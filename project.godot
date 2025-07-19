@@ -68,6 +68,7 @@ folder_colors={
 "res://Scenes/ContentManager/OtherTools/Scripts/": "green",
 "res://Scenes/ContentManager/Scripts/": "green",
 "res://Scenes/Overmap/Scripts/": "green",
+"res://Scenes/UI/": "blue",
 "res://Scripts/": "green",
 "res://addons/": "gray"
 }

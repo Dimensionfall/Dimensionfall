@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://e0ebcv1n8jnq"]
 
 [ext_resource type="Script" uid="uid://cvbq11ov0bqw1" path="res://Scripts/InventoryWindow.gd" id="1_7kqbx"]
-[ext_resource type="PackedScene" uid="uid://crck2fhgayxhn" path="res://Scenes/InventoryContainerListItem.tscn" id="2_xfgb3"]
+[ext_resource type="PackedScene" uid="uid://crck2fhgayxhn" path="res://Scenes/UI/InventoryContainerListItem.tscn" id="2_xfgb3"]
 [ext_resource type="PackedScene" uid="uid://khk40t8u7x5b" path="res://Scenes/UI/WearableSlot.tscn" id="3_1udct"]
 [ext_resource type="StyleBox" uid="uid://b4t06f0mrl43a" path="res://Scenes/UI/StyleBoxFlat_WindowHeader.tres" id="4_2bjug"]
 [ext_resource type="StyleBox" uid="uid://dekwnaow0islj" path="res://Scenes/UI/StyleBoxFlat_WindowBody.tres" id="5_xmi4a"]

@@ -16,10 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://dpxuma5a7e4p6" path="res://Scenes/UI/EscapeMenu.tscn" id="17_ewtgs"]
 [ext_resource type="PackedScene" uid="uid://bgswuol251m3u" path="res://Scenes/Overmap/Overmap.tscn" id="19_oomhy"]
 [ext_resource type="PackedScene" uid="uid://b50xhj4218wjd" path="res://Scenes/UI/QuestWindow.tscn" id="19_orjb2"]
-[ext_resource type="PackedScene" uid="uid://e0ebcv1n8jnq" path="res://Scenes/InventoryWindow.tscn" id="20_0l505"]
+[ext_resource type="PackedScene" uid="uid://e0ebcv1n8jnq" path="res://Scenes/UI/InventoryWindow.tscn" id="20_0l505"]
 [ext_resource type="PackedScene" uid="uid://cvr5g886g53be" path="res://Sounds/SFX/UI/UISFX.tscn" id="20_5kc73"]
-[ext_resource type="PackedScene" uid="uid://ckuh2s0nvwg0x" path="res://Scenes/GameOver.tscn" id="20_jlthm"]
-[ext_resource type="PackedScene" uid="uid://dowehl4nfwxm" path="res://Scenes/LoadingScreen.tscn" id="20_kxcpa"]
+[ext_resource type="PackedScene" uid="uid://ckuh2s0nvwg0x" path="res://Scenes/UI/GameOver.tscn" id="20_jlthm"]
+[ext_resource type="PackedScene" uid="uid://dowehl4nfwxm" path="res://Scenes/UI/LoadingScreen.tscn" id="20_kxcpa"]
 
 [sub_resource type="Theme" id="Theme_xn5t2"]
 default_font = ExtResource("1_pxloi")
