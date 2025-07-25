@@ -210,7 +210,7 @@ func set_collision_layers_and_masks():
 	var collision_layer = 1 << 3 | (1 << 6)  # Layer 4 is 1 << 3, Layer 7 is 1 << 6
 
 	# Set collision mask to include layers 1, 2, 3, 4, 5, and 6
-	var collision_mask = (1 << 0) | (1 << 1) | (1 << 2) | (1 << 3) | (1 << 4) | (1 << 5)
+	var collision_mask = (1 << 0) | (1 << 1) | (1 << 2) | (1 << 3) | (1 << 4) | (1 << 5) | (1 << 7)
 	# Explanation:
 	# - 1 << 0: Layer 1 (player layer)
 	# - 1 << 1: Layer 2 (enemy layer)
@@ -218,6 +218,7 @@ func set_collision_layers_and_masks():
 	# - 1 << 3: Layer 4 (static obstacles layer)
 	# - 1 << 4: Layer 5 (friendly projectiles layer)
 	# - 1 << 5: Layer 6 (enemy projectiles layer)
+	# - 1 << 7: Layer 8 (transparent static obstacles layer)
 	
 	PhysicsServer3D.body_set_collision_layer(collider, collision_layer)
 	PhysicsServer3D.body_set_collision_mask(collider, collision_mask)
