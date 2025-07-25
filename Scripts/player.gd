@@ -48,6 +48,7 @@ var move_input: Vector2 = Vector2.ZERO
 @export var testing: bool = false  # Used to test in the test_environment
 @export var interact_range: float = 10
 @export var camera_3d: Camera3D = null
+var my_viewport: Viewport
 
 #@export var progress_bar : NodePath
 #@export var progress_bar_filling : NodePath
@@ -70,6 +71,7 @@ func _init():
 
 
 func _ready():
+	my_viewport = get_viewport()
 	connect_held_item_slots()
 	initialize_condition()
 	initialize_attributes()
@@ -146,11 +148,10 @@ func initialize_stats_and_skills():
 
 func _process(_delta):
 	# Get the 2D screen position of the player
-	var camera = get_tree().get_first_node_in_group("Camera")
-	var player_screen_pos = camera.unproject_position(global_position)
+	var player_screen_pos = camera_3d.unproject_position(global_position)
 
 	# Get the mouse position in 2D screen space
-	var mouse_pos_2d = get_viewport().get_mouse_position()
+	var mouse_pos_2d = my_viewport.get_mouse_position()
 
 	# Calculate the direction vector from the player to the mouse position
 	var dir = (mouse_pos_2d - player_screen_pos).normalized()

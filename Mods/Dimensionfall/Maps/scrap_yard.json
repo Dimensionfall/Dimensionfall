@@ -121,7 +121,7 @@
 		{
 			"entities": [
 				{
-					"count": 1,
+					"count": 2,
 					"id": "security_robots",
 					"type": "mobgroup"
 				}
