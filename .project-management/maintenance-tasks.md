@@ -47,10 +47,13 @@ To guide an AI assistant in creating a detailed, step-by-step task list in Markd
     Cross-check the implemented content with design documents, roadmap, and lore. Suggest additions or corrections to bring the game closer to its intended narrative and feature set.
 
 14. **Map Categorization and Template Generation**  
-    Three map categories are: "urban", "nature", "industrial". Add two more to this list for a total of 5 categories. Review the maps in `/mods/dimensionfall/maps` as an example of what the output should look like. For each category, add two new maps. The new maps must include the following fields: `mapheight`, `mapwidth`, `name`, `weight`, `description`, `id`, `categories`, and `connections`. Include a `levels` array with a value of `[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]` representing 21 empty levels to allow manual map painting later. Use a name and description that aligns with the chosen category. The end result will be a total of 10 new maps.
+    Three map categories are: "urban", "nature", "industrial". Add two more to this list for a total of 5 categories. Review the maps in `/mods/dimensionfall/maps` as an example of what the output should look like. For each category, add two new maps. The new maps must include the following fields: `mapheight`, `mapwidth`, `name`, `weight`, `description`, `id`, `categories`, and `connections`. Include a `levels` array with a value of `[[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]` representing 21 empty levels to allow manual map painting later. Use a name and description that aligns with the chosen category. The end result will be a total of 10 new maps. Exclude integration into existing systems like overmapareas or references.
 
 15. **Add new items**  
-    Three item categories are: "urban", "nature", "industrial". Add two more to this list for a total of 5 categories. For each category, analyze the items in `/mods/dimensionfall/items` and propose two new items. Each item must include basic properties and appropriate type-specific fields (e.g., melee stats, food properties). Ensure the new items fit the theme of the game. The end result will be a total of 10 new items.
+    Three item categories are: "urban", "nature", "industrial". Add two more to this list for a total of 5 categories. For each category, analyze the items in `/mods/dimensionfall/items` and propose two new items. Each item must include basic properties and appropriate type-specific fields (e.g., melee stats, food properties). Ensure the new items fit the theme of the game. Use "./Mods/Dimensionfall/Items/9mm.png" as a placeholder sprite for each item. The end result will be a total of 10 new items. Since these are new items, we can exclude any references from consideration.
+
+**16. Add new furniture**
+The current furniture categories include: **"urban"**, **"nature"**, and **"industrial"**. As you create new furniture, imagine **two new categories** to expand the total to **five**. For each category, analyze the existing furniture definitions in `/mods/dimensionfall/furniture` and propose **two new furniture pieces**. Each piece must include: id, name, moveable. Ensure the new furniture fits the thematic tone and mechanics of **Dimensionfall**. Use `./Mods/Dimensionfall/furniture/toilet_48.png` as a placeholder sprite for all furniture entries. The final result will be **10 new furniture definitions** total. Since these are new additions, you can **ignore references or cross-links** from existing game data.
 
 
 ---
@@ -68,7 +71,7 @@ To guide an AI assistant in creating a detailed, step-by-step task list in Markd
 ### Process for Generating Maintenance Tasks  
 
 1. **Pick a goal**  
-   - Generate a number between 1 and 15 and write it down. Commit to the goal from the 'Refactoring & Code Quality Improvement Goals' that corresponds to the resulting number.
+   - Generate a number between 1 and 16 and write it down. Commit to the goal from the 'Refactoring & Code Quality Improvement Goals' that corresponds to the resulting number.
 
 2. **Analyze the codebase**  
    - The AI scans the codebase to identify scripts, scenes, or folders that require maintenance based on the selected refactoring or quality improvement goal.

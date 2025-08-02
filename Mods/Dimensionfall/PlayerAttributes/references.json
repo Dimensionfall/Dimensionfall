@@ -31,7 +31,9 @@
 			"zombie_organ",
 			"zombie_eye",
 			"rotten_flesh_chunk",
-			"meat_jerky"
+			"meat_jerky",
+			"dried_fruit_mix",
+			"jar_honey"
 		]
 	},
 	"head_health": {

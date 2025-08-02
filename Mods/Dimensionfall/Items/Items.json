@@ -2967,5 +2967,103 @@
 		"two_handed": false,
 		"volume": 5.0,
 		"weight": 0.2
+	},
+	{
+		"Food": {
+			"attributes": [
+				{
+					"amount": 15.0,
+					"id": "food"
+				}
+			]
+		},
+		"description": "A mix of dried fruits, perfect for a quick snack.",
+		"id": "dried_fruit_mix",
+		"image": "./Mods/Dimensionfall/Items/dried_fruit_mix_32.png",
+		"max_stack_size": 10,
+		"name": "Dried Fruit Mix",
+		"sprite": "dried_fruit_mix_32.png",
+		"stack_size": 1,
+		"two_handed": false,
+		"volume": 5.0,
+		"weight": 0.1
+	},
+	{
+		"Food": {
+			"attributes": [
+				{
+					"amount": 20.0,
+					"id": "food"
+				}
+			]
+		},
+		"description": "A jar filled with sweet honey.",
+		"id": "jar_honey",
+		"image": "./Mods/Dimensionfall/Items/jar_of_honey_32.png",
+		"max_stack_size": 5,
+		"name": "Jar of Honey",
+		"sprite": "jar_of_honey_32.png",
+		"stack_size": 1,
+		"two_handed": false,
+		"volume": 10.0,
+		"weight": 0.5
+	},
+	{
+		"Tool": {
+			"tool_qualities": {
+				"flashlight": 1
+			}
+		},
+		"description": "A folding multi-tool with various small implements.",
+		"id": "multi_tool",
+		"image": "./Mods/Dimensionfall/Items/multitool_32.png",
+		"max_stack_size": 1,
+		"name": "Multi-tool",
+		"sprite": "multitool_32.png",
+		"stack_size": 1,
+		"two_handed": false,
+		"volume": 5.0,
+		"weight": 0.5
+	},
+	{
+		"Tool": {
+			"tool_qualities": {
+				"flashlight": 1
+			}
+		},
+		"description": "A sturdy wrench adjustable for different bolt sizes.",
+		"id": "adjustable_wrench",
+		"image": "./Mods/Dimensionfall/Items/adjustable_wrench_32.png",
+		"max_stack_size": 1,
+		"name": "Adjustable Wrench",
+		"sprite": "adjustable_wrench_32.png",
+		"stack_size": 1,
+		"two_handed": false,
+		"volume": 15.0,
+		"weight": 0.8
+	},
+	{
+		"description": "A heavy bag of cement used for construction.",
+		"id": "cement_bag",
+		"image": "./Mods/Dimensionfall/Items/cement_bag_32.png",
+		"max_stack_size": 1,
+		"name": "Bag of Cement",
+		"sprite": "cement_bag_32.png",
+		"stack_size": 1,
+		"two_handed": true,
+		"volume": 200.0,
+		"weight": 15.0
+	},
+	{
+		"description": "Steel rebar used to reinforce concrete structures.",
+		"id": "steel_rebar",
+		"image": "./Mods/Dimensionfall/Items/steel_rebar_32.png",
+		"max_stack_size": 20,
+		"name": "Steel Rebar",
+		"sprite": "steel_rebar_32.png",
+		"stack_size": 1,
+		"two_handed": false,
+		"volume": 30.0,
+		"weight": 2.0
 	}
 ]
