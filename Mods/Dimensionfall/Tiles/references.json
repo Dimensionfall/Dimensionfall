@@ -205,6 +205,24 @@
 			"survivor_gas_station"
 		]
 	},
+	"dirt_dark_00": {
+		"maps": [
+			"field_farmland",
+			"underground_cave"
+		]
+	},
+	"dirt_dark_01": {
+		"maps": [
+			"field_farmland",
+			"underground_cave"
+		]
+	},
+	"dirt_dark_02": {
+		"maps": [
+			"field_farmland",
+			"underground_cave"
+		]
+	},
 	"dirt_light_00": {
 		"maps": [
 			"forest_road_cross",
@@ -235,7 +253,9 @@
 			"forest_burned_00",
 			"crater_small",
 			"forest_clearing",
-			"forest_ruins"
+			"forest_ruins",
+			"field_outpost",
+			"underground_cave"
 		]
 	},
 	"dirt_light_01": {
@@ -261,7 +281,9 @@
 			"forest_burned_00",
 			"crater_small",
 			"forest_clearing",
-			"forest_ruins"
+			"forest_ruins",
+			"field_outpost",
+			"underground_cave"
 		]
 	},
 	"dirt_light_02": {
@@ -284,7 +306,9 @@
 			"forest_burned_00",
 			"crater_small",
 			"forest_clearing",
-			"forest_ruins"
+			"forest_ruins",
+			"field_outpost",
+			"underground_cave"
 		]
 	},
 	"dirt_light_grass_north_00": {
@@ -582,7 +606,12 @@
 			"crater_small",
 			"survivor_gas_station",
 			"forest_clearing",
-			"forest_ruins"
+			"forest_ruins",
+			"suburban_park",
+			"field_outpost",
+			"field_farmland",
+			"underground_cave",
+			"underground_lab"
 		]
 	},
 	"grass_dirt_01": {
@@ -624,7 +653,12 @@
 			"crater_small",
 			"survivor_gas_station",
 			"forest_clearing",
-			"forest_ruins"
+			"forest_ruins",
+			"suburban_park",
+			"field_outpost",
+			"field_farmland",
+			"underground_cave",
+			"underground_lab"
 		]
 	},
 	"grass_dirt_02": {
@@ -665,7 +699,12 @@
 			"crater_small",
 			"survivor_gas_station",
 			"forest_clearing",
-			"forest_ruins"
+			"forest_ruins",
+			"suburban_park",
+			"field_outpost",
+			"field_farmland",
+			"underground_cave",
+			"underground_lab"
 		]
 	},
 	"grass_dirt_center_00": {
@@ -711,7 +750,11 @@
 			"military_bunker",
 			"crater_small",
 			"survivor_gas_station",
-			"forest_clearing"
+			"forest_clearing",
+			"suburban_park",
+			"field_farmland",
+			"underground_cave",
+			"underground_lab"
 		]
 	},
 	"grass_flowers_01": {
@@ -745,7 +788,11 @@
 			"store_electronic_clothing",
 			"military_bunker",
 			"crater_small",
-			"survivor_gas_station"
+			"survivor_gas_station",
+			"suburban_park",
+			"field_farmland",
+			"underground_cave",
+			"underground_lab"
 		]
 	},
 	"grass_flowers_02": {
@@ -778,7 +825,11 @@
 			"forest_camp_00",
 			"military_bunker",
 			"crater_small",
-			"survivor_gas_station"
+			"survivor_gas_station",
+			"suburban_park",
+			"field_farmland",
+			"underground_cave",
+			"underground_lab"
 		]
 	},
 	"grass_flowers_03": {
@@ -812,7 +863,11 @@
 			"forest_camp_00",
 			"military_bunker",
 			"crater_small",
-			"survivor_gas_station"
+			"survivor_gas_station",
+			"suburban_park",
+			"field_farmland",
+			"underground_cave",
+			"underground_lab"
 		]
 	},
 	"grass_medium_dirt_00": {
@@ -856,7 +911,12 @@
 			"crater_small",
 			"survivor_gas_station",
 			"forest_clearing",
-			"forest_ruins"
+			"forest_ruins",
+			"suburban_park",
+			"field_outpost",
+			"field_farmland",
+			"underground_cave",
+			"underground_lab"
 		]
 	},
 	"grass_medium_dirt_01": {
@@ -900,7 +960,12 @@
 			"crater_small",
 			"survivor_gas_station",
 			"forest_clearing",
-			"forest_ruins"
+			"forest_ruins",
+			"suburban_park",
+			"field_outpost",
+			"field_farmland",
+			"underground_cave",
+			"underground_lab"
 		]
 	},
 	"grass_medium_dirt_02": {
@@ -943,7 +1008,12 @@
 			"crater_small",
 			"survivor_gas_station",
 			"forest_clearing",
-			"forest_ruins"
+			"forest_ruins",
+			"suburban_park",
+			"field_outpost",
+			"field_farmland",
+			"underground_cave",
+			"underground_lab"
 		]
 	},
 	"grass_plain": {
@@ -1607,7 +1677,8 @@
 			"RockyHill_NW",
 			"RockyHill_NE",
 			"RockyHill_SW",
-			"crater_small"
+			"crater_small",
+			"underground_cave"
 		]
 	},
 	"rock_floor_01": {
@@ -1616,7 +1687,8 @@
 			"RockyHill_NW",
 			"RockyHill_NE",
 			"RockyHill_SW",
-			"crater_small"
+			"crater_small",
+			"underground_cave"
 		]
 	},
 	"rock_floor_02": {
@@ -1624,7 +1696,8 @@
 			"RockyHill_SE",
 			"RockyHill_NW",
 			"RockyHill_SW",
-			"crater_small"
+			"crater_small",
+			"underground_cave"
 		]
 	},
 	"rock_floor_03": {
@@ -1632,14 +1705,16 @@
 			"RockyHill_SE",
 			"RockyHill_NW",
 			"RockyHill_NE",
-			"RockyHill_SW"
+			"RockyHill_SW",
+			"underground_cave"
 		]
 	},
 	"rock_floor_04": {
 		"maps": [
 			"RockyHill_SE",
 			"RockyHill_NW",
-			"RockyHill_SW"
+			"RockyHill_SW",
+			"underground_cave"
 		]
 	},
 	"rock_floor_05": {
@@ -1647,7 +1722,8 @@
 			"RockyHill_SE",
 			"RockyHill_NW",
 			"RockyHill_NE",
-			"RockyHill_SW"
+			"RockyHill_SW",
+			"underground_cave"
 		]
 	},
 	"rock_floor_06": {
@@ -1655,7 +1731,8 @@
 			"RockyHill_SE",
 			"RockyHill_NW",
 			"RockyHill_NE",
-			"RockyHill_SW"
+			"RockyHill_SW",
+			"underground_cave"
 		]
 	},
 	"rock_slope_00": {
@@ -1667,7 +1744,8 @@
 			"RockyHill_NE",
 			"RockyHill_SW",
 			"military_bunker",
-			"crater_small"
+			"crater_small",
+			"underground_cave"
 		]
 	},
 	"rocky_earth_00": {
@@ -1701,7 +1779,8 @@
 			"generichouse_t",
 			"generichouse_corner",
 			"abandoned_building",
-			"store_electronic_clothing"
+			"store_electronic_clothing",
+			"suburban_park"
 		]
 	},
 	"wasteland_00": {

@@ -22,7 +22,8 @@
 			"warehouse_storage",
 			"military_bunker",
 			"crater_small",
-			"survivor_gas_station"
+			"survivor_gas_station",
+			"underground_cave"
 		]
 	},
 	"debris_urban": {

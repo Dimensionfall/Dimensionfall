@@ -1,0 +1,3874 @@
+{
+	"categories": [
+		"Field"
+	],
+	"connections": {
+		"east": "ground",
+		"north": "ground",
+		"south": "ground",
+		"west": "ground"
+	},
+	"description": "Cultivated farmland with crops.",
+	"id": "field_farmland",
+	"levels": [
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_01"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_00"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_02"
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_02",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_01"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_00"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_00"
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_01"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_01"
+			},
+			{
+				"id": "grass_flowers_02",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_02"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_02",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_flowers_00"
+			},
+			{
+				"id": "dirt_dark_00"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_00"
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_02"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_02"
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "dirt_dark_01"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_01"
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_02"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_02"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_01"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_00"
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_03"
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_02"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_01"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_02"
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_flowers_02"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_00"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_01"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_02"
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "dirt_dark_01"
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_00"
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_02"
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "dirt_dark_00"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_02"
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_02"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_01"
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_02"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "dirt_dark_01"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_02"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_02"
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_01"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_02",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_03"
+			},
+			{
+				"id": "dirt_dark_02"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_02"
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_03"
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_02",
+				"rotation": 180
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "dirt_dark_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_00"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_02"
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_00"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_03"
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_01"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_01"
+			},
+			{
+				"id": "grass_flowers_00"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_02"
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_01"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_02"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_flowers_01"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_02"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_flowers_02"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_01"
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_flowers_00"
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_01"
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_flowers_00"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_01",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			},
+			{
+				"id": "grass_flowers_02"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_medium_dirt_02",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 270
+			},
+			{
+				"id": "grass_flowers_00"
+			},
+			{
+				"id": "grass_dirt_02",
+				"rotation": 180
+			},
+			{
+				"id": "grass_flowers_03",
+				"rotation": 90
+			},
+			{
+				"id": "grass_dirt_00",
+				"rotation": 180
+			},
+			{
+				"id": "grass_dirt_01",
+				"rotation": 90
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_medium_dirt_02"
+			}
+		],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[]
+	],
+	"mapheight": 32,
+	"mapwidth": 32,
+	"name": "Field Farmland",
+	"weight": 1000
+}
