@@ -154,27 +154,27 @@
 		{
 			"entities": [
 				{
-					"count": 10,
+					"count": 20,
 					"id": "disruptor_drone",
 					"type": "mob"
 				},
 				{
-					"count": 2,
+					"count": 4,
 					"id": "scavenger_skitter",
 					"type": "mob"
 				},
 				{
-					"count": 1,
+					"count": 2,
 					"id": "iron_stalker",
 					"type": "mob"
 				},
 				{
-					"count": 4,
+					"count": 8,
 					"id": "scrapwalker",
 					"type": "mob"
 				},
 				{
-					"count": 3,
+					"count": 6,
 					"id": "rust_sentinel",
 					"type": "mob"
 				}

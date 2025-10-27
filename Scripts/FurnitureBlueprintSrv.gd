@@ -106,7 +106,7 @@ class FurnitureTransform:
 	func correct_new_position():
 		# We have to compensate for the fact that the physicsserver and
 		# renderingserver place the furniture lower then the intended height
-		posy += 0.5+(0.5*height)
+		posy += 0.5*height
 
 
 # Inner Container Class
@@ -115,7 +115,7 @@ class FurnitureContainer:
 	var itemgroup: String # The ID of an itemgroup that it creates loot from
 	var sprite_mesh: PlaneMesh
 	var sprite_instance: RID # RID to the quadmesh that displays the containersprite
-	var material: ShaderMaterial
+	var material: StandardMaterial3D
 	var furniture_transform: FurnitureTransform
 	var world3d: World3D
 
@@ -214,7 +214,6 @@ func _init(furniturepos: Vector3, newFurnitureJSON: Dictionary, world3d: World3D
 
 	# Apply the mode-specific logic. Only constructed furniture will be BLUEPRINT
 	set_mode()
-	Helper.signal_broker.player_current_y_level.connect.call_deferred(_on_player_y_level_updated)
 
 
 # If this furniture is a container, it will add a container node to the furniture.
@@ -653,8 +652,7 @@ func show_visuals():
 	is_hidden = false
 
 
-# ✅ Handles player Y level update and updates furniture visibility
-func _on_player_y_level_updated(_old_y_level: float, new_y_level: float):
+func refresh_visibility(new_y_level: float):
 	var furniture_y = get_y_position(true)  # Get snapped Y level
 
 	# Hide furniture above player, show furniture below

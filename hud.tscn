@@ -1,10 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://clhj525tmme3k"]
+[gd_scene load_steps=22 format=3 uid="uid://b4o76k6afwt1g"]
 
-[ext_resource type="FontFile" uid="uid://chm7lbcdeyo0h" path="res://Roboto-Bold.ttf" id="1_pxloi"]
+[ext_resource type="FontFile" uid="uid://chm7lbcdeyo0h" path="res://Assets/Fonts/Roboto-Bold.ttf" id="1_pxloi"]
 [ext_resource type="Script" uid="uid://cesohfflurhln" path="res://Scripts/hud.gd" id="1_s3xoj"]
 [ext_resource type="Script" uid="uid://dx6j302ja353t" path="res://Scripts/NonHUDclick.gd" id="2_kpbhl"]
 [ext_resource type="Texture2D" uid="uid://7hppy1l45loq" path="res://Textures/bar_progress.png" id="3_83uwt"]
-[ext_resource type="Resource" uid="uid://cgkq7vfjq07jm" path="res://ItemProtosets.tres" id="3_jmlkb"]
+[ext_resource type="Resource" uid="uid://40imt51cghsv" path="res://ItemProtosets.tres" id="3_jmlkb"]
 [ext_resource type="Texture2D" uid="uid://dcgwgmsmi7mjn" path="res://Textures/bar_border.png" id="3_y43f5"]
 [ext_resource type="PackedScene" uid="uid://b6ooia1084wfx" path="res://Scenes/UI/AttributesWindow.tscn" id="6_6e87o"]
 [ext_resource type="PackedScene" uid="uid://drjw0yaxf8x1p" path="res://Scenes/UI/QuestTrackerUI.tscn" id="7_bbed4"]
@@ -16,24 +16,25 @@
 [ext_resource type="PackedScene" uid="uid://dpxuma5a7e4p6" path="res://Scenes/UI/EscapeMenu.tscn" id="17_ewtgs"]
 [ext_resource type="PackedScene" uid="uid://bgswuol251m3u" path="res://Scenes/Overmap/Overmap.tscn" id="19_oomhy"]
 [ext_resource type="PackedScene" uid="uid://b50xhj4218wjd" path="res://Scenes/UI/QuestWindow.tscn" id="19_orjb2"]
-[ext_resource type="PackedScene" uid="uid://e0ebcv1n8jnq" path="res://Scenes/InventoryWindow.tscn" id="20_0l505"]
-[ext_resource type="PackedScene" uid="uid://ckuh2s0nvwg0x" path="res://Scenes/GameOver.tscn" id="20_jlthm"]
-[ext_resource type="PackedScene" uid="uid://dowehl4nfwxm" path="res://Scenes/LoadingScreen.tscn" id="20_kxcpa"]
+[ext_resource type="PackedScene" uid="uid://e0ebcv1n8jnq" path="res://Scenes/UI/InventoryWindow.tscn" id="20_0l505"]
+[ext_resource type="PackedScene" uid="uid://cvr5g886g53be" path="res://Sounds/SFX/UI/UISFX.tscn" id="20_5kc73"]
+[ext_resource type="PackedScene" uid="uid://ckuh2s0nvwg0x" path="res://Scenes/UI/GameOver.tscn" id="20_jlthm"]
+[ext_resource type="PackedScene" uid="uid://dowehl4nfwxm" path="res://Scenes/UI/LoadingScreen.tscn" id="20_kxcpa"]
 
 [sub_resource type="Theme" id="Theme_xn5t2"]
 default_font = ExtResource("1_pxloi")
 default_font_size = 0
 
-[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("clock_label", "ammo_HUD_container", "inventoryWindow", "characterWindow", "questWindow", "overmap")]
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("clock_label", "ammo_HUD_container", "inventory_window", "characterWindow", "quest_window", "overmap")]
 script = ExtResource("1_s3xoj")
-stamina_HUD = NodePath("StaminaLevel")
+stamina_hud = NodePath("StaminaLevel")
 clock_label = NodePath("ClockLabel")
 ammo_HUD_container = NodePath("AmmoVisuals")
 healthy_color = Color(0, 0.635294, 0, 1)
 damaged_color = Color(0.635294, 0, 0, 1)
-inventoryWindow = NodePath("InventoryWindow")
+inventory_window = NodePath("InventoryWindow")
 characterWindow = NodePath("CharacterWindow")
-questWindow = NodePath("QuestWindow")
+quest_window = NodePath("QuestWindow")
 building_menu = NodePath("BuildingMenu")
 crafting_menu = NodePath("CraftingMenu")
 overmap = NodePath("Overmap")
@@ -141,21 +142,6 @@ text = "R: 999/999"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Time" type="Label" parent="."]
-visible = false
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -191.0
-offset_bottom = 61.0
-grow_horizontal = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("1_pxloi")
-theme_override_font_sizes/font_size = 49
-text = "11:20"
-vertical_alignment = 1
-
 [node name="BuildingMenu" parent="." instance=ExtResource("9_v36fg")]
 visible = false
 
@@ -183,11 +169,6 @@ anchor_bottom = 0.9
 
 [node name="InventoryWindow" parent="." instance=ExtResource("20_0l505")]
 visible = false
-anchors_preset = -1
-anchor_left = 0.1
-anchor_top = 0.1
-anchor_right = 0.9
-anchor_bottom = 0.9
 
 [node name="CharacterWindow" parent="." instance=ExtResource("17_2f357")]
 visible = false
@@ -220,6 +201,9 @@ furniture_construction_window = NodePath("../FurnitureConstructionWindow")
 visible = false
 
 [node name="LoadingScreen" parent="." instance=ExtResource("20_kxcpa")]
+
+[node name="Uisfx" parent="." instance=ExtResource("20_5kc73")]
+root_path = NodePath("..")
 
 [connection signal="timeout" from="ProgressBar/ProgressBarTimer" to="." method="_on_progress_bar_timer_timeout"]
 [connection signal="mouse_entered" from="OutsideOfHUD" to="OutsideOfHUD" method="_on_mouse_entered"]

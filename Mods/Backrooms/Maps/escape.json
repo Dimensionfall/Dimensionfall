@@ -6,7 +6,7 @@
 		"west": "ground"
 	},
 	"description": "Some kind of \"escape\" map. Needs to be more fleshed out",
-	"id": "escape?",
+	"id": "escape",
 	"levels": [
 		[],
 		[],

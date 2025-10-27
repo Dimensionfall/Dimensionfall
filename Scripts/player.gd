@@ -1,62 +1,61 @@
 class_name Player
 extends CharacterBody3D
 
-var is_alive = true
+var is_alive: bool = true
 
 var rng = RandomNumberGenerator.new()
 
-var speed = 2  # speed in meters/sec
+var speed: float = 2.0  # speed in meters/sec
 
-var run_multiplier = 1.1
-var is_running = false
+var run_multiplier: float = 1.1
+var is_running: bool = false
+@onready var movement_timer: Timer = $MovementTimer
 
-var max_stamina = 100
-var current_stamina
-var stamina_lost_while_running_per_sec  = 15
-var stamina_regen_while_standing_still = 3
+var max_stamina: float = 100.0
+var current_stamina: float
+var stamina_lost_while_running_per_sec: float = 15.0
+var stamina_regen_while_standing_still: float = 3.0
 
-var nutrition = 100
-var current_nutrition
+var nutrition: float = 100.0
+var current_nutrition: float
 
-var pain
-var current_pain = 0
+var pain: float
+var current_pain: float = 0.0
 
 # Slots that the player can equip items into, i.e. left hand and right hand
-var held_item_slots : Array[EquippedItem]
-var stats = {}
-var skills = {}
+var held_item_slots: Array[EquippedItem]
+var stats: Dictionary = {}
+var skills: Dictionary = {}
 # Dictionary that holds instances of PlayerAttribute. For example food, water, mood
-var attributes = {}
+var attributes: Dictionary = {}
 
-var time_since_ready = 0.0
-var delay_before_movement = 2.0  # 2 second delay
+var time_since_ready: float = 0.0
+var delay_before_movement: float = 2.0  # 2 second delay
 
 # Variable to track the stun amount
 var stun_amount: float = 0.0
 var stun_depletion_rate: float = 10.0  # Amount to reduce per second
 
 # Variables to handle knockback
-var knockback_active = false
+var knockback_active: bool = false
 var knockback_velocity: Vector3 = Vector3.ZERO
 var knockback_distance_remaining: float = 0.0
 
-@export var sprite : Sprite3D
-@export var collision_detector : Area3D # Used for detecting collision with furniture
-@export var testing: bool = false # Used to test in the test_environment
-@export var interact_range : float = 10
-@export var camera_3d: Camera3D = null
+var move_input: Vector2 = Vector2.ZERO
 
+@export var sprite: Sprite3D
+@export var collision_detector: Area3D  # Used for detecting collision with furniture
+@export var testing: bool = false  # Used to test in the test_environment
+@export var interact_range: float = 10
+@export var camera_3d: Camera3D = null
+var my_viewport: Viewport
 
 #@export var progress_bar : NodePath
 #@export var progress_bar_filling : NodePath
 #@export var progress_bar_timer : NodePath
 
-@export var foostep_player : AudioStreamPlayer
-@export var foostep_stream_randomizer : AudioStreamRandomizer
-
-
 # Variables for furniture pushing
-var pushing_furniture = false
+var pushing_furniture: bool = false
 var furniture_body: RID
 # Store the last known player Y level for comparison
 var last_y_level: float = 0.0
@@ -64,13 +63,15 @@ var last_y_level: float = 0.0
 var y_level_timer: Timer
 #var progress_bar_timer_max_time : float
 
-#var is_progress_bar_well_progressing_i_guess = false
+#var is_progress_bar_active = false
+
 
 func _init():
 	_connect_signals()
 
 
 func _ready():
+	my_viewport = get_viewport()
 	connect_held_item_slots()
 	initialize_condition()
 	initialize_attributes()
@@ -79,7 +80,7 @@ func _ready():
 	Helper.save_helper.load_quest_state()
 	collision_detector.body_shape_entered.connect(_on_body_entered)
 	collision_detector.body_shape_exited.connect(_on_body_exited)
-	
+
 	# ✅ Set up the timer to check Y level frequently
 	y_level_timer = Timer.new()
 	y_level_timer.wait_time = 0.1
@@ -98,13 +99,24 @@ func _connect_signals():
 	ItemManager.craft_successful.connect(_on_craft_successful)
 	Helper.signal_broker.wearable_was_equipped.connect(_on_wearable_was_equipped)
 	Helper.signal_broker.wearable_was_unequipped.connect(_on_wearable_was_unequipped)
+	PlayerInputSignalBroker.run_toggled().connect(_on_run_toggled)
+	PlayerInputSignalBroker.interact().connect(_on_interact)
+	PlayerInputSignalBroker.movement_vector().connect(_on_movement_vector)
+
 
 func connect_held_item_slots():
 	held_item_slots = [$Sprite3D2/EquippedLeft, $Sprite3D2/EquippedRight]
 	for i in range(0, len(held_item_slots)):
-		PlayerInputSignalBroker.try_activate_equipped_item(i).connect(held_item_slots[i].try_activate_equipped_item)
-		Helper.signal_broker.item_was_equipped_to_slot(i).connect(held_item_slots[i]._on_hud_item_was_equipped)
-		Helper.signal_broker.item_was_unequipped_from_slot(i).connect(held_item_slots[i]._on_hud_item_equipment_slot_was_cleared)
+		PlayerInputSignalBroker.try_activate_equipped_item(i).connect(
+			held_item_slots[i].try_activate_equipped_item
+		)
+		Helper.signal_broker.item_was_equipped_to_slot(i).connect(
+			held_item_slots[i]._on_hud_item_was_equipped
+		)
+		Helper.signal_broker.item_was_unequipped_from_slot(i).connect(
+			held_item_slots[i]._on_hud_item_equipment_slot_was_cleared
+		)
+
 
 func initialize_condition():
 	current_stamina = max_stamina
@@ -127,7 +139,7 @@ func initialize_stats_and_skills():
 	for stat in Runtimedata.stats.get_all().values():
 		stats[stat.id] = 5
 	Helper.signal_broker.player_stat_changed.emit(self)
-	
+
 	# Initialize all skills with a value of level 1 and 0 XP
 	for skill in Runtimedata.skills.get_all().values():
 		skills[skill.id] = {"level": 1, "xp": 0}
@@ -136,11 +148,10 @@ func initialize_stats_and_skills():
 
 func _process(_delta):
 	# Get the 2D screen position of the player
-	var camera = get_tree().get_first_node_in_group("Camera")
-	var player_screen_pos = camera.unproject_position(global_position)
+	var player_screen_pos = camera_3d.unproject_position(global_position)
 
 	# Get the mouse position in 2D screen space
-	var mouse_pos_2d = get_viewport().get_mouse_position()
+	var mouse_pos_2d = my_viewport.get_mouse_position()
 
 	# Calculate the direction vector from the player to the mouse position
 	var dir = (mouse_pos_2d - player_screen_pos).normalized()
@@ -156,16 +167,14 @@ func _process(_delta):
 	RenderingServer.global_shader_parameter_set("player_y_level", current_y_level)
 
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	time_since_ready += delta
 	if time_since_ready < delay_before_movement:
-		# Skip movement updates during the delay period to prevent 
+		# Skip movement updates during the delay period to prevent
 		# the player from falling into the ground while the ground is spawning.
 		return
 
-	# Added an arbitrary multiplier because without it, the player will fall slowly
-	var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-	velocity.y -= gravity * 12 * delta
+	apply_gravity(delta)
 	move_and_slide()
 
 	if is_alive:
@@ -185,16 +194,14 @@ func _physics_process(delta):
 
 		# Check if the player is stunned; if so, prevent control-based movement
 		if is_stunned():
-			deplete_stun(delta) # Deplete stun amount
+			deplete_stun(delta)  # Deplete stun amount
 			move_and_slide()  # Keep moving with existing velocity but no input-based movement
 			return  # Prevent further processing for player control
 
 		# Player control movement
 		if not knockback_active:
 			var initial_stamina = current_stamina
-			var input_dir = Input.get_vector("left", "right", "up", "down")
-			var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-
+			var direction = (transform.basis * Vector3(move_input.x, 0, move_input.y)).normalized()
 			# Athletics skill level
 			var athletics_level = get_skill_level("athletics")
 
@@ -206,7 +213,9 @@ func _physics_process(delta):
 			# Check if the player is pushing furniture
 			if pushing_furniture and furniture_body:
 				# Apply resistance based on the mass of the furniture collider
-				var mass = PhysicsServer3D.body_get_param(furniture_body, PhysicsServer3D.BODY_PARAM_MASS)
+				var mass = PhysicsServer3D.body_get_param(
+					furniture_body, PhysicsServer3D.BODY_PARAM_MASS
+				)
 				var resistance = 1.0 / mass
 				velocity = direction * speed * resistance
 			else:
@@ -215,6 +224,7 @@ func _physics_process(delta):
 					velocity = direction * speed
 				elif is_running and current_stamina > 0:
 					velocity = direction * speed * run_multiplier
+
 					if velocity.length() > 0:
 						current_stamina -= delta * stamina_lost_while_running_per_sec
 						add_skill_xp("athletics", 0.01)
@@ -222,12 +232,25 @@ func _physics_process(delta):
 			# Stamina regeneration when standing still
 			if velocity.length() < 0.1:
 				current_stamina += delta * stamina_regen_while_standing_still
+			else:
+				if movement_timer.time_left <= 0:
+					if not testing and Helper.test_map_name == "":
+						play_tile_footstep_sound() # Only play in regular game, not testing
+					if not is_running or current_stamina == 0:
+						movement_timer.start(0.5)
+					else:
+						movement_timer.start(0.3)
 			current_stamina = clamp(current_stamina, 0.0, max_stamina)
-			
-			if (current_stamina != initial_stamina):
-				Helper.signal_broker.player_stamina_changed.emit(self, current_stamina)
 
+			if current_stamina != initial_stamina:
+				Helper.signal_broker.player_stamina_changed.emit(self, current_stamina)
 		move_and_slide()
+
+
+func apply_gravity(delta: float) -> void:
+	# Added an arbitrary multiplier because without it, the player will fall slowly
+	var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
+	velocity.y -= gravity * 12 * delta
 
 
 # When a body enters the CollisionDetector area
@@ -245,15 +268,20 @@ func _on_body_exited(body_rid: RID, body: Node3D, _body_shape_index: int, _local
 		pushing_furniture = false
 
 
-func _input(event):
-	if event.is_action_pressed("run"):
-		is_running = true
-	elif event.is_action_released("run"):
-		is_running = false
-		
-	#checking if we can interact with the object
-	if event.is_action_pressed("interact"):
-		_check_for_interaction()
+# Update running state when the run key is pressed or released
+func _on_run_toggled(running: bool) -> void:
+	is_running = running
+
+
+# Called when the interact key is pressed
+func _on_interact() -> void:
+	print_block_id_under_player()
+	_check_for_interaction()
+
+
+func _on_movement_vector(vec: Vector2) -> void:
+	move_input = vec
+
 
 # Check if player can interact with an object
 func _check_for_interaction() -> void:
@@ -264,15 +292,24 @@ func _check_for_interaction() -> void:
 		return
 
 	var world_mouse_position = raycast.position
-	
+
 	# Lower the y-value of global_position by 0.5
 	# This is required to interact with short furniture
 	var adjusted_global_position = global_position - Vector3(0, 0.5, 0)
-	var raycast_target = adjusted_global_position + (Vector3(
-		world_mouse_position.x - adjusted_global_position.x,
-		0,
-		world_mouse_position.z - adjusted_global_position.z
-	)).normalized() * interact_range
+	var raycast_target = (
+		adjusted_global_position
+		+ (
+			(
+				(Vector3(
+					world_mouse_position.x - adjusted_global_position.x,
+					0,
+					world_mouse_position.z - adjusted_global_position.z
+				))
+				. normalized()
+			)
+			* interact_range
+		)
+	)
 
 	var result = Helper.raycast(adjusted_global_position, raycast_target, layer, [self])
 
@@ -290,23 +327,26 @@ func _check_for_interaction() -> void:
 # 	"mobposition": Vector3(17, 1, 219) # The global position of the mob
 # }
 func get_hit(attack_data: Dictionary):
-	var attack: Dictionary = attack_data.get("attack",{})
+	Sfx.play_generic_sfx()
+	var attack: Dictionary = attack_data.get("attack", {})
 	var rattack: RAttack = Runtimedata.attacks.by_id(attack.get("id", ""))
 	if not rattack:
 		print_debug("Invalid attack ID:", attack.get("id", ""))
 		return
-	
+
 	# Get the attack effects with the applied damage multiplier
-	var attack_effects: Dictionary = rattack.get_scaled_attack_effects(attack_data.get("damage_multiplier", 1.0))
-	
+	var attack_effects: Dictionary = rattack.get_scaled_attack_effects(
+		attack_data.get("damage_multiplier", 1.0)
+	)
+
 	# Apply damage to each affected attribute
 	for attribute in attack_effects["attributes"]:
 		var attribute_id: String = attribute["id"]
 		var damage_value: float = attribute["damage"]
-		
+
 		if attributes.has(attribute_id):
 			attributes[attribute_id].reduce_amount(damage_value)
-	
+
 	# Apply knockback if applicable
 	if attack_effects["knockback"] > 0 and attack_data.has("mobposition"):
 		_perform_knockback(attack_effects["knockback"], attack_data["mobposition"])
@@ -316,12 +356,10 @@ func die():
 	if is_alive:
 		print("Player died")
 		is_alive = false
-		$"../../../HUD".get_node("GameOver").show()
-
-
-func play_footstep_audio():
-	foostep_player.stream = foostep_stream_randomizer
-	foostep_player.play()
+		Sfx.gameplay_sfx_stop()
+		Music.gameplay_music_stop()
+		Music.GameOverMusic.play()
+		Helper.signal_broker.player_died.emit(self)
 
 
 # The player has selected one or more items in the inventory and selected
@@ -336,13 +374,12 @@ func _on_food_item_used(usedItem: InventoryItem) -> void:
 
 	if was_used:
 		var stack_size: int = InventoryStacked.get_item_stack_size(usedItem)
-		InventoryStacked.set_item_stack_size(usedItem,stack_size-1)
+		InventoryStacked.set_item_stack_size(usedItem, stack_size - 1)
 
 
 # The player has selected one or more items in the inventory and selected
 # 'use' from the context menu.
 func _on_medical_item_used(usedItem: InventoryItem) -> void:
-	
 	var medical = RItem.Medical.new(usedItem.get_property("Medical"))
 	var was_used: bool = false
 
@@ -379,7 +416,7 @@ func _apply_specific_attribute_amounts(medattributes: Array) -> bool:
 		if new_amount != current_amount:
 			playerattribute.modify_current_amount(new_amount - current_amount)
 			was_used = true
-	
+
 	return was_used
 
 
@@ -408,7 +445,9 @@ func _apply_general_medical_amount(medical: RItem.Medical) -> bool:
 			other_attributes.append(playerattribute)
 
 	# First, apply the pool to attributes with the death effect
-	var sorted_death_attributes = _sort_player_attributes_by_order(death_effect_attributes, medical.order)
+	var sorted_death_attributes = _sort_player_attributes_by_order(
+		death_effect_attributes, medical.order
+	)
 	pool = _apply_pool_to_attributes(sorted_death_attributes, pool, was)
 
 	# Then, apply the remaining pool to the other attributes
@@ -419,26 +458,28 @@ func _apply_general_medical_amount(medical: RItem.Medical) -> bool:
 
 
 # Helper function to apply the pool to a given array of PlayerAttributes
-func _apply_pool_to_attributes(myattributes: Array[PlayerAttribute], pool: float, was: Dictionary) -> float:
+func _apply_pool_to_attributes(
+	myattributes: Array[PlayerAttribute], pool: float, was: Dictionary
+) -> float:
 	for playerattribute in myattributes:
 		var current_amount = playerattribute.default_mode.current_amount
 		var max_amount = playerattribute.default_mode.max_amount
 		var min_amount = playerattribute.default_mode.min_amount
-		
+
 		# Calculate how much can actually be added from the pool
 		var additional_amount = min(pool, max_amount - current_amount)
-		
+
 		# Make sure that amount is not more or less than the min and max amount for the attribute
 		var new_amount = clamp(current_amount + additional_amount, min_amount, max_amount)
-		
+
 		# Update the pool after applying the additional amount
 		pool -= (new_amount - current_amount)
-		
+
 		# If the new amount is different from the current amount, apply the change
 		if not new_amount == current_amount:
 			playerattribute.modify_current_amount(new_amount - current_amount)
 			was.used = true
-		
+
 		# If the pool is exhausted, break out of the loop
 		if pool <= 0:
 			break
@@ -447,7 +488,9 @@ func _apply_pool_to_attributes(myattributes: Array[PlayerAttribute], pool: float
 
 
 # Sort PlayerAttributes based on the specified order
-func _sort_player_attributes_by_order(myattributes: Array[PlayerAttribute], order: String) -> Array[PlayerAttribute]:
+func _sort_player_attributes_by_order(
+	myattributes: Array[PlayerAttribute], order: String
+) -> Array[PlayerAttribute]:
 	match order:
 		"Ascending":
 			# Reverse the array and return it
@@ -469,11 +512,15 @@ func _sort_player_attributes_by_order(myattributes: Array[PlayerAttribute], orde
 
 
 # Custom sorting functions for PlayerAttributes
-func _compare_player_attributes_by_current_amount_ascending(a: PlayerAttribute, b: PlayerAttribute) -> bool:
+func _compare_player_attributes_by_current_amount_ascending(
+	a: PlayerAttribute, b: PlayerAttribute
+) -> bool:
 	return a.default_mode.current_amount < b.default_mode.current_amount
 
 
-func _compare_player_attributes_by_current_amount_descending(a: PlayerAttribute, b: PlayerAttribute) -> bool:
+func _compare_player_attributes_by_current_amount_descending(
+	a: PlayerAttribute, b: PlayerAttribute
+) -> bool:
 	return a.default_mode.current_amount > b.default_mode.current_amount
 
 
@@ -543,17 +590,40 @@ func add_skill_xp(skill_id: String, xp: float) -> void:
 		var current_xp = skills[skill_id]["xp"]
 		var current_level = skills[skill_id]["level"]
 		current_xp += xp
-		
+
 		# Check if XP exceeds 100 and handle level up
 		while current_xp >= 100:
 			current_xp -= 100
 			current_level += 1
-		
+
 		skills[skill_id]["xp"] = current_xp
 		skills[skill_id]["level"] = current_level
 		Helper.signal_broker.player_skill_changed.emit(self)
 	else:
 		push_error("Skill ID not found: %s" % skill_id)
+
+
+# -----------------------
+#      STAT HELPERS
+# -----------------------
+
+
+# Returns the current value of a stat or 0 if it doesn't exist
+func get_stat(stat_id: String) -> int:
+	if stats.has(stat_id):
+		return stats[stat_id]
+	return 0
+
+
+# Sets the value for a stat and emits the change signal
+func set_stat(stat_id: String, value: int) -> void:
+	stats[stat_id] = value
+	Helper.signal_broker.player_stat_changed.emit(self)
+
+
+# Adds an amount to a stat value and emits the change signal
+func add_stat(stat_id: String, amount: int) -> void:
+	set_stat(stat_id, get_stat(stat_id) + amount)
 
 
 # The player has succesfully crafted an item. Get the skill id and xp from
@@ -590,7 +660,7 @@ func set_state(state: Dictionary) -> void:
 	current_pain = state.get("pain", current_pain)
 	skills = state.get("skills", skills)
 
-	# Set the attributes data. Assumes the attributes 
+	# Set the attributes data. Assumes the attributes
 	# have already been initialized in initialize_attributes
 	var attribute_data = state.get("attributes", {})
 	for attribute_id in attribute_data.keys():
@@ -600,7 +670,7 @@ func set_state(state: Dictionary) -> void:
 	global_transform.origin.x = state.get("global_position_x", global_transform.origin.x)
 	global_transform.origin.y = state.get("global_position_y", global_transform.origin.y)
 	global_transform.origin.z = state.get("global_position_z", global_transform.origin.z)
-	
+
 	# Emit signals to update the HUD
 	Helper.signal_broker.player_stamina_changed.emit(self, current_stamina)
 
@@ -657,9 +727,11 @@ func _perform_knockback(knockback_distance: float, mob_position: Vector3):
 func is_stunned() -> bool:
 	return stun_amount > 0.0
 
+
 # Function to deplete the stun amount over time
 func deplete_stun(delta: float) -> void:
 	stun_amount = max(0.0, stun_amount - stun_depletion_rate * delta)
+
 
 # Function to increase the stun amount
 func add_stun(amount: float) -> void:
@@ -678,5 +750,68 @@ func _update_player_y_level():
 	var current_y_level = global_position.y
 	# Only emit the signal if the Y level has changed
 	if current_y_level != last_y_level:
-		Helper.signal_broker.player_current_y_level.emit(last_y_level, current_y_level)
-		last_y_level = current_y_level # Update last known Y level
+		last_y_level = current_y_level  # Update last known Y level
+
+
+# Prints the id of the block the player is currently standing on
+func print_block_id_under_player() -> void:
+	var tile_id = get_tile_id_under_player()
+	if tile_id:
+		print("Player is standing on block id: ", tile_id)
+	else:
+		print("No block found under player.")
+
+
+# Returns the tile ID of the block directly beneath the player, or null if not found
+func get_tile_id_under_player() -> String:
+	var chunk = Helper.map_manager.get_chunk_from_position(global_position)
+	if chunk == null:
+		return ""
+
+	var local_x = int(global_position.x - chunk.mypos.x) % 32
+	if local_x < 0:
+		local_x += 32
+	var local_z = int(global_position.z - chunk.mypos.z) % 32
+	if local_z < 0:
+		local_z += 32
+
+	var level_index = int(floor(global_position.y - 1.0))  # slightly below player
+
+	var block_data = chunk.get_block_at(level_index, Vector2i(local_x, local_z))
+	if block_data and block_data.has("id"):
+		return block_data["id"]
+	return ""
+
+
+# Returns a Dictionary containing the sound category and volume for the tile under the player
+# If not found, returns default values: category = "default", volume = 100
+func get_tile_sound_info_under_player() -> Dictionary:
+	var tile_id := get_tile_id_under_player()
+	if not tile_id:
+		return {"sound_category": "default", "sound_volume": 100}
+
+	var rtile := Runtimedata.tiles.by_id(tile_id)
+	if not rtile:
+		return {"sound_category": "default", "sound_volume": 100}
+
+	return {"sound_category": rtile.sound_category, "sound_volume": rtile.sound_volume}
+
+
+# Plays the appropriate footstep SFX based on the tile the player is standing on
+func play_tile_footstep_sound():
+	var sound_info = get_tile_sound_info_under_player()
+	var category: String = sound_info.sound_category
+	var volume: float = sound_info.sound_volume
+
+	match category:
+		"grass":
+			Sfx.play_movement_sfx(Sfx.SFX.WALKING_GRASS, volume)
+		"concrete":
+			Sfx.play_movement_sfx(Sfx.SFX.WALKING_CONCRETE, volume)
+		"wood":
+			Sfx.play_movement_sfx(Sfx.SFX.WALKING_WOOD, volume)
+		"metal":
+			Sfx.play_movement_sfx(Sfx.SFX.WALKING_METAL, volume)
+		_:
+			# Default fallback to grass if unknown
+			Sfx.play_movement_sfx(Sfx.SFX.WALKING_GRASS, volume)

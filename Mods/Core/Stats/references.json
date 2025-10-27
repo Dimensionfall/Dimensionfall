@@ -1,0 +1,21 @@
+{
+	"dexterity": {
+		"items": [
+			"pistol_9mm",
+			"stone_spear",
+			"machete"
+		]
+	},
+	"intelligence": {
+		"items": [
+			"pistol_magazine"
+		]
+	},
+	"strength": {
+		"items": [
+			"long_stick",
+			"stone_spear",
+			"machete"
+		]
+	}
+}

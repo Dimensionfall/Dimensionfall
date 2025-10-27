@@ -2,9 +2,9 @@ class_name Mob
 extends CharacterBody3D
 
 var target_manager: Node3D = null
-var mobPosition: Vector3 # The position it will move to when it is created
-var mobRotation: int # The rotation it will rotate to when it is created
-var mobJSON: Dictionary # The json that defines this mob
+var mob_position: Vector3 # The position it will move to when it is created
+var mob_rotation: int # The rotation it will rotate to when it is created
+var mob_json: Dictionary # The json that defines this mob
 var rmob: RMob # The data that defines this mob in general
 var meshInstance: MeshInstance3D # This mob's mesh instance
 var nav_agent: NavigationAgent3D # Used for pathfinding
@@ -33,15 +33,16 @@ var is_blinking: bool = false # flag to prevent multiple blink actions
 var original_material: StandardMaterial3D # To return to normal after blinking
 var state_machine: StateMachine
 var terminated: bool = false
+var last_attacker: Node = null
 
 
 # Previously the Mob node was configured in the node editor
 # This function tries to re-create that node structure and properties
-func _init(mobpos: Vector3, newMobJSON: Dictionary):
-	mobJSON = newMobJSON
+func _init(mob_pos: Vector3, new_mob_json: Dictionary):
+	mob_json = new_mob_json
 	# Retrieve mob data from Runtimedata
-	rmob = Runtimedata.mobs.by_id(mobJSON.id)
-	mobPosition = mobpos
+	rmob = Runtimedata.mobs.by_id(mob_json.id)
+	mob_position = mob_pos
 	initialize_mob()
 
 # Initializes the mob by setting up various components and properties
@@ -61,8 +62,8 @@ func setup_basic_properties():
 	wall_min_slide_angle = 0
 	floor_constant_speed = true
 	add_to_group("mobs")
-	if mobJSON.has("rotation"):
-		mobRotation = mobJSON.rotation
+	if mob_json.has("rotation"):
+		mob_rotation = mob_json.rotation
 	hates_mobs = Runtimedata.mobfactions.by_id(rmob.faction_id).get_mobs_by_relation_type("hostile")
 
 # Set collision layers and masks
@@ -106,10 +107,8 @@ func create_detection():
 
 # Create and configure CollisionShape3D
 func create_collision_shape():
-	var new_shape = BoxShape3D.new()
-	new_shape.size = Vector3(0.35, 0.35, 0.35)
 	collision_shape_3d = CollisionShape3D.new()
-	collision_shape_3d.shape = new_shape
+	collision_shape_3d.shape = General.shared_collision_shape
 	add_child.call_deferred(collision_shape_3d)
 
 
@@ -134,15 +133,13 @@ func _ready():
 	current_health = health
 	current_move_speed = move_speed
 	current_idle_move_speed = idle_move_speed
-	position = mobPosition
-	last_position = mobPosition
+	position = mob_position
+	last_position = mob_position
 	meshInstance.position.y = -0.2
 	target_manager = get_tree().get_first_node_in_group("target_manager")
 	current_chunk = get_chunk_from_position(global_transform.origin)
 	update_navigation_agent_map(current_chunk)
 	Helper.signal_broker.mob_spawned.emit(self)
-
-
 
 func _physics_process(_delta):
 	if global_transform.origin != last_position:
@@ -184,6 +181,7 @@ func update_navigation_agent_map(chunk_position: Vector2):
 #   "damage": 10.0  # Direct damage amount (optional)
 # }
 func get_hit(attack_data: Dictionary):
+	last_attacker = attack_data.get("source", null)
 	var attack: Dictionary = attack_data.get("attack", {})
 	var rattack: RAttack = null
 	
@@ -193,7 +191,7 @@ func get_hit(attack_data: Dictionary):
 	if not rattack and not attack_data.has("damage"):
 		print_debug("Invalid attack ID:", attack.get("id", ""))
 		return
-	
+
 	# Determine damage based on priority:
 	var damage: float = 0.0
 	if rattack:
@@ -215,7 +213,7 @@ func get_hit(attack_data: Dictionary):
 		# Attack hits
 		current_health -= damage
 		if current_health <= 0:
-			_die()
+			_die(last_attacker)
 		else:
 			if not is_blinking:
 				start_blinking()
@@ -232,7 +230,7 @@ func show_miss_indicator():
 	miss_label.font_size = 64
 	get_tree().get_root().add_child(miss_label)
 	miss_label.position = position
-	miss_label.position.y += 2
+	miss_label.position.y += 0
 	miss_label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 	miss_label.render_priority = 10
 
@@ -245,8 +243,8 @@ func show_miss_indicator():
 
 
 # Handle the mob's death and trigger a corpse creation
-func _die():
-	Helper.signal_broker.mob_killed.emit(self)
+func _die(killer = null):
+	Helper.signal_broker.mob_killed.emit(self, killer)
 	add_corpse.call_deferred(global_position)
 	queue_free()
 
@@ -264,7 +262,7 @@ func add_corpse(pos: Vector3):
 		# Set the itemgroup property of the new ContainerItem
 		itemdata["itemgroups"] = [rmob.loot_group]
 	else:
-		print_debug("No loot_group found for mob ID: " + str(mobJSON.id))
+		print_debug("No loot_group found for mob ID: " + str(mob_json.id))
 
 	var newItem: ContainerItem = ContainerItem.new(itemdata)
 	newItem.add_to_group("mapitems")
@@ -342,7 +340,7 @@ func _on_tween_finished():
 # Return mob data as a Dictionary
 func get_data() -> Dictionary:
 	return {
-		"id": mobJSON.id,
+		"id": mob_json.id,
 		"global_position_x": last_position.x,
 		"global_position_y": last_position.y,
 		"global_position_z": last_position.z,

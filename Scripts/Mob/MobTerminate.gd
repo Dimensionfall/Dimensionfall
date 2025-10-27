@@ -9,14 +9,14 @@ class_name MobTerminate
 func _ready():
 	name = "MobTerminate"
 	
-func Enter():
+func enter():
 	print("Entering MobTerminate state")
 	# Disable navigation and any other behaviors
 
-func Exit():
+func exit():
 	pass
 
-func Physics_Update(_delta: float):
+func physics_update(_delta: float):
 	pass
 
 func _on_detection_target_spotted(_entity):

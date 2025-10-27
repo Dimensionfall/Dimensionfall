@@ -1,7 +1,7 @@
 extends Control
 
-# This script is meant to be used with the mod maintenance inteface
-# This script allows the user to select one of the scripts to perform a veriety of functions
+# This script is meant to be used with the mod maintenance interface
+# This script allows the user to select one of the scripts to perform a variety of functions
 # When more functions need to be added, create a new scene and instantiate as a child instance
 # under the vbox container and add it to the code below to update it's visibility.
 

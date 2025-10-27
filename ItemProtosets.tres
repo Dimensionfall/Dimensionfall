@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemProtoset" load_steps=2 format=3 uid="uid://bfvkrjemom6hg"]
+[gd_resource type="Resource" script_class="ItemProtoset" load_steps=2 format=3 uid="uid://o4cbl443y2um"]
 
 [ext_resource type="Script" uid="uid://blcdlb80ku0ox" path="res://addons/gloot/core/item_protoset.gd" id="1_o35lu"]
 
@@ -47,6 +47,7 @@ json_data = "[
 				\"craft_amount\": 1,
 				\"craft_time\": 10,
 				\"flags\": {
+					\"hand_craftable\": true,
 					\"requires_light\": true
 				},
 				\"required_resources\": [
@@ -59,6 +60,7 @@ json_data = "[
 						\"id\": \"bullet_9mm\"
 					}
 				],
+				\"skill_bonus_stat\": \"intelligence\",
 				\"skill_progression\": {
 					\"id\": \"fabrication\",
 					\"xp\": 10.0
@@ -86,6 +88,7 @@ json_data = "[
 	},
 	{
 		\"Ranged\": {
+			\"accuracy_stat\": \"dexterity\",
 			\"firing_speed\": 0.4,
 			\"range\": 1000,
 			\"recoil\": 10,
@@ -2308,6 +2311,7 @@ json_data = "[
 				\"craft_amount\": 1,
 				\"craft_time\": 10,
 				\"flags\": {
+					\"hand_craftable\": true,
 					\"requires_light\": false
 				},
 				\"required_resources\": [
@@ -2494,10 +2498,10 @@ json_data = "[
 	{
 		\"description\": \"A functional circuit board, scavenged from a robotic enemy or scrap pile. Essential for repairing electronics.\",
 		\"id\": \"circuit_board\",
-		\"image\": \"./Mods/Dimensionfall/Items/cirquit_board_32.png\",
+		\"image\": \"./Mods/Dimensionfall/Items/circuit_board_32.png\",
 		\"max_stack_size\": 5,
 		\"name\": \"Circuit Board\",
-		\"sprite\": \"cirquit_board_32.png\",
+		\"sprite\": \"circuit_board_32.png\",
 		\"stack_size\": 1,
 		\"volume\": 20.0,
 		\"weight\": 0.5
@@ -2762,5 +2766,138 @@ json_data = "[
 		\"stack_size\": 1,
 		\"volume\": 10.0,
 		\"weight\": 0.1
+	},
+	{
+		\"description\": \"A sturdy coil of rope, useful for climbing or crafting.\",
+		\"id\": \"rope_coil\",
+		\"image\": \"./Mods/Dimensionfall/Items/rope_coil_32.png\",
+		\"max_stack_size\": 2,
+		\"name\": \"Rope Coil\",
+		\"sprite\": \"rope_coil_32.png\",
+		\"stack_size\": 1,
+		\"volume\": 50.0,
+		\"weight\": 1.0
+	},
+	{
+		\"description\": \"Tablets that purify water, making it safe to drink.\",
+		\"id\": \"water_purification_tablets\",
+		\"image\": \"./Mods/Dimensionfall/Items/water_purification_tablets_32.png\",
+		\"max_stack_size\": 10,
+		\"name\": \"Water Purification Tablets\",
+		\"sprite\": \"water_purification_tablets_32.png\",
+		\"stack_size\": 1,
+		\"volume\": 5.0,
+		\"weight\": 0.1
+	},
+	{
+		\"Food\": {
+			\"attributes\": [
+				{
+					\"amount\": 10.0,
+					\"id\": \"food\"
+				}
+			]
+		},
+		\"description\": \"Dried strips of meat that keep for a long time.\",
+		\"id\": \"meat_jerky\",
+		\"image\": \"./Mods/Dimensionfall/Items/meat_jerky_32.png\",
+		\"max_stack_size\": 20,
+		\"name\": \"Meat Jerky\",
+		\"sprite\": \"meat_jerky_32.png\",
+		\"stack_size\": 1,
+		\"volume\": 5.0,
+		\"weight\": 0.2
+	},
+	{
+		\"Food\": {
+			\"attributes\": [
+				{
+					\"amount\": 15.0,
+					\"id\": \"food\"
+				}
+			]
+		},
+		\"description\": \"A mix of dried fruits, perfect for a quick snack.\",
+		\"id\": \"dried_fruit_mix\",
+		\"image\": \"./Mods/Dimensionfall/Items/dried_fruit_mix_32.png\",
+		\"max_stack_size\": 10,
+		\"name\": \"Dried Fruit Mix\",
+		\"sprite\": \"dried_fruit_mix_32.png\",
+		\"stack_size\": 1,
+		\"volume\": 5.0,
+		\"weight\": 0.1
+	},
+	{
+		\"Food\": {
+			\"attributes\": [
+				{
+					\"amount\": 20.0,
+					\"id\": \"food\"
+				}
+			]
+		},
+		\"description\": \"A jar filled with sweet honey.\",
+		\"id\": \"jar_honey\",
+		\"image\": \"./Mods/Dimensionfall/Items/jar_of_honey_32.png\",
+		\"max_stack_size\": 5,
+		\"name\": \"Jar of Honey\",
+		\"sprite\": \"jar_of_honey_32.png\",
+		\"stack_size\": 1,
+		\"volume\": 10.0,
+		\"weight\": 0.5
+	},
+	{
+		\"Tool\": {
+			\"tool_qualities\": {
+				\"flashlight\": 1.0
+			}
+		},
+		\"description\": \"A folding multi-tool with various small implements.\",
+		\"id\": \"multi_tool\",
+		\"image\": \"./Mods/Dimensionfall/Items/multitool_32.png\",
+		\"max_stack_size\": 1,
+		\"name\": \"Multi-tool\",
+		\"sprite\": \"multitool_32.png\",
+		\"stack_size\": 1,
+		\"volume\": 5.0,
+		\"weight\": 0.5
+	},
+	{
+		\"Tool\": {
+			\"tool_qualities\": {
+				\"flashlight\": 1.0
+			}
+		},
+		\"description\": \"A sturdy wrench adjustable for different bolt sizes.\",
+		\"id\": \"adjustable_wrench\",
+		\"image\": \"./Mods/Dimensionfall/Items/adjustable_wrench_32.png\",
+		\"max_stack_size\": 1,
+		\"name\": \"Adjustable Wrench\",
+		\"sprite\": \"adjustable_wrench_32.png\",
+		\"stack_size\": 1,
+		\"volume\": 15.0,
+		\"weight\": 0.8
+	},
+	{
+		\"description\": \"A heavy bag of cement used for construction.\",
+		\"id\": \"cement_bag\",
+		\"image\": \"./Mods/Dimensionfall/Items/cement_bag_32.png\",
+		\"max_stack_size\": 1,
+		\"name\": \"Bag of Cement\",
+		\"sprite\": \"cement_bag_32.png\",
+		\"stack_size\": 1,
+		\"volume\": 200.0,
+		\"weight\": 15.0
+	},
+	{
+		\"description\": \"Steel rebar used to reinforce concrete structures.\",
+		\"id\": \"steel_rebar\",
+		\"image\": \"./Mods/Dimensionfall/Items/steel_rebar_32.png\",
+		\"max_stack_size\": 20,
+		\"name\": \"Steel Rebar\",
+		\"sprite\": \"steel_rebar_32.png\",
+		\"stack_size\": 1,
+		\"volume\": 30.0,
+		\"weight\": 2.0
 	}
 ]"

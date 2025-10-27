@@ -120,8 +120,6 @@ signal player_skill_changed(player: Player)
 signal player_attribute_changed(player: Player, attribute: PlayerAttribute)
 @warning_ignore("unused_signal")
 signal player_ammo_changed(current_ammo: int, max_ammo: int, slot_index: int)
-@warning_ignore("unused_signal")
-signal player_current_y_level(old_y_level: float, new_y_level: float)
 
 # Save load start end events
 @warning_ignore("unused_signal")
@@ -134,10 +132,12 @@ signal game_ended() # When the game is completely exited and everything is unloa
 signal game_terminated() # When the user presses 'main menu' button on the escape menu
 @warning_ignore("unused_signal")
 signal player_spawned(player: Player) # When the player has spawned in-game
+@warning_ignore("unused_signal")
+signal player_died(player: Player)
 
 # When a mob was killed
 @warning_ignore("unused_signal")
-signal mob_killed(mobinstance: Mob)
+signal mob_killed(mobinstance: Mob, killer)
 # When a mob was spawned
 @warning_ignore("unused_signal")
 signal mob_spawned(mobinstance: Mob)

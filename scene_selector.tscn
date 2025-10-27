@@ -1,74 +1,189 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhqlst5h43xwm"]
+[gd_scene load_steps=15 format=3 uid="uid://bhqlst5h43xwm"]
 
+[ext_resource type="Texture2D" uid="uid://dpkea1rs7eukh" path="res://Textures/ui_concrete.png" id="1_3q5c8"]
 [ext_resource type="Script" uid="uid://iasqrgnlface" path="res://Scripts/scene_selector.gd" id="1_a5yxj"]
-[ext_resource type="FontFile" uid="uid://chm7lbcdeyo0h" path="res://Roboto-Bold.ttf" id="1_sue5h"]
+[ext_resource type="Theme" uid="uid://1vfq5cs2ckel" path="res://Main_menu_buttons.tres" id="3_3q5c8"]
+[ext_resource type="Texture2D" uid="uid://7l1nbygy5tts" path="res://Images/Main menu/AI_background_crt_computer.jpg" id="3_r0pvw"]
+[ext_resource type="FontFile" uid="uid://b1h04udb7506u" path="res://Assets/Fonts/Apple ][.ttf" id="4_3q5c8"]
+[ext_resource type="PackedScene" uid="uid://cvr5g886g53be" path="res://Sounds/SFX/UI/UISFX.tscn" id="6_r0pvw"]
+
+[sub_resource type="FontVariation" id="FontVariation_aahd7"]
+fallbacks = Array[Font]([null])
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_np3ba"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u3ft2"]
+texture = ExtResource("1_3q5c8")
+region_rect = Rect2(16, 64, 128, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_houm4"]
+texture = ExtResource("1_3q5c8")
+region_rect = Rect2(16, 64, 128, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7nukc"]
+texture = ExtResource("1_3q5c8")
+region_rect = Rect2(16.4345, 15.7811, 127.92, 32.4905)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ifmj"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_r0pvw"]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = SubResource("FontVariation_aahd7")
+Button/styles/disabled = SubResource("StyleBoxFlat_np3ba")
+Button/styles/focus = SubResource("StyleBoxTexture_u3ft2")
+Button/styles/hover = SubResource("StyleBoxTexture_houm4")
+Button/styles/normal = SubResource("StyleBoxTexture_7nukc")
+Button/styles/pressed = SubResource("StyleBoxFlat_2ifmj")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q5c8"]
+bg_color = Color(0.358, 0.686, 0.489, 0.311)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
 
 [node name="SceneSelector" type="Control" node_paths=PackedStringArray("load_game_list")]
 layout_mode = 3
-anchor_right = 1.067
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -77.1841
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_r0pvw")
 script = ExtResource("1_a5yxj")
-load_game_list = NodePath("LoadGameList")
+load_game_list = NodePath("VBoxContainer/HBoxContainer/LoadGameList")
 
-[node name="PlayDemo" type="Button" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 355.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_sue5h")
-theme_override_font_sizes/font_size = 60
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_r0pvw")
+expand_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.11
+anchor_top = 0.095
+anchor_right = 0.925
+anchor_bottom = 0.115
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3q5c8")
+
+[node name="TitleLabel" type="Label" parent="PanelContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(3.56168e-06, 0.670701, 0.129599, 1)
+theme_override_fonts/font = ExtResource("4_3q5c8")
+theme_override_font_sizes/font_size = 48
+text = "DIMENSIONFALL"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.195
+anchor_right = 0.7
+anchor_bottom = 0.7
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayDemo" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_3q5c8")
 text = "Play demo"
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="LoadGameButton" type="Button" parent="."]
-layout_mode = 1
-offset_top = 378.0
-offset_right = 453.0
-offset_bottom = 457.0
-theme_override_fonts/font = ExtResource("1_sue5h")
-theme_override_font_sizes/font_size = 25
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="LoadGameButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_3q5c8")
 disabled = true
-text = "Load game ---->>>"
+text = "Load game --->>>"
+metadata/_edit_use_anchors_ = true
 
-[node name="LoadGameList" type="OptionButton" parent="."]
-layout_mode = 1
-offset_left = 477.0
-offset_top = 378.0
-offset_right = 863.0
-offset_bottom = 457.0
+[node name="LoadGameList" type="OptionButton" parent="VBoxContainer/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_3q5c8")
+alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="HelpButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 474.0
-offset_right = 449.0
-offset_bottom = 553.0
-theme_override_font_sizes/font_size = 25
-text = "Help"
-
-[node name="ContentManagerButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 477.0
-offset_top = 474.0
-offset_right = 865.0
-offset_bottom = 553.0
-theme_override_font_sizes/font_size = 25
+[node name="ContentManagerButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_3q5c8")
 text = "Content Manager"
+metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 576.0
-offset_right = 1219.0
-offset_bottom = 625.0
-scale = Vector2(0.9, 0.9)
-text = "w,s,a,d: Movement. tab: inventory. m: overmap. e: Interact (open doors) r: reload. Left mouse button: Fire left weapon. Right mouse button: fire right weapon
-b: Build menu. c: Craft menu. v: Character menu. j: Quest menu"
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_3q5c8")
+text = "Options"
+metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="PlayDemo" to="." method="_on_play_demo_pressed"]
-[connection signal="pressed" from="LoadGameButton" to="." method="_on_load_game_button_pressed"]
-[connection signal="pressed" from="HelpButton" to="." method="_on_help_button_pressed"]
-[connection signal="button_up" from="ContentManagerButton" to="." method="_on_content_manager_button_button_up"]
+[node name="HelpButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_3q5c8")
+text = "Help"
+metadata/_edit_use_anchors_ = true
+
+[node name="Uisfx" parent="." instance=ExtResource("6_r0pvw")]
+root_path = NodePath("..")
+
+[connection signal="pressed" from="VBoxContainer/PlayDemo" to="." method="_on_play_demo_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/LoadGameButton" to="." method="_on_load_game_button_pressed"]
+[connection signal="button_up" from="VBoxContainer/ContentManagerButton" to="." method="_on_content_manager_button_button_up"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/HelpButton" to="." method="_on_help_button_pressed"]

@@ -8,8 +8,7 @@ extends Control
 @export var overmapTile: PackedScene = null
 @export var overmapTileLabel: Label = null
 
-
-var grid_chunks: Dictionary = {} # Stores references to grid containers (visual tile grids)
+var grid_chunks: Dictionary = {}  # Stores references to grid containers (visual tile grids)
 var chunk_width: int = 8  # Smaller chunk sizes improve performance
 var chunk_size: int = 8
 var tile_size: int = 32
@@ -22,7 +21,8 @@ var current_offset: Vector2 = Vector2.ZERO  # Holds the current screen offset
 
 # We will emit this signal when the position_coords change
 # Which happens when the user has panned the overmap
-signal position_coord_changed()
+signal position_coord_changed
+
 
 # Target location for quests
 class Target:
@@ -54,7 +54,6 @@ class GridChunk:
 	var offset: Vector2 = Vector2.ZERO  # Default offset is zero
 	var overmap_node  # Reference to the overmap node
 
-
 	# Constructor to initialize the chunk with its grid position, chunk position, and necessary references
 	# Expects this dictionary:
 	# {
@@ -65,8 +64,8 @@ class GridChunk:
 	# 	"overmap_node": overmap_node: Control
 	# }
 	func _init(properties: Dictionary):
-		self.grid_position = properties.mygrid_position # Local grid position. Ex. (0,0),(0,1),(1,1)
-		self.chunk_position = properties.mychunk_position # Global grid position ex. (0,0),(0,256),(256,256)
+		self.grid_position = properties.mygrid_position  # Local grid position. Ex. (0,0),(0,1),(1,1)
+		self.chunk_position = properties.mychunk_position  # Global grid position ex. (0,0),(0,256),(256,256)
 		self.tile_size = properties.mytile_size
 		self.grid_container = GridContainer.new()
 		self.grid_container.columns = chunk_width
@@ -114,7 +113,9 @@ class GridChunk:
 					tile.set_color(Color(1, 1, 1))  # White color for other tiles
 				tile.set_text("")
 				# Use the same function to update tile based on its position and player location
-				update_tile_texture_and_reveal(tile, global_pos, Helper.overmap_manager.player_current_cell)
+				update_tile_texture_and_reveal(
+					tile, global_pos, Helper.overmap_manager.player_current_cell
+				)
 
 	func on_position_coord_changed():
 		update_absolute_position()
@@ -158,7 +159,7 @@ class GridChunk:
 	func has_tile_at_position(global_pos: Vector2) -> bool:
 		var local_pos = calculate_local_pos(global_pos)  # Use the new function
 		return tile_dictionary.has(local_pos)
-	
+
 	# Function to calculate local position from a global position
 	func calculate_local_pos(global_pos: Vector2) -> Vector2:
 		# Calculate the local position within the chunk
@@ -167,8 +168,12 @@ class GridChunk:
 	# Function to check if a global position is within this chunk
 	func is_position_in_chunk(global_pos: Vector2) -> bool:
 		var chunk_end = grid_position + Vector2(chunk_size, chunk_size)
-		return global_pos.x >= grid_position.x and global_pos.x < chunk_end.x and \
-			   global_pos.y >= grid_position.y and global_pos.y < chunk_end.y
+		return (
+			global_pos.x >= grid_position.x
+			and global_pos.x < chunk_end.x
+			and global_pos.y >= grid_position.y
+			and global_pos.y < chunk_end.y
+		)
 
 	# Function to update the tile's text visibility based on the player's last known position
 	func update_tile_text_visibility():
@@ -202,14 +207,16 @@ class GridChunk:
 
 	# This function handles both revealing the map cell and updating the tile's texture
 	# It is used by both the player position update and regular map tile updates
-	# NOTE: I've seen this function be called 576 times in a frame in the profiler, leading to 
-	# 576 set_texture calls for the affected overmap tiles. In total, this can cause up to 90ms for 
-	# the frame. This is because each tile is processed in _on_player_coord_changed. Maybe we 
+	# NOTE: I've seen this function be called 576 times in a frame in the profiler, leading to
+	# 576 set_texture calls for the affected overmap tiles. In total, this can cause up to 90ms for
+	# the frame. This is because each tile is processed in _on_player_coord_changed. Maybe we
 	# can find a way to reduce the amount of calls for set_texture
-	func update_tile_texture_and_reveal(tile: Control, global_pos: Vector2, player_position: Vector2):
+	func update_tile_texture_and_reveal(
+		tile: Control, global_pos: Vector2, player_position: Vector2
+	):
 		# Get the map cell from overmap_manager
 		var map_cell = Helper.overmap_manager.get_map_cell_by_local_coordinate(global_pos)
-		
+
 		if not map_cell:
 			# If no map cell is found, reset the map_cell on the tile and clear the texture
 			tile.map_cell = null  # Reset map_cell to an empty dictionary
@@ -217,14 +224,13 @@ class GridChunk:
 
 		# Calculate distance to player
 		var distance_to_player = global_pos.distance_to(player_position)
-		
+
 		if distance_to_player <= 8:
 			# Reveal the map cell if within the player's range
 			map_cell.reveal()
 
 		# Assign the map_cell to the tile and let the tile handle texture and rotation
 		tile.map_cell = map_cell
-
 
 	# Function to check if the player's last position falls within the range of this chunk's grid area
 	func is_within_player_range() -> bool:
@@ -236,8 +242,12 @@ class GridChunk:
 		var chunk_end = grid_position + Vector2(chunk_size, chunk_size)
 
 		# Check if the player's position falls within the chunk's bounds with a radius of 8
-		if player_current_cell.x >= chunk_start.x - 8 and player_current_cell.x <= chunk_end.x + 8 and \
-		   player_current_cell.y >= chunk_start.y - 8 and player_current_cell.y <= chunk_end.y + 8:
+		if (
+			player_current_cell.x >= chunk_start.x - 8
+			and player_current_cell.x <= chunk_end.x + 8
+			and player_current_cell.y >= chunk_start.y - 8
+			and player_current_cell.y <= chunk_end.y + 8
+		):
 			return true
 		return false
 
@@ -260,6 +270,8 @@ func _ready():
 func connect_signals():
 	position_coord_changed.connect(on_position_coord_changed)
 	Helper.overmap_manager.player_coord_changed.connect(on_player_coord_changed)
+	Helper.overmap_manager.chunk_loaded.connect(_on_chunk_event)
+	Helper.overmap_manager.chunk_unloaded.connect(_on_chunk_event)
 	# Connect the visibility toggling signal
 	visibility_changed.connect(on_overmap_visibility_toggled)
 	# Connect to the target_map_changed signal from the quest helper
@@ -268,14 +280,14 @@ func connect_signals():
 
 # This function updates the chunks.
 # It loops through a 4x4 grid centered on the current position
-# generating new chunks at each position if they don't already exist. 
+# generating new chunks at each position if they don't already exist.
 # After generating any necessary new chunks, it calls `unload_chunks()`
 # to unload any chunks that are no longer needed. The
 # `chunk_size` variable determines the size of each chunk,
 # and `position_coord` is the current position in the world
 # This function updates the chunks.
 # It loops through a 4x4 grid centered on the current position
-# generating new chunks at each position if they don't already exist. 
+# generating new chunks at each position if they don't already exist.
 # After generating any necessary new chunks, it calls `unload_chunks()`
 # to unload any chunks that are no longer needed. The
 # `chunk_size` variable determines the size of each chunk,
@@ -297,9 +309,10 @@ func update_chunks():
 				if chunk_pool.size() > 0:
 					# Reuse a chunk from the pool
 					new_chunk = chunk_pool.pop_back()
-					new_chunk.reset_chunk(chunk_grid_position, get_localized_position(chunk_grid_position))
+					new_chunk.reset_chunk(
+						chunk_grid_position, get_localized_position(chunk_grid_position)
+					)
 				else:
-					
 					var chunkproperties: Dictionary = {
 						"mygrid_position": chunk_grid_position,
 						"mychunk_position": get_localized_position(chunk_grid_position),
@@ -318,7 +331,6 @@ func update_chunks():
 					tilesContainer.add_child(new_chunk.grid_container)
 				# Set the chunk's offset to the current global offset
 				new_chunk.update_offset(current_offset)
-
 
 				grid_chunks[chunk_grid_position] = new_chunk
 
@@ -389,7 +401,7 @@ func on_position_coord_changed():
 func _on_tile_clicked(clicked_tile):
 	if clicked_tile.map_cell:
 		overmapTileLabel.text = clicked_tile.map_cell.get_info_string()
-	else: 
+	else:
 		selected_overmap_tile = null
 		overmapTileLabel.text = "Select a valid target"
 
@@ -397,7 +409,7 @@ func _on_tile_clicked(clicked_tile):
 # The player presses the home button, sending the overmap view to (0,0)
 func _on_home_button_button_up():
 	# Update position_coord to the new position
-	Helper.position_coord = Vector2(0,0)
+	Helper.position_coord = Vector2(0, 0)
 	# Emit the signal to update the overmap's position and tiles
 	position_coord_changed.emit()
 
@@ -409,13 +421,13 @@ func _on_home_button_button_up():
 func get_overmap_tile_at_position(myposition: Vector2) -> Control:
 	# Calculate the chunk position based on tile size and chunk size
 	var chunk_pos = (myposition / chunk_size).floor() * chunk_size
-	
+
 	# Check if the chunk exists in grid_chunks
 	if grid_chunks.has(chunk_pos):
 		var chunk: GridChunk = grid_chunks[chunk_pos]
 		# Delegate the tile lookup to the GridChunk's dictionary lookup
 		return chunk.get_tile_at_coordinate(myposition)
-	
+
 	# Return null if the tile is not found in the corresponding chunk
 	return null
 
@@ -450,7 +462,9 @@ func find_location_on_overmap(mytarget: Target):
 	# Check if mytarget's coordinate is set
 	if mytarget.coordinate == Vector2():
 		# If not set, find the closest map cell and set the coordinates
-		var closest_cell = Helper.overmap_manager.find_closest_map_cell_with_ids([mytarget.map_id], {"reveal_condition": "VISITED"})
+		var closest_cell = Helper.overmap_manager.find_closest_map_cell_with_ids(
+			[mytarget.map_id], {"reveal_condition": "VISITED"}
+		)
 		if closest_cell:
 			mytarget.set_coordinate(Vector2(closest_cell.coordinate_x, closest_cell.coordinate_y))
 		else:
@@ -464,7 +478,7 @@ func find_location_on_overmap(mytarget: Target):
 # Displays an arrow at the edge of the overmap window pointing towards the direction of the cell
 func show_directional_arrow_to_cell(cell_position: Vector2):
 	# Calculate overmap center in pixels using Helper.position_coord, which now refers to the center tile
-	var overmap_center_in_pixels = (Helper.position_coord * tile_size)
+	var overmap_center_in_pixels = Helper.position_coord * tile_size
 
 	# Calculate the target position in pixels
 	var target_position_in_pixels = cell_position * tile_size
@@ -490,7 +504,7 @@ func show_directional_arrow_to_cell(cell_position: Vector2):
 	arrow.visible = true
 
 
-# Helper function to clamp the arrow to the edges of the TilesContainer with 
+# Helper function to clamp the arrow to the edges of the TilesContainer with
 # extra margin on the left side
 func clamp_arrow_to_container_bounds(arrow_position: Vector2) -> Vector2:
 	var container_size = tilesContainer.size
@@ -501,8 +515,10 @@ func clamp_arrow_to_container_bounds(arrow_position: Vector2) -> Vector2:
 
 	# Clamp the arrow position within the bounds of the tilesContainer, adding extra margin on the left
 	arrow_position.x = clamp(arrow_position.x, left_margin, container_size.x - arrow_size.x / 2)
-	arrow_position.y = clamp(arrow_position.y, arrow_size.y / 2, container_size.y - arrow_size.y / 2)
-	
+	arrow_position.y = clamp(
+		arrow_position.y, arrow_size.y / 2, container_size.y - arrow_size.y / 2
+	)
+
 	return arrow_position
 
 
@@ -521,12 +537,12 @@ func check_target_tile_visibility() -> void:
 	if target:
 		# Try to get the tile at the target's coordinate
 		var target_tile = get_overmap_tile_at_position(target.coordinate)
-		
+
 		if target_tile:
 			# Calculate the tile's position and the visible area
 			var tile_pos = target_tile.get_global_position() - tilesContainer.get_global_position()
 			var visible_rect = Rect2(Vector2.ZERO, tilesContainer.size)
-			
+
 			# Check if the target tile is now visible
 			if visible_rect.has_point(tile_pos):
 				# If the tile is visible, hide the arrow and show the tile text
@@ -564,7 +580,9 @@ func on_target_map_changed(map_ids: Array, target_properties: Dictionary = {}):
 
 	# 🔹 Ensure target exists and validate its map_id
 	if target:
-		var at_target: bool = Helper.overmap_manager.is_player_at_position(Vector2(target.coordinate.x, target.coordinate.y))
+		var at_target: bool = Helper.overmap_manager.is_player_at_position(
+			Vector2(target.coordinate.x, target.coordinate.y)
+		)
 
 		# ✅ If dynamic and the player is at the target, reset it
 		if dynamic and at_target:
@@ -576,9 +594,13 @@ func on_target_map_changed(map_ids: Array, target_properties: Dictionary = {}):
 			reset_target()
 
 	# 🔹 Find the closest valid target
-	var closest_cell = Helper.overmap_manager.find_closest_map_cell_with_ids(map_ids, target_properties)
+	var closest_cell = Helper.overmap_manager.find_closest_map_cell_with_ids(
+		map_ids, target_properties
+	)
 	if closest_cell and target == null:
-		target = Target.new(closest_cell.map_id, Vector2(closest_cell.coordinate_x, closest_cell.coordinate_y))
+		target = Target.new(
+			closest_cell.map_id, Vector2(closest_cell.coordinate_x, closest_cell.coordinate_y)
+		)
 		find_location_on_overmap(target)
 
 
@@ -598,3 +620,14 @@ func reset_target():
 		set_coordinate_text(target.coordinate, "")  # Clear the text
 	target = null
 	$ArrowLabel.visible = false  # Hide the arrow
+
+
+# Refresh chunks when the overmap manager loads or unloads data
+func _on_chunk_event(_chunk_pos: Vector2) -> void:
+	if visible:
+		update_chunks()
+
+
+# Closes the UI when the close button is pressed.
+func _on_close_menu_button_button_up() -> void:
+	self.hide()

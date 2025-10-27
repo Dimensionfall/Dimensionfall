@@ -9,14 +9,20 @@ extends Node
 # We keep a reference to the level_generator, which holds the chunks
 # The level generator will register itself to this variable when it's ready
 var level_generator: Node = null
-	
+
+# Stores `npc_tile` entries encountered during map processing for debugging
+var npc_tile_log: Array = []
+
+
 func get_chunk_from_position(position_in_3d_space: Vector3) -> Chunk:
 	return level_generator.get_chunk_from_position(position_in_3d_space)
+
 
 # Takes an overmap coordinate like -12,-6 or -1,-1 or 0,0 or 1,1 and
 # returns the cunk at that position or null if the chunk doesn't exist
 func get_chunk_from_overmap_coordinate(coordinate: Vector2) -> Chunk:
 	return level_generator.get_chunk(coordinate)
+
 
 # Takes an item_id (of an RItem) and a quantity and spawns it onto
 # the map that the player is currently on. It will make two attempts:
@@ -27,20 +33,26 @@ func spawn_item_at_current_player_map(item_id: String, quantity: int) -> bool:
 	var player: Player = Helper.overmap_manager.player
 	var player_coordinate: Vector2 = Helper.overmap_manager.player_current_cell
 	var chunk: Chunk = get_chunk_from_overmap_coordinate(player_coordinate)
+	if not chunk:
+		push_warning("Spawn item failed: chunk not found at " + str(player_coordinate))
+		return false
 	var current_player_y: float = player.get_y_position(true)
-	var same_y_furniture: Array[FurnitureStaticSrv] = chunk.get_furniture_at_y_level(current_player_y)
+	var same_y_furniture: Array[FurnitureStaticSrv] = chunk.get_furniture_at_y_level(
+		current_player_y
+	)
 	# Filter out furniture that is not a container
-	var container_furniture: Array[FurnitureStaticSrv] = same_y_furniture.filter(func(furniture): 
-		return furniture.is_container()
+	var container_furniture: Array[FurnitureStaticSrv] = same_y_furniture.filter(
+		func(furniture): return furniture.is_container()
 	)
 
 	# If there are valid container furniture options, pick one at random
 	if container_furniture.size() > 0:
 		var random_furniture = container_furniture.pick_random()
 		return random_furniture.add_item_to_inventory(item_id, quantity)
-	
+
 	# Attempt to spawn the item on an empty tile
-	return chunk.spawn_item_at_free_position(item_id,quantity,current_player_y)
+	return chunk.spawn_item_at_free_position(item_id, quantity, current_player_y)
+
 
 # Takes an mob_id (of an RMob) and spawns it onto
 # the map that is indicated by the coordinates.
@@ -49,17 +61,20 @@ func spawn_mob_at_nearby_map(mob_id: String, coordinates: Vector2) -> bool:
 	var player: Player = Helper.overmap_manager.player
 	var chunk: Chunk = get_chunk_from_overmap_coordinate(coordinates)
 	if not chunk:
+		push_warning("Spawn mob failed: chunk not found at " + str(coordinates))
 		return false
 	var current_player_y: float = player.get_y_position(true)
-	
+
 	# Attempt to spawn the item on an empty tile
 	return chunk.spawn_mob_at_free_position(mob_id, current_player_y)
-	
+
 
 # Function to process area data and assign to tile
 # Example original_tile: {"id":"road_asphalt_basic","areas":[{"id":"cars","rotation":270}]}
 # Example picked_tile: {"id": "forest_underbrush_04", "count": 100}
-func process_area_data(area_data: Dictionary, original_tile: Dictionary, picked_tile: Dictionary = {}) -> Dictionary:
+func process_area_data(
+	area_data: Dictionary, original_tile: Dictionary, picked_tile: Dictionary = {}
+) -> Dictionary:
 	var result = {}
 
 	# Process and assign tile ID, allowing for an external picked_tile to be passed in
@@ -94,7 +109,12 @@ func get_tile_area_rotation(original_tile: Dictionary, area_data: Dictionary) ->
 
 
 # Function to process and assign tile ID
-func _process_tile_id(area_data: Dictionary, original_tile: Dictionary, result: Dictionary, picked_tile: Dictionary = {}) -> void:
+func _process_tile_id(
+	area_data: Dictionary,
+	original_tile: Dictionary,
+	result: Dictionary,
+	picked_tile: Dictionary = {}
+) -> void:
 	var tiles_data = area_data.get("tiles", [])
 
 	# We get a random rotation if that's set as a property in the area data.
@@ -109,11 +129,11 @@ func _process_tile_id(area_data: Dictionary, original_tile: Dictionary, result: 
 		result["rotation"] = rotation
 		return  # Exit the function since the tile has been set
 
-	var original_tile_id = original_tile.get("id","")
+	var original_tile_id = original_tile.get("id", "")
 	# If no tile has been picked or pick_one is false, pick a new tile
 	if not tiles_data.is_empty():
 		var new_picked_tile = pick_item_based_on_count(tiles_data)
-		
+
 		# Check if the picked tile is "null"
 		if new_picked_tile["id"] == "null":
 			result["id"] = original_tile_id  # Keep the original tile ID
@@ -123,14 +143,16 @@ func _process_tile_id(area_data: Dictionary, original_tile: Dictionary, result: 
 
 
 # Function to process entities data and add them to result
-func _process_entities_data(area_data: Dictionary, result: Dictionary, original_tile: Dictionary) -> void:
+func _process_entities_data(
+	area_data: Dictionary, result: Dictionary, original_tile: Dictionary
+) -> void:
 	# Calculate the total count of tiles
 	var tiles_data = area_data.get("tiles", [])
 	var total_tiles_count: int = calculate_total_count(tiles_data)
 
 	# Duplicate the entities_data and add the "None" entity
 	var entities_data = area_data.get("entities", []).duplicate()
-	# We add an extra item to the entities list 
+	# We add an extra item to the entities list
 	# which will affect the proportion of entities that will spawn
 	# If you have an area of grass with a grass tile with a count of 100
 	# and a tree furniture with a count of 1, the entities_data will contain
@@ -139,7 +161,7 @@ func _process_entities_data(area_data: Dictionary, result: Dictionary, original_
 	entities_data.append({"id": "None", "type": "None", "count": total_tiles_count})
 
 	var tile_area_rotation: int = get_tile_area_rotation(original_tile, area_data)
-	
+
 	# Pick an entity from the duplicated entities_data
 	if not entities_data.is_empty():
 		var selected_entity = pick_item_based_on_count(entities_data)
@@ -148,15 +170,16 @@ func _process_entities_data(area_data: Dictionary, result: Dictionary, original_
 			if rotation == -1:
 				rotation = tile_area_rotation
 
+			# Store the selected entity in the unified feature dictionary
+			result["feature"] = {
+				"type": selected_entity["type"],
+				"rotation": rotation,
+			}
 			match selected_entity["type"]:
-				"furniture":
-					result["furniture"] = {"id": selected_entity["id"], "rotation": rotation}
-				"mob":
-					result["mob"] = {"id": selected_entity["id"], "rotation": rotation}
-				"mobgroup":
-					result["mobgroup"] = {"id": selected_entity["id"], "rotation": rotation}
+				"furniture", "mob", "mobgroup":
+					result.feature["id"] = selected_entity["id"]
 				"itemgroup":
-					result["itemgroups"] = [selected_entity["id"]]
+					result.feature["itemgroups"] = [selected_entity["id"]]
 
 
 # Function to pick an item based on its count property
@@ -288,12 +311,14 @@ func get_adjacent_positions(pos: Vector2) -> Array:
 		Vector2(pos.x - 1, pos.y),  # Left
 		Vector2(pos.x + 1, pos.y),  # Right
 		Vector2(pos.x, pos.y - 1),  # Up
-		Vector2(pos.x, pos.y + 1)   # Down
+		Vector2(pos.x, pos.y + 1)  # Down
 	]
 
 
 # Flood-fill function to find a cluster of tiles
-func flood_fill(level: Array, area_id: String, start_pos: Vector2, visited: Dictionary, width: int, height: int) -> Array:
+func flood_fill(
+	level: Array, area_id: String, start_pos: Vector2, visited: Dictionary, width: int, height: int
+) -> Array:
 	var cluster = []
 	var to_visit = [start_pos]
 
@@ -335,6 +360,7 @@ func flood_fill(level: Array, area_id: String, start_pos: Vector2, visited: Dict
 
 	return cluster
 
+
 # Function to find clusters of adjacent tiles with the same area_id
 func find_area_clusters(level: Array, area_id: String, width: int, height: int) -> Array:
 	if level.size() < 1:
@@ -373,7 +399,9 @@ func find_area_clusters(level: Array, area_id: String, width: int, height: int) 
 
 
 # Function to apply clusters of areas to tiles in a level
-func apply_area_clusters_to_tiles(level: Array, area_id: String, mapData: Dictionary, width: int, height: int) -> void:
+func apply_area_clusters_to_tiles(
+	level: Array, area_id: String, mapData: Dictionary, width: int, height: int
+) -> void:
 	# Find all clusters of tiles with the specified area_id
 	var clusters = find_area_clusters(level, area_id, width, height)
 
@@ -392,14 +420,17 @@ func apply_area_clusters_to_tiles(level: Array, area_id: String, mapData: Dictio
 		# Example tile: {"id":"road_asphalt_basic","areas":[{"id":"cars","rotation":270}]}
 		# Example picked_tile: {"id": "forest_underbrush_04", "count": 100}
 		for tile: Dictionary in cluster:
+			# Log `npc_tile` entries for debugging purposes
+			if tile.has("feature") and tile["feature"].get("type", "") == "npc_tile":
+				npc_tile_log.append(tile["feature"].duplicate())
 			var processed_data = process_area_data(area_data, tile, picked_tile)
 
 			# Remove existing entities if new entities are present in processed data
-			var entities_to_check = ["mob", "furniture", "mobgroup", "itemgroups"]
-			var new_has_entities = entities_to_check.any(func(entity): return processed_data.has(entity))
+			var new_has_feature: bool = processed_data.has("feature")
 
-			if new_has_entities:
-				# The processed data has an entity. Erase existing entities from the tile
+			if new_has_feature:
+				# Remove legacy entity fields and old feature entry
+				var entities_to_check = ["mob", "furniture", "mobgroup", "itemgroups", "feature"]
 				for key in entities_to_check:
 					tile.erase(key)
 
@@ -413,10 +444,14 @@ func apply_areas_to_tiles(selected_areas: Array, generated_mapdata: Dictionary) 
 	if generated_mapdata.has("levels"):
 		# Iterate through each level in the map
 		for level in generated_mapdata["levels"]:
+			if level.size() < 1:
+				continue  # Skip processing this level entirely
 			var width = 32  # Assuming 32x32 grid
 			var height = 32
 
 			# For each selected area, find and apply clusters
 			for area in selected_areas:
 				if area.has("id"):
-					apply_area_clusters_to_tiles(level, area["id"], generated_mapdata, width, height)
+					apply_area_clusters_to_tiles(
+						level, area["id"], generated_mapdata, width, height
+					)

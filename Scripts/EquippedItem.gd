@@ -80,7 +80,7 @@ func get_cursor_world_position() -> Vector3:
 	var space_state = get_world_3d().direct_space_state
 	var result = space_state.intersect_ray(query)
 
-	if result.size() != 0:  # Check if the result dictionary is not empty
+	if result.size() != 0:	# Check if the result dictionary is not empty
 		return result.position
 	else:
 		return to
@@ -90,9 +90,9 @@ func can_fire_weapon() -> bool:
 	if not equipped_item:
 		return false
 	if equipped_item.get_property("Melee") != null:
-		return General.is_mouse_outside_HUD and not General.is_action_in_progress and equipped_item and not in_cooldown
+		return General.is_mouse_outside_hud and not General.is_action_in_progress and equipped_item and not in_cooldown
 	if equipped_item.get_property("Ranged") != null:
-		return General.is_mouse_outside_HUD and not General.is_action_in_progress and General.is_allowed_to_shoot and equipped_item and not in_cooldown and (get_current_ammo() > 0 or not requires_ammo())
+		return General.is_mouse_outside_hud and not General.is_action_in_progress and General.is_allowed_to_shoot and equipped_item and not in_cooldown and (get_current_ammo() > 0 or not requires_ammo())
 	return false
 
 
@@ -104,7 +104,7 @@ func requires_ammo() -> bool:
 # Function to handle firing logic for a weapon.
 func fire_weapon():
 	if not can_fire_weapon():
-		return  # Return if no weapon is equipped or no ammo.
+		return	# Return if no weapon is equipped or no ammo.
 
 	if equipped_item.get_property("Melee") != null:
 		perform_melee_attack()
@@ -133,15 +133,20 @@ func calculate_accuracy() -> float:
 	var rangedproperties = equipped_item.get_property("Ranged")
 	var skillid = Helper.json_helper.get_nested_data(rangedproperties, "used_skill.skill_id")
 	var skill_level = player.get_skill_level(skillid)
+	var stat_value = 0
+	var accuracy_stat: String = rangedproperties.get("accuracy_stat", "")
+	if accuracy_stat != "" and player.has_method("get_stat"):
+		stat_value = player.get_stat(accuracy_stat)
 	# Minimum accuracy is 25%, maximum is 100% at level 30
 	var min_accuracy = 0.25
 	var max_accuracy = 1.0
 	var required_level = 30
 
-	if skill_level >= required_level:
+	var effective_level = skill_level + stat_value
+	if effective_level >= required_level:
 		return max_accuracy
 	else:
-		return min_accuracy + (max_accuracy - min_accuracy) * (skill_level / required_level)
+		return min_accuracy + (max_accuracy - min_accuracy) * (effective_level / required_level)
 
 
 # Function to calculate direction with accuracy and recoil applied
@@ -214,7 +219,7 @@ func get_max_ammo() -> int:
 # When the user wants to reload the item
 func reload_weapon():
 	if equipped_item.get_property("Melee") != null:
-		return  # No action needed for melee weapons
+		return	# No action needed for melee weapons
 	if equipped_item and not equipped_item.get_property("Ranged") == null and not General.is_action_in_progress and not ItemManager.find_compatible_magazine(equipped_item) == null:
 		var magazine = ItemManager.get_magazine(equipped_item)
 		if not magazine:
@@ -264,7 +269,7 @@ func clear_held_item():
 	equipped_item = null
 	in_cooldown = false
 	refresh_flashlight_visibility()
-	Helper.signal_broker.player_ammo_changed.emit(-1, -1, slot_idx)  # Emit signal to indicate no weapon is equipped
+	Helper.signal_broker.player_ammo_changed.emit(-1, -1, slot_idx)	 # Emit signal to indicate no weapon is equipped
 
 func _on_left_attack_cooldown_timeout():
 	in_cooldown = false
@@ -333,7 +338,7 @@ func _on_body_shape_exited_melee_range(body_rid: RID, _body: Node, _body_shape_i
 func animate_attack():
 	var tween = get_tree().create_tween().set_loops(1)  # Create tween and set loops
 	var original_position = position  # Use local position
-	var target_position = position  # Initialize target position
+	var target_position = position	# Initialize target position
 
 	position = default_hand_position
 	target_position.x -= 0.2  # Move forward by 0.2 units
@@ -388,14 +393,25 @@ func _calculate_melee_attack_data() -> Dictionary:
 	var damage = melee_properties.get("damage", 0)
 	var skill_id = melee_properties.get("used_skill", {}).get("skill_id", "")
 	var skill_level = player.get_skill_level(skill_id)
-	var hit_chance = 0.65 + (skill_level / 100.0) * (1.0 - 0.65)  # Scales up to 100% with skill level
-
-	return {"damage": damage, "hit_chance": hit_chance}
+	
+	# Add bonuses based on stats
+	var damage_stat_bonus = 0
+	var accuracy_stat_bonus = 0
+	if player.has_method("get_stat"):
+		# Add damage bonus based on selected stat OR strength if nothing is configured for the item
+		var damage_stat_id = melee_properties.get("damage_stat", "strength")
+		damage_stat_bonus = player.get_stat(damage_stat_id)
+		damage += damage_stat_bonus
+		# Add accuracy bonus based on selected stat OR dexterity if nothing is configured for the item
+		var accuracy_stat_id = melee_properties.get("accuracy_stat", "dexterity")
+		accuracy_stat_bonus = player.get_stat(accuracy_stat_id)
+	var hit_chance = 0.65 + ((skill_level + accuracy_stat_bonus) / 100.0) * (1.0 - 0.65)
+	return {"damage": damage, "hit_chance": hit_chance, "source": player}
 
 # Calculate ranged attack damage and hit chance
 # TODO: Have variation in damage, maybe by gunn or projectile
 func _calculate_ranged_attack_data() -> Dictionary:
-	return {"damage": 10, "hit_chance": 100}
+	return {"damage": 10, "hit_chance": 100, "source": player}
 
 
 # Attempts to hit an entity, ensuring no obstacles are in the way
@@ -411,11 +427,11 @@ func _attempt_melee_attack(entity, attack_data: Dictionary) -> void:
 		target_position = PhysicsServer3D.body_get_state(entity, PhysicsServer3D.BODY_STATE_TRANSFORM).origin
 		target_rid = entity
 	else:
-		return  # Skip unknown entity types
+		return	# Skip unknown entity types
 
 	# Check if an obstacle blocks the attack
 	if _is_obstacle_between(target_position, target_rid):
-		return  # Skip attack if something is in the way
+		return	# Skip attack if something is in the way
 
 	# Apply attack to the entity
 	if entity is RID:
@@ -426,7 +442,7 @@ func _attempt_melee_attack(entity, attack_data: Dictionary) -> void:
 
 # Checks if an obstacle is between the player and the target
 func _is_obstacle_between(target_position: Vector3, target_rid: RID) -> bool:
-	var obstacle_layers = (1 << 0) | (1 << 1) | (1 << 2) | (1 << 6)  # Layers to check for obstacles
+	var obstacle_layers = (1 << 0) | (1 << 1) | (1 << 2) | (1 << 6)	 # Layers to check for obstacles
 	var adjusted_player_position = player.global_position - Vector3(0, 0.5, 0)  # Adjust height for short objects
 
 	var result = Helper.raycast(adjusted_player_position, target_position, obstacle_layers, [player])
@@ -477,7 +493,7 @@ func setup_ranged_weapon_properties(equippedItem: InventoryItem):
 func setup_melee_weapon_properties(equippedItem: InventoryItem):
 	var melee_properties = equippedItem.get_property("Melee")
 	visible = true
-	Helper.signal_broker.player_ammo_changed.emit(-1, -1, slot_idx)  # Indicate no ammo needed for melee weapons
+	Helper.signal_broker.player_ammo_changed.emit(-1, -1, slot_idx)	 # Indicate no ammo needed for melee weapons
 
 	var reach = melee_properties.get("reach", 0)  # Default reach to 0 if not specified
 	if reach > 0:
@@ -508,8 +524,8 @@ func refresh_flashlight_visibility():
 func configure_melee_collision_shape(reach: float):
 	var shape = ConvexPolygonShape3D.new()
 	var points = [
-		Vector3(0, 0, 0.325),        # First point
-		Vector3(0, 0, -0.325),       # Second point
+		Vector3(0, 0, 0.325),	     # First point
+		Vector3(0, 0, -0.325),	     # Second point
 		Vector3(-reach, -1, 0.325),  # Third point
 		Vector3(-reach, 1, 0.325),   # Fourth point
 		Vector3(-reach, -1, -0.325), # Fifth point
@@ -528,7 +544,7 @@ func disable_melee_collision_shape():
 
 # Clear any configurations on the melee collision shape
 func clear_melee_collision_shape():
-	melee_collision_shape.disabled = false  # Ensure it's not disabled when changing weapons
+	melee_collision_shape.disabled = false	# Ensure it's not disabled when changing weapons
 	melee_collision_shape.shape = null  # Clear the previous shape to reset its configuration
 
 

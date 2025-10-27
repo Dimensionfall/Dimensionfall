@@ -1,5 +1,8 @@
 {
 	"Generichouse": {
+		"npcs": [
+			"hank"
+		],
 		"overmapareas": [
 			"city"
 		]
@@ -76,6 +79,9 @@
 		]
 	},
 	"generichouse_cross": {
+		"npcs": [
+			"hank"
+		],
 		"overmapareas": [
 			"city"
 		]

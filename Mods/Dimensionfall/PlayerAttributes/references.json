@@ -30,7 +30,11 @@
 			"kiwi",
 			"zombie_organ",
 			"zombie_eye",
-			"rotten_flesh_chunk"
+			"rotten_flesh_chunk",
+			"meat_jerky",
+			"dried_fruit_mix",
+			"jar_honey",
+			"tree_sap"
 		]
 	},
 	"head_health": {
@@ -38,7 +42,9 @@
 			"bottle_disinfectant",
 			"epipen",
 			"insulin",
-			"painkiller"
+			"painkiller",
+			"antiseptic_wipes",
+			"adrenaline_shot"
 		],
 		"mobs": [
 			"basic_zombie_1",
@@ -63,7 +69,9 @@
 			"bottle_disinfectant",
 			"epipen",
 			"insulin",
-			"painkiller"
+			"painkiller",
+			"antiseptic_wipes",
+			"adrenaline_shot"
 		],
 		"mobs": [
 			"basic_zombie_1",
@@ -87,7 +95,9 @@
 			"bottle_disinfectant",
 			"epipen",
 			"insulin",
-			"painkiller"
+			"painkiller",
+			"antiseptic_wipes",
+			"adrenaline_shot"
 		],
 		"mobs": [
 			"basic_zombie_1",
@@ -124,7 +134,9 @@
 			"bottle_disinfectant",
 			"epipen",
 			"insulin",
-			"painkiller"
+			"painkiller",
+			"antiseptic_wipes",
+			"adrenaline_shot"
 		],
 		"mobs": [
 			"basic_zombie_1",
@@ -149,7 +161,9 @@
 			"bottle_disinfectant",
 			"epipen",
 			"insulin",
-			"painkiller"
+			"painkiller",
+			"antiseptic_wipes",
+			"adrenaline_shot"
 		],
 		"mobs": [
 			"basic_zombie_1",
@@ -180,7 +194,9 @@
 			"bottle_disinfectant",
 			"epipen",
 			"insulin",
-			"painkiller"
+			"painkiller",
+			"antiseptic_wipes",
+			"adrenaline_shot"
 		],
 		"mobs": [
 			"basic_zombie_1",

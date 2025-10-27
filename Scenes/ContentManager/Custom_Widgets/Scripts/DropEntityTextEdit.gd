@@ -70,6 +70,7 @@ func _drop_data(newpos, data) -> void:
 
 func _on_button_button_up():
 	mytextedit.clear()
+	dropped_data = {}
 	text_changed.emit("")
 
 
@@ -94,3 +95,17 @@ func enable() -> void:
 	is_disabled = false  # Reset the disabled flag
 	if button:  # Ensure button is valid before enabling
 		button.disabled = false
+
+
+# Setter for `content_types`. Validates and stores the array.
+func set_content_types(types: Array[DMod.ContentType]) -> void:
+	# Ensure we have an Array of the correct enum type
+	if typeof(types) != TYPE_ARRAY:
+		push_error("content_types must be an Array of DMod.ContentType")
+		return
+	for t in types:
+		if typeof(t) != TYPE_INT:
+			push_error("content_types contains a non-ContentType value: %s" % str(t))
+			return
+	# Store it
+	content_types = types.duplicate()

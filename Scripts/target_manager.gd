@@ -43,7 +43,7 @@ func _on_mob_spawned(mob) -> void:
 
 
 # When a mob is killed, remove it from every faction
-func _on_mob_killed(mob) -> void:
+func _on_mob_killed(mob, _killer) -> void:
 	for faction_id in hates_mobs.keys():
 		if mob in hates_mobs[faction_id]:
 			hates_mobs[faction_id].erase(mob)

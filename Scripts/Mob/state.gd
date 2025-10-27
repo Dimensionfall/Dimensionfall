@@ -3,18 +3,20 @@ extends Node3D
 class_name State
 
 @warning_ignore("unused_signal")
-signal Transistioned
+signal Transitioned
 
-func Enter():
-	pass
-	
 
-func Exit():
+func enter():
 	pass
-	
 
-func Update(_delta: float):
+
+func exit():
 	pass
-	
-func Physics_Update(_delta: float):
+
+
+func update(_delta: float):
+	pass
+
+
+func physics_update(_delta: float):
 	pass

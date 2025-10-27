@@ -130,7 +130,10 @@ func changed(olddata: DTacticalmap):
 
 # Removes all chunks where the map_id matches the given chunk id
 func remove_chunk_by_mapid(map_id: String) -> void:
-	chunks = chunks.filter(func(chunk): 
-		return not (chunk.has("id") and chunk.id == map_id)
+	# Filter out any chunk whose ID (minus its extension) matches map_id
+	chunks = chunks.filter(func(chunk):
+		# Strip off the “.json” (or any extension) for comparison
+		var base_id: String = chunk.id.get_basename()
+		return base_id != map_id
 	)
 	save_data_to_disk()

@@ -1,0 +1,5 @@
+In a previous feature, we added DNpc and RNpc, and a NPC json file. This allows the game to load the NPC data and make it available to the game at runtime. Next, I want to make an editor so we can edit the NPC data in the content editor. We will need to add the DNpc to contenteditor.gd using its own contenttype called `DMod.ContentType.NPCS`. Then, we can call `load_content_list` for the NPC content type. This will load all NPCs (just 1 currently) into the content list in the content editor. When an NPC in the content_list is activated, it should open the NPC editor.
+
+The NPC editor will be added as a new editor. To make the implementation go smoothly, we will use the `StatsEditor.gd` as an example of an editor with only a few fields. The NPC editor needs the same fields as the statseditor for sprite, id, name, description. Additionally, we need a spinbox for the health of the NPC. Similar to the StatsEditor, we need functions for saving and loading data.
+
+Make sure to keep the scope of this feature limited and focus on the basic editing of the NPC.

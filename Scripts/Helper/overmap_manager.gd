@@ -26,19 +26,18 @@ extends Node
 # The level generator will register itself to this variable when it's ready
 var level_generator: Node = null
 
-@export var region_seed : String
-@export var grid_width : int = 100
-@export var grid_height : int = 100
+@export var region_seed: String  # Seed used when generating overmap noise
+@export var grid_width: int = 100  # Number of cells horizontally in a grid
+@export var grid_height: int = 100  # Number of cells vertically in a grid
 # Cell is represented by a chunk, which is 32x32. This is used to calculate the player's cell position
-@export var cell_size : int = 32
-@export var chunk_size : int = 1 # Number of tiles per chunk. More makes it less... circular- I would keep it as is.
-@export var load_radius : int = 8 # Number of chunks to load around the player. Basically sight radius on world map.
+@export var cell_size: int = 32  # Size of a cell in world units
+@export var chunk_size: int = 1  # Number of tiles per chunk. More makes it less... circular- I would keep it as is.
+@export var load_radius: int = 8  # Number of chunks to load around the player. Basically sight radius on world map.
 
-var loaded_grids: Dictionary = {} # Stores grids loaded in memory
+var loaded_grids: Dictionary = {}  # Stores grids loaded in memory
 var max_grids: int = 9
 var grid_load_distance: int = 25 * cell_size  # Load when 25 cells away from the border
 var grid_unload_distance: int = 50 * cell_size  # Unload when 50 cells away from the border
-
 
 # Distance to load and unload data from loaded_chunk_data.chunks. Loading and unloading happens
 # in segments, since one big file will be too big and saving each chunk separately will
@@ -56,32 +55,39 @@ var loaded_segments: Dictionary = {}
 # Chunk data is added trough Chunk.save_chunk()
 var loaded_chunk_data: Dictionary = {"chunks": {}}
 
-
-var player: Player
-var player_current_cell: Vector2 = Vector2.ZERO # Player's position per cell, updated regularly
+var player: Player  # Reference to the active player node
+var player_current_cell: Vector2 = Vector2.ZERO  # Player's position per cell, updated regularly
 
 var noise: FastNoiseLite
 
-# When the player coordinate changed. player: The player node. 
+signal chunk_loaded(chunk_pos: Vector2)
+signal chunk_unloaded(chunk_pos: Vector2)
+
+@onready var update_timer: Timer = Timer.new()
+
+# When the player coordinate changed. player: The player node.
 # old_pos: The old coordinate in the grid. new_pos: The new coordinate in the grid
 signal player_coord_changed(player: Player, old_pos: Vector2, new_pos: Vector2)
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Connect to the Helper.signal_broker.game_started signal
+	# Connect to core game signals
 	Helper.signal_broker.game_started.connect(_on_game_started)
 	Helper.signal_broker.game_loaded.connect(_on_game_loaded)
 	Helper.signal_broker.game_ended.connect(_on_game_ended)
 	Helper.signal_broker.player_spawned.connect(_on_player_spawned)
 
+	# Set up a timer for periodic updates instead of using _process
+	update_timer.wait_time = 0.25
+	update_timer.one_shot = false
+	update_timer.autostart = true
+	update_timer.timeout.connect(_on_update_timer_timeout)
+	add_child(update_timer)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
 
-	########## TEMPORARY! We don't want to load chunks so often, we should call load_chunks_around only when
-	########## there is a need to (for example moving from one chunk to another)
+# Periodic update handler replacing _process
+func _on_update_timer_timeout() -> void:
 	if player:
 		var player_position = player.position
 		load_cells_around(player_position)
@@ -93,10 +99,11 @@ func _process(_delta):
 func _on_game_started():
 	make_noise()
 	load_cells()
-	
+
+
 func make_noise():
 	noise = FastNoiseLite.new()
-	noise.seed = Helper.mapseed
+	noise.seed = Helper.map_seed
 
 	# Generate noise for the regions. These settings are delicate and a small adjustement
 	# can have a big impact. To easily visualize the pattern:
@@ -104,34 +111,37 @@ func make_noise():
 	# 2. In the inspector, add a new 'noisetexture' as the texture property
 	# 3. Under 'noise', add a new 'fastnoiselite'. Click on the fastnoiselite and adjust the properties
 	noise.noise_type = FastNoiseLite.TYPE_CELLULAR
-	noise.frequency = 0.05 # Increasing this will make smaller cells. Decreasing will create big cells
-	
+	noise.frequency = 0.05  # Increasing this will make smaller cells. Decreasing will create big cells
+
 	# Only applies if noise_type equals TYPE_CELLULAR:
 	noise.cellular_return_type = FastNoiseLite.RETURN_DISTANCE
-	noise.cellular_distance_function = FastNoiseLite.DISTANCE_HYBRID # Sensitivity of the pattern
-	noise.cellular_jitter = 0 # Changes the pattern by warping the cells
-	
+	noise.cellular_distance_function = FastNoiseLite.DISTANCE_HYBRID  # Sensitivity of the pattern
+	noise.cellular_jitter = 0  # Changes the pattern by warping the cells
+
 	# Only applies if domain_warp_enabled equals true
-	noise.domain_warp_enabled = true # Changing this to false disables the settings below:
-	noise.domain_warp_type = FastNoiseLite.DOMAIN_WARP_SIMPLEX # Changing this creates different patterns
-	noise.domain_warp_amplitude = 60 # Reducing this number will make the pattern trend towards squares
-	noise.domain_warp_frequency = -0.015 # Useful values are between 0.01 and 0.02. Changes the pattern
-	noise.domain_warp_fractal_type = FastNoiseLite.DOMAIN_WARP_FRACTAL_PROGRESSIVE # Makes no difference
-	noise.domain_warp_fractal_octaves = 1 # Increasing this will destroy the pattern and turn it into noise
-	noise.domain_warp_fractal_lacunarity = 16 # Makes no difference
-	noise.domain_warp_fractal_gain = 5 # Makes no difference
-	
-	
+	noise.domain_warp_enabled = true  # Changing this to false disables the settings below:
+	noise.domain_warp_type = FastNoiseLite.DOMAIN_WARP_SIMPLEX  # Changing this creates different patterns
+	noise.domain_warp_amplitude = 60  # Reducing this number will make the pattern trend towards squares
+	noise.domain_warp_frequency = -0.015  # Useful values are between 0.01 and 0.02. Changes the pattern
+	noise.domain_warp_fractal_type = FastNoiseLite.DOMAIN_WARP_FRACTAL_PROGRESSIVE  # Makes no difference
+	noise.domain_warp_fractal_octaves = 1  # Increasing this will destroy the pattern and turn it into noise
+	noise.domain_warp_fractal_lacunarity = 16  # Makes no difference
+	noise.domain_warp_fractal_gain = 5  # Makes no difference
+
+
 func load_cells():
 	loaded_grids.clear()
 	load_cells_around(Vector3(0, 0, 0))
+
 
 # Function for handling player spawned signal
 func _on_player_spawned(playernode: Player):
 	player = playernode
 	var player_position = player.position
 	load_cells_around(player_position)
-	var cellpos: Vector2 = get_cell_pos_from_global_pos(Vector2(player_position.x, player_position.z))
+	var cellpos: Vector2 = get_cell_pos_from_global_pos(
+		Vector2(player_position.x, player_position.z)
+	)
 	player_coord_changed.emit(player, player_current_cell, cellpos)
 	player_current_cell = cellpos
 
@@ -162,7 +172,7 @@ func load_cells_around(position: Vector3):
 				var cell_key = Vector2(x, y)
 				var grid_key = get_grid_pos_from_local_pos(cell_key)
 
-				load_grid(grid_key) # Will load a grid if it does not exist
+				load_grid(grid_key)  # Will load a grid if it does not exist
 				if loaded_grids[grid_key] and not loaded_grids[grid_key].cells.has(cell_key):
 					loaded_grids[grid_key].generate_cells()
 
@@ -191,7 +201,7 @@ func get_map_cell_by_global_coordinate(coord: Vector2i) -> OvermapGrid.map_cell:
 	var grid_key: Vector2i = get_grid_pos_from_global_pos(coord)
 	var cell_key: Vector2i = get_cell_pos_from_global_pos(coord)
 
-	if not loaded_grids.has(grid_key): # If the grid is not loaded, load it
+	if not loaded_grids.has(grid_key):  # If the grid is not loaded, load it
 		load_grid(grid_key)
 	return get_map_cell_by_local_coordinate(cell_key)
 
@@ -225,7 +235,7 @@ func get_cell_pos_from_global_pos(coord: Vector2) -> Vector2:
 
 # Function to get a map_cell by local coordinate within a specific grid
 # A local coord will start at (0,0), the next cell will be (0,1) and so on
-# It will return the map cell from the grid. 
+# It will return the map cell from the grid.
 # The grid can contain grid_width x grid_height amount of cells
 # If the grid's position is in the negative range, for example (-1,-1) it will
 # contain cells from (-100,100) up to (-1,-1)
@@ -243,17 +253,17 @@ func get_map_cell_by_local_coordinate(local_coord: Vector2) -> OvermapGrid.map_c
 
 # Load a grid based on the grid position
 # grid_pos: absolute vector2 relative to the other grids. Even though each grid contains 100x100 map_cells,
-# they are only one space apart in their "meta" coordinate system. So the grid containing cells 
+# they are only one space apart in their "meta" coordinate system. So the grid containing cells
 # (-100,100) to (-1,-1) is positioned at (-1,-1). The other grids may be (-1,0), (0,0), (1,0), (1,1)
 func load_grid(grid_pos: Vector2):
 	if loaded_grids.size() >= max_grids:
 		unload_furthest_grid()
 
 	if not loaded_grids.has(grid_pos):
-		var grid = OvermapGrid.new()
+		var grid = OvermapGrid.new(grid_width, grid_height)
 		grid.pos = grid_pos
 		loaded_grids[grid_pos] = grid
-		load_grid_from_file(grid_pos) # Loads grid data from storage if available
+		load_grid_from_file(grid_pos)  # Loads grid data from storage if available
 
 
 # Unload the furthest grid from the player
@@ -278,6 +288,7 @@ func unload_furthest_grid():
 func get_player_grid_position() -> Vector2:
 	return get_grid_pos_from_global_pos(Vector2(player.position.x, player.position.z))
 
+
 # Get the current cell position of the player
 func get_player_cell_position() -> Vector2:
 	return get_cell_pos_from_global_pos(Vector2(player.position.x, player.position.z))
@@ -289,9 +300,9 @@ func check_grids():
 	for dx in range(-1, 1):
 		for dy in range(-1, 1):
 			var grid_pos = Vector2(player_grid_pos.x + dx, player_grid_pos.y + dy)
-			
+
 			var grid_key = grid_pos
-			
+
 			if not loaded_grids.has(grid_key):
 				load_grid(grid_pos)
 
@@ -301,17 +312,23 @@ func check_grids():
 		if distance > grid_unload_distance:
 			unload_furthest_grid()
 
-	
+
 # Selects segment coordinates to load within the specified distance from the player
-func load_segments_around_player() -> Array:
-	var segments_to_load = []
+func _get_segments_to_load() -> Array[Vector2]:
+	var segments_to_load: Array[Vector2] = []
 	var player_cell_pos = get_player_cell_position()
 
-	for x in range(player_cell_pos.x - segment_load_distance, player_cell_pos.x + segment_load_distance + 1, 4):
-		for y in range(player_cell_pos.y - segment_load_distance, player_cell_pos.y + segment_load_distance + 1, 4):
+	for x in range(
+		player_cell_pos.x - segment_load_distance, player_cell_pos.x + segment_load_distance + 1, 4
+	):
+		for y in range(
+			player_cell_pos.y - segment_load_distance,
+			player_cell_pos.y + segment_load_distance + 1,
+			4
+		):
 			var segment_pos = get_segment_pos(Vector2(x, y))
 			segments_to_load.append(segment_pos)
-	
+
 	return segments_to_load
 
 
@@ -322,9 +339,9 @@ func load_segments_around_player() -> Array:
 # It checks if the segment position is not already in segments_to_unload to avoid duplicates.
 # It calculates the distance from the player's cell position to the segment position.
 # If the distance is greater than segment_unload_distance, it adds the segment position to segments_to_unload.
-func unload_distant_segments() -> Array:
-	var segments_to_unload = []
-	var player_cell_pos = get_player_cell_position()
+func _get_segments_to_unload() -> Array[Vector2]:
+	var segments_to_unload: Array[Vector2] = []
+	var player_cell_pos: Vector2 = get_player_cell_position()
 
 	for chunk_pos in loaded_chunk_data.chunks.keys():
 		var segment_pos = get_segment_pos(chunk_pos)
@@ -332,8 +349,39 @@ func unload_distant_segments() -> Array:
 			var distance = player_cell_pos.distance_to(segment_pos)
 			if distance > segment_unload_distance:
 				segments_to_unload.append(segment_pos)
-	
 	return segments_to_unload
+
+
+# Merge loaded segment data into loaded_chunk_data.chunks
+func _merge_loaded_segment_data(segment_data: Dictionary) -> void:
+	for chunk_pos in segment_data.keys():
+		if not loaded_chunk_data.chunks.has(chunk_pos):
+			loaded_chunk_data.chunks[chunk_pos] = segment_data[chunk_pos]
+			chunk_loaded.emit(chunk_pos)
+
+
+# Load segments around the player and merge their data
+func _load_segments_around_player() -> void:
+	var segments_to_load: Array[Vector2] = _get_segments_to_load()
+
+	for segment_pos in segments_to_load:
+		if not loaded_segments.has(segment_pos):
+			var loaded_segment_data: Dictionary = Helper.save_helper.load_map_segment_data(
+				segment_pos
+			)
+			loaded_segments[segment_pos] = loaded_segment_data
+			_merge_loaded_segment_data(loaded_segment_data)
+
+
+# Unload segments that are too far from the player
+func _unload_distant_segments() -> void:
+	var segments_to_unload: Array[Vector2] = _get_segments_to_unload()
+	for segment_pos in segments_to_unload:
+		if loaded_segments.has(segment_pos):
+			loaded_segments.erase(segment_pos)
+			var non_empty_chunk_data: Dictionary = process_and_clear_segment(segment_pos)
+			if not non_empty_chunk_data.is_empty():
+				Helper.save_helper.save_map_segment_data(non_empty_chunk_data, segment_pos)
 
 
 # Helper function to get the top-left coordinate of the 4x4 segment
@@ -355,33 +403,15 @@ func update_player_position_and_manage_segments(force_update: bool = false):
 		var last_cell: Vector2 = player_current_cell
 		player_current_cell = new_position
 		player_coord_changed.emit(player, last_cell, player_current_cell)
-		
+
 		# Call visit() on the map cell corresponding to the new position
 		var new_cell = get_map_cell_by_global_coordinate(player_current_cell)
 		if new_cell:
 			new_cell.visit()
-		
-		# Load segments around the player
-		var segments_to_load = load_segments_around_player()
-		
-		for segment_pos in segments_to_load:
-			if not loaded_segments.has(segment_pos):
-				var loaded_segment_data = Helper.save_helper.load_map_segment_data(segment_pos)
-				loaded_segments[segment_pos] = loaded_segment_data
-				# Merge loaded segment data into loaded_chunk_data.chunks
-				for chunk_pos in loaded_segment_data.keys():
-					if not loaded_chunk_data.chunks.has(chunk_pos):
-						loaded_chunk_data.chunks[chunk_pos] = loaded_segment_data[chunk_pos]
 
-		# Unload segments that are too far from the player
-		var segments_to_unload = unload_distant_segments()
-		
-		for segment_pos in segments_to_unload:
-			if loaded_segments.has(segment_pos):
-				loaded_segments.erase(segment_pos)
-			var non_empty_chunk_data = process_and_clear_segment(segment_pos)
-			if not non_empty_chunk_data.is_empty():
-				Helper.save_helper.save_map_segment_data(non_empty_chunk_data, segment_pos)
+			# Load/unload segments around the player
+			_load_segments_around_player()
+			_unload_distant_segments()
 
 
 # Function to process and clear each segment
@@ -390,13 +420,17 @@ func update_player_position_and_manage_segments(force_update: bool = false):
 # If the chunk data is not empty, it is erased from loaded_chunk_data.chunks and added to a dictionary.
 # The function returns the dictionary of non-empty chunk data.
 func process_and_clear_segment(segment_pos: Vector2) -> Dictionary:
-	var non_empty_data: Dictionary = {} # Dictionary to store non-empty chunk data with chunk_pos as keys
+	var non_empty_data: Dictionary = {}  # Dictionary to store non-empty chunk data with chunk_pos as keys
 	for x_offset in range(4):
 		for y_offset in range(4):
 			var chunk_key: Vector2i = segment_pos + Vector2(x_offset, y_offset)
-			if loaded_chunk_data.chunks.has(chunk_key) and not loaded_chunk_data.chunks[chunk_key].is_empty():
+			if (
+				loaded_chunk_data.chunks.has(chunk_key)
+				and not loaded_chunk_data.chunks[chunk_key].is_empty()
+			):
 				non_empty_data[chunk_key] = loaded_chunk_data.chunks[chunk_key]
 				loaded_chunk_data.chunks.erase(chunk_key)
+				chunk_unloaded.emit(chunk_key)
 	return non_empty_data
 
 
@@ -427,10 +461,10 @@ func load_grid_from_file(grid_key: Vector2) -> void:
 	process_loaded_grid_data(grid_data)
 
 
-# Creates a new grid from grid data loaded from disk 
+# Creates a new grid from grid data loaded from disk
 func process_loaded_grid_data(grid_data: Dictionary):
 	if grid_data:
-		var grid = OvermapGrid.new()
+		var grid = OvermapGrid.new(grid_width, grid_height)
 		grid.set_data(grid_data)
 		loaded_grids[grid.pos] = grid
 		grid.build_map_id_to_coordinates()
@@ -470,7 +504,7 @@ func save_all_segments():
 # Function to collect data for each segment without clearing it
 func collect_segment_data(segment_pos: Vector2) -> Dictionary:
 	var non_empty_chunk_data = {}  # Dictionary to store non-empty chunk data with chunk_pos as keys
-	
+
 	for x_offset in range(4):
 		for y_offset in range(4):
 			var chunk_pos = segment_pos + Vector2(x_offset, y_offset)
@@ -483,7 +517,7 @@ func collect_segment_data(segment_pos: Vector2) -> Dictionary:
 					print("Chunk data at ", chunk_pos, " is empty.")
 			else:
 				print("Chunk data at ", chunk_pos, " does not exist.")
-	
+
 	return non_empty_chunk_data
 
 
@@ -494,7 +528,9 @@ func collect_segment_data(segment_pos: Vector2) -> Dictionary:
 #     Determines how the target is selected based on its reveal state.
 #   - exact_match (bool, default: false): If true, only exact matches for the reveal_condition are valid.
 # Returns the closest map cell, or null if no suitable cell is found.
-func find_closest_map_cell_with_ids(map_ids: Array, target_properties: Dictionary = {}) -> OvermapGrid.map_cell:
+func find_closest_map_cell_with_ids(
+	map_ids: Array, target_properties: Dictionary = {}
+) -> OvermapGrid.map_cell:
 	var player_position = get_player_cell_position()
 	var closest_cell: OvermapGrid.map_cell = null
 	var shortest_distance = INF  # Use a very large number to initialize the shortest distance
@@ -521,7 +557,9 @@ func find_closest_map_cell_with_ids(map_ids: Array, target_properties: Dictionar
 						continue
 
 					# Calculate the distance to the player's position
-					var distance = player_position.distance_to(Vector2(cell.coordinate_x, cell.coordinate_y))
+					var distance = player_position.distance_to(
+						Vector2(cell.coordinate_x, cell.coordinate_y)
+					)
 
 					# If this is the closest cell so far, update the closest cell and shortest distance
 					if distance < shortest_distance:
@@ -534,7 +572,6 @@ func find_closest_map_cell_with_ids(map_ids: Array, target_properties: Dictionar
 
 	# Return the closest map cell (if any), or null if no cells exist for the map IDs
 	return closest_cell
-
 
 
 func get_revealed_priority(reveal_condition: String) -> Array:
@@ -561,16 +598,16 @@ func get_revealed_priority(reveal_condition: String) -> Array:
 # This is used for visualization outside the game
 func create_new_grid_with_default_values() -> OvermapGrid:
 	# Step 1: Create a new OvermapGrid instance
-	var new_grid = OvermapGrid.new()
+	var new_grid = OvermapGrid.new(grid_width, grid_height)
 
 	# Step 2: Set default position for the grid (this can be customized or passed as an argument)
 	new_grid.pos = Vector2(0, 0)
 
 	# Step 3: Initialize the noise generator for terrain generation
 	var rng = RandomNumberGenerator.new()
-	Helper.mapseed = rng.randi()
+	Helper.map_seed = rng.randi()
 	make_noise()
-	
+
 	new_grid.generate_cells()
 
 	# Step 4: Return the fully generated grid

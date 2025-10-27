@@ -1,32 +1,30 @@
 class_name FurnitureStaticSrv
-extends Node3D # Has to be Node3D. Changing it to RefCounted doesn't work
+extends Node3D  # Has to be Node3D. Changing it to RefCounted doesn't work
 
-
-# This is a standalone script that is not attached to any node. 
+# This is a standalone script that is not attached to any node.
 # This is the static version of furniture. There is also FurniturePhysicsSrv.gd.
-# This class is instanced by FurnitureStaticSpawner.gd when a map needs static 
+# This class is instanced by FurnitureStaticSpawner.gd when a map needs static
 # furniture, like a bed or fridge.
-
 
 # Variables to store furniture data
 var furniture_transform: FurnitureTransform
 var furniture_position: Vector3
 var furniture_rotation: int
-var furnitureJSON: Dictionary # The json that defines this furniture on the map
-var rfurniture: RFurniture # The json that defines this furniture's basics in general
+var furnitureJSON: Dictionary  # The json that defines this furniture on the map
+var rfurniture: RFurniture  # The json that defines this furniture's basics in general
 var collider: RID
 var shape: RID
 var mesh_instance: RID  # Variable to store the mesh instance RID
-var quad_instance: RID # RID to the quadmesh that displays the sprite
+var quad_instance: RID  # RID to the quadmesh that displays the sprite
 var myworld3d: World3D
-var spawner: FurnitureStaticSpawner # The spawner that spawned this furniture
-var is_hidden: bool = false # If true, all visual elements are invisible
+var spawner: FurnitureStaticSpawner  # The spawner that spawned this furniture
+var is_hidden: bool = false  # If true, all visual elements are invisible
 
 # We have to keep a reference or it will be auto deleted
-var support_mesh: PrimitiveMesh # A mesh below the sprite for 3d effect
+var support_mesh: PrimitiveMesh  # A mesh below the sprite for 3d effect
 var sprite_texture: Texture2D  # Variable to store the sprite texture
-var sprite_material: StandardMaterial3D # Material to display the furniture sprite
-var quad_mesh: PlaneMesh # Shows the sprite of the furniture
+var sprite_material: StandardMaterial3D  # Material to display the furniture sprite
+var quad_mesh: PlaneMesh  # Shows the sprite of the furniture
 
 # Variables to manage door functionality
 var is_door: bool = false
@@ -35,12 +33,16 @@ var door_state: String = "Closed"  # Default state
 # Variables to manage the container if this furniture is a container
 var container: FurnitureContainer
 var crafting_container: CraftingContainer
-var consumption: Consumption # Variable to manage consumption
+var consumption: Consumption  # Variable to manage consumption
 
 # Variables to manage health and damage
 var current_health: float = 100.0  # Default health
 var is_animating_hit: bool = false  # Flag to prevent multiple hit animations
 var original_material_color: Color = Color(1, 1, 1)  # Store the original material color
+
+# New variable to control processing on minute_passed
+var is_active: bool = false  # Only process minute_passed if active
+var last_processed_minute: int = -1  # Track last in-game minute processed
 
 signal about_to_be_destroyed(me: FurnitureStaticSrv)
 signal crafting_queue_updated(current_queue: Array[QueueItem])
@@ -95,38 +97,37 @@ class FurnitureTransform:
 		set_position(new_position)
 		set_rotation(new_rotation)
 		set_size(new_size)
-	
+
 	# New method to create a Transform3D
 	func get_sprite_transform() -> Transform3D:
-		var adjusted_position = get_position() + Vector3(0, 0.5*height+0.01, 0)
+		var adjusted_position = get_position() + Vector3(0, 0.5 * height + 0.01, 0)
 		return Transform3D(Basis(Vector3(0, 1, 0), deg_to_rad(rot)), adjusted_position)
-	
+
 	func get_cylinder_shape_data() -> Dictionary:
 		return {"radius": width / 4.0, "height": height}
-	
+
 	# New method to create a Transform3D for visual instances
 	func get_visual_transform() -> Transform3D:
 		return Transform3D(Basis(Vector3(0, 1, 0), deg_to_rad(rot)), get_position())
-	
+
 	func get_box_shape_size() -> Vector3:
 		# Apply width and depth scaling from rfurniture.support_shape
 		var scaled_width = width * (parent_furniture.rfurniture.support_shape.width_scale / 100.0)
 		var scaled_depth = depth * (parent_furniture.rfurniture.support_shape.depth_scale / 100.0)
 		return Vector3(scaled_width, height, scaled_depth)
 
-		
 	func correct_new_position():
 		# We have to compensate for the fact that the physicsserver and
 		# renderingserver place the furniture lower then the intended height
-		posy += 0.5+(0.5*height)
+		posy += 0.5 + (0.5 * height)
 
 
 # Inner Container Class
 class FurnitureContainer:
 	var inventory: InventoryStacked
-	var itemgroup: String # The ID of an itemgroup that it creates loot from
+	var itemgroup: String  # The ID of an itemgroup that it creates loot from
 	var sprite_mesh: PlaneMesh
-	var sprite_instance: RID # RID to the quadmesh that displays the containersprite
+	var sprite_instance: RID  # RID to the quadmesh that displays the containersprite
 	var material: StandardMaterial3D
 	var furniture_transform: FurnitureTransform
 	var parent_furniture: FurnitureStaticSrv
@@ -148,7 +149,7 @@ class FurnitureContainer:
 		inventory.item_protoset = ItemManager.item_protosets
 		inventory.item_removed.connect(_on_item_removed)
 		inventory.item_added.connect(_on_item_added)
-	
+
 	func get_inventory() -> InventoryStacked:
 		return inventory
 
@@ -176,16 +177,17 @@ class FurnitureContainer:
 	# Sets the sprite_3d texture to a texture of a random item in the container's inventory
 	func set_random_inventory_item_texture():
 		if parent_furniture.rfurniture.function.container_sprite_mode == "Hide":
-			return # We don't want a sprite visible when it's set to hide
+			return  # We don't want a sprite visible when it's set to hide
 		var items: Array[InventoryItem] = inventory.get_items()
 		if items.size() == 0:
-			sprite_mesh.material = Gamedata.materials.container # set empty container
+			# Use standard material for empty container
+			sprite_mesh.material = Gamedata.materials.container  # set empty container
 			return
-		
+
 		# Pick a random item from the inventory
 		var random_item: InventoryItem = items.pick_random()
 		var item_id = random_item.prototype_id
-		
+
 		# Get the ShaderMaterial for the item
 		material = Runtimedata.items.get_standard_material_by_id(item_id)
 		sprite_mesh.material = material  # Update the mesh material
@@ -209,16 +211,16 @@ class FurnitureContainer:
 	func insert_item(item: InventoryItem) -> bool:
 		var iteminv: InventoryStacked = item.get_inventory()
 		if iteminv == inventory:
-			return false # Can't insert into itself
+			return false  # Can't insert into itself
 		if not iteminv.transfer_autosplitmerge(item, inventory):
 			print_debug("Failed to transfer item: " + str(item))
 		return true
 
 	func _on_item_added(_item: InventoryItem):
-		set_random_inventory_item_texture() # Update to a new sprite
+		set_random_inventory_item_texture()  # Update to a new sprite
 
 	func _on_item_removed(_item: InventoryItem):
-		set_random_inventory_item_texture() # Update to a new sprite
+		set_random_inventory_item_texture()  # Update to a new sprite
 
 	# Takes a list of items and adds them to the inventory in Collection mode.
 	func _add_items_to_inventory_collection_mode(items: Array[RItemgroup.Item]) -> bool:
@@ -229,7 +231,7 @@ class FurnitureContainer:
 			var item_id = item_object.id
 			var item_probability = item_object.probability
 			if randi_range(0, 100) <= item_probability:
-				item_added = true # An item is about to be added
+				item_added = true  # An item is about to be added
 				# Determine quantity to add based on min and max
 				var quantity = randi_range(item_object.minc, item_object.maxc)
 				add_item_to_inventory(item_id, quantity)
@@ -278,7 +280,9 @@ class FurnitureContainer:
 		# Update container visuals
 		set_random_inventory_item_texture()
 
-	func check_regeneration_functionality(furnitureJSON: Dictionary, rfurniture: RFurniture, is_new_furniture: bool):
+	func check_regeneration_functionality(
+		furnitureJSON: Dictionary, rfurniture: RFurniture, is_new_furniture: bool
+	):
 		if rfurniture.function.container_regeneration_time:
 			regeneration_interval = rfurniture.function.container_regeneration_time
 
@@ -309,7 +313,6 @@ class FurnitureContainer:
 			# Regenerate items
 			_reset_inventory_and_regenerate_items()
 
-
 	# Will add item to the inventory based on the assigned itemgroup
 	# Only new furniture will have an itemgroup assigned, not previously saved furniture.
 	func create_loot(furnitureJSON: Dictionary, rfurniture: RFurniture):
@@ -330,13 +333,15 @@ class FurnitureContainer:
 	# If there is an itemgroup assigned to the furniture, it will be added to the container.
 	# It will check both furnitureJSON and dfurniture for itemgroup information.
 	# The function will return the id of the itemgroup so that the container may use it
-	func populate_container_from_itemgroup(furnitureJSON: Dictionary, rfurniture: RFurniture) -> String:
+	func populate_container_from_itemgroup(
+		furnitureJSON: Dictionary, rfurniture: RFurniture
+	) -> String:
 		# Check if furnitureJSON contains an itemgroups array
 		if furnitureJSON.has("itemgroups"):
 			var itemgroups_array = furnitureJSON["itemgroups"]
 			if itemgroups_array.size() > 0:
 				return itemgroups_array.pick_random()
-		
+
 		# Fallback to using itemgroup from furnitureJSONData if furnitureJSON.itemgroups does not exist
 		var myitemgroup = rfurniture.function.container_group
 		if myitemgroup:
@@ -353,7 +358,7 @@ class FurnitureContainer:
 			inventory.deserialize(container_json["Function"]["container"]["items"])
 		# Update the sprite behavior after deserialization
 		update_container_sprite_behavior()
-	
+
 	# Serialize the container data for saving
 	func serialize() -> Dictionary:
 		var container_data: Dictionary = {}
@@ -423,7 +428,6 @@ class CraftingContainer:
 	var furniture_parent: FurnitureStaticSrv
 	signal crafting_queue_updated(current_queue: Array[String])
 
-
 	func _init():
 		_initialize_inventory()
 		furniture_parent = null
@@ -462,7 +466,7 @@ class CraftingContainer:
 	# Serializes the inventory, crafting queue, and time-related variables for saving
 	func serialize() -> Dictionary:
 		var crafting_data: Dictionary = {}
-		
+
 		# Serialize the inventory if it contains items
 		var inventory_data = inventory.serialize()
 		if not inventory_data.is_empty():
@@ -491,13 +495,11 @@ class CraftingContainer:
 		last_update_time = data.get("last_update_time", 0.0)  # Default to 0 if not present
 		is_active = data.get("is_active", false)  # Default to inactive if not present
 
-
 	# Transfers all items to the given FurnitureContainer
 	func transfer_all_items_to_furniture() -> void:
-		
 		# Retrieve all items from the crafting container inventory
 		var items = inventory.get_items()
-		
+
 		# Get the inventory of the target furniture container
 		var furniture_inventory = furniturecontainer.get_inventory()
 
@@ -505,7 +507,6 @@ class CraftingContainer:
 		for item in items.duplicate():  # Duplicate the list to avoid modification during iteration
 			inventory.transfer_automerge(item, furniture_inventory)
 
-	
 	# Activates the crafting queue for real-time updates
 	func activate_crafting():
 		is_active = true
@@ -534,10 +535,9 @@ class CraftingContainer:
 	# Core logic to process the crafting queue
 	func _process_crafting_queue(elapsed_time: float):
 		while elapsed_time > 0 and not crafting_queue.is_empty():
-			
 			# Get the first item in the queue
 			var queue_item: QueueItem = crafting_queue[0]
-			
+
 			# Retrieve the recipe for the current item
 			var recipe: RItem.CraftRecipe = Runtimedata.items.get_first_recipe_by_id(queue_item.id)
 			if not recipe:
@@ -593,7 +593,9 @@ class CraftingContainer:
 			if missing_amount > 0:
 				all_present = false
 				if furniture_parent:
-					furniture_parent.transfer_item_between_containers(furniturecontainer, ingredient.id, missing_amount)
+					furniture_parent.transfer_item_between_containers(
+						furniturecontainer, ingredient.id, missing_amount
+					)
 				else:
 					print_debug("Error: Parent FurnitureStaticSrv is not set.")
 					return false
@@ -602,10 +604,10 @@ class CraftingContainer:
 	# Get the available amount of the ingredient in the FurnitureContainer inventory.
 	func get_available_ingredient_amount(ingredient_id: String) -> int:
 		var available_amount: int = 0
-		
+
 		if inventory.has_item_by_id(ingredient_id):
 			var items: Array = inventory.get_items_by_id(ingredient_id)
-			
+
 			for item in items:
 				var stack_size = InventoryStacked.get_item_stack_size(item)
 				available_amount += stack_size
@@ -617,6 +619,7 @@ class CraftingContainer:
 			if available < ingredient.amount:
 				return false
 		return true
+
 
 # Inner class for managing consumption mechanics
 class Consumption:
@@ -640,18 +643,18 @@ class Consumption:
 	func set_current_pool(value: float) -> void:
 		# Get the maximum pool size from rfurniture.consumption.pool
 		var pool_size: float = parent_furniture.rfurniture.consumption.pool
-		
+
 		# Clamp the value to ensure current_pool is within the valid range [0, pool_size]
 		current_pool = clamp(value, 0, pool_size)
 		current_pool_changed.emit(current_pool)
-		
+
 		# Get the drain_rate per in-game hour from the parent furniture
 		var drain_rate: float = parent_furniture.rfurniture.consumption.drain_rate
-		
+
 		# Only consider transforming automatically if pool and drain_rate are valid
 		if pool_size <= 0 or drain_rate <= 0:
 			return
-		
+
 		# Trigger transformation logic if the pool is depleted
 		if current_pool <= 0:
 			parent_furniture.transform_into()
@@ -660,7 +663,7 @@ class Consumption:
 	func get_available_pool_capacity() -> float:
 		# Get the maximum capacity of the pool from parent_furniture.rfurniture.consumption.pool
 		var max_pool: float = parent_furniture.rfurniture.consumption.pool
-		
+
 		# Calculate and return the difference
 		return max_pool - current_pool
 
@@ -672,10 +675,10 @@ class Consumption:
 		# We only consider consuming items if there is a pool defined with a size larger then 0
 		if pool_size <= 0 or drain_rate <= 0:
 			return
-		
+
 		# Calculate the per in-game minute drain amount (granular drain)
 		var drain_per_minute: float = drain_rate / 60.0
-		
+
 		# Subtract the per-minute drain from the current_pool
 		set_current_pool(get_current_pool() - drain_per_minute)
 		consume_items()
@@ -684,60 +687,76 @@ class Consumption:
 	func consume_items():
 		if not parent_furniture.rfurniture:
 			return
-		
+
 		# Get the dictionary of items from parent_furniture
 		var items_dict: Dictionary = parent_furniture.rfurniture.consumption.items
-		
+
 		# Check if the parent furniture has a container
 		if not parent_furniture.container:
 			return
-		
+
 		# Get the container inventory
 		var container_inventory: InventoryStacked = parent_furniture.container.get_inventory()
-		
+
 		# Keep consuming items as long as there is room in the pool
 		while get_available_pool_capacity() > 0:
 			var consumed_item = false  # Track if we consumed an item this iteration
-			
+
 			# Iterate over each item in the items dictionary
 			for item_id in items_dict.keys():
 				var item_value: float = items_dict[item_id]
-				
+
 				# Skip the item if its value is larger than the available capacity
 				if item_value > get_available_pool_capacity():
 					continue
-				
+
 				# Check if the inventory contains an item with the prototype_id matching the item_id
 				if container_inventory.has_item_by_id(item_id):
 					# Get the first item matching the item_id
 					var items: Array[InventoryItem] = container_inventory.get_items_by_id(item_id)
 					if items.size() > 0:
 						var item_to_consume: InventoryItem = items[0]  # Get the first item
-						var current_stack_size: int = InventoryStacked.get_item_stack_size(item_to_consume)
-						
+						var current_stack_size: int = InventoryStacked.get_item_stack_size(
+							item_to_consume
+						)
+
 						# Attempt to subtract 1 from the current stack size
-						if InventoryStacked.set_item_stack_size(item_to_consume, current_stack_size - 1):
+						if InventoryStacked.set_item_stack_size(
+							item_to_consume, current_stack_size - 1
+						):
 							# If successful, add the item's value to the current_pool
 							set_current_pool(get_current_pool() + item_value)
-							
+
 							# Log the successful consumption
-							print("Consumed 1 unit of item: ", item_id, ". Remaining stack size: ", current_stack_size - 1)
-							print("Added ", item_value, " to current pool. New pool value: ", get_current_pool())
-							
+							print(
+								"Consumed 1 unit of item: ",
+								item_id,
+								". Remaining stack size: ",
+								current_stack_size - 1
+							)
+							print(
+								"Added ",
+								item_value,
+								" to current pool. New pool value: ",
+								get_current_pool()
+							)
+
 							consumed_item = true  # Mark that we consumed an item
 							break  # Break out of the loop to re-check the pool capacity
 						else:
-							print("Failed to consume item: ", item_id, ". Could not reduce stack size.")
+							print(
+								"Failed to consume item: ",
+								item_id,
+								". Could not reduce stack size."
+							)
 					else:
 						print("No items available to consume for item_id: ", item_id)
 				else:
 					print("Item with prototype_id ", item_id, " not found in the inventory.")
-			
+
 			# If no items were consumed, exit the loop
 			if not consumed_item:
 				break
-
-
 
 	# Serialize the data
 	func serialize() -> Dictionary:
@@ -756,6 +775,7 @@ class Consumption:
 # Initialization
 # --------------------------------------------------------------
 
+
 # Function to initialize the furniture object
 func _init(furniturepos: Vector3, new_furniture_json: Dictionary, world3d: World3D):
 	furniture_position = furniturepos
@@ -769,11 +789,11 @@ func _init(furniturepos: Vector3, new_furniture_json: Dictionary, world3d: World
 		furniturepos, furniture_rotation, calculate_furniture_size()
 	)
 	furniture_transform.parent_furniture = self
-	
+
 	if _is_new_furniture():
 		furniture_transform.correct_new_position()
 		_apply_edge_snapping_if_needed()
-		set_new_rotation(furniture_rotation) # Apply rotation after setting up the shape and visual instance
+		set_new_rotation(furniture_rotation)  # Apply rotation after setting up the shape and visual instance
 
 	check_door_functionality()  # Check if this furniture is a door
 
@@ -787,11 +807,16 @@ func _init(furniturepos: Vector3, new_furniture_json: Dictionary, world3d: World
 	create_sprite_instance()
 	update_door_visuals()  # Set initial door visuals based on its state
 	add_container()  # Adds container if the furniture is a container
-	add_crafting_container() # Adds crafting container if the furniture is a crafting station
+	add_crafting_container()  # Adds crafting container if the furniture is a crafting station
 	if rfurniture.consumption:
 		consumption = Consumption.new(self)
 	Helper.time_helper.minute_passed.connect.call_deferred(on_minute_passed)
-	Helper.signal_broker.player_current_y_level.connect.call_deferred(_on_player_y_level_updated)
+
+	# Restore last_processed_minute if present in saved data, else default to -1
+	if furnitureJSON.has("last_processed_minute"):
+		last_processed_minute = furnitureJSON["last_processed_minute"]
+	else:
+		last_processed_minute = -1
 
 
 # If this furniture is a container, it will add a container node to the furniture.
@@ -823,6 +848,7 @@ func add_container():
 func is_container() -> bool:
 	return rfurniture.function.is_container
 
+
 # Wether or not this furniture is a crafting station.
 # Returns true if it is a container and has crafting recipes (items)
 func is_crafting_station() -> bool:
@@ -832,8 +858,8 @@ func is_crafting_station() -> bool:
 # Function to calculate the size of the furniture
 func calculate_furniture_size() -> Vector3:
 	if sprite_texture:
-		var sprite_width = sprite_texture.get_width() / 100.0 # Convert pixels to meters
-		var sprite_depth = sprite_texture.get_height() / 100.0 # Convert pixels to meters
+		var sprite_width = sprite_texture.get_width() / 100.0  # Convert pixels to meters
+		var sprite_depth = sprite_texture.get_height() / 100.0  # Convert pixels to meters
 		var height = rfurniture.support_shape.height
 		return Vector3(sprite_width, height, sprite_depth)  # Use height from support shape
 	return Vector3(0.5, rfurniture.support_shape.height, 0.5)  # Default size if texture is not set
@@ -843,11 +869,11 @@ func calculate_furniture_size() -> Vector3:
 func create_box_shape():
 	shape = PhysicsServer3D.box_shape_create()
 	var shape_size: Vector3 = furniture_transform.get_box_shape_size()
-	shape_size.x = shape_size.x/2
+	shape_size.x = shape_size.x / 2
 	shape_size.y = shape_size.y
-	shape_size.z = shape_size.z/2
+	shape_size.z = shape_size.z / 2
 	PhysicsServer3D.shape_set_data(shape, shape_size)
-	
+
 	collider = PhysicsServer3D.body_create()
 	PhysicsServer3D.body_set_mode(collider, PhysicsServer3D.BODY_MODE_STATIC)
 	# Set space, so it collides in the same space as current scene.
@@ -862,7 +888,9 @@ func create_box_shape():
 # Function to create a visual instance with a mesh to represent the shape
 # Apply the hide_above_player_shader to the MeshInstance
 func create_visual_instance(shape_type: String):
-	var material: StandardMaterial3D = Runtimedata.furnitures.get_shape_material_by_id(rfurniture.id)
+	var material: StandardMaterial3D = Runtimedata.furnitures.get_shape_material_by_id(
+		rfurniture.id
+	)
 
 	if shape_type == "Box":
 		support_mesh = BoxMesh.new()
@@ -893,17 +921,17 @@ func create_sprite_instance():
 	quad_mesh.material = sprite_material
 
 	# Create the quad instance
-	quad_instance = RenderingServer.instance_create2(quad_mesh,myworld3d.scenario)
+	quad_instance = RenderingServer.instance_create2(quad_mesh, myworld3d.scenario)
 	# Set the transform for the quad instance slightly above the box mesh
-	RenderingServer.instance_set_transform(quad_instance, furniture_transform.get_sprite_transform())
+	RenderingServer.instance_set_transform(
+		quad_instance, furniture_transform.get_sprite_transform()
+	)
 
 
 # Now, update methods that involve position, rotation, and size
 func _apply_edge_snapping_if_needed():
 	if not rfurniture.edgesnapping == "None":
-		var new_position = _apply_edge_snapping(
-			rfurniture.edgesnapping
-		)
+		var new_position = _apply_edge_snapping(rfurniture.edgesnapping)
 		furniture_transform.set_position(new_position)
 
 
@@ -911,7 +939,7 @@ func _apply_edge_snapping_if_needed():
 func create_cylinder_shape():
 	shape = PhysicsServer3D.cylinder_shape_create()
 	PhysicsServer3D.shape_set_data(shape, furniture_transform.get_cylinder_shape_data())
-	
+
 	collider = PhysicsServer3D.body_create()
 	PhysicsServer3D.body_set_mode(collider, PhysicsServer3D.BODY_MODE_STATIC)
 	# Set space, so it collides in the same space as current scene.
@@ -939,7 +967,7 @@ func set_collision_layers_and_masks():
 	# - 1 << 3: Layer 4 (movable obstacles layer)
 	# - 1 << 4: Layer 5 (friendly projectiles layer)
 	# - 1 << 5: Layer 6 (enemy projectiles layer)
-	
+
 	PhysicsServer3D.body_set_collision_layer(collider, collision_layer)
 	PhysicsServer3D.body_set_collision_mask(collider, collision_mask)
 
@@ -952,7 +980,7 @@ func _apply_edge_snapping(direction: String) -> Vector3:
 	var blockSize = Vector3(1.0, 1.0, 1.0)
 	var newpos = furniture_transform.get_position()
 	var size: Vector3 = furniture_transform.get_sizeV3()
-	
+
 	# Adjust position based on edgesnapping direction and rotation
 	match direction:
 		"North":
@@ -964,10 +992,10 @@ func _apply_edge_snapping(direction: String) -> Vector3:
 		"West":
 			newpos.x -= blockSize.x / 2 - size.x / 2
 		# Add more cases if needed
-	
+
 	# Consider rotation if necessary
 	newpos = rotate_position_around_block_center(newpos, furniture_transform.get_position())
-	
+
 	return newpos
 
 
@@ -975,17 +1003,17 @@ func _apply_edge_snapping(direction: String) -> Vector3:
 func rotate_position_around_block_center(newpos: Vector3, block_center: Vector3) -> Vector3:
 	# Convert rotation to radians for trigonometric functions
 	var radians = deg_to_rad(furniture_transform.get_rotation())
-	
+
 	# Calculate the offset from the block center
 	var offset = newpos - block_center
-	
+
 	# Apply rotation matrix transformation
 	var rotated_offset = Vector3(
 		offset.x * cos(radians) - offset.z * sin(radians),
 		offset.y,
 		offset.x * sin(radians) + offset.z * cos(radians)
 	)
-	
+
 	# Return the new position
 	return block_center + rotated_offset
 
@@ -1027,7 +1055,7 @@ func free_resources():
 # Function to check if this furniture acts as a door
 func check_door_functionality():
 	is_door = rfurniture.function.door != "None"
-	
+
 	# Ensure the door_state is properly set
 	if furnitureJSON.has("Function") and furnitureJSON["Function"].has("door"):
 		door_state = furnitureJSON["Function"]["door"]
@@ -1042,11 +1070,13 @@ func interact():
 	else:
 		Helper.signal_broker.furniture_interacted.emit(self)
 
+
 # Function to toggle the door state
 func toggle_door():
 	door_state = "Open" if door_state == "Closed" else "Closed"
 	furnitureJSON["Function"] = {"door": door_state}
 	update_door_visuals()
+
 
 # Update the visuals and physics of the door
 func update_door_visuals():
@@ -1071,6 +1101,7 @@ func update_door_visuals():
 
 	apply_transform_to_instance(rotation_angle, position_offset)
 
+
 # Function to apply the door's transformation
 func apply_transform_to_instance(rotation_angle: int, position_offset: Vector3):
 	# Apply transformation for mesh_instance (main visual mesh)
@@ -1079,7 +1110,7 @@ func apply_transform_to_instance(rotation_angle: int, position_offset: Vector3):
 		furniture_transform.get_position() + position_offset  # Apply position offset
 	)
 	RenderingServer.instance_set_transform(mesh_instance, mesh_transform)
-	
+
 	# Apply transformation for quad_instance (sprite) with rotation and sprite-specific offset
 	var sprite_transform = Transform3D(
 		Basis(Vector3(0, 1, 0), deg_to_rad(rotation_angle)),  # Apply rotation
@@ -1102,20 +1133,21 @@ func get_data() -> Dictionary:
 		"rotation": get_my_rotation(),
 	}
 
-	if is_door:
-		newfurniturejson["Function"] = {"door": door_state}
-	
-	# Container functionality
-	if container:
+	# Ensure Function dictionary exists if any function data is to be saved
+	var has_function_data := is_door or container or crafting_container
+	if has_function_data:
 		if "Function" not in newfurniturejson:
 			newfurniturejson["Function"] = {}
-		newfurniturejson["Function"]["container"] = container.serialize()
+		var func_dict = newfurniturejson["Function"]
+		if is_door:
+			func_dict["door"] = door_state
+		if container:
+			func_dict["container"] = container.serialize()
+		if crafting_container:
+			func_dict["crafting_container"] = crafting_container.serialize()
 
-	# Crafting container functionality
-	if crafting_container:
-		if "Function" not in newfurniturejson:
-			newfurniturejson["Function"] = {}
-		newfurniturejson["Function"]["crafting_container"] = crafting_container.serialize()
+	# Save last_processed_minute for time catch-up after reload
+	newfurniturejson["last_processed_minute"] = last_processed_minute
 
 	return newfurniturejson
 
@@ -1124,25 +1156,23 @@ func get_data() -> Dictionary:
 func add_corpse(pos: Vector3):
 	if can_be_destroyed():
 		var newitemjson: Dictionary = {
-			"global_position_x": pos.x,
-			"global_position_y": pos.y,
-			"global_position_z": pos.z
+			"global_position_x": pos.x, "global_position_y": pos.y, "global_position_z": pos.z
 		}
-		
+
 		var myitemgroup = rfurniture.destruction.group
 		if myitemgroup:
 			newitemjson["itemgroups"] = [myitemgroup]
-		
+
 		var newItem: ContainerItem = ContainerItem.new(newitemjson)
 		newItem.add_to_group("mapitems")
-		
+
 		var fursprite = rfurniture.destruction.sprite
 		if fursprite:
 			newItem.set_texture(fursprite)
-		
+
 		# Finally add the new item with possibly set loot group to the tree
 		Helper.map_manager.level_generator.get_tree().get_root().add_child.call_deferred(newItem)
-		
+
 		# Check if inventory has items and insert them into the new item
 		if is_container() and container.get_inventory():
 			for item in container.get_inventory().get_items():
@@ -1184,19 +1214,21 @@ func get_sprite() -> Texture:
 func get_hit(attack_data: Dictionary):
 	var attack: Dictionary = attack_data.get("attack", {})
 	var rattack: RAttack = null
-	
+
 	if attack.has("id"):
 		rattack = Runtimedata.attacks.by_id(attack["id"])
 
 	if not rattack and not attack_data.has("damage"):
 		print_debug("Invalid attack ID:", attack.get("id", ""))
 		return
-	
+
 	# Determine damage based on priority:
 	var damage: float = 0.0
 	if rattack:
 		# 1. Use attack's calculated damage
-		var attack_effects: Dictionary = rattack.get_scaled_attribute_damage(attack.get("damage_multiplier", 1.0))
+		var attack_effects: Dictionary = rattack.get_scaled_attribute_damage(
+			attack.get("damage_multiplier", 1.0)
+		)
 		damage = attack_effects.get("damage", 0)
 	elif attack_data.has("damage"):
 		# 2. Use the direct "damage" value if no attack is present
@@ -1229,10 +1261,8 @@ func _die(do_add_corpse: bool = true):
 		add_corpse(furniture_transform.get_position())  # Add wreck or corpse
 	if is_container():
 		Helper.signal_broker.container_exited_proximity.emit(self)
-	Helper.time_helper.minute_passed.disconnect(on_minute_passed)
-	# Disconnect from signal to stop tracking Y level changes
-	if Helper.signal_broker.player_current_y_level.is_connected(_on_player_y_level_updated):
-		Helper.signal_broker.player_current_y_level.disconnect(_on_player_y_level_updated)
+	if Helper.time_helper.minute_passed.is_connected(on_minute_passed):
+		Helper.time_helper.minute_passed.disconnect(on_minute_passed)
 	free_resources()  # Free resources
 	queue_free()  # Remove the node from the scene tree
 
@@ -1244,16 +1274,17 @@ func show_indicator(text: String, color: Color):
 	label.modulate = color
 	label.font_size = 64
 	Helper.map_manager.level_generator.get_tree().get_root().add_child(label)
-	label.position = furniture_transform.get_position() + Vector3(0, 2, 0)  # Slightly above the furniture
+	label.position = furniture_transform.get_position() + Vector3(0, 0.5, 0)  # Slightly above the furniture
 	label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 
 	# Animate the indicator to disappear quickly
 	var tween = Helper.map_manager.level_generator.create_tween()
 
-	tween.tween_property(label, "modulate:a", 0, 0.5).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
-	tween.finished.connect(func():
-		label.queue_free()  # Properly free the label node
+	tween.tween_property(label, "modulate:a", 0, 0.5).set_trans(Tween.TRANS_LINEAR).set_ease(
+		Tween.EASE_IN_OUT
 	)
+	tween.finished.connect(func(): label.queue_free())  # Properly free the label node
+
 
 # Function to show a hit indicator
 func show_hit_indicator():
@@ -1271,16 +1302,31 @@ func regenerate():
 	if container:
 		container.regenerate()
 
+
 # When this furniture enters the item detector, it means the player is close
 func on_entered_item_detector():
+	is_active = true
+	# Get the current in-game minute when the player comes close
+	var current_minute = Helper.time_helper.get_current_in_game_minutes()
+	# If this is not the first time (last_processed_minute != -1) and time has advanced,
+	# process all missed minutes since last time this furniture was active.
+	# last_processed_minute == -1 means this furniture has never processed time before (first activation)
+	if last_processed_minute != -1 and current_minute != last_processed_minute:
+		var minutes_passed = current_minute - last_processed_minute
+		process_missed_minutes(minutes_passed, Helper.time_helper.get_current_time())
+	# Always update last_processed_minute to the current minute
+	last_processed_minute = current_minute
 	regenerate()
 	if crafting_container and not crafting_container.is_active:
 		crafting_container.activate_crafting()  # Start active crafting
 
+
 # When this furniture exits the item detector, it means the player is away
 func on_exited_item_detector():
+	is_active = false
 	if crafting_container and crafting_container.is_active:
 		crafting_container.deactivate_crafting()  # Stop active crafting
+
 
 func add_crafting_container():
 	if is_crafting_station():
@@ -1289,13 +1335,16 @@ func add_crafting_container():
 		crafting_container.furniture_parent = self
 		crafting_container.crafting_queue_updated.connect(_on_crafting_queue_updated)
 
+
 func deserialize_crafting_container(data: Dictionary):
 	if crafting_container:
 		crafting_container.deserialize(data.get("crafting_container", {}))
 
 
 # Function to transfer an item between containers dynamically
-func transfer_item_between_containers(source_container: Object, item_id: String, quantity: int) -> bool:
+func transfer_item_between_containers(
+	source_container: Object, item_id: String, quantity: int
+) -> bool:
 	# Determine source and target inventories based on the source container type
 	var source_inventory: InventoryStacked
 	var target_inventory: InventoryStacked
@@ -1351,14 +1400,40 @@ func get_item_count_in_container(mycontainer: Object, item_id: String) -> int:
 	return 0
 
 
-# Since this furniture node is not in the tree, we will respond to the 
-# Helper.time_manager.minute_passed signal, which is connected in the 
+# Since this furniture node is not in the tree, we will respond to the
+# Helper.time_manager.minute_passed signal, which is connected in the
 # FurnitureStaticSpawner script.
 func on_minute_passed(current_time: String):
+	if not is_active:
+		return
+	# Get current in-game minute
+	var current_minute = Helper.time_helper.get_current_in_game_minutes()
+	# If this is the first time, just set last_processed_minute
+	if last_processed_minute == -1:
+		last_processed_minute = current_minute
+	# If time has passed, process all missed minutes
+	elif current_minute != last_processed_minute:
+		var minutes_passed = current_minute - last_processed_minute
+		process_missed_minutes(minutes_passed, current_time)
+		last_processed_minute = current_minute
+		return
+	# Normal per-minute processing
 	if crafting_container and crafting_container.is_active:
 		crafting_container.process_active_crafting()
 	if consumption:
 		consumption.on_minute_passed(current_time)
+	last_processed_minute = current_minute
+
+
+func process_missed_minutes(minutes_passed: int, current_time: String):
+	if minutes_passed <= 0:
+		return
+	if crafting_container and crafting_container.is_active:
+		for i in range(minutes_passed):
+			crafting_container.process_active_crafting()
+	if consumption:
+		for i in range(minutes_passed):
+			consumption.on_minute_passed(current_time)
 
 
 # Add an item to the crafting queue. This might happen from a button in the furniture window
@@ -1381,20 +1456,24 @@ func get_furniture_name() -> String:
 
 
 # Get the available amount of the ingredient in the FurnitureContainer inventory.
-func get_available_ingredient_amount(ingredient_id: String) -> int:
+func _get_inventory_counts() -> Dictionary:
 	var inventory = container.get_inventory()
-	var available_amount: int = 0
-	if inventory.has_item_by_id(ingredient_id):
-		var items: Array = inventory.get_items_by_id(ingredient_id)
-		for item in items:
-			available_amount += InventoryStacked.get_item_stack_size(item)
-	return available_amount
+	var counts: Dictionary = {}
+	for item in inventory.get_items():
+		var id = item.prototype_id
+		var stack_size = InventoryStacked.get_item_stack_size(item)
+		counts[id] = counts.get(id, 0) + stack_size
+	return counts
+
+
+func get_available_ingredient_amount(ingredient_id: String) -> int:
+	return _get_inventory_counts().get(ingredient_id, 0)
 
 
 func are_all_ingredients_available(recipe: RItem.CraftRecipe) -> bool:
+	var counts = _get_inventory_counts()
 	for ingredient in recipe.required_resources:
-		var available = get_available_ingredient_amount(ingredient.id)
-		if available < ingredient.amount:
+		if counts.get(ingredient.id, 0) < ingredient.amount:
 			return false
 	return true
 
@@ -1410,7 +1489,7 @@ func transform_into():
 	var chunk: Chunk = spawner.chunk
 	var construction_pos: Vector3 = furniture_transform.get_position()
 	# Decrease y by half the height of the furniture
-	construction_pos.y -= 0.5+furniture_transform.height * 0.5
+	construction_pos.y -= 0.5 + furniture_transform.height * 0.5
 	# Translate the position to negate the chunk's `mypos`
 	construction_pos -= chunk.mypos
 
@@ -1434,10 +1513,7 @@ func transform_into():
 		add_corpse(Helper.overmap_manager.player.get_position())
 
 	# Spawn the furniture instance with or without the "items" property
-	chunk.spawn_furniture({
-		"json": furniture_json,
-		"pos": construction_pos
-	})
+	chunk.spawn_furniture({"json": furniture_json, "pos": construction_pos})
 
 	# Remove the instance afterwards and don't add a corpse
 	_die(false)
@@ -1451,11 +1527,13 @@ func add_item_to_inventory(item_id: String, quantity: int) -> bool:
 		return true
 	return false
 
+
 # Returns the y position of the furniture.
 # If 'snapped' is true, it returns the y position snapped to the nearest integer.
 func get_y_position(is_snapped: bool = false) -> float:
 	var y_pos = furniture_transform.posy
 	return round(y_pos) if is_snapped else y_pos
+
 
 # Hides all visual elements of the furniture (mesh, sprite, container sprite)
 func hide_visuals():
@@ -1467,6 +1545,7 @@ func hide_visuals():
 		RenderingServer.instance_set_visible(container.sprite_instance, false)
 	is_hidden = true
 
+
 # Shows all visual elements of the furniture (mesh, sprite, container sprite)
 func show_visuals():
 	if not mesh_instance == null:
@@ -1476,11 +1555,6 @@ func show_visuals():
 	if not container == null and not container.sprite_instance == null:
 		RenderingServer.instance_set_visible(container.sprite_instance, true)
 	is_hidden = false
-
-
-# ✅ Handles player Y level update and updates furniture visibility
-func _on_player_y_level_updated(_old_y_level: float, new_y_level: float):
-	refresh_visibility(new_y_level)
 
 
 func refresh_visibility(new_y_level: float):

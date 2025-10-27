@@ -5,42 +5,41 @@ extends RefCounted
 # This script is intended to be used inside the GameData autoload singleton
 # This script handles data for one map. You can access it trough Gamedata.mods.by_id("Core").maps
 
-
 # Example map data:
 #{
 #	"areas": [
 #	{
-#	    "id": "base_layer",
-#	    "rotate_random": false,
-#	    "spawn_chance": 100,
-#	    "tiles": [
-#	    	{ "id": "grass_plain_01", "count": 100 },
-#	    	{ "id": "grass_dirt_00", "count": 15 }
-#	    ],
-#	    "entities": []
+#		"id": "base_layer",
+#		"rotate_random": false,
+#		"spawn_chance": 100,
+#		"tiles": [
+#			{ "id": "grass_plain_01", "count": 100 },
+#			{ "id": "grass_dirt_00", "count": 15 }
+#		],
+#		"entities": []
 #	},
 #	{
-#	    "id": "sparse_trees",
-#	    "rotate_random": true,
-#	    "spawn_chance": 30,
-#	    "tiles": [
-#	    	{ "id": "null", "count": 1000 }
-#	    ],
-#	    "entities": [
-#	    	{ "id": "Tree_00", "type": "furniture", "count": 1 },
-#	    	{ "id": "WillowTree_00", "type": "furniture", "count": 1 }
-#	    ]
+#		"id": "sparse_trees",
+#		"rotate_random": true,
+#		"spawn_chance": 30,
+#		"tiles": [
+#			{ "id": "null", "count": 1000 }
+#		],
+#		"entities": [
+#			{ "id": "Tree_00", "type": "furniture", "count": 1 },
+#			{ "id": "WillowTree_00", "type": "furniture", "count": 1 }
+#		]
 #	},
 #	{
-#	    "id": "generic_field_finds",
-#	    "rotate_random": false,
-#	    "spawn_chance": 50,
-#	    "tiles": [
-#	    	{ "id": "null", "count": 500 }
-#	    ],
-#	    "entities": [
-#	    	{ "id": "generic_field_finds", "type": "itemgroup", "count": 1 }
-#	    ]
+#		"id": "generic_field_finds",
+#		"rotate_random": false,
+#		"spawn_chance": 50,
+#		"tiles": [
+#			{ "id": "null", "count": 500 }
+#		],
+#		"entities": [
+#			{ "id": "generic_field_finds", "type": "itemgroup", "count": 1 }
+#		]
 #	}
 #	],
 #	"categories": ["Field", "Plains"],
@@ -55,24 +54,24 @@ extends RefCounted
 #	"levels": [
 #		[], [], [], [], [], [], [], [], [], [],
 #	[
-#	    {
-#	    "id": "grass_medium_dirt_01",
-#	    "rotation": 180,
-#	    "areas": [
-#	        { "id": "base_layer", "rotation": 0 },
-#	        { "id": "sparse_trees", "rotation": 0 },
-#	        { "id": "generic_field_finds", "rotation": 0 }
-#	    ]
-#	    },
-#	    {
-#	    "id": "grass_plain_01",
-#	    "rotation": 90,
-#	    "areas": [
-#	        { "id": "base_layer", "rotation": 0 },
-#	        { "id": "sparse_trees", "rotation": 0 },
-#	        { "id": "generic_field_finds", "rotation": 0 }
-#	    ]
-#	    }
+#		{
+#		"id": "grass_medium_dirt_01",
+#		"rotation": 180,
+#		"areas": [
+#			{ "id": "base_layer", "rotation": 0 },
+#			{ "id": "sparse_trees", "rotation": 0 },
+#			{ "id": "generic_field_finds", "rotation": 0 }
+#		]
+#		},
+#		{
+#		"id": "grass_plain_01",
+#		"rotation": 90,
+#		"areas": [
+#			{ "id": "base_layer", "rotation": 0 },
+#			{ "id": "sparse_trees", "rotation": 0 },
+#			{ "id": "generic_field_finds", "rotation": 0 }
+#		]
+#		}
 #	]
 #	],
 #	"mapheight": 32,
@@ -83,18 +82,22 @@ extends RefCounted
 
 var id: String = "":
 	set(newid):
-		id = newid.replace(".json", "") # In case the filename is passed, we remove json
+		id = newid.replace(".json", "")  # In case the filename is passed, we remove json
 var name: String = ""
 var description: String = ""
-var categories: Array = [] # example: "categories": ["Buildings","Urban","City"]
+var categories: Array = []  # example: "categories": ["Buildings","Urban","City"]
 var weight: int = 1000
 var mapwidth: int = 32
 var mapheight: int = 32
-var levels: Array = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+var levels: Array = [
+	[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []
+]
 var areas: Array = []
 var sprite: Texture = null
- # Variable to store connections. For example: {"south": "road","west": "ground"} default to ground
-var connections: Dictionary = {"north": "ground","east": "ground","south": "ground","west": "ground"}
+# Variable to store connections. For example: {"south": "road","west": "ground"} default to ground
+var connections: Dictionary = {
+	"north": "ground", "east": "ground", "south": "ground", "west": "ground"
+}
 var dataPath: String
 var parent: DMaps
 
@@ -113,14 +116,12 @@ class area:
 # TODO: Implement this into the script
 class maptile:
 	# Only a reference to an area, not an instance of an area. Can have "id" and "rotation"
-	var areas: Array = [] 
-	var id: String = "" # The id of the tile
+	var areas: Array = []
+	var id: String = ""  # The id of the tile
 	var rotation: int = 0
-	# Furniture, Mob and Itemgroups are mutually exclusive. Only one can exist at a time
-	var furniture: String = ""
-	var mob: String = ""
-	var mobgroup: String = ""  # Add mobgroup support
-	var itemgroups: Array = []
+	# Unified feature structure for this tile. Holds furniture, mobs, mobgroups
+	# and itemgroups in a single dictionary.
+	var feature: Dictionary = {}
 
 
 func _init(newid: String, newdataPath: String, myparent: DMaps):
@@ -136,7 +137,13 @@ func set_data(newdata: Dictionary) -> void:
 	weight = newdata.get("weight", 1000)
 	mapwidth = newdata.get("mapwidth", 32)
 	mapheight = newdata.get("mapheight", 32)
-	levels = newdata.get("levels", [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]])
+	# Convert legacy level data to the unified feature dictionary
+	levels = _convert_levels_legacy_to_feature(
+		newdata.get(
+			"levels",
+			[[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], []]
+		)
+	)
 	areas = newdata.get("areas", [])
 	connections = newdata.get("connections", {})  # Set connections from data if present
 
@@ -151,7 +158,8 @@ func get_data() -> Dictionary:
 	mydata["weight"] = weight
 	mydata["mapwidth"] = mapwidth
 	mydata["mapheight"] = mapheight
-	mydata["levels"] = levels
+	# Strip empty feature entries when saving
+	mydata["levels"] = _convert_levels_feature_for_save(levels)
 	if not areas.is_empty():
 		mydata["areas"] = areas
 	if not connections.is_empty():  # Omit connections if empty
@@ -161,7 +169,7 @@ func get_data() -> Dictionary:
 
 func load_data_from_disk():
 	set_data(Helper.json_helper.load_json_dictionary_file(get_file_path()))
-	sprite = load(get_sprite_path()) 
+	sprite = load(get_sprite_path())
 
 
 func save_data_to_disk() -> void:
@@ -171,17 +179,21 @@ func save_data_to_disk() -> void:
 
 func get_filename() -> String:
 	return id + ".json"
-	
+
+
 func get_file_path() -> String:
 	return dataPath + get_filename()
-	
+
+
 func get_sprite_path() -> String:
 	return get_file_path().replace(".json", ".png")
 
 
 # This will remove this map from the tacticalmap in every mod that has it.
 func remove_self_from_tacticalmap(tacticalmap_id: String) -> void:
-	var all_results: Array = Gamedata.mods.get_all_content_by_id(DMod.ContentType.MAPS, tacticalmap_id)
+	var all_results: Array = Gamedata.mods.get_all_content_by_id(
+		DMod.ContentType.TACTICALMAPS, tacticalmap_id
+	)
 	if all_results.size() > 0:
 		for result: DTacticalmap in all_results:
 			result.remove_chunk_by_mapid(id)
@@ -199,7 +211,7 @@ func delete_files():
 	if dir.file_exists(png_file_path):
 		dir.remove(id + ".png")
 		dir.remove(id + ".png.import")
-	
+
 
 # We remove ourselves from the filesystem and the parent maplist
 # After this, the map is deleted from the current mod that the parent maplist is a part of
@@ -212,7 +224,7 @@ func delete():
 	var all_results: Array = Gamedata.mods.get_all_content_by_id(DMod.ContentType.MAPS, id)
 	if all_results.size() > 0:
 		return
-	
+
 	var myreferences: Dictionary = parent.references.get(id, {})
 	# Remove this map from the tacticalmaps in this map's references
 	for ref in myreferences.get("tacticalmaps", []):
@@ -221,95 +233,127 @@ func delete():
 	# Remove this map from the overmapareas in this map's references
 	for ref in myreferences.get("overmapareas", []):
 		var myareas: Array = Gamedata.mods.get_all_content_by_id(DMod.ContentType.OVERMAPAREAS, ref)
+		if myareas.is_empty():
+			print_debug("Missing overmap area '" + ref + "' while deleting map '" + id + "'")
 		for area: DOvermaparea in myareas:
 			area.remove_map_from_all_regions(id)
-	
+
+		# Remove this map from NPC spawn lists
+	for npc_id in myreferences.get("npcs", []):
+		var npcs: Array = Gamedata.mods.get_all_content_by_id(DMod.ContentType.NPCS, npc_id)
+		if npcs.is_empty():
+			print_debug("Missing NPC '" + npc_id + "' while deleting map '" + id + "'")
+		for npc: DNpc in npcs:
+			npc.remove_map_from_spawn_maps(id)
+
+	# Remove this map from quests
+	for quest_id in myreferences.get("quests", []):
+		var quests: Array = Gamedata.mods.get_all_content_by_id(DMod.ContentType.QUESTS, quest_id)
+		if quests.is_empty():
+			print_debug("Missing quest '" + quest_id + "' while deleting map '" + id + "'")
+		for quest: DQuest in quests:
+			quest.remove_steps_by_map(id)
+
 	remove_my_reference_from_all_entities()
+
+	# Remove entry from references.json and save
+	parent.references.erase(id)
+	Gamedata.mods.save_references(parent)
 
 
 func remove_my_reference_from_all_entities() -> void:
 	# Collect unique entities from mapdata
 	var entities = collect_unique_entities(DMap.new(id, dataPath, parent))
-	var unique_entities = entities["new_entities"]
+	var unique_entities: Dictionary = entities["new_entities"]
 
-	# Remove references for unique entities
-	for entity_type in unique_entities.keys():
-		for entity_id in unique_entities[entity_type]:
-			if entity_type == "furniture":
-				Gamedata.mods.remove_reference(DMod.ContentType.FURNITURES,entity_id,DMod.ContentType.MAPS,id)
-			elif entity_type == "tiles":
-				Gamedata.mods.remove_reference(DMod.ContentType.TILES,entity_id,DMod.ContentType.MAPS,id)
-			elif entity_type == "mobs":
-				Gamedata.mods.remove_reference(DMod.ContentType.MOBS, entity_id, DMod.ContentType.MAPS, id)
-			elif entity_type == "itemgroups":
-				Gamedata.mods.remove_reference(DMod.ContentType.ITEMGROUPS, entity_id, DMod.ContentType.MAPS, id)
+	# Remove references for feature entries
+	for feature in unique_entities.get("features", []):
+		match feature["type"]:
+			"furniture":
+				Gamedata.mods.remove_reference(
+					DMod.ContentType.FURNITURES, feature["id"], DMod.ContentType.MAPS, id
+				)
+			"mob":
+				Gamedata.mods.remove_reference(
+					DMod.ContentType.MOBS, feature["id"], DMod.ContentType.MAPS, id
+				)
+			"mobgroup":
+				Gamedata.mods.remove_reference(
+					DMod.ContentType.MOBGROUPS, feature["id"], DMod.ContentType.MAPS, id
+				)
+			"itemgroup":
+				Gamedata.mods.remove_reference(
+					DMod.ContentType.ITEMGROUPS, feature["id"], DMod.ContentType.MAPS, id
+				)
+
+	# Remove tile references
+	for tile_id in unique_entities.get("tiles", []):
+		Gamedata.mods.remove_reference(DMod.ContentType.TILES, tile_id, DMod.ContentType.MAPS, id)
 
 
 # Function to update map entity references when a map's data changes
 func data_changed(oldmap: DMap):
 	# Collect unique entities from both new and old data
 	var entities = collect_unique_entities(oldmap)
-	var new_entities = entities["new_entities"]
-	var old_entities = entities["old_entities"]
+	var new_entities: Dictionary = entities["new_entities"]
+	var old_entities: Dictionary = entities["old_entities"]
 
-	# Add references for new entities
-	for entity_type in new_entities.keys():
-		if entity_type == "furniture":
-			for entity_id in new_entities[entity_type]:
-				Gamedata.mods.add_reference(DMod.ContentType.FURNITURES,entity_id,DMod.ContentType.MAPS,id)
-		elif entity_type == "tiles":
-			for entity_id in new_entities[entity_type]:
-				Gamedata.mods.add_reference(DMod.ContentType.TILES,entity_id,DMod.ContentType.MAPS,id)
-		elif entity_type == "mobs":
-			for entity_id in new_entities[entity_type]:
-				Gamedata.mods.add_reference(DMod.ContentType.MOBS, entity_id, DMod.ContentType.MAPS, id)
-		elif entity_type == "mobgroups":  # Handle mobgroup references
-			for entity_id in new_entities[entity_type]:
-				Gamedata.mods.add_reference(DMod.ContentType.MOBGROUPS, entity_id, DMod.ContentType.MAPS, id)
-		elif entity_type == "itemgroups":
-			for entity_id in new_entities[entity_type]:
-				Gamedata.mods.add_reference(DMod.ContentType.ITEMGROUPS, entity_id, DMod.ContentType.MAPS, id)
+	# Add references for new features
+	for feature in new_entities.get("features", []):
+		match feature["type"]:
+			"furniture":
+				Gamedata.mods.add_reference(
+					DMod.ContentType.FURNITURES, feature["id"], DMod.ContentType.MAPS, id
+				)
+			"mob":
+				Gamedata.mods.add_reference(
+					DMod.ContentType.MOBS, feature["id"], DMod.ContentType.MAPS, id
+				)
+			"mobgroup":
+				Gamedata.mods.add_reference(
+					DMod.ContentType.MOBGROUPS, feature["id"], DMod.ContentType.MAPS, id
+				)
+			"itemgroup":
+				Gamedata.mods.add_reference(
+					DMod.ContentType.ITEMGROUPS, feature["id"], DMod.ContentType.MAPS, id
+				)
+
+	# Add references for new tiles
+	for tile_id in new_entities.get("tiles", []):
+		Gamedata.mods.add_reference(DMod.ContentType.TILES, tile_id, DMod.ContentType.MAPS, id)
 
 	# Remove references for entities not present in new data
-	for entity_type in old_entities.keys():
-		if entity_type == "furniture":
-			for entity_id in old_entities[entity_type]:
-				if not new_entities[entity_type].has(entity_id):
-					Gamedata.mods.remove_reference(DMod.ContentType.FURNITURES,entity_id,DMod.ContentType.MAPS,id)
-		elif entity_type == "tiles":
-			for entity_id in old_entities[entity_type]:
-				if not new_entities[entity_type].has(entity_id):
-					Gamedata.mods.remove_reference(DMod.ContentType.TILES,entity_id,DMod.ContentType.MAPS,id)
-		elif entity_type == "itemgroups":
-			for entity_id in old_entities[entity_type]:
-				if not new_entities[entity_type].has(entity_id):
-					Gamedata.mods.remove_reference(DMod.ContentType.ITEMGROUPS, entity_id,DMod.ContentType.MAPS,id)
-		elif entity_type == "mobs":
-			for entity_id in old_entities[entity_type]:
-				if not new_entities[entity_type].has(entity_id):
-					Gamedata.mods.remove_reference(DMod.ContentType.MOBS, entity_id, DMod.ContentType.MAPS, id)
-		elif entity_type == "mobgroups":  # Remove mobgroup references
-			for entity_id in old_entities[entity_type]:
-				if not new_entities[entity_type].has(entity_id):
-					Gamedata.mods.remove_reference(DMod.ContentType.MOBGROUPS, entity_id, DMod.ContentType.MAPS, id)
+	for feature in old_entities.get("features", []):
+		if not _feature_exists(new_entities.get("features", []), feature):
+			match feature["type"]:
+				"furniture":
+					Gamedata.mods.remove_reference(
+						DMod.ContentType.FURNITURES, feature["id"], DMod.ContentType.MAPS, id
+					)
+				"mob":
+					Gamedata.mods.remove_reference(
+						DMod.ContentType.MOBS, feature["id"], DMod.ContentType.MAPS, id
+					)
+				"mobgroup":
+					Gamedata.mods.remove_reference(
+						DMod.ContentType.MOBGROUPS, feature["id"], DMod.ContentType.MAPS, id
+					)
+				"itemgroup":
+					Gamedata.mods.remove_reference(
+						DMod.ContentType.ITEMGROUPS, feature["id"], DMod.ContentType.MAPS, id
+					)
+
+	for tile_id in old_entities.get("tiles", []):
+		if not new_entities.get("tiles", []).has(tile_id):
+			Gamedata.mods.remove_reference(
+				DMod.ContentType.TILES, tile_id, DMod.ContentType.MAPS, id
+			)
 
 
 # Function to collect unique entities from each level in newdata and olddata
 func collect_unique_entities(oldmap: DMap) -> Dictionary:
-	var new_entities = {
-		"mobs": [],
-		"mobgroups": [],  # Add mobgroup
-		"furniture": [],
-		"itemgroups": [],
-		"tiles": []
-	}
-	var old_entities = {
-		"mobs": [],
-		"mobgroups": [],  # Add mobgroup
-		"furniture": [],
-		"itemgroups": [],
-		"tiles": []
-	}
+	var new_entities = {"features": [], "tiles": []}
+	var old_entities = {"features": [], "tiles": []}
 
 	# Collect entities from newdata
 	for level in levels:
@@ -326,7 +370,7 @@ func collect_unique_entities(oldmap: DMap) -> Dictionary:
 	# Collect entities from olddata
 	for myarea in oldmap.areas:
 		add_entities_in_area_to_set(myarea, old_entities)
-	
+
 	return {"new_entities": new_entities, "old_entities": old_entities}
 
 
@@ -334,19 +378,12 @@ func collect_unique_entities(oldmap: DMap) -> Dictionary:
 func add_entities_in_area_to_set(myarea: Dictionary, entity_set: Dictionary):
 	if myarea.has("entities"):
 		for entity in myarea["entities"]:
-			match entity["type"]:
-				"mob":
-					if not entity_set["mobs"].has(entity["id"]):
-						entity_set["mobs"].append(entity["id"])
-				"mobgroup":
-					if not entity_set["mobgroups"].has(entity["id"]):
-						entity_set["mobgroups"].append(entity["id"])
-				"furniture":
-					if not entity_set["furniture"].has(entity["id"]):
-						entity_set["furniture"].append(entity["id"])
+			var feature_type: String = entity.get("type", "")
+			match feature_type:
+				"mob", "mobgroup", "furniture":
+					_add_feature_to_set(entity_set, feature_type, entity.get("id", ""))
 				"itemgroup":
-					if not entity_set["itemgroups"].has(entity["id"]):
-						entity_set["itemgroups"].append(entity["id"])
+					_add_feature_to_set(entity_set, "itemgroup", entity.get("id", ""))
 
 	if myarea.has("tiles"):
 		for tile in myarea["tiles"]:
@@ -358,30 +395,46 @@ func add_entities_in_area_to_set(myarea: Dictionary, entity_set: Dictionary):
 # Helper function to add entities to the respective sets
 func add_entities_to_set(level: Array, entity_set: Dictionary):
 	for entity in level:
-		if entity.has("mob") and not entity_set["mobs"].has(entity["mob"]["id"]):
-			entity_set["mobs"].append(entity["mob"]["id"])
-		if entity.has("mobgroup") and not entity_set["mobgroups"].has(entity["mobgroup"]["id"]):  # Add mobgroup
-			entity_set["mobgroups"].append(entity["mobgroup"]["id"])
-		if entity.has("furniture"):
-			if not entity_set["furniture"].has(entity["furniture"]["id"]):
-				entity_set["furniture"].append(entity["furniture"]["id"])
-			# Add unique itemgroups from furniture
-			if entity["furniture"].has("itemgroups"):
-				for itemgroup in entity["furniture"]["itemgroups"]:
-					if not entity_set["itemgroups"].has(itemgroup):
-						entity_set["itemgroups"].append(itemgroup)
-		if entity.has("id") and not entity_set["tiles"].has(entity["id"]) and not entity["id"] == "":
-			entity_set["tiles"].append(entity["id"])
-		# Add unique itemgroups directly from the entity
-		if entity.has("itemgroups"):
-			for itemgroup in entity["itemgroups"]:
-				if not entity_set["itemgroups"].has(itemgroup):
-					entity_set["itemgroups"].append(itemgroup)
+		if entity.has("feature"):
+			var feature: Dictionary = entity["feature"]
+			var ftype: String = feature.get("type", "")
+			match ftype:
+				"mob", "mobgroup", "furniture":
+					var fid: String = feature.get("id", "")
+					if fid != "":
+						_add_feature_to_set(entity_set, ftype, fid)
+					if feature.has("itemgroups"):
+						for itemgroup in feature["itemgroups"]:
+							_add_feature_to_set(entity_set, "itemgroup", itemgroup)
+				"itemgroup":
+					for itemgroup in feature.get("itemgroups", []):
+						_add_feature_to_set(entity_set, "itemgroup", itemgroup)
+
+
+# Helper to add a feature id to the entity_set if it doesn't exist yet
+func _add_feature_to_set(entity_set: Dictionary, ftype: String, fid: String) -> void:
+	if fid == "":
+		return
+	for existing in entity_set["features"]:
+		if existing["type"] == ftype and existing["id"] == fid:
+			return
+	entity_set["features"].append({"type": ftype, "id": fid})
+
+
+# Helper to check if a feature entry exists in a list
+func _feature_exists(feature_list: Array, feature: Dictionary) -> bool:
+	for f in feature_list:
+		if (
+			f.get("type", "") == feature.get("type", "")
+			and f.get("id", "") == feature.get("id", "")
+		):
+			return true
+	return false
 
 
 # Removes all instances of the provided entity from the map
-# entity_type can be "tile", "furniture", "itemgroup" or "mob"
-# entity_id is the id of the tile, furniture, itemgroup or mob
+# entity_type can be "tile" or a feature type ("furniture", "mob", "mobgroup", "itemgroup")
+# entity_id is the id of the tile or feature
 func remove_entity_from_map(entity_type: String, entity_id: String) -> void:
 	# Translate the type to the actual key that we need
 	if entity_type == "tile":
@@ -392,47 +445,40 @@ func remove_entity_from_map(entity_type: String, entity_id: String) -> void:
 
 
 # Removes all instances of the provided entity from the levels
-# entity_type can be "tile", "furniture", "itemgroup" or "mob"
-# entity_id is the id of the tile, furniture, itemgroup or mob
+# entity_type can be "tile" or a feature type ("furniture", "mob", "mobgroup", "itemgroup")
+# entity_id is the id of the tile or feature
 func remove_entity_from_levels(entity_type: String, entity_id: String) -> void:
-	# Iterate over each level in the map
 	for level in levels:
-		# Iterate through each entity in the level
 		for entity_index in range(level.size()):
-			var entity = level[entity_index]
+			var entity: Dictionary = level[entity_index]
 
 			match entity_type:
 				"id":
-					# Check if the entity's 'id' matches and replace the entire entity with an empty object
 					if entity.get("id", "") == entity_id:
-						level[entity_index] = {}  # Replacing entity with an empty object
-				"furniture":
-					# Check if the entity has 'furniture' and the 'id' within it matches
-					if entity.has("furniture") and entity["furniture"].get("id", "") == entity_id:
-						entity.erase("furniture")  # Removing the furniture object from the entity
-				"mob":
-					# Check if the entity has 'mob' and the 'id' within it matches
-					if entity.has("mob") and entity["mob"].get("id", "") == entity_id:
-						entity.erase("mob")  # Removing the mob object from the entity
-				"mobgroup":
-					# Check if the entity has 'mobgroup' and matches the given ID
-					if entity.has("mobgroup") and entity["mobgroup"].get("id", "") == entity_id:
-						entity.erase("mobgroup")  # Remove mobgroup from the entity
+						level[entity_index] = {}
+				"furniture", "mob", "mobgroup":
+					if (
+						entity.get("feature", {}).get("type", "") == entity_type
+						and entity["feature"].get("id", "") == entity_id
+					):
+						entity.erase("feature")
 				"itemgroup":
-					# Check if the entity has 'furniture' and 'itemgroups', then remove the itemgroup
-					if entity.has("furniture") and entity["furniture"].has("itemgroups"):
-						var itemgroups = entity["furniture"]["itemgroups"]
-						if itemgroups.has(entity_id):
-							itemgroups.erase(entity_id)
-							if itemgroups.size() == 0:
-								entity["furniture"].erase("itemgroups")
-					# Also, check and remove itemgroups from the entity itself if present
-					if entity.has("itemgroups"):
-						var entity_itemgroups = entity["itemgroups"]
-						if entity_itemgroups.has(entity_id):
-							entity_itemgroups.erase(entity_id)
-							if entity_itemgroups.size() == 0:
-								entity.erase("itemgroups")
+					if entity.has("feature"):
+						var feature = entity["feature"]
+						if feature.get("type", "") == "itemgroup":
+							var groups: Array = feature.get("itemgroups", [])
+							if groups.has(entity_id):
+								groups.erase(entity_id)
+								if groups.is_empty():
+									entity.erase("feature")
+								else:
+									feature["itemgroups"] = groups
+						elif feature.get("type", "") == "furniture" and feature.has("itemgroups"):
+							var groups_f: Array = feature["itemgroups"]
+							if groups_f.has(entity_id):
+								groups_f.erase(entity_id)
+								if groups_f.is_empty():
+									feature.erase("itemgroups")
 
 
 # Function to erase an entity from every area
@@ -441,18 +487,19 @@ func erase_entity_from_areas(entity_type: String, entity_id: String) -> void:
 		match entity_type:
 			"tile":
 				if myarea.has("tiles"):
-					myarea["tiles"] = myarea["tiles"].filter(func(tile):
-						return tile["id"] != entity_id
+					myarea["tiles"] = myarea["tiles"].filter(
+						func(tile): return tile["id"] != entity_id
 					)
 			"furniture", "mob", "mobgroup", "itemgroup":
 				if myarea.has("entities"):
-					myarea["entities"] = myarea["entities"].filter(func(entity):
-						return not (entity["type"] == entity_type and entity["id"] == entity_id)
+					myarea["entities"] = myarea["entities"].filter(
+						func(entity):
+							return not (entity["type"] == entity_type and entity["id"] == entity_id)
 					)
 
 
 # Function to remove a area from mapData.areas by its id
-func remove_area(area_id: String) -> void:	
+func remove_area(area_id: String) -> void:
 	# Iterate through the areas array to find and remove the area by id
 	for i in range(areas.size()):
 		if areas[i]["id"] == area_id:
@@ -465,7 +512,7 @@ func set_connection(direction: String, value: String) -> void:
 	# Ensure the connections dictionary has an entry for the specified direction (e.g., "north", "south").
 	if not connections.has(direction):
 		connections[direction] = "ground"  # Default to "ground" if not already set.
-	
+
 	# Assign the provided connection type (e.g., "road", "ground") to the specified direction.
 	connections[direction] = value
 
@@ -475,6 +522,86 @@ func get_connection(direction: String) -> String:
 	# Return "ground" if connections dictionary is empty or the direction is not found.
 	if connections.is_empty() or not connections.has(direction):
 		return "ground"
-	
+
 	# Return the connection type for the specified direction (e.g., "road" or "ground").
 	return connections[direction]
+
+
+# --- Helper functions for tile feature conversion ---
+
+
+# Converts legacy tile dictionaries to use the `feature` dictionary structure
+# A legacy tile looks like this:
+#	{
+#		"areas": [
+#			{
+#				"id": "floor_bedroom",
+#				"rotation": 0.0
+#			}
+#		],
+#		"furniture": {
+#			"id": "door_wood",
+#			"rotation": 180.0
+#		},
+#		"id": "floor_wood_boards_05",
+#		"rotation": 180.0
+#	},
+func _legacy_tile_to_feature(tile: Dictionary) -> Dictionary:
+	if tile.has("feature"):
+		return tile
+
+	if tile.has("furniture"):
+		var f = tile["furniture"]
+		tile["feature"] = {
+			"type": "furniture", "id": f.get("id", ""), "rotation": f.get("rotation", 0)
+		}
+		if f.has("itemgroups"):
+			tile["feature"]["itemgroups"] = f["itemgroups"]
+		tile.erase("furniture")
+
+	elif tile.has("mob"):
+		var m = tile["mob"]
+		tile["feature"] = {"type": "mob", "id": m.get("id", ""), "rotation": m.get("rotation", 0)}
+		tile.erase("mob")
+
+	elif tile.has("mobgroup"):
+		var mg = tile["mobgroup"]
+		tile["feature"] = {
+			"type": "mobgroup", "id": mg.get("id", ""), "rotation": mg.get("rotation", 0)
+		}
+		tile.erase("mobgroup")
+
+	elif tile.has("itemgroups"):
+		var groups = tile["itemgroups"]
+		tile["feature"] = {
+			"type": "itemgroup", "itemgroups": groups, "rotation": tile.get("rotation", 0)  # No per-itemgroup rotation, fallback to tile
+		}
+		tile.erase("itemgroups")
+
+	return tile
+
+
+# Applies legacy conversion to all tiles within all levels
+func _convert_levels_legacy_to_feature(raw_levels: Array) -> Array:
+	var converted: Array = []
+	for level in raw_levels:
+		var new_level: Array = []
+		for tile in level:
+			var t: Dictionary = tile.duplicate()
+			new_level.append(_legacy_tile_to_feature(t))
+		converted.append(new_level)
+	return converted
+
+
+# Prepares levels for saving by omitting empty `feature` entries
+func _convert_levels_feature_for_save(in_levels: Array) -> Array:
+	var result: Array = []
+	for level in in_levels:
+		var new_level: Array = []
+		for tile in level:
+			var t: Dictionary = tile.duplicate()
+			if t.has("feature") and t["feature"].is_empty():
+				t.erase("feature")
+			new_level.append(t)
+		result.append(new_level)
+	return result

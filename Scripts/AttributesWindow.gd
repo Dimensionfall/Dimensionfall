@@ -1,10 +1,11 @@
 extends Control
+class_name AttributesWindow
 
 # This script controls the attribute window
 # The attribute window shows stats about the player like food, water, stamina
 
 # These are references to the containers in the UI where stats and skills are displayed
-@export var attributeContainer: VBoxContainer
+@export var attribute_container: VBoxContainer
 var player_instance: CharacterBody3D
 
 # Dictionary to store the AttributeDisplay instances by attribute ID
@@ -89,16 +90,16 @@ func _on_player_attribute_changed(player_node: CharacterBody3D, attr: PlayerAttr
 			# Create a new display if it doesn't exist
 			var display = AttributeDisplay.new(attr)
 			attribute_displays[attr.id] = display
-			attributeContainer.add_child(display.hbox)
+			attribute_container.add_child(display.hbox)
 	else:  # If the entire player attributes need to be refreshed
-		clear_container(attributeContainer)  # Clear existing content
+		clear_container(attribute_container)  # Clear existing content
 		attribute_displays.clear()  # Clear existing displays
 		var playerattributes = player_node.attributes
 		for attribute: PlayerAttribute in playerattributes.values():
 			if attribute.default_mode:
 				var display = AttributeDisplay.new(attribute)
 				attribute_displays[attribute.id] = display
-				attributeContainer.add_child(display.hbox)
+				attribute_container.add_child(display.hbox)
 				# Update only the specific attribute display
 				attribute_displays[attribute.id].update(attribute)
 

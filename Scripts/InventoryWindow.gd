@@ -6,34 +6,39 @@ extends Control
 @export var proximity_inventory_control: Control
 
 # The node that visualizes the player inventory
-@export var inventory_control : Control
+@export var inventory_control: Control
 # The player inventory
-@export var inventory : InventoryStacked
+@export var inventory: InventoryStacked
 # Holds a list of containers represented by their sprite
-@export var containerList : VBoxContainer
-@export var containerListItem : PackedScene
+@export var containerList: VBoxContainer
+@export var containerListItem: PackedScene
 
 # Equipment
-@export var EquipmentSlotList : VBoxContainer
-@export var WearableSlotScene : PackedScene
-@export var LeftHandEquipmentSlot : Control
-@export var RightHandEquipmentSlot : Control
+@export var EquipmentSlotList: VBoxContainer
+@export var WearableSlotScene: PackedScene
+@export var LeftHandEquipmentSlot: Control
+@export var RightHandEquipmentSlot: Control
 
 # The tooltip will show when the player hovers over an item
 @export var tooltip: Control
 var is_showing_tooltip = false
-@export var tooltip_item_name : Label
-@export var tooltip_item_description : Label
+@export var tooltip_item_name: Label
+@export var tooltip_item_description: Label
 @export var tool_tip_description_panel: Panel
 
+@export var close_button: Button = null
+var input_action: String = "toggle_inventory"  # What action is used to show/hide this
+
+# Add a transparent drop zone overlay to catch drag-and-drop outside inventory
+@export var drop_zone_overlay: Control = null
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setup_inventory_controls()
-	
-	LeftHandEquipmentSlot.myInventory = inventory
-	RightHandEquipmentSlot.myInventory = inventory
+
+	LeftHandEquipmentSlot.my_inventory = inventory
+	RightHandEquipmentSlot.my_inventory = inventory
 	instantiate_wearable_slots()
 	equip_loaded_items()
 	# We let the signal broker forward the change in visibility so other nodes can respond
@@ -41,21 +46,48 @@ func _ready():
 	Helper.signal_broker.container_entered_proximity.connect(_on_container_entered_proximity)
 	Helper.signal_broker.container_exited_proximity.connect(_on_container_exited_proximity)
 
+	if close_button:  # Connect close button to hide the window
+		close_button.pressed.connect(_on_close_button_pressed)
+
+	# Connect drop_items signal from both inventory controls
+	if inventory_control.has_signal("drop_items"):
+		inventory_control.drop_items.connect(_on_drop_items)
+	if proximity_inventory_control.has_signal("drop_items"):
+		proximity_inventory_control.drop_items.connect(_on_drop_items)
+	# Setup drop zone overlay for drag-outside-to-drop
+	if drop_zone_overlay:
+		# Forward drag-and-drop events to the overlay so it can handle drops outside inventory grids
+		drop_zone_overlay.set_drag_forwarding(
+			Callable(), _on_drop_zone_overlay_can_drop_data, _on_drop_zone_overlay_drop_data
+		)
+
+
+func _on_close_button_pressed():
+	visible = false
+
+
+func _input(event):
+	# Check if we need to hide based on what input action the child window uses
+	if input_action != "" and event.is_action_pressed(input_action):
+		visible = not visible
+
 
 # Setup player and proximity inventories
 func setup_inventory_controls():
 	inventory = ItemManager.playerInventory
 	proximity_inventory = ItemManager.proximityInventory
-	
+
 	initialize_inventory_control(inventory_control, inventory)
 	initialize_inventory_control(proximity_inventory_control, proximity_inventory)
 
+
 func initialize_inventory_control(control: Control, inv: InventoryStacked):
-	control.myInventory = inv
+	control.my_inventory = inv
 	control.initialize_list()
 	control.mouse_entered_item.connect(_on_inventory_item_mouse_entered)
 	control.mouse_exited_item.connect(_on_inventory_item_mouse_exited)
-	control.grid_cell_doubleclicked.connect(_on_grid_cell_double_clicked) 
+	control.grid_cell_doubleclicked.connect(_on_grid_cell_double_clicked)
+
 
 # If any items are present in the player equipment, load them
 func equip_loaded_items():
@@ -76,7 +108,7 @@ func equip_loaded_items():
 
 # Gets the slots that are defined in json and instatiates WearableSlotScene
 # for each of the slots. It will add the instances to EquipmentSlotList
-# The first to children of EquipmentSlotList are static slots and we should ignore them
+# The first two children of EquipmentSlotList are static slots and we should ignore them
 # It will get the "name" property from the slot data and set it to the instance's "myLabel" property
 func instantiate_wearable_slots():
 	var slots: Dictionary = Runtimedata.wearableslots.get_all()
@@ -102,7 +134,9 @@ func instantiate_wearable_slots():
 func _process(_delta):
 	if is_showing_tooltip:
 		tooltip.visible = true
-		tooltip.global_position = tooltip.get_global_mouse_position() + Vector2(10, -5 - tooltip.size.y)
+		tooltip.global_position = (
+			tooltip.get_global_mouse_position() + Vector2(10, -5 - tooltip.size.y)
+		)
 	else:
 		tooltip.visible = false
 
@@ -110,7 +144,7 @@ func _process(_delta):
 func _on_inventory_item_mouse_entered(item: InventoryItem):
 	is_showing_tooltip = true
 	tooltip_item_name.text = str(item.get_property("name", ""))
-	
+
 	var description = item.get_property("description", "")
 
 	description = _append_food_attributes(item, description)
@@ -121,11 +155,13 @@ func _on_inventory_item_mouse_entered(item: InventoryItem):
 	tooltip_item_description.text = description
 	_set_tooltip_size(description)
 
+
 # Helper function to set the tooltip size based on the description length
 func _set_tooltip_size(description: String):
 	var line_count = description.split("\n").size()
 	var vertical_size = max(80, line_count * 21)  # Ensure a minimum height of 80
 	tool_tip_description_panel.custom_minimum_size = Vector2(240, vertical_size)
+
 
 # Adds text to the tooltip to display the effects the item has on the attributes
 func _append_food_attributes(item: InventoryItem, description: String) -> String:
@@ -149,20 +185,21 @@ func _append_medical_attributes(item: InventoryItem, description: String) -> Str
 				var attr_id = attribute.get("id", "Unknown")
 				var attr_amount = attribute.get("amount", 0)
 				var attr_name: String = Runtimedata.playerattributes.by_id(attr_id).name
-				
+
 				# Build the line only if there's something to display
 				var line = " ►" + attr_name + ":"
 				var values = []
-				
+
 				if dmedical.amount != 0:
 					values.append("(" + str(dmedical.amount) + ")")
 				if attr_amount != 0:
 					values.append("+" + str(attr_amount))
-				
+
 				if values.size() > 0:
 					line += " " + "".join(values)
 					description += line + "\n"
 	return description
+
 
 # Add text to the tooltip to display the Melee attributes
 func _append_melee_attributes(item: InventoryItem, description: String) -> String:
@@ -174,13 +211,27 @@ func _append_melee_attributes(item: InventoryItem, description: String) -> Strin
 		if dmelee.reach > 0:
 			description += "- Reach: " + str(dmelee.reach) + "\n"
 		if dmelee.used_skill:
-			description += "- Skill: " + str(dmelee.used_skill.get("skill_id", "Unknown")) + " (XP: " + str(dmelee.used_skill.get("xp", 0)) + ")\n"
+			description += (
+				"- Skill: "
+				+ str(dmelee.used_skill.get("skill_id", "Unknown"))
+				+ " (XP: "
+				+ str(dmelee.used_skill.get("xp", 0))
+				+ ")\n"
+			)
 	return description
+
 
 # Add text to the tooltip to display the Ranged attributes
 func _append_ranged_attributes(item: InventoryItem, description: String) -> String:
 	var dranged = RItem.Ranged.new(item.get_property("Ranged", {}))
-	if dranged.firing_speed > 0 or dranged.firing_range > 0 or dranged.recoil > 0 or dranged.reload_speed > 0 or dranged.used_ammo != "" or dranged.used_skill:
+	if (
+		dranged.firing_speed > 0
+		or dranged.firing_range > 0
+		or dranged.recoil > 0
+		or dranged.reload_speed > 0
+		or dranged.used_ammo != ""
+		or dranged.used_skill
+	):
 		description += "\n\nAttributes (Ranged):\n"  # Add a section for ranged attributes
 		if dranged.firing_speed > 0:
 			description += "- Firing Speed: " + str(dranged.firing_speed) + "\n"
@@ -199,10 +250,14 @@ func _append_ranged_attributes(item: InventoryItem, description: String) -> Stri
 		if dranged.used_magazine != "":
 			description += "- Magazine Type: " + dranged.used_magazine + "\n"
 		if dranged.used_skill:
-			description += "- Skill: " + str(dranged.used_skill.get("skill_id", "Unknown")) + " (XP: " + str(dranged.used_skill.get("xp", 0)) + ")\n"
+			description += (
+				"- Skill: "
+				+ str(dranged.used_skill.get("skill_id", "Unknown"))
+				+ " (XP: "
+				+ str(dranged.used_skill.get("xp", 0))
+				+ ")\n"
+			)
 	return description
-
-
 
 
 func _on_inventory_item_mouse_exited():
@@ -217,7 +272,7 @@ func _on_inventory_grid_stacked_item_added(item):
 		var original_parent = item.get_meta("original_parent")
 		var original_item = item.get_meta("original_item")
 		if original_parent and original_parent.has_method("remove_item"):
-			original_parent.remove_item(original_item)  # Remove from original parent 
+			original_parent.remove_item(original_item)  # Remove from original parent
 
 
 func get_inventory() -> InventoryStacked:
@@ -299,7 +354,6 @@ func remove_container_from_list(container: Node3D):
 	proximity_inventory_control.visible = first_container != null
 
 
-
 # Called when the user has pressed a button that will equip the selected item
 func _on_ctrl_inventory_stacked_custom_equip_left(items: Array[InventoryItem]):
 	equip_item(items, LeftHandEquipmentSlot)
@@ -342,7 +396,9 @@ func _on_transfer_all_left_button_button_up():
 
 	# Decide on the transfer strategy based on the content of the lists
 	if non_favorite_items.size() > 0:
-		transfer_autosplitmerge_list(non_favorite_items, inventory_control, proximity_inventory_control)
+		transfer_autosplitmerge_list(
+			non_favorite_items, inventory_control, proximity_inventory_control
+		)
 	elif favorite_items.size() > 0:
 		transfer_autosplitmerge_list(favorite_items, inventory_control, proximity_inventory_control)
 
@@ -390,23 +446,80 @@ func transfer_autosplitmerge_list(items: Array, src: Control, dest: Control) -> 
 # Function to handle double-clicking a grid cell in the inventory grid
 func _on_grid_cell_double_clicked(item: InventoryItem):
 	var source_inventory = item.get_inventory()
-	var destination_inventory_control: Control # Item will go here
-	var source_inventory_control: Control # Item comes from here
+	var destination_inventory_control: Control  # Item will go here
+	var source_inventory_control: Control  # Item comes from here
 
 	# Determine the destination inventory based on the source inventory
-	if source_inventory == inventory: # If true, the player double-clicked an item in his inventory
+	if source_inventory == inventory:  # If true, the player double-clicked an item in his inventory
 		# Check if the current proximity inventory is the default set in the ItemManager
 		if proximity_inventory_control.get_inventory() == ItemManager.proximityInventory:
 			print_debug("Attempt to transfer to default proximity inventory aborted.")
 			return  # Exit the function early if the condition is met
-		destination_inventory_control = proximity_inventory_control # Item groes to proximity inventory
-		source_inventory_control = inventory_control # The item comes from player inventory
+		destination_inventory_control = proximity_inventory_control  # Item groes to proximity inventory
+		source_inventory_control = inventory_control  # The item comes from player inventory
 		is_showing_tooltip = false
-	else: # The player doubleclicked an item in the proximity inventory control
-		destination_inventory_control = inventory_control # Item goes to player inventory
+	else:  # The player doubleclicked an item in the proximity inventory control
+		destination_inventory_control = inventory_control  # Item goes to player inventory
 		source_inventory_control = proximity_inventory_control
 		is_showing_tooltip = false
 
 	# Attempt to transfer the item
-	if not destination_inventory_control or not transfer_autosplitmerge_list([item],source_inventory_control,destination_inventory_control):
+	if (
+		not destination_inventory_control
+		or not transfer_autosplitmerge_list(
+			[item], source_inventory_control, destination_inventory_control
+		)
+	):
 		print("Failed to transfer item!")
+
+
+# Handler for dropping items from inventory context menu
+func _on_drop_items(items: Array):
+	drop_items_to_ground(items)
+
+
+# Drop logic: find or create a ground container and move items
+func drop_items_to_ground(items: Array):
+	Helper.signal_broker.inventory_operation_started.emit()
+	var player = Helper.player
+	var player_pos = player.global_transform.origin
+	var radius = 2.0  # Use a small radius around the player
+
+	# Find nearest ground ContainerItem in proximity
+	var nearest_container = null
+	var min_dist = INF
+	for container in ItemManager.proximityInventories:
+		if container is ContainerItem and container.get_parent() == get_tree().get_root():
+			var dist = container.global_transform.origin.distance_to(player_pos)
+			if dist < radius and dist < min_dist:
+				nearest_container = container
+				min_dist = dist
+
+	var target_container = nearest_container
+	if not target_container:
+		# No suitable container found, create one
+		var container_data = {
+			"global_position_x": player_pos.x,
+			"global_position_y": player_pos.y,
+			"global_position_z": player_pos.z
+		}
+		target_container = ContainerItem.new(container_data)
+		target_container.add_to_group("mapitems")
+		for item in items:
+			target_container.insert_item(item)
+		get_tree().get_root().call_deferred("add_child", target_container)
+	else:
+		for item in items:
+			target_container.insert_item(item)
+
+	Helper.signal_broker.inventory_operation_finished.emit()
+
+
+# Handler for drop zone overlay drop
+func _on_drop_zone_overlay_drop_data(_pos, data):
+	if data is Array and data.size() > 0 and data[0] is InventoryItem:
+		_on_drop_items(data)
+
+
+func _on_drop_zone_overlay_can_drop_data(_pos, data):
+	return data is Array and data.size() > 0 and data[0] is InventoryItem

@@ -4,7 +4,7 @@
 			"basic_map_00",
 			"basic_map_01",
 			"basic_map_02",
-			"escape?"
+			"escape"
 		]
 	},
 	"backrooms_tile_01": {
@@ -12,7 +12,7 @@
 			"basic_map_00",
 			"basic_map_01",
 			"basic_map_02",
-			"escape?"
+			"escape"
 		]
 	},
 	"backrooms_tile_02": {
@@ -20,7 +20,7 @@
 			"basic_map_00",
 			"basic_map_01",
 			"basic_map_02",
-			"escape?"
+			"escape"
 		]
 	}
 }

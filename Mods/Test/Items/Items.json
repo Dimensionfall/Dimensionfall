@@ -8,8 +8,8 @@
 		"sprite": "test_apple_32.png",
 		"stack_size": 1,
 		"two_handed": false,
-		"volume": 1,
-		"weight": 1
+		"volume": 1.0,
+		"weight": 1.0
 	},
 	{
 		"description": "You could use this item to test if it adds to an inventory",
@@ -20,7 +20,49 @@
 		"sprite": "test_zombie_bone_32.png",
 		"stack_size": 1,
 		"two_handed": false,
-		"volume": 1,
-		"weight": 1
+		"volume": 1.0,
+		"weight": 1.0
+	},
+	{
+		"Magazine": {
+			"current_ammo": 19,
+			"max_ammo": 20,
+			"used_ammo": "bullet_9mm"
+		},
+		"description": "In order for your pistol to fire a bullet, it needs to have a magazine loaded with bullets",
+		"id": "generic_test_pistol_magazine",
+		"image": "./Mods/Test/Items/test_apple_32.png",
+		"max_stack_size": 1,
+		"name": "Pistol magazine",
+		"sprite": "test_apple_32.png",
+		"stack_size": 1,
+		"two_handed": false,
+		"volume": 10.0,
+		"weight": 0.25
+	},
+	{
+		"Ranged": {
+			"firing_speed": 0.4,
+			"range": 1000,
+			"recoil": 10,
+			"reload_speed": 1.5,
+			"spread": 5,
+			"sway": 5,
+			"used_ammo": "9mm",
+			"used_magazine": "generic_test_pistol_magazine",
+			"used_skill": {
+
+			}
+		},
+		"description": "A standard issue pistol that uses 9mm ammunition",
+		"id": "generic_test_pistol",
+		"image": "./Mods/Test/Items/test_zombie_bone_32.png",
+		"max_stack_size": 1,
+		"name": "Pistol 9mm",
+		"sprite": "test_zombie_bone_32.png",
+		"stack_size": 1,
+		"two_handed": false,
+		"volume": 150.0,
+		"weight": 2.0
 	}
 ]

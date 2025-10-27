@@ -1,33 +1,38 @@
 extends Panel
 
-@export var item_button_container : VBoxContainer
+@export var item_button_container: VBoxContainer
 
-@export var description : Label
-@export var required_items : VBoxContainer
-@export var skill_progression_label : Label
-@export var recipeVBoxContainer : VBoxContainer
-@export var feedback_label : Label
+@export var description: Label
+@export var required_items: VBoxContainer
+@export var skill_progression_label: Label
+@export var recipeVBoxContainer: VBoxContainer
+@export var feedback_label: Label
 
-@export var start_crafting_button : Button
+@export var start_crafting_button: Button
 
-@export var hud : NodePath
+@export var hud: NodePath
 
 signal start_craft(item: Dictionary, recipe: Dictionary)
 
-var active_recipe: RItem.CraftRecipe # The currently selected recipe
-var active_item: RItem # The currently selected item in the itemlist
+var active_recipe: RItem.CraftRecipe  # The currently selected recipe
+var active_item: RItem  # The currently selected item in the itemlist
 # Dictionary to store buttons with item IDs as keys
 var item_buttons = {}
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	_connect_signals()
+	create_item_buttons()
+
+
+func _connect_signals():
 	self.visibility_changed.connect(_on_visibility_changed)
 	start_craft.connect(ItemManager.on_crafting_menu_start_craft)
 	ItemManager.allAccessibleItems_changed.connect(_on_allAccessibleItems_changed)
 	Helper.signal_broker.player_skill_changed.connect(_on_player_skill_changed)
 	ItemManager.craft_successful.connect(_on_craft_successful)
 	ItemManager.craft_failed.connect(_on_craft_failed)
-	create_item_buttons()
 
 
 # Function to create item buttons based on craftable items
@@ -42,7 +47,7 @@ func create_item_button(item: RItem):
 	var button = Button.new()
 	button.icon = item.sprite
 	button.text = item.name
-	button.button_up.connect(_on_item_button_clicked.bind(item))
+	button.pressed.connect(_on_item_button_clicked.bind(item))
 
 	# Initially set the button color based on craftability
 	update_button_color(button, item)
@@ -66,26 +71,35 @@ func _on_item_button_clicked(item: RItem):
 	active_item = item
 	description.text = item["description"]  # Set the description label
 	var recipes = item.craft.recipes  # Get the recipe array from the item
-	for element in recipeVBoxContainer.get_children():
-		recipeVBoxContainer.remove_child(element)
-		element.queue_free()  # Properly free the node to avoid memory leaks
+	_update_recipe_buttons(recipes)
+	if recipes.size() > 0:
+		_on_recipe_button_pressed(recipes[0])  # Automatically select the first recipe
 
+
+func _update_recipe_buttons(recipes: Array):
+	clear_recipe_buttons()
 	for i in range(recipes.size()):
 		var recipe_button = Button.new()
 		recipe_button.text = "Recipe %d" % (i + 1)
+		recipe_button.pressed.connect(_on_recipe_button_pressed.bind(recipes[i]))
 		recipeVBoxContainer.add_child(recipe_button)
-		recipe_button.button_up.connect(_on_recipe_button_pressed.bind(recipes[i]))
 
-	if recipes.size() > 0:
-		_on_recipe_button_pressed(recipes[0])  # Automatically select the first recipe
+
+func clear_recipe_buttons():
+	for element in recipeVBoxContainer.get_children():
+		recipeVBoxContainer.remove_child(element)
+		element.queue_free()
 
 
 # When a recipe button is pressed, update the required items label
 func _on_recipe_button_pressed(recipe: RItem.CraftRecipe):
 	active_recipe = recipe
 	update_required_items_display(recipe)
-	
-	# Display skill progression information if it exists
+	_update_skill_progression_label(recipe)
+	_update_start_button_state(recipe)
+
+
+func _update_skill_progression_label(recipe: RItem.CraftRecipe):
 	if recipe.skill_progression:
 		var skill_id = recipe.skill_progression.id
 		var skill_xp = recipe.skill_progression.xp
@@ -95,8 +109,9 @@ func _on_recipe_button_pressed(recipe: RItem.CraftRecipe):
 			skill_progression_label.text = ""
 	else:
 		skill_progression_label.text = ""
-	
-	# Enable or disable the start crafting button based on whether the player can craft
+
+
+func _update_start_button_state(recipe: RItem.CraftRecipe):
 	start_crafting_button.disabled = not CraftingRecipesManager.can_craft_recipe(recipe)
 
 
@@ -128,7 +143,10 @@ func update_required_items_display(recipe: RItem.CraftRecipe):
 		# Check if the player has enough of the resource
 		if current_amount < required_amount:
 			var missing_amount = required_amount - current_amount
-			label.text = " %s: %d/%d (Missing %d)" % [item_name, current_amount, required_amount, missing_amount]
+			label.text = (
+				" %s: %d/%d (Missing %d)"
+				% [item_name, current_amount, required_amount, missing_amount]
+			)
 			label.modulate = Color.RED  # Set the text color
 		else:
 			label.text = " %s: %d/%d" % [item_name, current_amount, required_amount]
@@ -225,14 +243,15 @@ func display_feedback(message: String, color: Color):
 	feedback_label.text = message
 	feedback_label.modulate = color  # Set the text color
 	feedback_label.visible = true
-	
+
 	# Create a timer to hide the feedback label after 0.5 seconds
 	var timer = Timer.new()
 	timer.wait_time = 0.5
 	timer.one_shot = true
-	timer.timeout.connect(func():
-		feedback_label.visible = false
-		timer.queue_free()  # Properly free the timer node
+	timer.timeout.connect(
+		func():
+			feedback_label.visible = false
+			timer.queue_free()  # Properly free the timer node
 	)
 	add_child(timer)  # Add the timer to the scene tree
 	timer.start()

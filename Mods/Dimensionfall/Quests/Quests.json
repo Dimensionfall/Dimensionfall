@@ -5,42 +5,42 @@
 		"name": "The Last Holy Crusade",
 		"rewards": [
 			{
-				"amount": 10,
+				"amount": 10.0,
 				"item_id": "painkiller"
 			},
 			{
-				"amount": 1,
+				"amount": 1.0,
 				"item_id": "compass"
 			},
 			{
-				"amount": 1,
+				"amount": 1.0,
 				"item_id": "flashlight_basic"
 			},
 			{
-				"amount": 3,
+				"amount": 3.0,
 				"item_id": "canned_food"
 			},
 			{
-				"amount": 10,
+				"amount": 10.0,
 				"item_id": "bandage_basic"
 			},
 			{
-				"amount": 1,
+				"amount": 1.0,
 				"item_id": "bottle_antibiotics"
 			},
 			{
-				"amount": 1,
+				"amount": 1.0,
 				"item_id": "bottle_plastic_water"
 			},
 			{
-				"amount": 1,
+				"amount": 1.0,
 				"item_id": "bottle_antidote"
 			}
 		],
 		"sprite": "machete_32.png",
 		"steps": [
 			{
-				"amount": 100,
+				"amount": 100.0,
 				"map_guide": "none",
 				"mobgroup": "basic_zombies",
 				"tip": "Kill any undead enemy you find.",
@@ -54,7 +54,7 @@
 		"name": "The Signal",
 		"rewards": [
 			{
-				"amount": 1,
+				"amount": 1.0,
 				"item_id": "solar_panel"
 			}
 		],
@@ -67,22 +67,22 @@
 				"type": "enter"
 			},
 			{
-				"amount": 1,
+				"amount": 1.0,
 				"item": "damaged_transmitter",
 				"tip": "Search inside the abandoned building for a damaged transmitter. Look for lootable containers or interactable objects.",
 				"type": "collect"
 			},
 			{
-				"amount": 1,
+				"amount": 1.0,
 				"map_guide": "revealed",
 				"mob": "disruptor_drone",
 				"tip": "Circuit boards can often be scavenged from scrap piles or robotic enemies. Defeat a Disruptor Drone to find one.",
 				"type": "kill"
 			},
 			{
-				"amount": 1,
+				"amount": 1.0,
 				"item": "circuit_board",
-				"tip": "Collect a cirquit board from a defeated enemy or search for it inside containers.",
+				"tip": "Collect a circuit board from a defeated enemy or search for it inside containers.",
 				"type": "collect"
 			},
 			{
@@ -104,20 +104,20 @@
 		"name": "Beginnings",
 		"rewards": [
 			{
-				"amount": 10,
+				"amount": 10.0,
 				"item_id": "berries_wild"
 			}
 		],
 		"sprite": "spear_stone_32.png",
 		"steps": [
 			{
-				"amount": 1,
+				"amount": 1.0,
 				"item": "long_stick",
 				"tip": "You can find one in the forest (move close to an item on the ground and press tab to open the inventory and pick it up)",
 				"type": "collect"
 			},
 			{
-				"amount": 1,
+				"amount": 1.0,
 				"item": "sharp_stone",
 				"tip": "You can find one in the field",
 				"type": "collect"
@@ -128,7 +128,7 @@
 				"type": "craft"
 			},
 			{
-				"amount": 2,
+				"amount": 2.0,
 				"map_guide": "revealed",
 				"mobgroup": "basic_zombies",
 				"tip": "The map will show you where to find them and update the target if there's no zombie there.",
@@ -141,7 +141,7 @@
 				"type": "enter"
 			},
 			{
-				"amount": 2,
+				"amount": 2.0,
 				"item": "pistol_magazine",
 				"tip": "Find a way into the police station armory and collect ammunition",
 				"type": "collect"
@@ -153,7 +153,7 @@
 				"type": "enter"
 			},
 			{
-				"amount": 1,
+				"amount": 1.0,
 				"item": "rifle_m4a1",
 				"tip": "Go to the mountain and enter the cave from the south",
 				"type": "collect"

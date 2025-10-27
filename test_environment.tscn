@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://by4k08jqt2qal"]
+[gd_scene load_steps=6 format=3 uid="uid://by4k08jqt2qal"]
 
 [ext_resource type="Script" uid="uid://djfx5kt38vuvf" path="res://Scripts/Chunk.gd" id="1_hp7uo"]
 [ext_resource type="Script" uid="uid://gqicvgvnb73e" path="res://test_environment.gd" id="1_vhsh0"]
+[ext_resource type="PackedScene" uid="uid://cesy3sdpbal3f" path="res://Scenes/input_manager.tscn" id="2_4f72c"]
 [ext_resource type="PackedScene" uid="uid://bn5i23p2yi5uj" path="res://Scenes/player.tscn" id="3_uc33h"]
 [ext_resource type="Script" uid="uid://bvjofw3g5oyxg" path="res://LevelManager.gd" id="17_akyhy"]
 
@@ -10,11 +11,13 @@ script = ExtResource("1_vhsh0")
 canvas_layer = NodePath("CanvasLayer")
 chunk = NodePath("Chunk")
 
-[node name="Chunk" type="Node3D" parent="." node_paths=PackedStringArray("level_manager")]
+[node name="InputManager" parent="." instance=ExtResource("2_4f72c")]
+
+[node name="Chunk" type="Node3D" parent="."]
 script = ExtResource("1_hp7uo")
-level_manager = NodePath("../LevelManager")
 
 [node name="Player" parent="." instance=ExtResource("3_uc33h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2, 15)
 
 [node name="LevelManager" type="Node3D" parent="."]
 script = ExtResource("17_akyhy")

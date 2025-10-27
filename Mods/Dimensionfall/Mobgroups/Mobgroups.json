@@ -3,13 +3,13 @@
 		"description": "Being relics from the old world, they were designed to quell riots and protect VIPs. Now they guard strategically important locations from both alive and undead intruders.",
 		"id": "security_robots",
 		"mobs": {
-			"disruptor_drone": 100,
-			"iron_stalker": 10,
-			"outpost_guardian": 30,
-			"rust_sentinel": 40,
-			"scavenger_skitter": 100,
-			"scrapwalker": 60,
-			"venom_crawler": 75
+			"disruptor_drone": 100.0,
+			"iron_stalker": 10.0,
+			"outpost_guardian": 30.0,
+			"rust_sentinel": 40.0,
+			"scavenger_skitter": 100.0,
+			"scrapwalker": 60.0,
+			"venom_crawler": 75.0
 		},
 		"name": "Security robots",
 		"references": {
@@ -25,16 +25,16 @@
 		"description": "A group of basic zombies, representing a minor threat to the player",
 		"id": "basic_zombies",
 		"mobs": {
-			"basic_zombie_1": 100,
-			"basic_zombie_2": 100,
-			"bloated_zombie": 50,
-			"bone_thrower": 8,
-			"charred_zombie": 10,
-			"heavy_zombie": 50,
-			"limping_zombie": 25,
-			"rushing_zombie": 25,
-			"skeleton_zombie": 10,
-			"spitter_zombie": 8
+			"basic_zombie_1": 100.0,
+			"basic_zombie_2": 100.0,
+			"bloated_zombie": 50.0,
+			"bone_thrower": 8.0,
+			"charred_zombie": 10.0,
+			"heavy_zombie": 50.0,
+			"limping_zombie": 25.0,
+			"rushing_zombie": 25.0,
+			"skeleton_zombie": 10.0,
+			"spitter_zombie": 8.0
 		},
 		"name": "Basic zombies",
 		"references": {

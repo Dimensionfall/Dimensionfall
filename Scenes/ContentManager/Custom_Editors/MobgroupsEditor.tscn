@@ -50,10 +50,9 @@ text = "Save"
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-current_tab = 1
+current_tab = 0
 
 [node name="General" type="GridContainer" parent="VBoxContainer/TabContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 columns = 2
@@ -143,6 +142,7 @@ has been made, you can assign this group to a quest, in the quest editor."
 columns = 4
 
 [node name="References" parent="VBoxContainer/TabContainer" instance=ExtResource("3_8bh5q")]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 

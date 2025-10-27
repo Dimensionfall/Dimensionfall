@@ -1,7 +1,6 @@
 class_name OvermapGrid
 extends RefCounted
 
-
 # A grid that holds grid_width by grid_height of cells
 # This is used to segment the overmap grid for saving and loading
 # A maximum of 9 grids can exist at once. Grids that are far away will be unloaded
@@ -13,31 +12,34 @@ var pos: Vector2 = Vector2.ZERO
 var cells: Dictionary = {}
 # Dictionary to store map_id and their corresponding coordinates
 var map_id_to_coordinates: Dictionary = {}
-var tactical_map_positions: Dictionary = {}  # Tracks tactical map cell coordinates
-var grid_width: int = 100 # TODO: Pass the global grid_width to this class
+var tactical_map_positions: Dictionary = {}  # Tracks tactical map cell coordinates in global space
+var grid_width: int = 100  # TODO: Pass the global grid_width to this class
 var grid_height: int = 100
+
+
+func _init(p_grid_width: int = 100, p_grid_height: int = 100) -> void:
+	grid_width = p_grid_width
+	grid_height = p_grid_height
+
+
 # Dictionary to store lists of area positions sorted by dovermaparea.id
 var area_positions: Dictionary = {}
 var road_maps: Array[RMap] = Runtimedata.maps.get_maps_by_category("Road")
 var forest_road_maps: Array[RMap] = Runtimedata.maps.get_maps_by_category("Forest Road")
 const NOISE_VALUE_PLAINS = -0.2
 
-enum Region {
-	FOREST,
-	PLAINS
-}
+enum Region { FOREST, PLAINS }
 
 
 # A cell in the grid. This will tell you it's coordinate and if it's part
 # of something bigger like the tacticalmap
 class map_cell:
 	# Enum for revealed states
-	enum RevealedState {
-		HIDDEN,  # Default state. The cell has been instanced onto a grid, nothimg more
-		REVEALED, # the map has been revealed on the overmap when the player got close enough
-		EXPLORED, # the map has been loaded as a chunk in the player's proximity at least once
-		VISITED # the player has entered the boundary of the map's coordinates
-	}
+  	# HIDDEN: Default state. The cell has been instanced onto a grid, nothing more  
+	# REVEALED: the map has been revealed on the overmap when the player got close enough  
+	# EXPLORED: the map has been loaded as a chunk in the player's proximity at least once 
+	# VISITED: the player has entered the boundary of the map's coordinates
+	enum RevealedState { HIDDEN, REVEALED, EXPLORED, VISITED }
 
 	var region = Region.PLAINS
 	var coordinate_x: int = 0
@@ -74,26 +76,28 @@ class map_cell:
 		rotation = newdata.get("rotation", 0)
 
 	func get_sprite() -> Texture:
-		return rmap.sprite
-	
+		if rmap:
+			return rmap.sprite
+		# rmap can be null if the map hasn't been instantiated
+		return null
+
 	# Function to return formatted information about the map cell
 	func get_info_string() -> String:
 		# If the cell is not revealed, notify the player
 		if revealed == RevealedState.HIDDEN:
 			return "This area has not \nbeen explored yet."
-		
+
 		# If revealed, display the detailed information
 		var pos_string: String = "Pos: (" + str(coordinate_x) + ", " + str(coordinate_y) + ")"
-		
+
 		# Use dmap's name and description instead of map_id
 		var map_name_string: String = "\nName: " + rmap.name
-		
+
 		var region_string: String = "\nRegion: " + region_type_to_string(region)
 		var challenge_string: String = "\nChallenge: Easy"  # Placeholder for now
-		
+
 		# Combine all the information into one formatted string
 		return pos_string + map_name_string + region_string + challenge_string
-
 
 	# Helper function to convert Region enum to string
 	func region_type_to_string(region_type: int) -> String:
@@ -128,7 +132,7 @@ class map_cell:
 	func visit():
 		# Automatically upgrade the state to visited
 		revealed = RevealedState.VISITED
-		
+
 	func matches_reveal_condition(reveal_condition: String, exact_match: bool = false) -> bool:
 		# Convert reveal_condition to uppercase for case-insensitive matching
 		reveal_condition = reveal_condition.to_upper()
@@ -159,7 +163,6 @@ class map_cell:
 			return false  # Return false for unknown conditions
 
 
-
 # Translates local grid coordinates to global coordinates
 # Local coordinates: (0,0) -> (grid_width-1, grid_height-1)
 # Returns: Global coordinates (absolute positions in the world grid)
@@ -173,6 +176,7 @@ func get_data() -> Dictionary:
 		mydata["cells"][str(cell_key)] = cells[cell_key].get_data()
 	return mydata
 
+
 func set_data(mydata: Dictionary) -> void:
 	var newpos = mydata.get("pos", "0,0")
 	pos = Vector2(newpos.split(",")[0].to_int(), newpos.split(",")[1].to_int())
@@ -182,11 +186,13 @@ func set_data(mydata: Dictionary) -> void:
 		cell.set_data(mydata["cells"][cell_key])
 		cells[Vector2(cell_key.split(",")[0].to_int(), cell_key.split(",")[1].to_int())] = cell
 
-# Updates a cell's map ID and rotation using local coordinates
+
+# Updates a cell's map ID and rotation using global coordinates
 func update_cell(local_coord: Vector2, map_id: String, rotation: int):
 	if cells.has(local_coord):
 		cells[local_coord].map_id = map_id.replace(".json", "")
 		cells[local_coord].rotation = rotation
+
 
 # Helper function to build the map_id_to_coordinates dictionary
 func build_map_id_to_coordinates():
@@ -197,7 +203,7 @@ func build_map_id_to_coordinates():
 
 		if not map_id_to_coordinates.has(map_id):
 			map_id_to_coordinates[map_id] = []
-		
+
 		map_id_to_coordinates[map_id].append(cell_key)
 
 
@@ -230,30 +236,34 @@ func connect_cities_by_riverlike_path(city_positions: Array) -> void:
 # Generate a winding path between two global positions
 # Global meaning they are independent of this grid's pos and are
 # either contained within the range of this grid or not
-# For example, the (-53,12) position is contained in the grid at (-1,0), 
+# For example, the (-53,12) position is contained in the grid at (-1,0),
 # which holds positions (-100,0) to (-1,99)
 func generate_winding_path(global_start: Vector2, global_end: Vector2) -> Array:
 	var path = []
 	var current = global_start
-	
+
 	while current.distance_to(global_end) > 1:
 		if not path.has(current):
 			path.append(current)
 		var next_position = (global_end - current).normalized().round() + current
 		current = _adjust_path_for_organic_movement(next_position, current, path)
-	
+
 	# Ensure the end point is included
 	_append_unique(path, global_end)
 	return path
 
+
 # Adjust path to avoid straight lines and prefer organic movement
-func _adjust_path_for_organic_movement(next_position: Vector2, current: Vector2, path: Array) -> Vector2:
+func _adjust_path_for_organic_movement(
+	next_position: Vector2, current: Vector2, path: Array
+) -> Vector2:
 	if is_diagonal(current, next_position):
 		if randi() % 2 == 0:
 			_append_unique(path, current + Vector2(0, next_position.y - current.y))
 		else:
 			_append_unique(path, current + Vector2(next_position.x - current.x, 0))
 	return next_position
+
 
 # Append a position to the path only if it's unique
 func _append_unique(path: Array, position: Vector2) -> void:
@@ -300,9 +310,9 @@ func update_all_road_connections(road_positions: Array) -> void:
 
 	# Handle connections for edge positions with neighboring grids
 	for direction in edge_positions.keys():
-		for edge_position in edge_positions[direction]: # All positions on the south border for example
+		for edge_position in edge_positions[direction]:  # All positions on the south border for example
 			# Update within this grid first
-			if cells.has(edge_position): # Should be true for all edge positions
+			if cells.has(edge_position):  # Should be true for all edge positions
 				var cell = cells[edge_position]
 
 				# 🚨 Prevent roads from replacing tactical maps
@@ -314,21 +324,22 @@ func update_all_road_connections(road_positions: Array) -> void:
 			# Update in the neighboring grid
 			var neighbor_pos: Vector2 = edge_position + Gamedata.DIRECTION_OFFSETS[direction]
 			if neighbor_pos:
-				var neighbor_grid: OvermapGrid = Helper.overmap_manager.get_grid_from_local_pos(neighbor_pos)
-				var neighbor_cell = neighbor_grid.get_cell_from_global_pos(neighbor_pos) # A map_cell instance
+				var neighbor_grid: OvermapGrid = Helper.overmap_manager.get_grid_from_local_pos(
+					neighbor_pos
+				)
+				var neighbor_cell = neighbor_grid.get_cell_from_global_pos(neighbor_pos)  # A map_cell instance
 
 				# 🚨 Prevent roads from replacing tactical maps in neighboring grids
 				if neighbor_cell and neighbor_grid.tactical_map_positions.has(neighbor_pos):
 					continue
-				
-				neighbor_grid.update_road_connections(neighbor_pos, neighbor_cell)
 
+				neighbor_grid.update_road_connections(neighbor_pos, neighbor_cell)
 
 
 # Function to categorize road positions by grid edge
 # Positions in road_positions are discarded if they are not on the edge of the grid
 # Remaining positions will be on the edge of the current grid
-# Example for the a grid with (-1,-1) as pos: 
+# Example for the a grid with (-1,-1) as pos:
 # { "north": [], "east": [], "south": [(-17, -1), (-83, -1), (-82, -1), (-70, -1)], "west": [] }
 # This example shows multiple positions on the south border of the grid.
 # All positions on the south order have -1 as the y coordinate.
@@ -364,7 +375,7 @@ func assign_road_map_to_cell(global_position: Vector2, cell) -> void:
 	var map_to_use: Array[RMap] = road_maps
 	if "Forest" in cell.rmap.categories:
 		map_to_use = forest_road_maps
-	
+
 	# Select a weighted random map
 	var selected_map: RMap = pick_random_rmap_by_weight(map_to_use)
 	update_cell(global_position, selected_map.id, 0)
@@ -374,7 +385,7 @@ func assign_road_map_to_cell(global_position: Vector2, cell) -> void:
 # cell: A map_cell instance
 func update_road_connections(global_position: Vector2, cell) -> void:
 	if not "Road" in cell.rmap.categories and not "Forest Road" in cell.rmap.categories:
-		return # Only update road cells
+		return  # Only update road cells
 	# Get the required connections for this cell
 	var needed_connections = get_needed_connections(global_position)
 	# If it's a forest cell, find a matching forest road map, otherwise a regular road map
@@ -401,7 +412,7 @@ func get_needed_connections(position: Vector2) -> Array:
 	# Iterate over each direction (north, east, south, west)
 	for direction in directions:
 		var neighbor_pos: Vector2 = position + Gamedata.DIRECTION_OFFSETS[direction]
-		
+
 		# Check if the neighbor exists in this grid
 		if cells.has(neighbor_pos):
 			var neighbor_cell = cells[neighbor_pos]
@@ -420,13 +431,14 @@ func get_needed_connections(position: Vector2) -> Array:
 					if category in neighbor_cell.rmap.categories:
 						connections.append(direction)
 						break  # Exit if match is found
-	
+
 	return connections
 
 
-
 # Function to get road maps that match the required connections
-func get_road_maps_with_connections(myroad_maps: Array, required_directions: Array) -> Array[Dictionary]:
+func get_road_maps_with_connections(
+	myroad_maps: Array, required_directions: Array
+) -> Array[Dictionary]:
 	var matching_maps: Array[Dictionary] = []
 
 	# Iterate through each road map
@@ -438,11 +450,9 @@ func get_road_maps_with_connections(myroad_maps: Array, required_directions: Arr
 			# Check if the rotated connections match the required directions
 			if self.are_connections_matching(rotated_connections, required_directions):
 				# If it matches, add a dictionary with map id and rotation
-				matching_maps.append({
-					"id": road_map.id,
-					"rotation": rotation,
-					"weight": road_map.weight
-				})
+				matching_maps.append(
+					{"id": road_map.id, "rotation": rotation, "weight": road_map.weight}
+				)
 				break  # Stop checking other rotations for this road_map once a match is found
 
 	return matching_maps
@@ -469,7 +479,7 @@ func are_connections_matching(rotated_connections: Dictionary, required_directio
 # Function to get rotated connections based on rotation
 func get_rotated_connections(connections: Dictionary, rotation: int) -> Dictionary:
 	var rotated_connections = {}
-	
+
 	# Apply the rotation map to the connections
 	for direction in connections.keys():
 		var rotated_direction = Gamedata.ROTATION_MAP[rotation][direction]
@@ -479,7 +489,9 @@ func get_rotated_connections(connections: Dictionary, rotation: int) -> Dictiona
 
 
 # Function to place an area on the grid and return the valid position where it was placed
-func place_area_on_grid(area_grid: Dictionary, placed_positions: Array, mapsize: Vector2) -> Vector2:
+func place_area_on_grid(
+	area_grid: Dictionary, placed_positions: Array, mapsize: Vector2
+) -> Vector2:
 	var max_attempts = 100  # Combined attempt limit
 	var attempts = 0
 	var valid_position: Vector2 = Vector2(-1, -1)
@@ -489,7 +501,9 @@ func place_area_on_grid(area_grid: Dictionary, placed_positions: Array, mapsize:
 		# Calculate remaining attempts to stay within the max_attempts limit
 		var remaining_attempts = max_attempts - attempts
 		# Find a candidate position with limited attempts
-		valid_position = find_weighted_random_position(placed_positions, mapsize, remaining_attempts, false)
+		valid_position = find_weighted_random_position(
+			placed_positions, mapsize, remaining_attempts, false
+		)
 		attempts += remaining_attempts
 
 		# Check if this position is at least 15 units away from each placed position
@@ -529,13 +543,14 @@ func place_overmap_areas() -> void:
 	for myint in range(10):
 		_place_single_overmap_area(placed_positions)
 
+
 # Helper function to place a single overmap area
 func _place_single_overmap_area(placed_positions: Array) -> void:
 	var generator = OvermapAreaGenerator.new()
 	var random_area: ROvermaparea = Runtimedata.overmapareas.get_random_area()
 	if not random_area:
 		return  # No valid area found
-	
+
 	# Initialize the area generator
 	generator.rovermaparea = random_area
 	var area_grid = generator.generate_area(10000)
@@ -569,7 +584,9 @@ func place_tactical_maps() -> void:
 		var chunks = dmap.chunks
 
 		# Find a valid position on the grid to place the tactical map
-		var position = find_weighted_random_position(placed_positions, Vector2(map_width, map_height), 100, true)
+		var position = find_weighted_random_position(
+			placed_positions, Vector2(map_width, map_height), 100, true
+		)
 		if position == Vector2(-1, -1):  # If no valid position is found, skip this map placement
 			print("Failed to find a valid position for tactical map")
 			continue
@@ -587,10 +604,11 @@ func place_tactical_maps() -> void:
 					var chunk_index = j * map_width + i
 					var dchunk: RTacticalmap.TChunk = chunks[chunk_index]
 
-					# 🚨 Track tactical map position
-					tactical_map_positions[cell_key] = true
+					# 🚨 Track tactical map position in global coordinates
+					var global_cell_key = local_to_global(cell_key)
+					tactical_map_positions[global_cell_key] = true
 
-					update_cell(local_to_global(cell_key), dchunk.id, dchunk.rotation)
+					update_cell(global_cell_key, dchunk.id, dchunk.rotation)
 					placed_positions.append(cell_key)  # Track the positions that have been occupied
 
 
@@ -611,7 +629,9 @@ func generate_cells() -> void:
 			cell.region = region_type
 
 			# Pick a map from the category based on the region type
-			var maps_by_category = Runtimedata.maps.get_maps_by_category(region_type_to_string(region_type))
+			var maps_by_category = Runtimedata.maps.get_maps_by_category(
+				region_type_to_string(region_type)
+			)
 			if maps_by_category.size() > 0:
 				cell.map_id = Helper.overmap_manager.pick_random_map_by_weight(maps_by_category)
 			else:
@@ -619,7 +639,7 @@ func generate_cells() -> void:
 			# If you need to test a specific map, uncomment these two lines and put in your map name.
 			# It will spawn the map at position (0,0), where the player starts
 			#if global_x == 0 and global_y == 0:
-				#cell.map_id = "urbanroad"
+				#cell.map_id = "field_farmland"
 
 			# Add the cell to the grid's cells dictionary
 			cells[cell_key] = cell
@@ -631,10 +651,10 @@ func generate_cells() -> void:
 		connect_cities_by_hub_path(area_positions["city"])
 
 	place_tactical_maps()
-	
+
 	# Connect cities on the borders with neighboring grids
 	check_and_connect_neighboring_grids()
-	
+
 	# After modifications, rebuild the map_id_to_coordinates dictionary
 	build_map_id_to_coordinates()
 
@@ -651,7 +671,9 @@ func region_type_to_string(region_type: int) -> String:
 
 # Function to find a weighted random position within a maximum number of attempts
 # Prevents placement within a radius of 15 from (0,0) for tactical maps if enforce_restricted_radius is true.
-func find_weighted_random_position(placed_positions: Array, mapsize: Vector2, max_attempts: int, enforce_restricted_radius: bool) -> Vector2:
+func find_weighted_random_position(
+	placed_positions: Array, mapsize: Vector2, max_attempts: int, enforce_restricted_radius: bool
+) -> Vector2:
 	var best_position = Vector2(-1, -1)
 	var best_distance = 0
 	var restricted_radius = 15  # Define the restricted radius
@@ -659,7 +681,7 @@ func find_weighted_random_position(placed_positions: Array, mapsize: Vector2, ma
 
 	# Calculate the grid's global offset
 	var grid_offset = pos * Vector2(grid_width, grid_height)
-	
+
 	# Loop within the specified maximum attempts
 	for attempt in range(max_attempts):
 		var random_x = randi() % (grid_width - int(mapsize.x) + 1)
@@ -719,7 +741,7 @@ func connect_cities_by_hub_path(city_positions: Array) -> void:
 
 	# Handle hub connections for distant city pairs
 	connect_distant_city_pairs_with_hubs(city_pairs, city_positions, all_road_positions)
-	update_all_road_connections(all_road_positions) # Finalize all road connections
+	update_all_road_connections(all_road_positions)  # Finalize all road connections
 
 
 # New function to connect city pairs directly if their distance is less than 40
@@ -730,23 +752,26 @@ func connect_close_city_pairs(city_pairs: Array, all_road_positions: Array) -> v
 		var city_b = pair["cities"][1]
 		var distance = pair["distance"]
 
-
 		# Avoid duplicate paths by using sorted key pairs
 		var pair_key = [city_a, city_b]
 		pair_key.sort()
 		if connected_pairs.has(pair_key):
 			continue
 		connected_pairs[pair_key] = true
-		
+
 		# Connect directly if cities are close
 		if distance < 40:
-			var direct_path = generate_winding_path(local_to_global(city_a), local_to_global(city_b))
+			var direct_path = generate_winding_path(
+				local_to_global(city_a), local_to_global(city_b)
+			)
 			update_path_on_grid(direct_path)
 			all_road_positions.append_array(direct_path)
 
 
 # Updated function to connect hubs to cities within 40 units and track connection counts for all cities
-func connect_distant_city_pairs_with_hubs(city_pairs: Array, city_positions: Array, all_road_positions: Array) -> void:
+func connect_distant_city_pairs_with_hubs(
+	city_pairs: Array, city_positions: Array, all_road_positions: Array
+) -> void:
 	var city_hub_connections: Dictionary = {}
 	var connected_hubs: Dictionary = {}
 	var connection_counts: Dictionary = {}  # Dictionary to track connection counts per city
@@ -762,7 +787,7 @@ func connect_distant_city_pairs_with_hubs(city_pairs: Array, city_positions: Arr
 	for hub in hubs:
 		for city_pos in city_positions:
 			var distance = hub.distance_to(city_pos)
-			
+
 			# Only connect cities within 40 units
 			if distance <= 40:
 				# Generate a unique key to prevent duplicate connections
@@ -775,7 +800,9 @@ func connect_distant_city_pairs_with_hubs(city_pairs: Array, city_positions: Arr
 				connected_hubs[hub_city_key] = true
 
 				# Generate and store the path from hub to city
-				var path_to_city = generate_winding_path(local_to_global(hub), local_to_global(city_pos))
+				var path_to_city = generate_winding_path(
+					local_to_global(hub), local_to_global(city_pos)
+				)
 				update_path_on_grid(path_to_city)
 				all_road_positions.append_array(path_to_city)
 
@@ -790,24 +817,27 @@ func connect_distant_city_pairs_with_hubs(city_pairs: Array, city_positions: Arr
 
 
 # New function to connect cities with zero connections to nearby cities within 40 units
-func connect_zero_connection_cities(city_positions: Array, connection_counts: Dictionary, all_road_positions: Array) -> void:
+func connect_zero_connection_cities(
+	city_positions: Array, connection_counts: Dictionary, all_road_positions: Array
+) -> void:
 	for city_pos in city_positions:
 		if connection_counts[city_pos] == 0:
 			for other_city in city_positions:
 				# Skip if checking the same city or if already connected
-				if other_city == city_pos:# or connection_counts[other_city] > 0:
+				if other_city == city_pos:  # or connection_counts[other_city] > 0:
 					continue
 				var distance = city_pos.distance_to(other_city)
 				if distance <= 40:
 					# Generate and store the path between the two cities
-					var path_between_cities = generate_winding_path(local_to_global(city_pos), local_to_global(other_city))
+					var path_between_cities = generate_winding_path(
+						local_to_global(city_pos), local_to_global(other_city)
+					)
 					update_path_on_grid(path_between_cities)
 					all_road_positions.append_array(path_between_cities)
 
 					# Update connection counts for both cities
 					connection_counts[city_pos] += 1
 					connection_counts[other_city] += 1
-
 
 
 # Custom sorting function to compare by distance (descending order)
@@ -867,11 +897,12 @@ func get_city_hubs(city_positions: Array, city_pairs: Array) -> Array:
 				if midpoint_int.distance_to(existing_hub) < 20:
 					is_far_from_others = false
 					break
-			
+
 			if is_far_from_others:
 				hubs.append(midpoint_int)
 
 	return hubs
+
 
 # Find the nearest hub for a given city
 func get_nearest_hub(city_pos: Vector2, hubs: Array) -> Vector2i:
@@ -894,7 +925,7 @@ func connect_border_cities(neighbor_grid: OvermapGrid) -> void:
 	# Convert local positions to global coordinates for accurate distance calculation
 	for city_a in current_cities:
 		var city_a_global = local_to_global(city_a)
-		
+
 		for city_b in neighboring_cities:
 			var city_b_global = neighbor_grid.local_to_global(city_b)
 			var distance = city_a_global.distance_to(city_b_global)
@@ -902,10 +933,10 @@ func connect_border_cities(neighbor_grid: OvermapGrid) -> void:
 			# If cities are within a certain threshold, connect them with a road path
 			if distance < 40:
 				var path: Array = generate_winding_path(city_a_global, city_b_global)
-				
+
 				# Collect all positions in the generated path
 				all_road_positions.append_array(path)
-				
+
 				# Update path on each grid to assign road maps
 				update_path_on_grid(path)
 				neighbor_grid.update_path_on_grid(path)
@@ -970,4 +1001,8 @@ func pick_random_map_dict_by_weight(maps: Array[Dictionary]) -> Dictionary:
 		if random_value < current_weight:
 			return map  # Return the entire dictionary
 
-	return maps[0] if maps.size() > 0 else {"id": "field_grass_basic_00.json", "rotation": 0, "weight": 1}  # Fallback dictionary
+	return (
+		maps[0]
+		if maps.size() > 0
+		else {"id": "field_grass_basic_00.json", "rotation": 0, "weight": 1}
+	)  # Fallback dictionary

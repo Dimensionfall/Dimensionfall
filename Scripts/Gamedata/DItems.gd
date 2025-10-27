@@ -130,7 +130,7 @@ func remove_reference(item_id: String) -> void:
 # The return value might look like this:
 #{
 #	"itemgroups": [
-#		"refridgerator",
+#		"refrigerator",
 #		"starting_items"
 #	]
 #}

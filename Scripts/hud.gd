@@ -1,6 +1,7 @@
+class_name HUD
 extends CanvasLayer
 
-@export var stamina_HUD: NodePath
+@export var stamina_hud: NodePath
 @export var clock_label: Label = null
 
 
@@ -10,9 +11,9 @@ extends CanvasLayer
 @export var damaged_color: Color
 
 # This window shows the inventory to the player
-@export var inventoryWindow : Control
+@export var inventory_window: Control
 @export var characterWindow : Control
-@export var questWindow : Control
+@export var quest_window: Control
 
 @export var building_menu: NodePath
 @export var crafting_menu : NodePath
@@ -26,15 +27,15 @@ var is_building_menu_open = false
 @export var progress_bar_timer : NodePath
 var progress_bar_timer_max_time : float
 
-var is_progress_bar_well_progressing_i_guess = false
+var is_progress_bar_active = false
 
 
 @export var item_protoset : ItemProtoset
-	
+
 func _process(_delta):
-	if is_progress_bar_well_progressing_i_guess:
+	if is_progress_bar_active:
 		update_progress_bar()
-		
+
 func _init():
 	# If some node wants to start a progressbar, they will emit a signal trough the broker
 	Helper.signal_broker.hud_start_progressbar.connect(start_progress_bar)
@@ -62,15 +63,12 @@ func _input(event):
 		else:
 			is_building_menu_open = true
 			get_node(building_menu).set_visible(true)
-			
-	if event.is_action_pressed("toggle_inventory"):
-		inventoryWindow.visible = !inventoryWindow.visible
-			
+
 	if event.is_action_pressed("character_menu"):
 		characterWindow.visible = !characterWindow.visible
-			
+
 	if event.is_action_pressed("quest_menu"):
-		questWindow.visible = !questWindow.visible
+		quest_window.visible = !quest_window.visible
 
 	if event.is_action_pressed("crafting_menu"):
 		get_node(crafting_menu).visible = !get_node(crafting_menu).visible
@@ -80,12 +78,12 @@ func _input(event):
 		else:
 			overmap.show()
 
-	if is_progress_bar_well_progressing_i_guess:
+	if is_progress_bar_active:
 		get_node(progress_bar_filling).scale.x = lerp(1, 0, get_node(progress_bar_timer).time_left / progress_bar_timer_max_time)
 
 
 func _on_player_update_stamina_hud(player: Player, stamina: float):
-	get_node(stamina_HUD).text = str(round(stamina)) + "%"
+	get_node(stamina_hud).text = str(round(stamina)) + "%"
 
 
 func start_progress_bar(time : float):
@@ -94,12 +92,12 @@ func start_progress_bar(time : float):
 	get_node(progress_bar_timer).start()
 	get_node(progress_bar_filling).scale.x = 0
 	progress_bar_timer_max_time = time
-	is_progress_bar_well_progressing_i_guess = true
+	is_progress_bar_active = true
 
 
 func interrupt_progress_bar():
 	get_node(progress_bar).visible = false
-	is_progress_bar_well_progressing_i_guess = false
+	is_progress_bar_active = false
 
 
 func _on_progress_bar_timer_timeout():
@@ -118,12 +116,12 @@ func _on_shooting_ammo_changed(current_ammo: int, max_ammo: int, slot_index: int
 
 # The parameter container the inventory that has entered proximity
 func _on_item_detector_add_to_proximity_inventory(container):
-	inventoryWindow._on_item_detector_add_to_proximity_inventory(container)
+	inventory_window._on_item_detector_add_to_proximity_inventory(container)
 
 
 # The parameter container the inventory that has left proximity
 func _on_item_detector_remove_from_proximity_inventory(container):
-	inventoryWindow._on_item_detector_remove_from_proximity_inventory(container)
+	inventory_window._on_item_detector_remove_from_proximity_inventory(container)
 
 
 func _on_minute_passed(current_time: String):

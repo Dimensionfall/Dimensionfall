@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cibcfcysyj15" path="res://Scripts/ItemRangedEditor.gd" id="1_my1v7"]
 [ext_resource type="PackedScene" uid="uid://dsax7il2yggw8" path="res://Scenes/ContentManager/Custom_Widgets/DropEnabledTextEdit.tscn" id="2_crphu"]
 
-[node name="ItemRangedEditor" type="Control" node_paths=PackedStringArray("UsedAmmoTextEdit", "UsedMagazineContainer", "RangeNumberBox", "SpreadNumberBox", "SwayNumberBox", "RecoilNumberBox", "UsedSkillTextEdit", "skill_xp_spin_box", "ReloadSpeedNumberBox", "FiringSpeedNumberBox")]
+[node name="ItemRangedEditor" type="Control" node_paths=PackedStringArray("used_ammo_text_edit", "used_magazine_grid_container", "range_number_box", "spread_number_box", "sway_number_box", "recoil_number_box", "used_skill_text_edit", "skill_xp_spin_box", "reload_speed_number_box", "firing_speed_number_box", "accuracy_stat_text_edit")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,16 +11,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_my1v7")
-UsedAmmoTextEdit = NodePath("Ranged/UsedAmmoTextEdit")
-UsedMagazineContainer = NodePath("Ranged/ScrollContainer/UsedMagazineContainer")
-RangeNumberBox = NodePath("Ranged/RangeNumber")
-SpreadNumberBox = NodePath("Ranged/SpreadNumber")
-SwayNumberBox = NodePath("Ranged/SwayNumber")
-RecoilNumberBox = NodePath("Ranged/RecoilNumber")
-UsedSkillTextEdit = NodePath("Ranged/SkillHBoxContainer/UsedSkillTextEdit")
+used_ammo_text_edit = NodePath("Ranged/UsedAmmoTextEdit")
+used_magazine_grid_container = NodePath("Ranged/UsedMagazineGridContainer")
+range_number_box = NodePath("Ranged/RangeNumber")
+spread_number_box = NodePath("Ranged/SpreadNumber")
+sway_number_box = NodePath("Ranged/SwayNumber")
+recoil_number_box = NodePath("Ranged/RecoilNumber")
+used_skill_text_edit = NodePath("Ranged/SkillHBoxContainer/UsedSkillTextEdit")
 skill_xp_spin_box = NodePath("Ranged/SkillHBoxContainer/SkillXPSpinBox")
-ReloadSpeedNumberBox = NodePath("Ranged/ReloadSpeedNumber")
-FiringSpeedNumberBox = NodePath("Ranged/FiringSpeedNumber")
+reload_speed_number_box = NodePath("Ranged/ReloadSpeedNumber")
+firing_speed_number_box = NodePath("Ranged/FiringSpeedNumber")
+accuracy_stat_text_edit = NodePath("Ranged/AccuracyStatTextEdit")
 
 [node name="Ranged" type="GridContainer" parent="."]
 layout_mode = 1
@@ -41,24 +42,20 @@ custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.1
-focus_next = NodePath("../ScrollContainer/UsedMagazineContainer")
+focus_next = NodePath("../UsedMagazineGridContainer")
 placeholder_text = "9mm"
 
 [node name="UsedMagazineLabel" type="Label" parent="Ranged"]
 layout_mode = 2
 text = "Magazine"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Ranged"]
+[node name="UsedMagazineGridContainer" type="GridContainer" parent="Ranged"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="UsedMagazineContainer" type="VBoxContainer" parent="Ranged/ScrollContainer"]
+columns = 3
 custom_minimum_size = Vector2(0, 28)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.9
-focus_previous = NodePath("../../UsedAmmoTextEdit")
+focus_previous = NodePath("../UsedAmmoTextEdit")
 
 [node name="RangeLabel" type="Label" parent="Ranged"]
 layout_mode = 2
@@ -148,3 +145,13 @@ tooltip_text = "The delay between shots. A smaller number means firing more quic
 min_value = 0.01
 step = 0.01
 value = 0.25
+
+[node name="AccuracyStatLabel" type="Label" parent="Ranged"]
+layout_mode = 2
+text = "Accuracy Stat"
+
+[node name="AccuracyStatTextEdit" parent="Ranged" instance=ExtResource("2_crphu")]
+layout_mode = 2
+size_flags_vertical = 1
+tooltip_text = "The stat that improves accuracy for this weapon."
+myplaceholdertext = "Drop a stat from the list to the left"

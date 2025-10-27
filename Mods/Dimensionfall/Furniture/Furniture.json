@@ -281,7 +281,7 @@
 	},
 	{
 		"Function": {
-			"container_group": "refridgerator",
+			"container_group": "refrigerator",
 			"is_container": true
 		},
 		"categories": [
@@ -655,7 +655,7 @@
 	},
 	{
 		"Function": {
-			"container_group": "refridgerator",
+			"container_group": "refrigerator",
 			"is_container": true
 		},
 		"categories": [

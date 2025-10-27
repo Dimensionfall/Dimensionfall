@@ -11,24 +11,28 @@ func _ready() -> void:
 	tracked_quest_id = Helper.quest_helper.tracked_quest
 	update_quest_ui(tracked_quest_id)
 
+
 # Function to update quest UI based on the current quest and step
 # quest_name: it's actually the id of the quest as known by Runtimedata.quests
-func update_quest_ui(quest_name: String):
+func update_quest_ui(quest_name: String) -> void:
 	if not quest_name:
 		return
-	# Update the quest name label
-	var rquest: RQuest = Runtimedata.quests.by_id(quest_name)
-	quest_name_label.text = rquest.name
 
-	# Get the current step
-	var current_step = QuestManager.get_current_step(quest_name)
+	var rquest: RQuest = Runtimedata.quests.by_id(quest_name)
+	var current_step: Dictionary = QuestManager.get_current_step(quest_name)
+
 	if current_step == null or current_step.is_empty():
 		hide_ui_elements()
 		return
 
-	# Retrieve step requirement details
+	var requirement: String = _build_step_requirement(current_step)
+	_update_labels(rquest.name, requirement)
+
+
+# Builds the requirement string for the given step
+func _build_step_requirement(current_step: Dictionary) -> String:
 	var step_type = current_step.get("step_type", "Unknown")
-	var step_requirement = ""
+	var step_requirement := ""
 
 	match step_type:
 		QuestManager.INCREMENTAL_STEP:
@@ -38,22 +42,31 @@ func update_quest_ui(quest_name: String):
 
 			if stepmeta.get("type", "") == "collect":
 				var item_id = stepmeta.get("item", "")
-				var item_name = Runtimedata.items.by_id(item_id).name if item_id != "" else "Unknown Item"
-				step_requirement = "Collect " + str(current_amount) + "/" + str(target_amount) + " " + item_name
+				var item_name = (
+					Runtimedata.items.by_id(item_id).name if item_id != "" else "Unknown Item"
+				)
+				step_requirement = "Collect %s/%s %s" % [current_amount, target_amount, item_name]
 			elif stepmeta.get("type", "") == "kill":
 				if stepmeta.has("mob"):
 					var mob_id = stepmeta["mob"]
-					var mob_name = Runtimedata.mobs.by_id(mob_id).name if mob_id != "" else "Unknown Mob"
-					step_requirement = "Kill " + str(current_amount) + "/" + str(target_amount) + " " + mob_name
+					var mob_name = (
+						Runtimedata.mobs.by_id(mob_id).name if mob_id != "" else "Unknown Mob"
+					)
+					step_requirement = "Kill %s/%s %s" % [current_amount, target_amount, mob_name]
 				elif stepmeta.has("mobgroup"):
 					var mobgroup_id = stepmeta["mobgroup"]
-					var mobgroup_name = Runtimedata.mobgroups.by_id(mobgroup_id).name if mobgroup_id != "" else "Unknown Mob Group"
-					step_requirement = "Kill " + str(current_amount) + "/" + str(target_amount) + " from " + mobgroup_name
+					var mobgroup_name = (
+						Runtimedata.mobgroups.by_id(mobgroup_id).name
+						if mobgroup_id != ""
+						else "Unknown Mob Group"
+					)
+					step_requirement = (
+						"Kill %s/%s from %s" % [current_amount, target_amount, mobgroup_name]
+					)
 				else:
 					step_requirement = "Kill target not specified."
 			else:
-				step_requirement = "Progress: " + str(current_amount) + "/" + str(target_amount)
-
+				step_requirement = "Progress: %s/%s" % [current_amount, target_amount]
 		QuestManager.ITEMS_STEP:
 			var items_required = current_step.get("required_items", {})
 			step_requirement = "Items needed: " + str(items_required)
@@ -62,8 +75,13 @@ func update_quest_ui(quest_name: String):
 		_:
 			step_requirement = "Objective unknown."
 
-	# Update the quest step label
-	quest_target_label.text = step_requirement
+	return step_requirement
+
+
+# Updates quest name and requirement labels
+func _update_labels(quest_name: String, requirement: String) -> void:
+	quest_name_label.text = quest_name
+	quest_target_label.text = requirement
 
 
 # Example call to update the UI with a specific quest
@@ -92,7 +110,10 @@ func connect_quest_signals():
 
 # Function to handle quest completion
 func _on_quest_complete(_quest: Dictionary):
-	if tracked_quest_id != "" and Runtimedata.quests.by_id(tracked_quest_id).name == quest_name_label.text:  # Check if it matches the tracked quest
+	if (
+		tracked_quest_id != ""
+		and Runtimedata.quests.by_id(tracked_quest_id).name == quest_name_label.text
+	):  # Check if it matches the tracked quest
 		hide_ui_elements()  # Hide the UI if the quest has failed
 	else:
 		print("Quest failed but not currently tracked:", tracked_quest_id)
@@ -100,7 +121,10 @@ func _on_quest_complete(_quest: Dictionary):
 
 # Function to handle quest failure
 func _on_quest_failed(_quest: Dictionary):
-	if tracked_quest_id != "" and Runtimedata.quests.by_id(tracked_quest_id).name == quest_name_label.text:  # Check if it matches the tracked quest
+	if (
+		tracked_quest_id != ""
+		and Runtimedata.quests.by_id(tracked_quest_id).name == quest_name_label.text
+	):  # Check if it matches the tracked quest
 		hide_ui_elements()  # Hide the UI if the quest has failed
 	else:
 		print("Quest failed but not currently tracked:", tracked_quest_id)
@@ -108,19 +132,28 @@ func _on_quest_failed(_quest: Dictionary):
 
 # Function to handle step completion
 func _on_step_complete(_step: Dictionary):
-	if tracked_quest_id != "" and Runtimedata.quests.by_id(tracked_quest_id).name == quest_name_label.text:  # Check if it matches the tracked quest
+	if (
+		tracked_quest_id != ""
+		and Runtimedata.quests.by_id(tracked_quest_id).name == quest_name_label.text
+	):  # Check if it matches the tracked quest
 		update_quest_ui(tracked_quest_id)  # Update the UI for the tracked quest
 
 
 # Function to handle moving to the next step
 func _on_next_step(_step: Dictionary):
-	if tracked_quest_id != "" and Runtimedata.quests.by_id(tracked_quest_id).name == quest_name_label.text:  # Check if it matches the tracked quest
+	if (
+		tracked_quest_id != ""
+		and Runtimedata.quests.by_id(tracked_quest_id).name == quest_name_label.text
+	):  # Check if it matches the tracked quest
 		update_quest_ui(tracked_quest_id)  # Update the UI for the tracked quest
 
 
 # Function to handle step update
 func _on_step_updated(_step: Dictionary):
-	if tracked_quest_id != "" and Runtimedata.quests.by_id(tracked_quest_id).name == quest_name_label.text:  # Check if it matches the tracked quest
+	if (
+		tracked_quest_id != ""
+		and Runtimedata.quests.by_id(tracked_quest_id).name == quest_name_label.text
+	):  # Check if it matches the tracked quest
 		update_quest_ui(tracked_quest_id)  # Update the UI for the tracked quest
 
 

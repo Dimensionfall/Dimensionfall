@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://coyt00mcucd8n" path="res://Scripts/ItemAmmoEditor.gd" id="1_5v06u"]
 
-[node name="ItemAmmoEditor" type="Control" node_paths=PackedStringArray("DamageNumberBox")]
+[node name="ItemAmmoEditor" type="Control" node_paths=PackedStringArray("damage_number_box")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5v06u")
-DamageNumberBox = NodePath("Ammo/DamageNumber")
+damage_number_box = NodePath("Ammo/DamageNumber")
 
 [node name="Ammo" type="GridContainer" parent="."]
 layout_mode = 0

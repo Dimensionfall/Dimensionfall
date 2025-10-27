@@ -18,6 +18,7 @@ var overmapareas: ROvermapareas
 var mobgroups: RMobgroups
 var mobfactions: RMobfactions
 var attacks: RAttacks
+var npcs: RNpcs
 
 # Dictionary to map content types to Gamedata variables
 var gamedata_map: Dictionary = {}
@@ -50,8 +51,9 @@ func reconstruct(enabled_mods: Array[DMod] = []) -> void:
 	items = RItems.new(enabled_mods)
 	mobfactions = RMobfactions.new(enabled_mods)
 	attacks = RAttacks.new(enabled_mods)
-
-	# Populate the gamedata_map with the instantiated objects
+	npcs = RNpcs.new(enabled_mods)
+	
+		# Populate the gamedata_map with the instantiated objects
 	gamedata_map = {
 		DMod.ContentType.STATS: stats,
 		DMod.ContentType.SKILLS: skills,
@@ -68,8 +70,9 @@ func reconstruct(enabled_mods: Array[DMod] = []) -> void:
 		DMod.ContentType.FURNITURES: furnitures,
 		DMod.ContentType.ITEMS: items,
 		DMod.ContentType.MOBFACTIONS: mobfactions,
-		DMod.ContentType.ATTACKS: attacks
-	}
+		DMod.ContentType.ATTACKS: attacks,
+		DMod.ContentType.NPCS: npcs
+		}
 
 
 func reset() -> void:

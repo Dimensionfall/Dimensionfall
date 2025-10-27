@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dia3100avqbi2" path="res://Scripts/EquipmentSlot.gd" id="1_hgy1f"]
 
-[node name="EquipmentSlot" type="Control" node_paths=PackedStringArray("backgroundColor", "myIcon")]
+[node name="EquipmentSlot" type="Control" node_paths=PackedStringArray("background_color", "my_icon")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,8 +10,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hgy1f")
-backgroundColor = NodePath("ColorRect")
-myIcon = NodePath("TextureRect")
+background_color = NodePath("ColorRect")
+my_icon = NodePath("TextureRect")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

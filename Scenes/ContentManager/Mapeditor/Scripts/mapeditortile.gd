@@ -2,10 +2,11 @@ extends Control
 
 const defaultTexture: String = "res://Scenes/ContentManager/Mapeditor/Images/emptyTile.png"
 const aboveTexture: String = "res://Scenes/ContentManager/Mapeditor/Images/tileAbove.png"
+const npcTexture: String = "res://Scenes/ContentManager/Mapeditor/Images/npctile.png"
 const areaTexture: String = "res://Scenes/ContentManager/Mapeditor/Images/areatile.png"
 
-
 signal tile_clicked(clicked_tile: Control)
+
 
 # Emits tile_clicked signal when left mouse button is pressed
 func _on_texture_rect_gui_input(event: InputEvent) -> void:
@@ -24,7 +25,6 @@ func set_scale_amount(scaleAmount: int) -> void:
 	custom_minimum_size.y = scaleAmount
 
 
-
 # If the user holds the mouse button while entering this tile, we consider it clicked
 func _on_texture_rect_mouse_entered() -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
@@ -36,7 +36,7 @@ func highlight() -> void:
 
 
 func unhighlight() -> void:
-	$TileSprite.modulate = Color(1,1,1)
+	$TileSprite.modulate = Color(1, 1, 1)
 
 
 func set_clickable(clickable: bool):
@@ -60,56 +60,33 @@ func get_tile_texture():
 # Sets the tooltip for this tile. The user can use this to see what's on this tile.
 func set_tooltip(tileData: Dictionary) -> void:
 	var tooltiptext = "Tile Overview:\n"
-	
+
 	# Display tile ID
-	if tileData.has("id") and tileData.id != "":
-		tooltiptext += "ID: " + str(tileData.id) + "\n"
-	else:
+	var tile_id: String = tileData.get("id", "")
+	if tile_id == "":
 		tooltiptext += "ID: None\n"
-	
+	else:
+		tooltiptext += "ID: " + tile_id + "\n"
+
 	# Display tile rotation
-	if tileData.has("rotation"):
-		tooltiptext += "Rotation: " + str(tileData.rotation) + " degrees\n"
+	tooltiptext += "Rotation: " + str(tileData.get("rotation", 0)) + " degrees\n"
+
+	# Display feature information
+	if tileData.has("feature"):
+		var feature: Dictionary = tileData.feature
+		var feature_type: String = feature.get("type", "None")
+		tooltiptext += "Feature Type: " + feature_type + "\n"
+		match feature_type:
+			"mob", "mobgroup", "furniture":
+				tooltiptext += "Feature ID: " + str(feature.get("id", "")) + "\n"
+				tooltiptext += "Feature Rotation: " + str(feature.get("rotation", 0)) + " degrees\n"
+				if feature_type == "furniture" and feature.has("itemgroups"):
+					tooltiptext += "Furniture Item areas: " + str(feature.itemgroups) + "\n"
+			"itemgroup":
+				tooltiptext += "Itemgroups: " + str(feature.get("itemgroups", [])) + "\n"
+				tooltiptext += "Feature Rotation: " + str(feature.get("rotation", 0)) + " degrees\n"
 	else:
-		tooltiptext += "Rotation: 0 degrees\n"
-	
-	# Display mob information
-	if tileData.has("mob"):
-		tooltiptext += "Mob ID: " + str(tileData.mob.id) + "\n"
-		if tileData.mob.has("rotation"):
-			tooltiptext += "Mob Rotation: " + str(tileData.mob.rotation) + " degrees\n"
-		else:
-			tooltiptext += "Mob Rotation: 0 degrees\n"
-	else:
-		tooltiptext += "Mob: None\n"
-		
-	# Display mobgroup information
-	if tileData.has("mobgroup"):
-		tooltiptext += "Mob Group ID: " + str(tileData.mobgroup.id) + "\n"
-		if tileData.mobgroup.has("rotation"):
-			tooltiptext += "Mob Group Rotation: " + str(tileData.mobgroup.rotation) + " degrees\n"
-		else:
-			tooltiptext += "Mob Group Rotation: 0 degrees\n"
-	else:
-		tooltiptext += "Mob Group: None\n"
-	
-	# Display furniture information
-	if tileData.has("furniture"):
-		tooltiptext += "Furniture ID: " + str(tileData.furniture.id) + "\n"
-		if tileData.furniture.has("rotation"):
-			tooltiptext += "Furniture Rotation: " + str(tileData.furniture.rotation) + " degrees\n"
-		else:
-			tooltiptext += "Furniture Rotation: 0 degrees\n"
-		if tileData.furniture.has("itemgroups"):
-			tooltiptext += "Furniture Item areas: " + str(tileData.furniture.itemgroups) + "\n"
-	else:
-		tooltiptext += "Furniture: None\n"
-	
-	# Display itemgroups information
-	if tileData.has("itemgroups"):
-		tooltiptext += "Tile Item areas: " + str(tileData.itemgroups) + "\n"
-	else:
-		tooltiptext += "Tile Item areas: None\n"
+		tooltiptext += "Feature: None\n"
 
 	# Display areas information
 	if tileData.has("areas"):
@@ -122,7 +99,6 @@ func set_tooltip(tileData: Dictionary) -> void:
 	else:
 		tooltiptext += "Tile areas: None\n"
 
-	
 	# Set the tooltip
 	self.tooltip_text = tooltiptext
 
@@ -136,7 +112,7 @@ func set_area_sprite_visibility(isvisible: bool) -> void:
 # Tiledata can have: id, rotation, mob, furniture, itemgroup, and areas
 func update_display(tileData: Dictionary = {}, selected_area_name: String = "None"):
 	var parent_name = get_parent().get_name()
-	
+
 	# Will be made visible again if the conditions are right
 	$ObjectSprite.hide()
 	$AreaSprite.hide()
@@ -157,24 +133,43 @@ func update_display(tileData: Dictionary = {}, selected_area_name: String = "Non
 		$ObjectSprite.rotation_degrees = 0
 		$AreaSprite.rotation_degrees = 0
 
-		# Check for mob and furniture, and update accordingly
-		if tileData.has("mobgroup"):
-			if tileData["mobgroup"].has("rotation"):
-				$ObjectSprite.rotation_degrees = tileData["mobgroup"]["rotation"]
-			$ObjectSprite.texture = Gamedata.mods.get_content_by_id(DMod.ContentType.MOBGROUPS,tileData["mobgroup"]["id"]).sprite
-			$ObjectSprite.show()
-		if tileData.has("mob"):
-			if tileData["mob"].has("rotation"):
-				$ObjectSprite.rotation_degrees = tileData["mob"]["rotation"]
-			$ObjectSprite.texture = Gamedata.mods.get_content_by_id(DMod.ContentType.MOBS,tileData["mob"]["id"]).sprite
-			$ObjectSprite.show()
-		elif tileData.has("furniture"):
-			if tileData["furniture"].has("rotation"):
-				$ObjectSprite.rotation_degrees = tileData["furniture"]["rotation"]
-			$ObjectSprite.texture = Gamedata.mods.get_content_by_id(DMod.ContentType.FURNITURES,tileData["furniture"]["id"]).sprite
-			$ObjectSprite.show()
-		elif tileData.has("itemgroups"):
-			set_tile_itemgroups(tileData)
+		if tileData.has("feature"):
+			var feature: Dictionary = tileData.feature
+			var feature_rot: int = int(feature.get("rotation", 0))
+			match feature.get("type", ""):
+				"mobgroup":
+					$ObjectSprite.rotation_degrees = feature_rot
+					$ObjectSprite.texture = (
+						Gamedata
+						. mods
+						. get_content_by_id(DMod.ContentType.MOBGROUPS, feature.get("id", ""))
+						. sprite
+					)
+					$ObjectSprite.show()
+				"mob":
+					$ObjectSprite.rotation_degrees = feature_rot
+					$ObjectSprite.texture = (
+						Gamedata
+						. mods
+						. get_content_by_id(DMod.ContentType.MOBS, feature.get("id", ""))
+						. sprite
+					)
+					$ObjectSprite.show()
+				"furniture":
+					$ObjectSprite.rotation_degrees = feature_rot
+					$ObjectSprite.texture = (
+						Gamedata
+						. mods
+						. get_content_by_id(DMod.ContentType.FURNITURES, feature.get("id", ""))
+						. sprite
+					)
+					$ObjectSprite.show()
+				"npc_tile":
+					$ObjectSprite.rotation_degrees = feature_rot
+					$ObjectSprite.texture = load(npcTexture)
+					$ObjectSprite.show()
+				"itemgroup":
+					set_tile_itemgroups(tileData)
 
 		# Show the area sprite if conditions are met
 		if tileData.has("areas") and selected_area_name != "None":
@@ -189,7 +184,6 @@ func update_display(tileData: Dictionary = {}, selected_area_name: String = "Non
 	set_tooltip(tileData)
 
 
-
 # Update the sprite by id
 func set_tile_id(id: String) -> void:
 	if id == "null":
@@ -197,23 +191,28 @@ func set_tile_id(id: String) -> void:
 	if id == "":
 		$TileSprite.texture = load(defaultTexture)
 	else:
-		$TileSprite.texture = Gamedata.mods.get_content_by_id(DMod.ContentType.TILES,id).sprite
+		$TileSprite.texture = Gamedata.mods.get_content_by_id(DMod.ContentType.TILES, id).sprite
 
 
-# Manages the itemgroups property for the tile. 
+# Manages the itemgroups property for the tile.
 # If the tile has no mob or furniture, it applies itemgroups to the tile and assigns a random sprite to the ObjectSprite.
 # If the itemgroups array is empty, it hides the ObjectSprite and removes the itemgroups property from the tile.
 # If the tileData contains a mob or furniture, the function returns early without making any changes.
 func set_tile_itemgroups(tileData: Dictionary) -> void:
-	if tileData.has("mob") or tileData.has("furniture") or tileData.has("mobgroup"):
+	if not tileData.has("feature"):
 		return
-	
-	var itemgroups: Array = tileData.get("itemgroups", [])
-	if itemgroups.is_empty(): # Erase the itemgroups property if the itemgroups array is empty
+
+	var feature: Dictionary = tileData.feature
+	if feature.get("type", "") != "itemgroup":
+		return
+
+	var itemgroups: Array = feature.get("itemgroups", [])
+	if itemgroups.is_empty():
 		$ObjectSprite.hide()
 	else:
-		# Apply the itemgroup to the tile and update ObjectSprite with a random sprite
 		var random_itemgroup: String = itemgroups.pick_random()
-		$ObjectSprite.texture = Gamedata.mods.get_content_by_id(DMod.ContentType.ITEMGROUPS,random_itemgroup).sprite
+		$ObjectSprite.texture = (
+			Gamedata.mods.get_content_by_id(DMod.ContentType.ITEMGROUPS, random_itemgroup).sprite
+		)
 		$ObjectSprite.show()
 		$ObjectSprite.rotation_degrees = 0

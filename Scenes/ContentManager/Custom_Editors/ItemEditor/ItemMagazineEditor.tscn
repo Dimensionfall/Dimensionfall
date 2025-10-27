@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://6c1lyc6bwknh" path="res://Scripts/ItemMagazineEditor.gd" id="1_cgvqr"]
 
-[node name="ItemMagazineEditor" type="Control" node_paths=PackedStringArray("UsedAmmoTextEdit", "MaxAmmoNumberBox", "CurrentAmmoNumberBox")]
+[node name="ItemMagazineEditor" type="Control" node_paths=PackedStringArray("used_ammo_text_edit", "max_ammo_number_box", "current_ammo_number_box")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,9 +10,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cgvqr")
-UsedAmmoTextEdit = NodePath("Magazine/UsedAmmoTextEdit")
-MaxAmmoNumberBox = NodePath("Magazine/MaxAmmoNumber")
-CurrentAmmoNumberBox = NodePath("Magazine/CurrentAmmoNumber")
+used_ammo_text_edit = NodePath("Magazine/UsedAmmoTextEdit")
+max_ammo_number_box = NodePath("Magazine/MaxAmmoNumber")
+current_ammo_number_box = NodePath("Magazine/CurrentAmmoNumber")
 
 [node name="Magazine" type="GridContainer" parent="."]
 layout_mode = 1

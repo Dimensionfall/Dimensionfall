@@ -14,6 +14,11 @@
 			"military_bunker"
 		]
 	},
+	"clothing_general": {
+		"maps": [
+			"underground_lab"
+		]
+	},
 	"debris_rock": {
 		"maps": [
 			"subway_station",
@@ -22,7 +27,8 @@
 			"warehouse_storage",
 			"military_bunker",
 			"crater_small",
-			"survivor_gas_station"
+			"survivor_gas_station",
+			"underground_cave"
 		]
 	},
 	"debris_urban": {
@@ -59,7 +65,9 @@
 			"factory_hall",
 			"warehouse_storage",
 			"military_bunker",
-			"survivor_gas_station"
+			"survivor_gas_station",
+			"forest_ruins",
+			"underground_lab"
 		]
 	},
 	"electronics_damaged": {
@@ -88,7 +96,8 @@
 		"maps": [
 			"radio_tower",
 			"police_station",
-			"military_bunker"
+			"military_bunker",
+			"underground_lab"
 		]
 	},
 	"generic_field_finds": {
@@ -108,7 +117,9 @@
 			"field_grass_hill_00",
 			"military_bunker",
 			"crater_small",
-			"survivor_gas_station"
+			"survivor_gas_station",
+			"forest_clearing",
+			"forest_ruins"
 		]
 	},
 	"generic_forest_finds": {
@@ -119,7 +130,9 @@
 			"forest_road_corner",
 			"forest_basic_00",
 			"forest_camp_00",
-			"forest_burned_00"
+			"forest_burned_00",
+			"forest_clearing",
+			"forest_ruins"
 		]
 	},
 	"kitchen_cupboard": {
@@ -163,7 +176,7 @@
 			"military_bunker"
 		]
 	},
-	"refridgerator": {
+	"refrigerator": {
 		"maps": [
 			"store_groceries"
 		]
@@ -174,6 +187,9 @@
 			"campfire_on",
 			"burned_tree_stump",
 			"burned_tree"
+		],
+		"maps": [
+			"forest_ruins"
 		]
 	},
 	"tree_forage": {
@@ -194,7 +210,8 @@
 			"police_station",
 			"warehouse_storage",
 			"military_bunker",
-			"survivor_gas_station"
+			"survivor_gas_station",
+			"underground_lab"
 		]
 	},
 	"vending_machine_drinks": {

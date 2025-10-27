@@ -17,14 +17,13 @@ var loaded_chunks = {} # Dictionary to store loaded chunks with their positions 
 var player_position = Vector2.ZERO # Player's position, updated regularly
 # Chunks are loaded and unloaded one at a time. The load_queue will be processed before the unload_queue
 # Chunks that should be loaded and unloaded are stored inside these variables
-var load_queue = []
-var unload_queue = []
+var load_queue: Array[Vector2] = []
+var unload_queue: Array[Vector2] = []
 # Enforces loading or unloading one chunk at a time
 var is_processing_chunk = false
 const TIME_DELAY: float = 0.4
 
 signal all_chunks_unloaded
-signal all_chunks_loaded  # Signal to indicate all initial chunks are loaded for the first time
 
 var initial_chunks_status = {}  # Dictionary to track initial chunks loading status
 
@@ -191,8 +190,6 @@ func save_and_unload_chunk(chunk_pos: Vector2):
 # We set the is_processing_chunk to false so we can start processing another chunk
 func _on_chunk_un_loaded():
 	is_processing_chunk = false
-	if load_queue.size() <= 0 or unload_queue.size() <= 0:
-		all_chunks_loaded.emit()  # Emit the signal when all chunks are loaded
 
 
 # Calculates which chunks should be loaded and unloaded
@@ -266,8 +263,8 @@ func get_global_chunk(chunk_pos: Vector2) -> Chunk:
 # Returns which chunk the position is in right now
 # position_in_3d_space can be any position, like 12,2,6 or 139,-6,14
 func get_chunk_from_position(position_in_3d_space: Vector3) -> Chunk:
-	var chunk_x = floor(position_in_3d_space.x / 32) * 32
-	var chunk_z = floor(position_in_3d_space.z / 32) * 32
+	var chunk_x = floor(position_in_3d_space.x / level_width) * level_width
+	var chunk_z = floor(position_in_3d_space.z / level_height) * level_height
 	return get_global_chunk(Vector2(chunk_x, chunk_z))
 
 
@@ -291,23 +288,26 @@ func unload_all_chunks():
 # Function to handle chunk unloading. Chunk data will NOT be saved.
 # If you need to save chunk data beforehand, call Helper.save_helper.save_map_data()
 func handle_chunk_unload():
-		var all_unloaded = true
-		# Get all chunks in the group "chunks"
+	var all_unloaded := false
+
+	# Keep looping until every chunk has been unloaded
+	while not all_unloaded:
+		all_unloaded = true
+
+		# Get every chunk currently in the group
 		var chunks = get_tree().get_nodes_in_group("chunks")
 		for chunk in chunks:
-			await get_tree().create_timer(TIME_DELAY).timeout # Wait for a bit before checking again
-			if is_instance_valid(chunk): # some might be queue_freed at this point
+			await get_tree().create_timer(TIME_DELAY).timeout # short pause between checks
+			if is_instance_valid(chunk):
 				match chunk.load_state:
 					chunk.LoadStates.NEITHER:
 						unload_chunk(get_chunk_pos_from_mypos(chunk.mypos))
-						all_unloaded = false  # Wait for state to change
-					chunk.LoadStates.LOADING:
-						all_unloaded = false  # Wait for state to change
-					chunk.LoadStates.UNLOADING:
-						all_unloaded = false  # Wait for chunk to unload
-		if all_unloaded:
-			is_processing_chunk = false
-			all_chunks_unloaded.emit()
-		else:
-			await get_tree().create_timer(TIME_DELAY).timeout # Wait for a bit before checking again
-			handle_chunk_unload()
+						all_unloaded = false
+					chunk.LoadStates.LOADING, chunk.LoadStates.UNLOADING:
+						all_unloaded = false
+
+		if not all_unloaded:
+			await get_tree().create_timer(TIME_DELAY).timeout # wait before the next pass
+
+	is_processing_chunk = false
+	all_chunks_unloaded.emit()

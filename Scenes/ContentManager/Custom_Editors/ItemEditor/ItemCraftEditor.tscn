@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7jwy5hpj2vyt"]
+[gd_scene load_steps=5 format=3 uid="uid://b7jwy5hpj2vyt"]
 
 [ext_resource type="Script" uid="uid://b4xhaqlgcskvg" path="res://Scripts/ItemCraftEditor.gd" id="1_6wvrt"]
 [ext_resource type="PackedScene" uid="uid://dsax7il2yggw8" path="res://Scenes/ContentManager/Custom_Widgets/DropEnabledTextEdit.tscn" id="2_bjy2a"]
+[ext_resource type="PackedScene" uid="uid://dmlbg7nolncnh" path="res://Scenes/ContentManager/Custom_Widgets/DropEntityTextEdit.tscn" id="3_mliuy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvald"]
 content_margin_left = 11.0
@@ -19,7 +20,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[node name="ItemCraftEditor" type="Control" node_paths=PackedStringArray("craftAmountNumber", "craftTimeNumber", "requiresLightCheckbox", "hand_craftable_check_box", "resourcesGridContainer", "recipesContainer", "required_skill_text_edit", "skill_level_requirement_spin_box", "skill_progression_text_edit", "skill_progression_spin_box")]
+[node name="ItemCraftEditor" type="Control" node_paths=PackedStringArray("craftAmountNumber", "craftTimeNumber", "requiresLightCheckbox", "hand_craftable_check_box", "resourcesGridContainer", "recipesContainer", "required_skill_text_edit", "skill_level_requirement_spin_box", "skill_progression_text_edit", "skill_progression_spin_box", "skill_bonus_stat_text_edit")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,6 +38,7 @@ required_skill_text_edit = NodePath("Craft/SkillRequirementHBoxContainer/Require
 skill_level_requirement_spin_box = NodePath("Craft/SkillRequirementHBoxContainer/SkillLevelRequirementSpinBox")
 skill_progression_text_edit = NodePath("Craft/SkillProgressionHBoxContainer/SkillProgressionNameDropEnabledTextEdit")
 skill_progression_spin_box = NodePath("Craft/SkillProgressionHBoxContainer/SkillProgressionSpinBox")
+skill_bonus_stat_text_edit = NodePath("Craft/SkillBonusStatTextEdit")
 
 [node name="Craft" type="GridContainer" parent="."]
 layout_mode = 1
@@ -178,13 +180,23 @@ myplaceholdertext = "drop a skill from the list on the left"
 
 [node name="SkillProgressionSpinBox" type="SpinBox" parent="Craft/SkillProgressionHBoxContainer"]
 layout_mode = 2
-tooltip_text = "The amount of XP the player will get when crafting this item. 
-The xp will go towards the skill configured in the textbox. If no 
+tooltip_text = "The amount of XP the player will get when crafting this item.
+The xp will go towards the skill configured in the textbox. If no
 skill is set, the player does not receive XP for crafting this item.
 The amount can be a minimum of 1 and a maximum of 100."
 min_value = 1.0
 value = 1.0
 editable = false
+
+[node name="SkillBonusStatLabel" type="Label" parent="Craft"]
+layout_mode = 2
+text = "Skill bonus stat"
+
+[node name="SkillBonusStatTextEdit" parent="Craft" instance=ExtResource("3_mliuy")]
+layout_mode = 2
+size_flags_vertical = 1
+tooltip_text = "Drop a stat to increase the effective crafting skill."
+myplaceholdertext = "Drop a stat from the list"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="button_up" from="Craft/HBoxContainer/AddRecipeButton" to="." method="_on_add_recipe_button_button_up"]

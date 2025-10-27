@@ -5,46 +5,57 @@ var attack_timer: Timer
 var mob: CharacterBody3D
 var spotted_target: CharacterBody3D
 
+
 func _ready():
 	name = "MobRangedAttack"
 	attack_timer = Timer.new()
-	attack_timer.wait_time = 1 #mob.rmob.ranged_cooldown # TODO: Need a ranged_cooldown in mob data
+	attack_timer.wait_time = 1  #mob.rmob.ranged_cooldown # TODO: Need a ranged_cooldown in mob data
 	add_child.call_deferred(attack_timer)
 	attack_timer.timeout.connect(_on_attack_cooldown_timeout)
 
-func Enter():
+
+func enter():
 	attack_timer.start()
 	print("ENTERING RANGED ATTACK MODE")
 
-func Exit():
+
+func exit():
 	attack_timer.stop()
 
-func Physics_Update(_delta: float):
+
+func physics_update(_delta: float):
 	if mob.terminated:
-		Transistioned.emit(self, "mobterminate")
+		Transitioned.emit(self, "mobterminate")
 		return
 
 	var ranged_range: int = mob.get_ranged_range()
 
-	if spotted_target and is_instance_valid(spotted_target) and mob.global_position.distance_to(spotted_target.global_position) <= ranged_range:
+	if (
+		spotted_target
+		and is_instance_valid(spotted_target)
+		and mob.global_position.distance_to(spotted_target.global_position) <= ranged_range
+	):
 		# Make the mob look at the target
 		var target_position = spotted_target.global_position
-		target_position.y = mob.meshInstance.global_position.y # Align y to avoid tilting
+		target_position.y = mob.meshInstance.global_position.y  # Align y to avoid tilting
 		mob.meshInstance.look_at(target_position, Vector3.UP)
 
 		var space_state = get_world_3d().direct_space_state
-		var query = PhysicsRayQueryParameters3D.create(mob.global_position, spotted_target.global_position, 3, [self])
+		var query = PhysicsRayQueryParameters3D.create(
+			mob.global_position, spotted_target.global_position, 3, [self]
+		)
 		var result = space_state.intersect_ray(query)
 
 		if result and result.collider == spotted_target:
 			if attack_timer.is_stopped():
 				attack_timer.start()
 	else:
-		Transistioned.emit(self, "mobfollow") # Exit back to follow state if out of range
+		Transitioned.emit(self, "mobfollow")  # Exit back to follow state if out of range
 
 
 func _on_attack_cooldown_timeout():
 	shoot_projectile()
+
 
 func shoot_projectile():
 	# Ensure target is still valid before shooting
@@ -53,7 +64,7 @@ func shoot_projectile():
 
 	var spawn_position = mob.global_transform.origin + Vector3(0.0, -0.0, 0.0)
 	var target_position = spotted_target.global_position
-	var projectile_speed: float = 5 # TODO: implement mob.rmob.projectile_speed
+	var projectile_speed: float = 5  # TODO: Read from RAttack.projectile_speed
 
 	spawn_projectile(spawn_position, target_position, projectile_speed)
 
@@ -92,7 +103,5 @@ func create_attack_data(spawn_position: Vector3) -> Dictionary:
 	if not chosen_attack:
 		return {}
 	return {
-		"attack": chosen_attack,
-		"mobposition": spawn_position,
-		"hit_chance": 100
+		"attack": chosen_attack, "mobposition": spawn_position, "hit_chance": 100, "source": mob
 	}

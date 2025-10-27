@@ -1,4 +1,5 @@
 extends Control
+class_name EquipmentSlot
 
 # This script is intended to be used with the EquipmentSlot scene
 # The equipmentslot will hold one piece of equipment (a weapon)
@@ -15,12 +16,12 @@ extends Control
 
 
 # The inventory to pull ammo from and to drop items into
-@export var myInventory: InventoryStacked
-@export var myInventoryCtrl: Control
-@export var backgroundColor: ColorRect
-@export var myIcon: TextureRect
+@export var my_inventory: InventoryStacked
+@export var my_inventory_ctrl: Control
+@export var background_color: ColorRect
+@export var my_icon: TextureRect
 # A timer that will prevent the user from reloading while a reload is happening now
-@export var otherHandSlot: Control
+@export var other_hand_slot: Control
 @export var slot_idx: int
 
 var myInventoryItem: InventoryItem = null
@@ -30,7 +31,7 @@ var default_reload_speed: float = 1.0
 
 
 # Handle GUI input events
-func _gui_input(event):
+func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		# Check if there's an item equipped and the click is inside the slot
 		if myInventoryItem:
@@ -54,7 +55,7 @@ func equip(item: InventoryItem) -> void:
 		# Not applicable if a game is loaded and we re-equip an item that was alread equipped
 		var itemInventory = item.get_inventory()
 		if itemInventory and itemInventory.has_item(item):
-			item.get_inventory().remove_item(item)	
+			item.get_inventory().remove_item(item)  
 
 		# Tells the equippedItem node in the player node to update the weapon properties
 		Helper.signal_broker.item_was_equipped.emit(item, self)
@@ -69,7 +70,7 @@ func unequip() -> void:
 	if myInventoryItem:
 		Helper.signal_broker.item_was_unequipped.emit(myInventoryItem, self)
 		Helper.signal_broker.item_was_unequipped_from_slot(slot_idx).emit(slot_idx, myInventoryItem, self)
-		myInventory.add_item(myInventoryItem)
+		my_inventory.add_item(myInventoryItem)
 		myInventoryItem = null
 		update_icon()
 
@@ -79,7 +80,7 @@ func unequip() -> void:
 func handle_two_handed_constraint(item: InventoryItem) -> bool:
 	var can_equip: bool = true
 	var is_two_handed: bool = item.get_property("two_handed", false)
-	var other_slot_item: InventoryItem = otherHandSlot.get_item()
+	var other_slot_item: InventoryItem = other_hand_slot.get_item()
 	# Check if the other slot has a two-handed item equipped
 	if other_slot_item and other_slot_item.get_property("two_handed", false):
 		print_debug("Cannot equip item. The other slot has a two-handed weapon equipped.")
@@ -87,16 +88,16 @@ func handle_two_handed_constraint(item: InventoryItem) -> bool:
 	else:
 		# If the item is two-handed, clear the other hand slot before equipping
 		if is_two_handed:
-			otherHandSlot.unequip()
+			other_hand_slot.unequip()
 	return can_equip
 
 
 # Update the icon of the equipped item
 func update_icon() -> void:
 	if myInventoryItem:
-		myIcon.texture = myInventoryItem.get_texture()
+		my_icon.texture = myInventoryItem.get_texture()
 	else:
-		myIcon.texture = null
+		my_icon.texture = null
 
 
 # Get the currently equipped item
@@ -105,12 +106,12 @@ func get_item() -> InventoryItem:
 
 
 # This function should return true if the dragged data can be dropped here
-func _can_drop_data(_newpos, data) -> bool:
+func _can_drop_data(_newpos: Vector2, data: Variant) -> bool:
 	return data is Array[InventoryItem]
-
+		
 
 # This function handles the data being dropped
-func _drop_data(newpos, data):
+func _drop_data(newpos: Vector2, data: Variant) -> void:
 	if _can_drop_data(newpos, data):
 		if data is Array and data.size() > 0 and data[0] is InventoryItem:
 			var first_item = data[0]
@@ -120,7 +121,7 @@ func _drop_data(newpos, data):
 			else:
 				# Equip the item if it's not a magazine
 				equip(first_item)
-
+								
 
 # When the user has dropped a magaziene from the inventory
 func _handle_magazine_drop(magazine: InventoryItem):

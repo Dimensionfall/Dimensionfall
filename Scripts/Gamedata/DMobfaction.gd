@@ -174,16 +174,13 @@ func changed(olddata: DMobfaction):
 
 	# Add new references
 	for new_mob_id in new_mob_ids:
-		if new_mob_id not in old_mob_ids:
-			Gamedata.mods.add_reference(DMod.ContentType.MOBS, new_mob_id, DMod.ContentType.MOBFACTIONS, id)
+		Gamedata.mods.add_reference(DMod.ContentType.MOBS, new_mob_id, DMod.ContentType.MOBFACTIONS, id)
 
 	for new_mobgroup_id in new_mobgroup_ids:
-		if new_mobgroup_id not in old_mobgroup_ids:
-			Gamedata.mods.add_reference(DMod.ContentType.MOBGROUPS, new_mobgroup_id, DMod.ContentType.MOBFACTIONS, id)
+		Gamedata.mods.add_reference(DMod.ContentType.MOBGROUPS, new_mobgroup_id, DMod.ContentType.MOBFACTIONS, id)
 
 	for new_faction_id in new_faction_ids:
-		if new_faction_id not in old_faction_ids:
-			Gamedata.mods.add_reference(DMod.ContentType.MOBFACTIONS, new_faction_id, DMod.ContentType.MOBFACTIONS, id)
+		Gamedata.mods.add_reference(DMod.ContentType.MOBFACTIONS, new_faction_id, DMod.ContentType.MOBFACTIONS, id)
 
 	save_to_disk()
 

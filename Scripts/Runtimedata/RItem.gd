@@ -33,6 +33,7 @@ class CraftRecipe:
 	var required_resources: Array
 	var skill_requirement: Dictionary
 	var skill_progression: Dictionary
+	var skill_bonus_stat: String
 
 	func _init(data: Dictionary):
 		craft_amount = data.get("craft_amount", 1)
@@ -41,6 +42,7 @@ class CraftRecipe:
 		required_resources = data.get("required_resources", [])
 		skill_requirement = data.get("skill_requirement", {})
 		skill_progression = data.get("skill_progression", {})
+		skill_bonus_stat = data.get("skill_bonus_stat", "")
 
 	func get_data() -> Dictionary:
 		var data: Dictionary = {
@@ -53,6 +55,8 @@ class CraftRecipe:
 			data["skill_requirement"] = skill_requirement
 		if not skill_progression.is_empty():
 			data["skill_progression"] = skill_progression
+		if skill_bonus_stat != "":
+			data["skill_bonus_stat"] = skill_bonus_stat
 		return data
 
 # Subclass to represent the Craft functionality
@@ -104,6 +108,7 @@ class Ranged:
 	var used_ammo: String
 	var used_magazine: String
 	var used_skill: Dictionary
+	var accuracy_stat: String
 
 	func _init(data: Dictionary):
 		firing_speed = data.get("firing_speed", 0.0)
@@ -115,9 +120,10 @@ class Ranged:
 		used_ammo = data.get("used_ammo", "")
 		used_magazine = data.get("used_magazine", "")
 		used_skill = data.get("used_skill", {})
+		accuracy_stat = data.get("accuracy_stat", "")
 
 	func get_data() -> Dictionary:
-		return {
+		var data: Dictionary = {
 			"firing_speed": firing_speed,
 			"range": firing_range,
 			"recoil": recoil,
@@ -128,6 +134,9 @@ class Ranged:
 			"used_magazine": used_magazine,
 			"used_skill": used_skill
 		}
+		if accuracy_stat != "":
+			data["accuracy_stat"] = accuracy_stat
+		return data
 
 class Melee:
 	var damage: int

@@ -21,11 +21,13 @@ var position_offset: Vector3 = Vector3.ZERO
 var has_obstacle: bool = false # Tracks whether there is an obstacle
 var current_rotation: int = 0
 
+# Emitted when the player clicks and there are no obstacles for the construction
 signal construction_clicked(data: Dictionary)
 
 func _ready():
 	# Connect the signal for construction clicks to the build manager
 	construction_clicked.connect(buildmanager.on_construction_clicked)
+	visibility_changed.connect(_on_visibility_changed)
 
 
 func _process(_delta):
@@ -55,7 +57,7 @@ func _process(_delta):
 	var snapped_y = round(mouse_position.y / grid_size) * grid_size
 	
 	# Update the position of the construction ghost with the offset applied
-	global_transform.origin = Vector3(snapped_x, snapped_y, snapped_z) + position_offset
+	global_transform.origin = Vector3(snapped_x, snapped_y, snapped_z) + position_offset + Vector3(0.5,-1.0,0.5) # Shift to center of the block
 	construction_ghost_area_3d.global_transform.origin = Vector3(snapped_x, snapped_y+0.5, snapped_z)
 
 
@@ -89,10 +91,22 @@ func _input(event):
 		set_mesh_rotation(new_rotation)
 
 
-# Sets the material of the ConstructionGhost
+# Sets the material of the ConstructionGhost, but first clones it
+# and forces it into unshaded mode before applying.
 func set_material(new_material: Material) -> void:
-	if mesh:
-		mesh.surface_set_material(0, new_material)  # Assuming the ghost mesh has a single surface
+	if not mesh:
+		return
+
+	# 1. Clone the incoming material so we don't mutate the shared resource
+	var cloned_mat: Material = new_material.duplicate()
+
+	# 2. If it's a StandardMaterial3D, switch it to unshaded
+	if cloned_mat is StandardMaterial3D:
+		(cloned_mat as StandardMaterial3D).shading_mode = StandardMaterial3D.SHADING_MODE_UNSHADED
+
+	# 3. Apply the cloned/unshaded material to the first surface
+	mesh.surface_set_material(0, cloned_mat)
+
 
 # Resets the material to the default CONSTRUCTION_GHOST_MATERIAL
 func reset_material_to_default() -> void:
@@ -195,6 +209,10 @@ func _on_construction_ghost_area_3d_body_exited(body: Node3D) -> void:
 	# Check if no other obstacles remain in the area
 	if construction_ghost_area_3d.get_overlapping_bodies().size() == 0:
 		has_obstacle = false
+
+# Logs visibility changes
+func _on_visibility_changed() -> void:
+	print_debug("ConstructionGhost visibility: ", visible)
 
 func reset_to_default():
 	reset_rotation_to_default()

@@ -48,41 +48,57 @@ func _ready():
 # Connect signals for game start, load, end, mob killed, and quest events
 func connect_signals() -> void:
 	# Connect to the Helper.signal_broker.game_started signal
-	Helper.signal_broker.game_started.connect(_on_game_started)
-	Helper.signal_broker.game_ended.connect(_on_game_ended)
-	
+	if not Helper.signal_broker.game_started.is_connected(_on_game_started):
+		Helper.signal_broker.game_started.connect(_on_game_started)
+	if not Helper.signal_broker.game_ended.is_connected(_on_game_ended):
+		Helper.signal_broker.game_ended.connect(_on_game_ended)
+
 	# Connect to the Helper.signal_broker.game_loaded signal
-	Helper.signal_broker.game_loaded.connect(_on_game_loaded)
-	
+	if not Helper.signal_broker.game_loaded.is_connected(_on_game_loaded):
+		Helper.signal_broker.game_loaded.connect(_on_game_loaded)
+
 	# Connect to misc game event signals
-	Helper.signal_broker.mob_killed.connect(_on_mob_killed)
-	Helper.overmap_manager.player_coord_changed.connect(_on_map_entered)
-	ItemManager.craft_successful.connect(_on_craft_successful)
-	
-	
+	if not Helper.signal_broker.mob_killed.is_connected(_on_mob_killed):
+		Helper.signal_broker.mob_killed.connect(_on_mob_killed)
+	if not Helper.overmap_manager.player_coord_changed.is_connected(_on_map_entered):
+		Helper.overmap_manager.player_coord_changed.connect(_on_map_entered)
+	if not ItemManager.craft_successful.is_connected(_on_craft_successful):
+		ItemManager.craft_successful.connect(_on_craft_successful)
+
+
 	# Connect to the QuestManager signals
-	QuestManager.quest_completed.connect(_on_quest_complete)
-	QuestManager.quest_failed.connect(_on_quest_failed)
-	QuestManager.step_complete.connect(_on_step_complete)
-	QuestManager.next_step.connect(_on_next_step)
-	QuestManager.step_updated.connect(_on_step_updated)
-	QuestManager.new_quest_added.connect(_on_new_quest_added)
-	QuestManager.quest_reset.connect(_on_quest_reset)
-	
+	if not QuestManager.quest_completed.is_connected(_on_quest_complete):
+		QuestManager.quest_completed.connect(_on_quest_complete)
+	if not QuestManager.quest_failed.is_connected(_on_quest_failed):
+		QuestManager.quest_failed.connect(_on_quest_failed)
+	if not QuestManager.step_complete.is_connected(_on_step_complete):
+		QuestManager.step_complete.connect(_on_step_complete)
+	if not QuestManager.next_step.is_connected(_on_next_step):
+		QuestManager.next_step.connect(_on_next_step)
+	if not QuestManager.step_updated.is_connected(_on_step_updated):
+		QuestManager.step_updated.connect(_on_step_updated)
+	if not QuestManager.new_quest_added.is_connected(_on_new_quest_added):
+		QuestManager.new_quest_added.connect(_on_new_quest_added)
+	if not QuestManager.quest_reset.is_connected(_on_quest_reset):
+		QuestManager.quest_reset.connect(_on_quest_reset)
+
 	# When the user has pressed the "track" button in the quest window
-	Helper.signal_broker.track_quest_clicked.connect(_on_quest_window_track_quest_clicked)
+	if not Helper.signal_broker.track_quest_clicked.is_connected(_on_quest_window_track_quest_clicked):
+		Helper.signal_broker.track_quest_clicked.connect(_on_quest_window_track_quest_clicked)
 	# Connect equipment signals
-	Helper.signal_broker.item_was_equipped.connect(_on_item_was_equipped)
-	Helper.signal_broker.item_was_unequipped.connect(_on_item_was_unequipped)
+	if not Helper.signal_broker.item_was_equipped.is_connected(_on_item_was_equipped):
+		Helper.signal_broker.item_was_equipped.connect(_on_item_was_equipped)
+	if not Helper.signal_broker.item_was_unequipped.is_connected(_on_item_was_unequipped):
+		Helper.signal_broker.item_was_unequipped.connect(_on_item_was_unequipped)
 
 
 func connect_inventory_signals() -> void:
-	if not Helper.signal_broker.playerInventory_item_added.is_connected(_on_inventory_item_added):
-		Helper.signal_broker.playerInventory_item_added.connect(_on_inventory_item_added)
-	if not Helper.signal_broker.playerInventory_item_removed.is_connected(_on_inventory_item_removed):
-		Helper.signal_broker.playerInventory_item_removed.connect(_on_inventory_item_removed)
-	if not Helper.signal_broker.playerInventory_item_modified.is_connected(_on_inventory_item_modified):
-		Helper.signal_broker.playerInventory_item_modified.connect(_on_inventory_item_modified)
+	if not Helper.signal_broker.playerInventory_item_added.is_connected(_on_inventory_changed):
+		Helper.signal_broker.playerInventory_item_added.connect(_on_inventory_changed)
+	if not Helper.signal_broker.playerInventory_item_removed.is_connected(_on_inventory_changed):
+		Helper.signal_broker.playerInventory_item_removed.connect(_on_inventory_changed)
+	if not Helper.signal_broker.playerInventory_item_modified.is_connected(_on_inventory_changed):
+		Helper.signal_broker.playerInventory_item_modified.connect(_on_inventory_changed)
 
 
 # Function for handling game started signal
@@ -131,7 +147,7 @@ func _on_next_step(step: Dictionary):
 	process_active_quests()  # Centralized quest description update
 
 	# The player might already have the item for the next step, so check it
-	match step.get("step_type", ""):	
+	match step.get("step_type", ""):
 		QuestManager.INCREMENTAL_STEP, QuestManager.ITEMS_STEP:
 			update_quest_by_inventory(null)
 
@@ -180,13 +196,13 @@ func create_quest_from_data(quest_data: RQuest):
 
 # Add a quest step to the quest. In this case, the step is just a dictionary with some data
 # Example step dictionary:
-#	{
-#		"amount": 1,
-#		"item": "long_stick",
-#		"tip": "You can find one in the forest",
-#		"description": "This stick will help figure out the truth!", # updates the quest description
-#		"type": "collect"
-#	}
+#  {
+#     "amount": 1,
+#     "item": "long_stick",
+#     "tip": "You can find one in the forest",
+#     "description": "This stick will help figure out the truth!", # updates the quest description
+#     "type": "collect"
+#  }
 func add_quest_step(quest: ScriptQuest, step: Dictionary) -> bool:
 	match step.type:
 		"collect":
@@ -226,20 +242,8 @@ func add_quest_step(quest: ScriptQuest, step: Dictionary) -> bool:
 			return true
 	return false
 
-
-
-# An item is added to the player inventory. Now we need to update the quests
-func _on_inventory_item_added(item: InventoryItem, _inventory: InventoryStacked):
+func _on_inventory_changed(item: InventoryItem, _inventory: InventoryStacked) -> void:
 	update_quest_by_inventory(item)
-
-# An item is removed to the player inventory. Now we need to update the quests
-func _on_inventory_item_removed(item: InventoryItem, _inventory: InventoryStacked):
-	update_quest_by_inventory(item)
-
-# An item is modified to the player inventory. Now we need to update the quests
-func _on_inventory_item_modified(item: InventoryItem, _inventory: InventoryStacked):
-	update_quest_by_inventory(item)
-
 
 # Update the quest progress based on the items in the player's inventory and equipped items.
 # For each quest, we ONLY update the step that the quest is currently at
@@ -276,7 +280,7 @@ func update_quest_by_inventory(item: InventoryItem):
 # - item_count: The count of the item in the player's inventory
 func update_quest_step(myquestname: String, item_id: String, item_count: int, add: bool = false) -> void:
 	var step = QuestManager.get_current_step(myquestname)
-	match step.get("step_type", ""):	
+	match step.get("step_type", ""):
 		QuestManager.INCREMENTAL_STEP:
 			if step.item_name == item_id:
 				# Update the quest step items with the collected count
@@ -295,8 +299,10 @@ func update_quest_step(myquestname: String, item_id: String, item_count: int, ad
 
 
 # A mob has been killed. TODO: Add who or what killed it so we know if it was the player
-func _on_mob_killed(mobinstance: Mob):
-	var mob_id: String = mobinstance.mobJSON.id
+func _on_mob_killed(mobinstance: Mob, killer):
+	if not (killer is Player):
+		return
+	var mob_id: String = mobinstance.mob_json.id
 	var quests_in_progress = QuestManager.get_quests_in_progress()
 
 	# Update each of the current quests with the collected item information

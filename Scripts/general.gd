@@ -1,26 +1,30 @@
 extends Node
 
 # Existing variables
-var is_mouse_outside_HUD = false
+var is_mouse_outside_hud = false
 var is_allowed_to_shoot = true
 
-# New variables
+# For controlling the player actions
 var is_action_in_progress = false
 var action_timer: Timer
 var action_complete_callback: Callable  # Use Callable to store the function reference
 signal start_timer_progressbar(time_left: float)
 
+# Shared shape for mobs
+var shared_collision_shape = BoxShape3D.new()
+
+## Initializes the action timer and connects signals.
 func _ready():
 	# Initialize the timer
 	action_timer = Timer.new()
 	action_timer.timeout.connect(_on_action_timer_timeout)
 	add_child(action_timer)
 	start_timer_progressbar.connect(Helper.signal_broker.on_start_timer_progressbar)
-
+	shared_collision_shape.size = Vector3(0.35, 0.35, 0.35)
 
 # Function to start an action
 # Usage example: 
-	# This example will call the 'reload_weapon" functoin in self after the timer is complete
+	# This example will call the 'reload_weapon" function in self after the timer is complete
 	# var reload_callable = Callable(self, "reload_weapon").bind(item, specific_magazine)
 	# General.start_action(reload_time, reload_callable)
 # Usage example using an inline callable:
@@ -39,18 +43,20 @@ func start_action(duration: float, callback: Callable):
 	else:
 		print_debug("Another action is currently in progress.")
 
-# Function called when the action timer runs out
+## Handles the completion of a timed action.
 func _on_action_timer_timeout():
 	is_action_in_progress = false
 	# Call the callback function if it exists
 	if action_complete_callback:
-		action_complete_callback.call()
+		var result = action_complete_callback.call()
+		if result is bool and result == false:
+			print_debug("Action callback returned failure.")
 	# Reset the callback function
 	action_complete_callback = Callable()
 	# Code to handle the completion of the action
 
 
-# Converts a string to a Vector2. If it's already a Vector2, it remains a Vector2
+## Converts a string in the form "(x, y)" to a Vector2. Returns Vector2.ZERO if invalid.
 static func string_to_vector2(input: Variant) -> Vector2:
 	# If input is already a Vector2, return it as is
 	if input is Vector2:

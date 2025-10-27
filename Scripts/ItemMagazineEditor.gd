@@ -1,14 +1,12 @@
 extends Control
 
-# This scene is intended to be used inside the item editor
-# It is supposed to edit exactly one magazine
+# This scene is intended to be used inside the item editor.
+# It is supposed to edit exactly one magazine.
 
-
-# Form elements
-@export var UsedAmmoTextEdit: TextEdit = null
-@export var MaxAmmoNumberBox: SpinBox = null
-@export var CurrentAmmoNumberBox: SpinBox = null
-
+# Form elements.
+@export var used_ammo_text_edit: TextEdit = null
+@export var max_ammo_number_box: SpinBox = null
+@export var current_ammo_number_box: SpinBox = null
 
 var ditem: DItem = null:
 	set(value):
@@ -17,15 +15,17 @@ var ditem: DItem = null:
 		ditem = value
 		load_properties()
 
+
 func save_properties() -> void:
-	ditem.magazine.used_ammo = UsedAmmoTextEdit.text
-	ditem.magazine.max_ammo = int(MaxAmmoNumberBox.value)
-	ditem.magazine.current_ammo = int(CurrentAmmoNumberBox.value)
+	ditem.magazine.used_ammo = used_ammo_text_edit.text
+	ditem.magazine.max_ammo = int(max_ammo_number_box.value)
+	ditem.magazine.current_ammo = int(current_ammo_number_box.value)
+
 
 func load_properties() -> void:
 	if not ditem.magazine:
 		print_debug("ditem.magazine is null, skipping property loading.")
 		return
-	UsedAmmoTextEdit.text = ditem.magazine.used_ammo
-	MaxAmmoNumberBox.value = ditem.magazine.max_ammo
-	CurrentAmmoNumberBox.value = ditem.magazine.current_ammo
+	used_ammo_text_edit.text = ditem.magazine.used_ammo
+	max_ammo_number_box.value = ditem.magazine.max_ammo
+	current_ammo_number_box.value = ditem.magazine.current_ammo

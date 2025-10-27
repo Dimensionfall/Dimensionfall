@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://480xqusluqrk"]
+[gd_scene load_steps=20 format=3 uid="uid://480xqusluqrk"]
 
 [ext_resource type="Script" uid="uid://db86xpmnwjoqb" path="res://Scenes/ContentManager/Scripts/contenteditor.gd" id="1_65sl4"]
 [ext_resource type="PackedScene" uid="uid://bhh0v7x4fjsgi" path="res://Scenes/ContentManager/content_list.tscn" id="2_4f21i"]
@@ -12,12 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://767oi7u7wkm5" path="res://Scenes/ContentManager/Custom_Editors/WearableslotEditor.tscn" id="10_nfqj6"]
 [ext_resource type="PackedScene" uid="uid://bcdt60dcs3sn1" path="res://Scenes/ContentManager/Custom_Editors/StatsEditor.tscn" id="11_lg6mj"]
 [ext_resource type="PackedScene" uid="uid://qn17yxy8fy0d" path="res://Scenes/ContentManager/Custom_Editors/SkillsEditor.tscn" id="12_orpls"]
+[ext_resource type="PackedScene" uid="uid://npceditor" path="res://Scenes/ContentManager/Custom_Editors/NpcEditor.tscn" id="20_npctscn"]
 [ext_resource type="PackedScene" uid="uid://b7k2j4d6wx4yy" path="res://Scenes/ContentManager/Custom_Editors/QuestEditor.tscn" id="13_gv2y0"]
 [ext_resource type="PackedScene" uid="uid://b07i30w3ey3aa" path="res://Scenes/ContentManager/Custom_Editors/PlayerAttributeEditor.tscn" id="14_uu117"]
 [ext_resource type="PackedScene" uid="uid://b3ggaal1e2obk" path="res://Scenes/ContentManager/Custom_Editors/OvermapAreaEditor.tscn" id="15_qbq5b"]
 [ext_resource type="PackedScene" uid="uid://bw14nfwdnu41d" path="res://Scenes/ContentManager/Custom_Editors/MobgroupsEditor.tscn" id="16_lrbdj"]
 [ext_resource type="PackedScene" uid="uid://d3xxrpq0ijw30" path="res://Scenes/ContentManager/Custom_Editors/MobfactionsEditor.tscn" id="17_mcu7c"]
 [ext_resource type="PackedScene" uid="uid://d3rielcw177vm" path="res://Scenes/ContentManager/Custom_Editors/AttacksEditor.tscn" id="18_v4s36"]
+[ext_resource type="PackedScene" uid="uid://cvr5g886g53be" path="res://Sounds/SFX/UI/UISFX.tscn" id="19_pn5oe"]
 
 [node name="contenteditor" type="Control" node_paths=PackedStringArray("select_mods", "content", "tabContainer", "type_selector_menu_button")]
 layout_mode = 3
@@ -35,6 +37,7 @@ terrainTileEditor = ExtResource("4_5nnw0")
 furnitureEditor = ExtResource("5_r1dle")
 itemEditor = ExtResource("7_i5608")
 mobEditor = ExtResource("5_86se2")
+npcEditor = ExtResource("20_npctscn")
 itemgroupEditor = ExtResource("9_mc021")
 wearableslotEditor = ExtResource("10_nfqj6")
 statsEditor = ExtResource("11_lg6mj")
@@ -45,18 +48,19 @@ overmapareaEditor = ExtResource("15_qbq5b")
 mobgroupsEditor = ExtResource("16_lrbdj")
 mobfactionsEditor = ExtResource("17_mcu7c")
 attacksEditor = ExtResource("18_v4s36")
-content = NodePath("HSplitContainer/ContentLists/TabContainer2/Content/ContentList")
+content = NodePath("HSplitContainer/ContentLists/TabContainer2/Content/ScrollContainer/ContentList")
 tabContainer = NodePath("HSplitContainer/TabContainer")
 type_selector_menu_button = NodePath("HSplitContainer/ContentLists/TabContainer2/Content/Toolbar/TypeSelectorMenuButton")
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 split_offset = 240
+metadata/_edit_use_anchors_ = true
 
 [node name="ContentLists" type="VBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
@@ -68,9 +72,11 @@ text = "Back to menu"
 [node name="SelectMods" type="OptionButton" parent="HSplitContainer/ContentLists"]
 layout_mode = 2
 tooltip_text = "Select the mod you want edit"
+alignment = 1
 selected = 0
 item_count = 3
 popup/item_0/text = "Core"
+popup/item_0/id = 0
 popup/item_1/text = "MyArcheryMod"
 popup/item_1/id = 1
 popup/item_2/text = "MyFarmMod"
@@ -92,9 +98,15 @@ layout_mode = 2
 layout_mode = 2
 text = "☰"
 
-[node name="ContentList" type="VBoxContainer" parent="HSplitContainer/ContentLists/TabContainer2/Content"]
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/ContentLists/TabContainer2/Content"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ContentList" type="VBoxContainer" parent="HSplitContainer/ContentLists/TabContainer2/Content/ScrollContainer"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Recent" type="ItemList" parent="HSplitContainer/ContentLists/TabContainer2"]
@@ -137,6 +149,9 @@ Click the + sign: Allows you to add new content to the mod. Enter the name and a
 [font_size=22][b]Content editing[/b][/font_size]
 On the right a content editor will be displayed that allows you to edit the selected item. Multiple editors can be opened in tabs. Use the controls to edit the content and press save to save your edits"
 metadata/_tab_index = 0
+
+[node name="Uisfx" parent="." instance=ExtResource("19_pn5oe")]
+root_path = NodePath("..")
 
 [connection signal="button_up" from="HSplitContainer/ContentLists/BackButton" to="." method="_on_back_button_button_up"]
 [connection signal="item_selected" from="HSplitContainer/ContentLists/SelectMods" to="." method="_on_select_mods_item_selected"]

@@ -8,6 +8,7 @@ extends Control
 @export var furnitureEditor: PackedScene = null
 @export var itemEditor: PackedScene = null
 @export var mobEditor: PackedScene = null
+@export var npcEditor: PackedScene = null
 @export var itemgroupEditor: PackedScene = null
 @export var wearableslotEditor: PackedScene = null
 @export var statsEditor: PackedScene = null
@@ -21,10 +22,31 @@ extends Control
 @export var content: VBoxContainer = null
 @export var tabContainer: TabContainer = null
 @export var type_selector_menu_button: MenuButton = null
+@onready var editor_configs := {
+	DMod.ContentType.MAPS: {"property": "currentMap", "scene": mapEditor},
+	DMod.ContentType.TACTICALMAPS: {"property": "currentMap", "scene": tacticalmapEditor},
+	DMod.ContentType.FURNITURES: {"property": "dfurniture", "scene": furnitureEditor},
+	DMod.ContentType.ITEMGROUPS: {"property": "ditemgroup", "scene": itemgroupEditor},
+	DMod.ContentType.ITEMS: {"property": "ditem", "scene": itemEditor},
+	DMod.ContentType.TILES: {"property": "dtile", "scene": terrainTileEditor},
+	DMod.ContentType.MOBS: {"property": "dmob", "scene": mobEditor},
+	DMod.ContentType.PLAYERATTRIBUTES: {"property": "dplayerattribute", "scene": playerattributesEditor},
+	DMod.ContentType.WEARABLESLOTS: {"property": "dwearableslot", "scene": wearableslotEditor},
+	DMod.ContentType.STATS: {"property": "dstat", "scene": statsEditor},
+	DMod.ContentType.SKILLS: {"property": "dskill", "scene": skillsEditor},
+	DMod.ContentType.QUESTS: {"property": "dquest", "scene": questsEditor},
+	DMod.ContentType.OVERMAPAREAS: {"property": "dovermaparea", "scene": overmapareaEditor},
+	DMod.ContentType.MOBGROUPS: {"property": "dmobgroup", "scene": mobgroupsEditor},
+	DMod.ContentType.MOBFACTIONS: {"property": "dmobfaction", "scene": mobfactionsEditor},
+	DMod.ContentType.ATTACKS: {"property": "dattack", "scene": attacksEditor},
+	DMod.ContentType.NPCS: {"property": "dnpc", "scene": npcEditor}
+}
 var selectedMod: String = "Core"
 
 # This function will load the contents of the data into the contentListInstance
 func _ready():
+	#Pauses main menu music as soon as the scene is loaded
+	Music.main_menu_music_pause()
 	# Load the saved selected mod or default to "Core"
 	selectedMod = load_selected_mod()
 
@@ -77,6 +99,7 @@ func refresh_lists() -> void:
 	load_content_list(DMod.ContentType.MOBGROUPS, "Mob groups")
 	load_content_list(DMod.ContentType.MOBFACTIONS, "Mob factions")
 	load_content_list(DMod.ContentType.ATTACKS, "Attacks")
+	load_content_list(DMod.ContentType.NPCS, "NPCs")
 	
 	# Repopulate the type selector menu
 	populate_type_selector_menu_button()
@@ -107,6 +130,7 @@ func load_content_list(type: DMod.ContentType, strHeader: String):
 
 
 func _on_back_button_button_up():
+	Music.main_menu_music_resume()
 	get_tree().change_scene_to_file("res://Scenes/ContentManager/contentmanager.tscn")
 
 
@@ -118,27 +142,7 @@ func _on_content_item_activated(type: DMod.ContentType, itemID: String, list: Co
 		data (Array) or itemID ("+itemID+") is empty")
 		return
 
-	# HACK Hacky implementation, need to find a better solution
-	var editors = {
-		DMod.ContentType.TILES: terrainTileEditor,
-		DMod.ContentType.FURNITURES: furnitureEditor,
-		DMod.ContentType.ITEMGROUPS: itemgroupEditor,
-		DMod.ContentType.ITEMS: itemEditor,
-		DMod.ContentType.MOBS: mobEditor,
-		DMod.ContentType.MAPS: mapEditor,
-		DMod.ContentType.TACTICALMAPS: tacticalmapEditor,
-		DMod.ContentType.PLAYERATTRIBUTES: playerattributesEditor,
-		DMod.ContentType.WEARABLESLOTS: wearableslotEditor,
-		DMod.ContentType.STATS: statsEditor,
-		DMod.ContentType.SKILLS: skillsEditor,
-		DMod.ContentType.QUESTS: questsEditor,
-		DMod.ContentType.OVERMAPAREAS: overmapareaEditor,
-		DMod.ContentType.MOBGROUPS: mobgroupsEditor,
-		DMod.ContentType.MOBFACTIONS: mobfactionsEditor,
-		DMod.ContentType.ATTACKS: attacksEditor
-	}
-
-	instantiate_editor(type, itemID, editors[type], list)
+	instantiate_editor(type, itemID, list)
 
 
 # This will add an editor to the content editor tab view. 
@@ -146,7 +150,7 @@ func _on_content_item_activated(type: DMod.ContentType, itemID: String, list: Co
 # It is important that the editor has the property contentSource or contentData so it can be set
 # If a tab for the given itemID already exists, switch to that tab.
 # Otherwise, instantiate a new editor.
-func instantiate_editor(type: DMod.ContentType, itemID: String, newEditor: PackedScene, list: Control):
+func instantiate_editor(type: DMod.ContentType, itemID: String, list: Control):
 	# Check if a tab for the itemID already exists
 	for i in range(tabContainer.get_child_count()):
 		var child = tabContainer.get_child(i)
@@ -155,79 +159,23 @@ func instantiate_editor(type: DMod.ContentType, itemID: String, newEditor: Packe
 			tabContainer.current_tab = i
 			return
 
-	# If no existing tab is found, instantiate a new editor
-	var newContentEditor: Control = newEditor.instantiate()
+	# If no existing tab is found, instantiate a new editor using the mapping
+	var info: Dictionary = editor_configs.get(type, null)
+	if info == null:
+		print("Unknown content type:", type)
+		return
+
+	var newContentEditor: Control = info.scene.instantiate()
 	newContentEditor.name = itemID
 	tabContainer.add_child(newContentEditor)
 	tabContainer.current_tab = tabContainer.get_child_count() - 1
+
 	var currentmod: DMod = Gamedata.mods.by_id(selectedMod)
-	
-	match type:
-		DMod.ContentType.MAPS:
-			newContentEditor.currentMap = currentmod.maps.by_id(itemID)
-			newContentEditor.data_changed.connect(list.load_data)
-		
-		DMod.ContentType.TACTICALMAPS:
-			newContentEditor.currentMap = currentmod.tacticalmaps.by_id(itemID)
-		
-		DMod.ContentType.FURNITURES:
-			newContentEditor.dfurniture = currentmod.furnitures.by_id(itemID)
-			newContentEditor.data_changed.connect(list.load_data)
-		
-		DMod.ContentType.ITEMGROUPS:
-			newContentEditor.ditemgroup = currentmod.itemgroups.by_id(itemID)
-			newContentEditor.data_changed.connect(list.load_data)
-		
-		DMod.ContentType.ITEMS:
-			newContentEditor.ditem = currentmod.items.by_id(itemID)
-			newContentEditor.data_changed.connect(list.load_data)
-		
-		DMod.ContentType.TILES:
-			newContentEditor.dtile = currentmod.tiles.by_id(itemID)
-			newContentEditor.data_changed.connect(list.load_data)
-		
-		DMod.ContentType.MOBS:
-			newContentEditor.dmob = currentmod.mobs.by_id(itemID)
-			newContentEditor.data_changed.connect(list.load_data)
-		
-		DMod.ContentType.PLAYERATTRIBUTES:
-			newContentEditor.dplayerattribute = currentmod.playerattributes.by_id(itemID)
-			newContentEditor.data_changed.connect(list.load_data)
-		
-		DMod.ContentType.WEARABLESLOTS:
-			newContentEditor.dwearableslot = currentmod.wearableslots.by_id(itemID)
-			newContentEditor.data_changed.connect(list.load_data)
-		
-		DMod.ContentType.STATS:
-			newContentEditor.dstat = currentmod.stats.by_id(itemID)
-			newContentEditor.data_changed.connect(list.load_data)
-		
-		DMod.ContentType.SKILLS:
-			newContentEditor.dskill = currentmod.skills.by_id(itemID)
-			newContentEditor.data_changed.connect(list.load_data)
-		
-		DMod.ContentType.QUESTS:
-			newContentEditor.dquest = currentmod.quests.by_id(itemID)
-			newContentEditor.data_changed.connect(list.load_data)
-		
-		DMod.ContentType.OVERMAPAREAS:
-			newContentEditor.dovermaparea = currentmod.overmapareas.by_id(itemID)
-			newContentEditor.data_changed.connect(list.load_data)
-		
-		DMod.ContentType.MOBGROUPS:
-			newContentEditor.dmobgroup = currentmod.mobgroups.by_id(itemID)
-			newContentEditor.data_changed.connect(list.load_data)
-			
-		DMod.ContentType.MOBFACTIONS:
-			newContentEditor.dmobfaction = currentmod.mobfactions.by_id(itemID)
-			newContentEditor.data_changed.connect(list.load_data)
-			
-		DMod.ContentType.ATTACKS:
-			newContentEditor.dattack = currentmod.attacks.by_id(itemID)
-			newContentEditor.data_changed.connect(list.load_data)
-		
-		_:
-			print("Unknown content type:", type)
+	var data_instance: RefCounted = currentmod.get_data_of_type(type).by_id(itemID)
+	newContentEditor.set(info.property, data_instance)
+
+	if newContentEditor.has_signal("data_changed") and not newContentEditor.data_changed.is_connected(list.load_data):
+		newContentEditor.data_changed.connect(list.load_data)
 
 
 # Function to populate the type_selector_menu_button with content list headers and load their state
@@ -243,7 +191,7 @@ func populate_type_selector_menu_button():
 	var headers = [
 		"Maps", "Tactical Maps", "Items", "Terrain Tiles", "Mobs", 
 		"Furniture", "Item Groups", "Player Attributes", "Wearable Slots", 
-		"Stats", "Skills", "Quests", "Overmap areas", "Mob groups", "Mob factions", "Attacks"
+		"Stats", "Skills", "Quests", "Overmap areas", "Mob groups", "Mob factions", "Attacks", "NPCs"
 	]
 	
 	for i in headers.size():

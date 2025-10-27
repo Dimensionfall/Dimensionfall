@@ -3,7 +3,7 @@
 		"attacks": {
 			"melee": [
 				{
-					"damage_multiplier": 1,
+					"damage_multiplier": 1.0,
 					"id": "melee_basic"
 				}
 			],
@@ -27,7 +27,7 @@
 		"attacks": {
 			"melee": [
 				{
-					"damage_multiplier": 1,
+					"damage_multiplier": 1.0,
 					"id": "melee_basic"
 				}
 			],
@@ -63,7 +63,7 @@
 		"health": 50,
 		"hearing_range": 800,
 		"id": "scavenger_skitter",
-		"idle_move_speed": 1,
+		"idle_move_speed": 1.0,
 		"loot_group": "loot_electronic",
 		"move_speed": 3.5,
 		"name": "Scavenger Skitter",
@@ -71,9 +71,9 @@
 		"sight_range": 250,
 		"special_moves": {
 			"dash": {
-				"cooldown": 5,
+				"cooldown": 5.0,
 				"duration": 0.5,
-				"speed_multiplier": 2
+				"speed_multiplier": 2.0
 			}
 		},
 		"sprite": "scavenger_skitter_48.png"
@@ -82,7 +82,7 @@
 		"attacks": {
 			"melee": [
 				{
-					"damage_multiplier": 1,
+					"damage_multiplier": 1.0,
 					"id": "melee_knockback"
 				}
 			],
@@ -96,7 +96,7 @@
 		"id": "iron_stalker",
 		"idle_move_speed": 0.3,
 		"loot_group": "mob_loot",
-		"move_speed": 1,
+		"move_speed": 1.0,
 		"name": "Iron Stalker",
 		"sense_range": 60,
 		"sight_range": 150,
@@ -106,7 +106,7 @@
 		"attacks": {
 			"melee": [
 				{
-					"damage_multiplier": 1,
+					"damage_multiplier": 1.0,
 					"id": "melee_stun"
 				}
 			],
@@ -146,7 +146,7 @@
 			"melee": [],
 			"ranged": [
 				{
-					"damage_multiplier": 1,
+					"damage_multiplier": 1.0,
 					"id": "ranged_basic"
 				}
 			]
@@ -183,7 +183,7 @@
 		"id": "basic_zombie_1",
 		"idle_move_speed": 0.5,
 		"loot_group": "zombie_loot",
-		"move_speed": 1,
+		"move_speed": 1.0,
 		"name": "Zombie",
 		"sense_range": 30,
 		"sight_range": 50,
@@ -207,7 +207,7 @@
 		"id": "basic_zombie_2",
 		"idle_move_speed": 0.5,
 		"loot_group": "zombie_loot",
-		"move_speed": 1,
+		"move_speed": 1.0,
 		"name": "Zombie",
 		"sense_range": 30,
 		"sight_range": 50,
@@ -261,9 +261,9 @@
 		"sight_range": 80,
 		"special_moves": {
 			"dash": {
-				"cooldown": 4,
+				"cooldown": 4.0,
 				"duration": 0.5,
-				"speed_multiplier": 2
+				"speed_multiplier": 2.0
 			}
 		},
 		"sprite": "zombie_rushing_64_42.png"
@@ -286,7 +286,7 @@
 		"id": "charred_zombie",
 		"idle_move_speed": 0.4,
 		"loot_group": "zombie_loot",
-		"move_speed": 1,
+		"move_speed": 1.0,
 		"name": "Charred Zombie",
 		"sense_range": 40,
 		"sight_range": 60,
@@ -344,7 +344,7 @@
 		"attacks": {
 			"melee": [
 				{
-					"damage_multiplier": 1,
+					"damage_multiplier": 1.0,
 					"id": "melee_basic"
 				}
 			],
@@ -369,7 +369,7 @@
 			"melee": [],
 			"ranged": [
 				{
-					"damage_multiplier": 1,
+					"damage_multiplier": 1.0,
 					"id": "ranged_spit"
 				}
 			]
@@ -393,7 +393,7 @@
 			"melee": [],
 			"ranged": [
 				{
-					"damage_multiplier": 1,
+					"damage_multiplier": 1.0,
 					"id": "ranged_bone"
 				}
 			]
@@ -406,7 +406,7 @@
 		"id": "bone_thrower",
 		"idle_move_speed": 0.5,
 		"loot_group": "mob_loot",
-		"move_speed": 1,
+		"move_speed": 1.0,
 		"name": "Bone Thrower",
 		"sense_range": 50,
 		"sight_range": 200,

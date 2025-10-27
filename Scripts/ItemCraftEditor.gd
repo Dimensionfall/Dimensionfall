@@ -13,6 +13,7 @@ extends Control
 @export var skill_level_requirement_spin_box: SpinBox
 @export var skill_progression_text_edit: HBoxContainer
 @export var skill_progression_spin_box: SpinBox
+@export var skill_bonus_stat_text_edit: HBoxContainer
 
 
 var current_recipe_index = 0
@@ -33,6 +34,7 @@ func _ready():
 		enable_all_controls()
 	set_drop_functions()
 	recipesContainer.item_selected.connect(_on_recipe_selected)
+	skill_bonus_stat_text_edit.content_types = [DMod.ContentType.STATS] as Array[DMod.ContentType]
 
 
 func _on_recipe_selected(index: int):
@@ -54,9 +56,12 @@ func load_recipe_into_ui(recipe: DItem.CraftRecipe):
 	required_skill_text_edit.set_text(recipe.skill_requirement.get("id", ""))
 	skill_level_requirement_spin_box.value = recipe.skill_requirement.get("level", 1)
 
-	# Load skill progression
+# Load skill progression
 	skill_progression_text_edit.set_text(recipe.skill_progression.get("id", ""))
 	skill_progression_spin_box.value = recipe.skill_progression.get("xp", 1)
+
+# Load bonus stat
+	skill_bonus_stat_text_edit.set_text(recipe.skill_bonus_stat)
 
 	# Clear previous entries
 	for child in resourcesGridContainer.get_children():
@@ -111,6 +116,7 @@ func _update_current_recipe():
 			}
 		else:
 			current_recipe.skill_progression.clear()
+		current_recipe.skill_bonus_stat = skill_bonus_stat_text_edit.get_text()
 
 
 # Helper to get resources from UI
@@ -154,7 +160,8 @@ func add_new_recipe():
 		"flags": {"requires_light": false},
 		"skill_requirement": {"id": "", "level": 1},
 		"skill_progression": {"id": "", "xp": 1},
-		"required_resources": []
+		"required_resources": [],
+		"skill_bonus_stat": ""
 	}
 	var new_recipe = DItem.CraftRecipe.new(new_recipe_data)
 	craft_recipes.append(new_recipe)
@@ -312,11 +319,12 @@ func can_skill_drop(dropped_data: Dictionary):
 	if not Gamedata.mods.by_id(dropped_data["mod_id"]).skills.has_id(dropped_data["id"]):
 		return false
 
-	# If all checks pass, return true
+# If all checks pass, return true
 	return true
 
 
-# Set the drop funcitons on the required skill and skill progression controls
+
+# Set the drop functions on the required skill and skill progression controls
 # This enables them to receive drop data
 func set_drop_functions():
 	required_skill_text_edit.drop_function = skill_drop.bind(required_skill_text_edit)
@@ -330,6 +338,7 @@ func disable_all_controls() -> void:
 	# Disable specific controls
 	required_skill_text_edit.disable()
 	skill_progression_text_edit.disable()
+	skill_bonus_stat_text_edit.disable()
 	craftAmountNumber.editable = false
 	craftTimeNumber.editable = false
 	requiresLightCheckbox.disabled = true
@@ -342,6 +351,7 @@ func enable_all_controls() -> void:
 	# Enable specific controls
 	required_skill_text_edit.enable()
 	skill_progression_text_edit.enable()
+	skill_bonus_stat_text_edit.enable()
 	craftAmountNumber.editable = true
 	craftTimeNumber.editable = true
 	requiresLightCheckbox.disabled = false

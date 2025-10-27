@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://2s1p2npnkvrp"
+
 [autoload]
 
 Nakama="res://addons/com.heroiclabs.nakama/Nakama.gd"
@@ -27,10 +31,14 @@ General="*res://Scripts/general.gd"
 CraftingRecipesManager="*res://Scripts/crafting_recipes_manager.gd"
 QuestManager="*res://addons/quest_manager/QuestManager.gd"
 Runtimedata="*res://Scripts/runtimedata.gd"
+Music="*res://Sounds/Music/Music.tscn"
+Sfx="*res://Sounds/SFX/sfx.tscn"
+Ambience="*res://Sounds/Ambience/Ambience.tscn"
+AppConfig="*res://addons/maaacks_options_menus/base/scenes/autoloads/app_config.tscn"
 
 [display]
 
-mouse_cursor/custom_image="res://Textures/pointer3.png"
+mouse_cursor/custom_image="uid://b4d5nmc2jtjmw"
 mouse_cursor/custom_image_hotspot=Vector2(64, 64)
 
 [editor]
@@ -39,7 +47,7 @@ movie_writer/movie_file="D:/CataX resources/catax.avi"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gloot/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/quest_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/gloot/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/maaacks_options_menus/plugin.cfg", "res://addons/quest_manager/plugin.cfg")
 
 [file_customization]
 
@@ -60,9 +68,8 @@ folder_colors={
 "res://Scenes/ContentManager/OtherTools/Scripts/": "green",
 "res://Scenes/ContentManager/Scripts/": "green",
 "res://Scenes/Overmap/Scripts/": "green",
+"res://Scenes/UI/": "blue",
 "res://Scripts/": "green",
-"res://WorldGeneratorTesting/": "orange",
-"res://WorldGeneratorTesting/Docs/": "gray",
 "res://addons/": "gray"
 }
 
@@ -169,6 +176,10 @@ quest_menu={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://addons/maaacks_options_menus/base/translations/menus_translations.en.translation", "res://addons/maaacks_options_menus/base/translations/menus_translations.fr.translation")
+
 [layer_names]
 
 3d_render/layer_5="Enemy"
@@ -185,6 +196,11 @@ quest_menu={
 3d_physics/layer_7="containers"
 3d_physics/layer_8="transparentstaticobstacles"
 2d_physics/layer_20="Items"
+
+[maaacks_options_menus]
+
+disable_plugin_dialogues=true
+copy_path="res://Options"
 
 [shader_globals]
 

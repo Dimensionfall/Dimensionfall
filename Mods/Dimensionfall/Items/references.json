@@ -4,9 +4,24 @@
 			"generic_forest_finds"
 		]
 	},
+	"adjustable_wrench": {
+		"itemgroups": [
+			"cabinet_general"
+		]
+	},
+	"adrenaline_shot": {
+		"itemgroups": [
+			"first_aid"
+		]
+	},
+	"antiseptic_wipes": {
+		"itemgroups": [
+			"first_aid"
+		]
+	},
 	"apple": {
 		"itemgroups": [
-			"refridgerator",
+			"refrigerator",
 			"starting_items"
 		]
 	},
@@ -18,7 +33,7 @@
 	},
 	"bag_bacon": {
 		"itemgroups": [
-			"refridgerator"
+			"refrigerator"
 		]
 	},
 	"bandage_basic": {
@@ -111,7 +126,7 @@
 	},
 	"bottle_plastic_water": {
 		"itemgroups": [
-			"refridgerator",
+			"refrigerator",
 			"kitchen_cupboard",
 			"cabinet_general",
 			"vending_machine_drinks",
@@ -124,7 +139,7 @@
 	},
 	"bottle_yogurt": {
 		"itemgroups": [
-			"refridgerator"
+			"refrigerator"
 		]
 	},
 	"branch": {
@@ -159,12 +174,12 @@
 	},
 	"butter": {
 		"itemgroups": [
-			"refridgerator"
+			"refrigerator"
 		]
 	},
 	"can_beer": {
 		"itemgroups": [
-			"refridgerator",
+			"refrigerator",
 			"kitchen_cupboard",
 			"vending_machine_drinks",
 			"zombie_loot"
@@ -172,7 +187,7 @@
 	},
 	"can_energydrink": {
 		"itemgroups": [
-			"refridgerator",
+			"refrigerator",
 			"vending_machine_drinks",
 			"zombie_loot"
 		]
@@ -184,7 +199,7 @@
 	},
 	"can_soda": {
 		"itemgroups": [
-			"refridgerator",
+			"refrigerator",
 			"vending_machine_drinks",
 			"starting_items",
 			"zombie_loot",
@@ -201,7 +216,12 @@
 	},
 	"carrot": {
 		"itemgroups": [
-			"refridgerator"
+			"refrigerator"
+		]
+	},
+	"cement_bag": {
+		"itemgroups": [
+			"loot_gas_station"
 		]
 	},
 	"ceramic_fragments": {
@@ -211,7 +231,7 @@
 	},
 	"cheese": {
 		"itemgroups": [
-			"refridgerator"
+			"refrigerator"
 		]
 	},
 	"chocolate": {
@@ -253,6 +273,12 @@
 			"quest_holy_crusade_01"
 		]
 	},
+	"crowbar": {
+		"itemgroups": [
+			"loot_gas_station",
+			"cabinet_general"
+		]
+	},
 	"cutting_board": {
 		"furnitures": [
 			"countertop_wood"
@@ -275,9 +301,14 @@
 			"quest_radio_signal_01"
 		]
 	},
+	"dried_fruit_mix": {
+		"itemgroups": [
+			"kitchen_cupboard"
+		]
+	},
 	"eggs": {
 		"itemgroups": [
-			"refridgerator"
+			"refrigerator"
 		]
 	},
 	"electrical_components": {
@@ -359,6 +390,11 @@
 			"generic_forest_finds"
 		]
 	},
+	"industrial_lubricant": {
+		"itemgroups": [
+			"cabinet_general"
+		]
+	},
 	"insulin": {
 		"itemgroups": [
 			"zombie_loot"
@@ -368,6 +404,11 @@
 		"itemgroups": [
 			"clothing_general",
 			"zombie_loot"
+		]
+	},
+	"jar_honey": {
+		"itemgroups": [
+			"kitchen_cupboard"
 		]
 	},
 	"jeans": {
@@ -383,7 +424,7 @@
 	},
 	"kiwi": {
 		"itemgroups": [
-			"refridgerator"
+			"refrigerator"
 		]
 	},
 	"large_rock": {
@@ -402,7 +443,7 @@
 	},
 	"lettuce": {
 		"itemgroups": [
-			"refridgerator"
+			"refrigerator"
 		]
 	},
 	"log": {
@@ -431,6 +472,11 @@
 			"zombie_loot"
 		]
 	},
+	"meat_jerky": {
+		"itemgroups": [
+			"refrigerator"
+		]
+	},
 	"medium_rock": {
 		"itemgroups": [
 			"generic_field_finds",
@@ -452,6 +498,11 @@
 		"itemgroups": [
 			"electronics_store_medium",
 			"electronics_store_mixed"
+		]
+	},
+	"multi_tool": {
+		"itemgroups": [
+			"cabinet_general"
 		]
 	},
 	"mushrooms_forest": {
@@ -580,6 +631,17 @@
 			"starter_tutorial_00"
 		]
 	},
+	"river_reed": {
+		"itemgroups": [
+			"generic_field_finds"
+		]
+	},
+	"rope_coil": {
+		"itemgroups": [
+			"cabinet_general",
+			"loot_gas_station"
+		]
+	},
 	"rotten_flesh_chunk": {
 		"itemgroups": [
 			"zombie_loot"
@@ -589,6 +651,11 @@
 		"itemgroups": [
 			"debris_urban",
 			"loot_gas_station"
+		]
+	},
+	"safety_helmet": {
+		"itemgroups": [
+			"clothing_general"
 		]
 	},
 	"scarf": {
@@ -630,7 +697,7 @@
 	},
 	"slice_of_pizza": {
 		"itemgroups": [
-			"refridgerator"
+			"refrigerator"
 		]
 	},
 	"small_rock": {
@@ -657,9 +724,19 @@
 			"quest_radio_signal_01"
 		]
 	},
+	"spray_paint": {
+		"itemgroups": [
+			"cabinet_general"
+		]
+	},
 	"stale_bread": {
 		"itemgroups": [
 			"urban_litter"
+		]
+	},
+	"steel_rebar": {
+		"itemgroups": [
+			"loot_gas_station"
 		]
 	},
 	"steel_scrap": {
@@ -703,6 +780,11 @@
 			"zombie_loot"
 		]
 	},
+	"thermal_blanket": {
+		"itemgroups": [
+			"first_aid"
+		]
+	},
 	"toaster": {
 		"itemgroups": [
 			"electronics_store_medium",
@@ -711,17 +793,22 @@
 	},
 	"tofu": {
 		"itemgroups": [
-			"refridgerator"
+			"refrigerator"
 		]
 	},
 	"tomato": {
 		"itemgroups": [
-			"refridgerator"
+			"refrigerator"
 		]
 	},
 	"transmitter": {
 		"quests": [
 			"quest_radio_signal_01"
+		]
+	},
+	"tree_sap": {
+		"itemgroups": [
+			"cabinet_general"
 		]
 	},
 	"tshirt": {
@@ -732,12 +819,12 @@
 	},
 	"uncooked_meat": {
 		"itemgroups": [
-			"refridgerator"
+			"refrigerator"
 		]
 	},
 	"vacuum_sealed_fish": {
 		"itemgroups": [
-			"refridgerator"
+			"refrigerator"
 		]
 	},
 	"vest_ballistic": {
@@ -754,6 +841,18 @@
 	"wallet": {
 		"itemgroups": [
 			"zombie_loot",
+			"loot_gas_station"
+		]
+	},
+	"water_filter_straw": {
+		"itemgroups": [
+			"loot_gas_station"
+		]
+	},
+	"water_purification_tablets": {
+		"itemgroups": [
+			"cabinet_general",
+			"kitchen_cupboard",
 			"loot_gas_station"
 		]
 	},

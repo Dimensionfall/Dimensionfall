@@ -1,12 +1,10 @@
 class_name OvermapAreaGenerator
 extends RefCounted
 
-
 # This is a stand-alone script that generates an area that can be placed on the overmap, such as a city
 # It can be accessed trough OvermapAreaGenerator.new()
 # The script has a function that returns the 2d grid on which maps are procedurally placed
 # All map data comes from Runtimedata.maps. The maps contain the weights and connections that are used
-
 
 # Example overmaparea data:
 # {
@@ -87,18 +85,17 @@ extends RefCounted
 #     }
 # }
 
-
 var grid_width: int = 20
 var grid_height: int = 20
 var area_grid: Dictionary = {}  # Grid containing the generated area
 # Dictionary to store the percentage distance from the center for each grid position
 var distance_from_center_map: Dictionary = {}  # Key: Vector2 (position), Value: float (percentage distance)
-var dimensions: Vector2 = Vector2.ZERO # The dimensions of the grid
+var dimensions: Vector2 = Vector2.ZERO  # The dimensions of the grid
 var rovermaparea: ROvermaparea = null
 var tile_catalog: Array = []  # List of all tile instances with rotations
 var tried_tiles: Dictionary = {}  # Key: (x, y), Value: Set of tried tile IDs
 var processed_tiles: Dictionary = {}  # Dictionary to track processed tiles
-var noise = FastNoiseLite.new() # Used to create noise to modify distance_from_center_map
+var noise = FastNoiseLite.new()  # Used to create noise to modify distance_from_center_map
 
 # Tiles sorted by key. This can be used to select the right neighbors for the tiles
 # We will pick one direction to select the correct neighbor. Let's say "north".
@@ -147,11 +144,10 @@ class Tile:
 	# This variable holds the neighbor keys that are allowed to spawn next to this map
 	# rmap.neighbors e.g., {"north": {"urban": 100, "suburban": 50}, "south": ...}
 	var rmap: RMap  # Map data
-	var tile_dictionary: Dictionary # Reference to the tile_dictionary variable in the main script
-	
+	var tile_dictionary: Dictionary  # Reference to the tile_dictionary variable in the main script
+
 	# Define rotation mappings for how the directions shift depending on rotation
 	var rotation_map: Dictionary
-
 
 	# Adjusts the connections based on the rotation
 	func rotated_connections(myrotation: int) -> Dictionary:
@@ -165,7 +161,6 @@ class Tile:
 
 		return myrotated_connections
 
-		
 	# Function to pick a tile from the list based on the weights
 	# tiles: A list of tiles that are limited by neighbor_key, connection and direction
 	# For example, it may only contain tiles from "urban", connection "road" and "north" direction
@@ -187,7 +182,6 @@ class Tile:
 
 		return null  # Return null if no tile is selected, which should not happen if weights are correct
 
-
 	# Retrieves a list of neighbor tiles based on the direction, connection type, and rotation
 	func get_neighbor_tiles(direction: String, neighbor_key: String) -> Array:
 		if neighbor_key == "" or not tile_dictionary.has(neighbor_key):
@@ -199,12 +193,19 @@ class Tile:
 
 		# Step 3: Retrieve the list of tiles from tile_dictionary based on the neighbor key, connection type, and direction
 		var reverse_direction = rotation_map[180][direction]  # Get the reverse direction
-		if tile_dictionary[neighbor_key].has(connection_type) and tile_dictionary[neighbor_key][connection_type].has(reverse_direction):
+		if (
+			tile_dictionary[neighbor_key].has(connection_type)
+			and tile_dictionary[neighbor_key][connection_type].has(reverse_direction)
+		):
 			return tile_dictionary[neighbor_key][connection_type][reverse_direction].values()  # Return the list of tiles
 		else:
-			print_debug("get_neighbor_tiles: No matching tiles found for Neighbor Key:", neighbor_key, " and Connection Type:", connection_type)  # Debug when no tiles are found
+			print_debug(
+				"get_neighbor_tiles: No matching tiles found for Neighbor Key:",
+				neighbor_key,
+				" and Connection Type:",
+				connection_type
+			)  # Debug when no tiles are found
 			return []  # Return an empty list if no matching tiles are found
-
 
 	# Retrieves a tile from the neighbor tiles list based on weighted probability
 	func get_neighbor_tile(direction: String, neighbor_key: String) -> Tile:
@@ -226,7 +227,7 @@ class Tile:
 		var my_connection_type = my_rotated_connections[direction]
 
 		# Get the reverse direction to check the neighbor's connection in the opposite direction
-		var reverse_direction = rotation_map[180][direction] # 180 will get the opposite direction
+		var reverse_direction = rotation_map[180][direction]  # 180 will get the opposite direction
 		var neighbor_connection_type = neighbor_rotated_connections[reverse_direction]
 
 		# Check if the connections are compatible (for example, both should be "road" or "ground")
@@ -260,7 +261,7 @@ func generate_area(max_iterations: int = 100000) -> Dictionary:
 
 	# Step 1: Populate the distance_from_center_map before generating the area
 	populate_distance_from_center_map()
-	
+
 	# Step 2: Place the starting tile in the center of the grid
 	var center = get_map_center()
 	var starting_tile = place_starting_tile(center)
@@ -293,7 +294,9 @@ func generate_area(max_iterations: int = 100000) -> Dictionary:
 		iteration_count += 1  # Increment the iteration counter
 
 	if iteration_count >= max_iterations:
-		print_debug("Warning: Maximum iteration limit reached in generate_area. Possible infinite loop detected.")
+		print_debug(
+			"Warning: Maximum iteration limit reached in generate_area. Possible infinite loop detected."
+		)
 
 	return area_grid
 
@@ -302,7 +305,7 @@ func generate_area(max_iterations: int = 100000) -> Dictionary:
 func populate_distance_from_center_map() -> void:
 	# Clear the distance_from_center_map for fresh generation
 	distance_from_center_map.clear()
-	
+
 	# Set up FastNoiseLite with a specific seed and frequency
 	setup_noise(randi(), 0.3)
 
@@ -310,7 +313,7 @@ func populate_distance_from_center_map() -> void:
 	for x in range(grid_width):
 		for y in range(grid_height):
 			var position = Vector2(x, y)
-			
+
 			# Calculate the linear percentage distance from the center
 			var base_percentage = get_distance_from_center_as_percentage(position)
 
@@ -330,7 +333,12 @@ func populate_distance_from_center_map() -> void:
 
 # Function to check if a given position is within the grid bounds
 func is_within_grid_bounds(position: Vector2) -> bool:
-	return position.x >= 0 and position.x < dimensions.x and position.y >= 0 and position.y < dimensions.y
+	return (
+		position.x >= 0
+		and position.x < dimensions.x
+		and position.y >= 0
+		and position.y < dimensions.y
+	)
 
 
 # Function to place the neighboring tiles of the specified position on the area_grid
@@ -367,7 +375,9 @@ func place_neighbor_tile(current_tile: Tile, direction: String, neighbor_pos: Ve
 
 	# Select and place a suitable neighbor tile
 	var neighbor_key = neighbor_regions.pick_random()
-	var neighbor_tile = find_suitable_neighbor_tile(current_tile, direction, neighbor_key, neighbor_pos)
+	var neighbor_tile = find_suitable_neighbor_tile(
+		current_tile, direction, neighbor_key, neighbor_pos
+	)
 
 	if neighbor_tile != null:
 		area_grid[neighbor_pos] = neighbor_tile
@@ -375,34 +385,52 @@ func place_neighbor_tile(current_tile: Tile, direction: String, neighbor_pos: Ve
 		print_debug("No suitable neighbor tile found for direction: ", direction)
 
 
-# Function to find a suitable neighbor tile that fits the specified position
-func find_suitable_neighbor_tile(current_tile: Tile, direction: String, neighbor_key: String, neighbor_pos: Vector2) -> Tile:
-	# Get the list of all potential neighbor tiles
+# Returns a list of candidate tiles that haven't been tried at this position
+func _gather_neighbor_candidates(
+	current_tile: Tile, direction: String, neighbor_key: String, neighbor_pos: Vector2
+) -> Array:
 	var potential_tiles: Array = current_tile.get_neighbor_tiles(direction, neighbor_key)
-
-	# Filter out any tiles that have already been tried for this position
-	var tried_tiles_for_position = tried_tiles.get(Vector2(int(neighbor_pos.x), int(neighbor_pos.y)), [])
-	var filtered_tiles: Array = []
+	var tried_tiles_for_position = tried_tiles.get(
+		Vector2(int(neighbor_pos.x), int(neighbor_pos.y)), []
+	)
+	var candidates: Array = []
 	for tile in potential_tiles:
 		if tile not in tried_tiles_for_position:
-			filtered_tiles.append(tile)
+			candidates.append(tile)
+	return candidates
 
-	# Continue selecting tiles based on weight until a suitable one is found
-	while not filtered_tiles.is_empty():
-		# Select a tile based on weight using pick_tile_from_list
-		var selected_tile: Tile = current_tile.pick_tile_from_list(filtered_tiles)
 
-		# If the selected tile fits, return it
+# Picks the first tile that fits among the candidates using weighted selection
+func _pick_compatible_candidate(
+	current_tile: Tile, direction: String, neighbor_pos: Vector2, candidates: Array
+) -> Tile:
+	while not candidates.is_empty():
+		var selected_tile: Tile = current_tile.pick_tile_from_list(candidates)
 		if can_tile_fit(neighbor_pos, selected_tile):
 			return selected_tile
-
-		# If the tile doesn't fit, exclude it and remove it from the list
 		exclude_tile_from_cell(int(neighbor_pos.x), int(neighbor_pos.y), selected_tile)
-		filtered_tiles.erase(selected_tile)  # Remove the tile from the selection pool
-
-	# If no valid tile was found, return null
-	print_debug("No suitable neighbor tile found after trying all weighted possibilities for direction: ", direction)
+		candidates.erase(selected_tile)
 	return null
+
+
+# Function to find a suitable neighbor tile that fits the specified position
+func find_suitable_neighbor_tile(
+	current_tile: Tile, direction: String, neighbor_key: String, neighbor_pos: Vector2
+) -> Tile:
+	# Neighbor selection algorithm:
+	# 1. Gather candidate tiles for the target position based on connection requirements.
+	# 2. Filter out tiles already attempted for this cell.
+	# 3. Repeatedly pick a weighted tile until one fits or candidates are exhausted.
+	var candidates: Array = _gather_neighbor_candidates(
+		current_tile, direction, neighbor_key, neighbor_pos
+	)
+	var result: Tile = _pick_compatible_candidate(current_tile, direction, neighbor_pos, candidates)
+	if result == null:
+		print_debug(
+			"No suitable neighbor tile found after trying all weighted possibilities for direction: ",
+			direction
+		)
+	return result
 
 
 # Function to place the starting tile in the center of the grid
@@ -419,9 +447,10 @@ func place_starting_tile(center: Vector2) -> Tile:
 
 	return starting_tile
 
+
 # An algorithm that takes an area id and gets the required maps and instances them into tiles
 # 1. Get the DOvermaparea from Runtimedata.overmapareas.by_id(area_id)
-# 2. Get the regions from rovermaparea.regions. This will be a dictionary where the region name 
+# 2. Get the regions from rovermaparea.regions. This will be a dictionary where the region name
 # is the key and the region data is the value. The value will be of the DOvermaparea.Region class
 # 3. For each region:
 # 3.1 Create a new key in tile_dictionary for the region name
@@ -460,7 +489,7 @@ func create_tile_entries() -> void:
 				map = Runtimedata.maps.by_id(map_id)
 			else:
 				var dmap = Gamedata.mods.by_id("Dimensionfall").maps.by_id(map_id)
-				map = RMap.new(null,map_id,dmap.dataPath)
+				map = RMap.new(null, map_id, dmap.dataPath)
 				map.overwrite_from_dmap(dmap)
 			if map == null:
 				print_debug("create_tile_entries: Map not found for id: ", map_id)
@@ -508,7 +537,9 @@ func can_tile_fit(pos: Vector2, tile: Tile) -> bool:
 		var neighbor_tile = area_grid[neighbor_pos]
 		if not tile.are_connections_compatible(neighbor_tile, direction):
 			return false
-		if not neighbor_tile.are_connections_compatible(tile, Gamedata.ROTATION_MAP[180][direction]):
+		if not neighbor_tile.are_connections_compatible(
+			tile, Gamedata.ROTATION_MAP[180][direction]
+		):
 			return false
 
 	return true
@@ -537,10 +568,12 @@ func get_distance_from_center_as_percentage(position: Vector2) -> float:
 	var center = get_map_center()
 
 	# Calculate the maximum possible distance (radius) from the center to the edge of the map
-	var max_radius = max(center.distance_to(Vector2(0, 0)),
-						 center.distance_to(Vector2(dimensions.x - 1, 0)),
-						 center.distance_to(Vector2(0, dimensions.y - 1)),
-						 center.distance_to(Vector2(dimensions.x - 1, dimensions.y - 1)))
+	var max_radius = max(
+		center.distance_to(Vector2(0, 0)),
+		center.distance_to(Vector2(dimensions.x - 1, 0)),
+		center.distance_to(Vector2(0, dimensions.y - 1)),
+		center.distance_to(Vector2(dimensions.x - 1, dimensions.y - 1))
+	)
 
 	# Calculate the distance from the given position to the center
 	var mydistance_to_center = center.distance_to(position)
@@ -554,10 +587,10 @@ func get_distance_from_center_as_percentage(position: Vector2) -> float:
 func distance_to_center(position: Vector2) -> float:
 	# Calculate the center of the map
 	var center = get_map_center()
-	
+
 	# Calculate the Euclidean distance from the position to the center
 	var distance = position.distance_to(center)
-	
+
 	return distance
 
 

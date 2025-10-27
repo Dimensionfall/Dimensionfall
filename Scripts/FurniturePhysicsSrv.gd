@@ -26,6 +26,10 @@ var inventory: InventoryStacked  # Holds the inventory for the container
 var itemgroup: String  # The ID of an itemgroup that it creates loot from
 var is_hidden: bool = false # If true, all visual elements are invisible
 
+# Optimization: Cache last position and rotation to avoid redundant updates
+var _last_position: Vector3 = Vector3.INF
+var _last_rotation: int = -99999
+
 
 signal about_to_be_destroyed(me: FurniturePhysicsSrv)
 
@@ -57,22 +61,27 @@ class FurnitureTransform:
 		return Vector3(posx, posy, posz)
 
 	func set_position(new_position: Vector3):
-		# Check if x or z position has changed
+		# Update y unconditionally
+		posy = new_position.y
+
+		# Only proceed if x or z changed
 		if not posx == new_position.x or not posz == new_position.z:
-			# Update x and z positions
 			posx = new_position.x
 			posz = new_position.z
 
-			# Calculate the new chunk position based on the updated x and z positions
-			var new_chunk_pos: Vector2 = Helper.overmap_manager.get_cell_pos_from_global_pos(Vector2(posx, posz))
-			
-			# Check if the chunk position has changed
-			if new_chunk_pos != chunk_pos:
-				chunk_pos = new_chunk_pos
-				chunk_changed.emit(chunk_pos)  # Emit the signal if chunk position changes
+			# Only check for chunk change if near boundary (within 2.0 units of edge)
+			var grid_x := int(posx) % 32
+			var grid_z := int(posz) % 32
 
-		# Update the y position independently
-		posy = new_position.y
+			var near_x_edge := grid_x < 2 or grid_x > 30
+			var near_z_edge := grid_z < 2 or grid_z > 30
+
+			if near_x_edge or near_z_edge:
+				var new_chunk_pos: Vector2 = Helper.overmap_manager.get_cell_pos_from_global_pos(Vector2(posx, posz))
+				if new_chunk_pos != chunk_pos:
+					chunk_pos = new_chunk_pos
+					chunk_changed.emit(chunk_pos)
+
 
 
 	func get_rotation() -> int:
@@ -105,21 +114,22 @@ class FurnitureTransform:
 		return Transform3D(Basis(Vector3(0, 1, 0), deg_to_rad(rot)), get_position())
 
 	func correct_new_position():
-		posy += 1
+		# Set the y position to the value where the physics engine will settle the furniture
+		posy += 0.797
 
 
 # Initialize the furniture object
-func _init(furniturepos: Vector3, newFurnitureJSON: Dictionary, world3d: World3D):
-	furnitureJSON = newFurnitureJSON
+func _init(myposition: Vector3, furniture_data: Dictionary, world: World3D):
+	furnitureJSON = furniture_data
 	rfurniture = Runtimedata.furnitures.by_id(furnitureJSON.id)
 	var myrotation: int = furnitureJSON.get("rotation", 0)
-	myworld3d = world3d
+	myworld3d = world
 
 	# Size of the collider will be a uniform sphere
-	var furniture_size: Vector3 = Vector3(0.3,0.3,0.3)
+	var furniture_size: Vector3 = Vector3(0.3, 0.3, 0.3)
 
 	# Initialize the furniture transform
-	furniture_transform = FurnitureTransform.new(furniturepos, myrotation, furniture_size)
+	furniture_transform = FurnitureTransform.new(myposition, myrotation, furniture_size)
 
 	if is_new_furniture():
 		furniture_transform.correct_new_position()
@@ -133,7 +143,7 @@ func _init(furniturepos: Vector3, newFurnitureJSON: Dictionary, world3d: World3D
 
 func connect_signals():
 	furniture_transform.chunk_changed.connect(_on_chunk_changed)
-	Helper.signal_broker.player_current_y_level.connect.call_deferred(_on_player_y_level_updated)
+	spawner.chunk.chunk_generated.connect(_on_chunk_generated)
 
 
 # Signal to emit when chunk position updates
@@ -167,9 +177,6 @@ func setup_physics_properties() -> void:
 	# Set collision layers and masks
 	set_collision_layers_and_masks()
 
-	# Set the force integration callback to update the visual position
-	PhysicsServer3D.body_set_force_integration_callback(collider, _moved)
-
 
 # Handle movement logic when the furniture changes position and rotation
 func _moved(state: PhysicsDirectBodyState3D) -> void:
@@ -180,6 +187,13 @@ func _moved(state: PhysicsDirectBodyState3D) -> void:
 	# Safely convert rotation to degrees and round to the nearest integer
 	var myrotation_degrees = rad_to_deg(new_rotation)
 	var rounded_rotation = int(round(myrotation_degrees))
+
+	# Optimization: Only update if position or rotation has changed
+	if new_position == _last_position and rounded_rotation == _last_rotation:
+		return  # No change, skip expensive updates
+
+	_last_position = new_position
+	_last_rotation = rounded_rotation
 
 	# Update the internal furniture position and rotation
 	furniture_transform.set_position(new_position)
@@ -196,7 +210,7 @@ func set_collision_layers_and_masks():
 	var collision_layer = 1 << 3 | (1 << 6)  # Layer 4 is 1 << 3, Layer 7 is 1 << 6
 
 	# Set collision mask to include layers 1, 2, 3, 4, 5, and 6
-	var collision_mask = (1 << 0) | (1 << 1) | (1 << 2) | (1 << 3) | (1 << 4) | (1 << 5)
+	var collision_mask = (1 << 0) | (1 << 1) | (1 << 2) | (1 << 3) | (1 << 4) | (1 << 5) | (1 << 7)
 	# Explanation:
 	# - 1 << 0: Layer 1 (player layer)
 	# - 1 << 1: Layer 2 (enemy layer)
@@ -204,6 +218,7 @@ func set_collision_layers_and_masks():
 	# - 1 << 3: Layer 4 (static obstacles layer)
 	# - 1 << 4: Layer 5 (friendly projectiles layer)
 	# - 1 << 5: Layer 6 (enemy projectiles layer)
+	# - 1 << 7: Layer 8 (transparent static obstacles layer)
 	
 	PhysicsServer3D.body_set_collision_layer(collider, collision_layer)
 	PhysicsServer3D.body_set_collision_mask(collider, collision_mask)
@@ -568,11 +583,6 @@ func show_visuals() -> void:
 	is_hidden = false
 
 
-# ✅ Handles player Y level update and updates furniture visibility
-func _on_player_y_level_updated(_old_y_level: float, new_y_level: float):
-	refresh_visibility(new_y_level)
-
-
 func refresh_visibility(new_y_level: float):
 	var furniture_y = get_y_position(true)  # Get snapped Y level
 
@@ -583,3 +593,12 @@ func refresh_visibility(new_y_level: float):
 	else:
 		if is_hidden:
 			show_visuals()
+
+
+# When the chunk that this furniture spawns on is completely done generating
+# Waiting for this will buy some time before starting more expensive calculations
+func _on_chunk_generated():
+	# Set the force integration callback to update the visual position
+	PhysicsServer3D.body_set_force_integration_callback(collider, _moved)
+	# Force the body to sleep after spawn to prevent unnecessary _moved calls
+	PhysicsServer3D.body_set_state(collider, PhysicsServer3D.BODY_STATE_SLEEPING, true)

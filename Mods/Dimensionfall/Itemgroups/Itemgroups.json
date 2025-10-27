@@ -56,6 +56,24 @@
 				"max": 1,
 				"min": 1,
 				"probability": 20
+			},
+			{
+				"id": "water_purification_tablets",
+				"max": 1,
+				"min": 1,
+				"probability": 1
+			},
+			{
+				"id": "dried_fruit_mix",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "jar_honey",
+				"max": 1,
+				"min": 1,
+				"probability": 20
 			}
 		],
 		"mode": "Collection",
@@ -178,6 +196,54 @@
 				"max": 1,
 				"min": 1,
 				"probability": 20
+			},
+			{
+				"id": "water_purification_tablets",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "rope_coil",
+				"max": 1,
+				"min": 1,
+				"probability": 1
+			},
+			{
+				"id": "adjustable_wrench",
+				"max": 1,
+				"min": 1,
+				"probability": 1
+			},
+			{
+				"id": "multi_tool",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "industrial_lubricant",
+				"max": 1,
+				"min": 1,
+				"probability": 2
+			},
+			{
+				"id": "tree_sap",
+				"max": 1,
+				"min": 1,
+				"probability": 1
+			},
+			{
+				"id": "crowbar",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "spray_paint",
+				"max": 1,
+				"min": 1,
+				"probability": 5
 			}
 		],
 		"mode": "Collection",
@@ -236,8 +302,8 @@
 		"use_sprite": false
 	},
 	{
-		"description": "Items you can find in a refridgerator in an urban home",
-		"id": "refridgerator",
+		"description": "Items you can find in a refrigerator in an urban home",
+		"id": "refrigerator",
 		"items": [
 			{
 				"id": "bottle_plastic_water",
@@ -346,10 +412,16 @@
 				"max": 1,
 				"min": 1,
 				"probability": 20
+			},
+			{
+				"id": "meat_jerky",
+				"max": 1,
+				"min": 1,
+				"probability": 4
 			}
 		],
 		"mode": "Collection",
-		"name": "Refridgerator",
+		"name": "Refrigerator",
 		"sprite": "bottle_empty_32.png",
 		"use_sprite": false
 	},
@@ -434,6 +506,12 @@
 				"max": 1,
 				"min": 1,
 				"probability": 20
+			},
+			{
+				"id": "safety_helmet",
+				"max": 1,
+				"min": 1,
+				"probability": 2
 			}
 		],
 		"mode": "Collection",
@@ -762,6 +840,12 @@
 				"max": 1,
 				"min": 1,
 				"probability": 20
+			},
+			{
+				"id": "river_reed",
+				"max": 1,
+				"min": 1,
+				"probability": 10
 			}
 		],
 		"mode": "Distribution",
@@ -1260,6 +1344,24 @@
 				"max": 2,
 				"min": 1,
 				"probability": 40
+			},
+			{
+				"id": "antiseptic_wipes",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "adrenaline_shot",
+				"max": 1,
+				"min": 1,
+				"probability": 1
+			},
+			{
+				"id": "thermal_blanket",
+				"max": 1,
+				"min": 1,
+				"probability": 2
 			}
 		],
 		"mode": "Collection",
@@ -1694,6 +1796,42 @@
 				"max": 1,
 				"min": 1,
 				"probability": 85
+			},
+			{
+				"id": "water_purification_tablets",
+				"max": 1,
+				"min": 1,
+				"probability": 4
+			},
+			{
+				"id": "rope_coil",
+				"max": 1,
+				"min": 1,
+				"probability": 1
+			},
+			{
+				"id": "steel_rebar",
+				"max": 1,
+				"min": 1,
+				"probability": 1
+			},
+			{
+				"id": "cement_bag",
+				"max": 1,
+				"min": 1,
+				"probability": 1
+			},
+			{
+				"id": "water_filter_straw",
+				"max": 1,
+				"min": 1,
+				"probability": 4
+			},
+			{
+				"id": "crowbar",
+				"max": 1,
+				"min": 1,
+				"probability": 10
 			}
 		],
 		"mode": "Collection",

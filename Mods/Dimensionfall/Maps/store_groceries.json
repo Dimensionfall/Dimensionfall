@@ -250,7 +250,7 @@
 		{
 			"entities": [
 				{
-					"count": 2.0,
+					"count": 24.0,
 					"id": "basic_zombies",
 					"type": "mobgroup"
 				}
@@ -1144,7 +1144,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 90.0
 				},
@@ -1161,7 +1161,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 270.0
 				},
@@ -1192,7 +1192,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 90.0
 				},
@@ -1209,7 +1209,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 270.0
 				},
@@ -1538,7 +1538,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 90.0
 				},
@@ -1555,7 +1555,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 270.0
 				},
@@ -1586,7 +1586,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 90.0
 				},
@@ -1603,7 +1603,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 270.0
 				},
@@ -1913,7 +1913,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 90.0
 				},
@@ -1930,7 +1930,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 270.0
 				},
@@ -1961,7 +1961,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 90.0
 				},
@@ -1978,7 +1978,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 270.0
 				},
@@ -2192,7 +2192,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 90.0
 				},
@@ -2209,7 +2209,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 270.0
 				},
@@ -2240,7 +2240,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 90.0
 				},
@@ -2257,7 +2257,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 270.0
 				},
@@ -2562,7 +2562,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 90.0
 				},
@@ -2579,7 +2579,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 270.0
 				},
@@ -2610,7 +2610,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 90.0
 				},
@@ -2627,7 +2627,7 @@
 				"furniture": {
 					"id": "display_case",
 					"itemgroups": [
-						"refridgerator"
+						"refrigerator"
 					],
 					"rotation": 270.0
 				},

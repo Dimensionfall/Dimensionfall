@@ -1,9 +1,9 @@
 # Feature list
 
-This is an extended and detailed list of features for the dimensionfall game. These features are implemented unless a note says otherwise. 
+This is an extended and detailed list of features for the Dimensionfall game. These features are implemented unless a note says otherwise.
 
 
-### Combat:
+### Combat
 Ranged and melee combat are currently implemented. 
 - One-handed weapons can be dual-wielded, while two-handed weapons will occupy both slots.
 - Load and unload guns and magazines.
@@ -16,21 +16,22 @@ Ranged and melee combat are currently implemented.
 - You can drag and drop items from different containers
 - Interact with your equipment slots
 
-![Catax_inventory](Media/Catax_inventory.png)
+![Catax_inventory](Media/Dimensionfall_inventory.png)
 
 ### Overmap
-The game will create an infinite map to explore. The world is devided by regions, each having their own oppertunities and challenges. A marker will indicate your current location.
 
-![Catax_overmap](Media/Catax_overmap.png)
+The game will create an infinite map to explore. The world is divided by regions, each having their own opportunities and challenges. A marker will indicate your current location.
+
+![Catax_overmap](Media/Dimensionfall_overmap.png)
 
 Cities and roads are generated. Explore a whole network of roads and get to know the area
 
 ![Catax_overmap](Media/Catax_overmap_large.png)
 
 ### Quest journal
-Follow quests to guide your way trough this dangerous world. A quest may have multiple objectives, which will be displayed step-by-step
+Follow quests to guide your way through this dangerous world. A quest may have multiple objectives, which will be displayed step-by-step
 
-![Catax_overmap](Media/Catax_quest_journal.png)
+![Catax_overmap](Media/Dimensionfall_quest_journal.png)
 
 ### Crafting stations
 Crafting stations allow off-handed crafting while you're doing other stuff. Expand your base with all the crafting stations you need. To make an item, put in the required ingredients and add it to the queue. Once it's done, the output will be present inside the furniture's inventory. Use the content editor to turn any furniture into a crafting station. 
@@ -41,20 +42,28 @@ Crafting stations allow off-handed crafting while you're doing other stuff. Expa
 ### Main menu
 - Play the game
 - Load a game
+- Manage options
 - Read documentation
 - Manage content for the game
-![Catax_main_menu](Media/Catax_main_menu.png)
+![Dimensionfall_main_menu](Media/Dimensionfall_main_menu.png)
+
+
+### Add/Remove Mods Menu
+
+Manage the game’s content dynamically using the Add/Remove Mods menu. From this menu, you can enable, disable, reorder, and inspect mods without leaving the game. When selecting a mod, its details are shown on the right:
+
+![Dimensionfall_add_remove_mod_menu](Media/Dimensionfall_add_remove_mod_menu.png)
 
 
 ### Content editor
-Content for this game is created in the content editor. On the left you can select content to edit. You can edit tacticalmaps, maps, items, tiles, furniture, mobs, itemgroups and wearable slots, skills and stats. 
+Content for this game is created in the content editor. On the left, you can select content to edit. You can edit tactical maps, maps, items, tiles, furniture, mobs, itemgroups, wearable slots, skills, and stats.
 - All content is saved as JSON, which allows you to edit the files manually or using an external editor if you want to.
 - Content is loaded as mods, even the core content. Put all your json and sprites into /mods/yourmod/ and it can be read by the game.
 ![Catax_content_editor](Media/Catax_content_editor.png)
 
 
 ### Tacticalmap editor
-A tacticalmap is made from maps and can be used to define a fixed area in the infinite world. This allows you to piece together a bigger map. You can specify any size and start filling the grid with maps from the selection on the right. The tiles in the grid can be rotated to properly connect roads and create symmetry. Tacticalmaps will spawn randomly on the map (not implemented yet)
+A tacticalmap is made from maps and can be used to define a fixed area in the infinite world. This allows you to piece together a bigger map. You can specify any size and start filling the grid with maps from the selection on the right. The tiles in the grid can be rotated to properly connect roads and create symmetry. Tacticalmaps will spawn randomly on the map.
 ![Catax_tacticalmap_editor](Media/Catax_tacticalmap_editor.png)
 
 
@@ -95,70 +104,70 @@ Allows you to create new mobs and configure them. You can then use the map edito
 ![Catax_mob_editor](Media/Catax_mob_editor.png)
 
 
-# Furniture editor
+### Furniture editor
 Create new furniture or edit existing ones with this editor. After creating them, you can place them on the map with the Map Editor. Hover over the controls to get information about each of them.
 
 ![Catax_furniture_editor](Media/Catax_furniture_editor.png)
 
 
 
-# Itemgroup editor
-Specify itemgroups, used to spawn items in various locations including containers and corpses. By specifying a spawn chance and amount, it offers a wide veriety of possibilities. To add items to the itemgroup, drag them from the left side of the screen onto the itemgroup!
+### Itemgroup editor
+Specify itemgroups, used to spawn items in various locations including containers and corpses. By specifying a spawn chance and amount, it offers a wide variety of possibilities. To add items to the itemgroup, drag them from the left side of the screen onto the itemgroup!
 
 ![Catax_furniture_editor](Media/Catax_itemgroup_editor.png)
 
 
 
-# Player attribute editor
+### Player attribute editor
 In line with complete moddability, you can set the player's attributes using the editor. This allows for more immersion and customization. Once the attribute is created, you can then drag them from the menu onto items and have them alter the attribute. For example, you can have an "apple" item increase the "food" attribute when used.
 
 ![Catax_furniture_editor](Media/Catax_playerattribute_editor.png)
 
 
 
-# Wearable slots editor
+### Wearable slots editor
 Ever wanted to create that unique piece of armor, but didn't have that slot to fit it in? Now you can add your own slots. These show up in the player's inventory and enables the player to equip armor into it.
 
 ![Catax_furniture_editor](Media/Catax_wearableslots_editor.png)
 
 
 
-# Stats editor
-Add your own stats to the game. Stats are not implemented yet, but you can define them.
+### Stats editor
+Add your own stats to the game. Stats are used to boost the use of skills when crafting or using a weapon
 
 ![Catax_furniture_editor](Media/Catax_stats_editor.png)
 
 
-# Skills editor
+### Skills editor
 Make any and every skill you need! Some are included in the core mod, but you can easily add your own in the Skills Editor. After they are created, use them in weapon or recipe configuration for other entities.
 
 ![Catax_furniture_editor](Media/Catax_skills_editor.png)
 
 
-# Quests editor
+### Quests editor
 Create a story for the player using the quest editor. These will show up in the quest journal in-game. It allows you to guide the player to their next destination and reward them for their efforts. There are multiple step types available. You can set many details and add a tip for the player.
 
 ![Catax_furniture_editor](Media/Catax_quest_editor.png)
 
 
-# Overmap area editor
-This editor allows you to define an area that will be generated on the overmap. An area can be created from an unlimted number of regions. In this image, a city is defined by the urban, suburban and field regions:
+### Overmap area editor
+This editor allows you to define an area that will be generated on the overmap. An area can be created from an unlimited number of regions. In this image, a city is defined by the urban, suburban and field regions:
 
 ![Catax_furniture_editor](Media/Dimensionfall_overmaparea_editor.png)
 
-Each region in the area will cover a differen circle around the center, depending on the radius. Using the generator, you can quickly see the result of your settings:
+Each region in the area will cover a different circle around the center, depending on the radius. Using the generator, you can quickly see the result of your settings:
 
 ![Catax_furniture_editor](Media/Dimensionfall_overmaparea_generator.png)
 
 
 Using this tool you can add new maps to cities, or create a whole new area with maps you made! This allows for the creation of biomes, for example.
 
-# Mob group editor
-With this editor, you can create your own group of mobs by adding a sprite, name, description, monsters (which can be dragged straight from the mob editor section within the content manager). You can even configure the monsters' spawn chance invidually by altering their weight, all within the editor:
+### Mob group editor
+With this editor, you can create your own group of mobs by adding a sprite, name, description, monsters (which can be dragged straight from the mob editor section within the content manager). You can even configure the monsters' spawn chance individually by altering their weight, all within the editor:
 
 ![Catax_mobgroup_editor](Media/Dimensionfall_mobgroup_editor.png)
 
-# Mob faction editor
+### Mob faction editor
 (Work in progress), you can create a new custom faction and assign it to any mobs or mobgroups you want. You can set what this faction is friendly, neutral and hostile towards other mobs, mobgroups and factions.
 
 ![Catax_mobfaction_editor](Media/Dimensionfall_mobfaction_editor.png)

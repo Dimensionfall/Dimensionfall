@@ -1,0 +1,19 @@
+[
+	{
+		"description": "Friendly wanderer",
+		"health": 100,
+		"id": "hank",
+		"name": "Hank",
+		"spawn_maps": [
+			{
+				"id": "Generichouse",
+				"weight": 100
+			},
+			{
+				"id": "generichouse_cross",
+				"weight": 100
+			}
+		],
+		"sprite": "hank.png"
+	}
+]

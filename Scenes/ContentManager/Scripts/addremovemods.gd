@@ -343,79 +343,57 @@ func _on_mods_item_list_item_activated(index: int) -> void:
 
 
 
+# Moves the selected mod in the list by the given offset.
+# Swaps it with the item at `index + offset` while keeping
+# text, metadata and color intact. Also saves the list state.
+func move_item(offset: int) -> void:
+	var selected_index: PackedInt32Array = mods_item_list.get_selected_items()
+	if selected_index.is_empty() or selected_index[0] == 0:
+		return # No item selected or "Core" is selected
+
+	var index := selected_index[0]
+	var target_index := index + offset
+	var count := mods_item_list.get_item_count()
+
+	# Disallow moving the "Core" mod or moving past bounds
+	if index == 0 or target_index <= 0 or target_index >= count:
+		return
+
+	# Get the properties of the current item
+	var current_text := mods_item_list.get_item_text(index)
+	var current_metadata: Variant = mods_item_list.get_item_metadata(index)
+	var current_color := mods_item_list.get_item_custom_bg_color(index)
+
+	# Get the properties of the target item
+	var target_text := mods_item_list.get_item_text(target_index)
+	var target_metadata: Variant = mods_item_list.get_item_metadata(target_index)
+	var target_color := mods_item_list.get_item_custom_bg_color(target_index)
+
+	# Swap text, metadata, and colors
+	mods_item_list.set_item_text(index, target_text)
+	mods_item_list.set_item_metadata(index, target_metadata)
+	mods_item_list.set_item_custom_bg_color(index, target_color)
+
+	mods_item_list.set_item_text(target_index, current_text)
+	mods_item_list.set_item_metadata(target_index, current_metadata)
+	mods_item_list.set_item_custom_bg_color(target_index, current_color)
+
+	mods_item_list.select(target_index)
+
+	save_mod_list_state()
+
+
 # The user pressed the move down button in the mod editor
 # Moves the selected mod down in the list and preserves its state and color
 func _on_move_down_button_button_up() -> void:
-	var selected_index = mods_item_list.get_selected_items()
-	if selected_index.size() == 0 or selected_index[0] == 0:
-		return  # No item selected or "Core" is selected
-
-	selected_index = selected_index[0]
-	if selected_index >= mods_item_list.get_item_count() - 1:
-		return  # Already at the bottom
-
-	# Get the properties of the current item
-	var mod_text = mods_item_list.get_item_text(selected_index)
-	var mod_metadata = mods_item_list.get_item_metadata(selected_index)
-	var mod_color = mods_item_list.get_item_custom_bg_color(selected_index)
-
-	# Get the properties of the next item
-	var next_text = mods_item_list.get_item_text(selected_index + 1)
-	var next_metadata = mods_item_list.get_item_metadata(selected_index + 1)
-	var next_color = mods_item_list.get_item_custom_bg_color(selected_index + 1)
-
-	# Swap text, metadata, and colors
-	mods_item_list.set_item_text(selected_index, next_text)
-	mods_item_list.set_item_metadata(selected_index, next_metadata)
-	mods_item_list.set_item_custom_bg_color(selected_index, next_color)
-
-	mods_item_list.set_item_text(selected_index + 1, mod_text)
-	mods_item_list.set_item_metadata(selected_index + 1, mod_metadata)
-	mods_item_list.set_item_custom_bg_color(selected_index + 1, mod_color)
-
-	# Select the moved mod
-	mods_item_list.select(selected_index + 1)
-
-	# Save the mod list state
-	save_mod_list_state()
+	move_item(1)
 
 
 
 # The user pressed the move up button in the mod editor
 # Moves the selected mod up in the list and preserves its state and color
 func _on_move_up_button_button_up() -> void:
-	var selected_index = mods_item_list.get_selected_items()
-	if selected_index.size() == 0 or selected_index[0] <= 1:
-		return  # No item selected or "Core" is selected
-
-	selected_index = selected_index[0]
-	if selected_index <= 0:
-		return  # Already at the top
-
-	# Get the properties of the current item
-	var mod_text = mods_item_list.get_item_text(selected_index)
-	var mod_metadata = mods_item_list.get_item_metadata(selected_index)
-	var mod_color = mods_item_list.get_item_custom_bg_color(selected_index)
-
-	# Get the properties of the previous item
-	var prev_text = mods_item_list.get_item_text(selected_index - 1)
-	var prev_metadata = mods_item_list.get_item_metadata(selected_index - 1)
-	var prev_color = mods_item_list.get_item_custom_bg_color(selected_index - 1)
-
-	# Swap text, metadata, and colors
-	mods_item_list.set_item_text(selected_index, prev_text)
-	mods_item_list.set_item_metadata(selected_index, prev_metadata)
-	mods_item_list.set_item_custom_bg_color(selected_index, prev_color)
-
-	mods_item_list.set_item_text(selected_index - 1, mod_text)
-	mods_item_list.set_item_metadata(selected_index - 1, mod_metadata)
-	mods_item_list.set_item_custom_bg_color(selected_index - 1, mod_color)
-
-	# Select the moved mod
-	mods_item_list.select(selected_index - 1)
-
-	# Save the mod list state
-	save_mod_list_state()
+	move_item(-1)
 
 
 # The state or order of one or more mods has changed

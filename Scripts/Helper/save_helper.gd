@@ -18,10 +18,12 @@ func create_new_save():
 	var sanitized_path = unique_folder_path.replace(":", "")
 	if dir.make_dir_recursive(sanitized_path) == OK:
 		current_save_folder = "user://" + sanitized_path
-		Helper.json_helper.write_json_file(current_save_folder + "/game.json", JSON.stringify({
-			"mapseed": Helper.mapseed,
-			"elapsed_time": Helper.time_helper.get_elapsed_time()  # Save the elapsed time
-		}))
+		Helper.json_helper.write_json_file(
+			current_save_folder + "/game.json",
+			JSON.stringify(
+				{"mapseed": Helper.map_seed, "elapsed_time": Helper.time_helper.get_elapsed_time()}  # Save the elapsed time
+			)
+		)
 	else:
 		print_debug("Failed to create a unique folder for the demo.")
 
@@ -31,7 +33,7 @@ func save_map_data() -> void:
 	# Get all chunks in the group "chunks"
 	var chunks = get_tree().get_nodes_in_group("chunks")
 	for chunk in chunks:
-		if is_instance_valid(chunk): # some might be queue_freed at this point
+		if is_instance_valid(chunk):  # some might be queue_freed at this point
 			chunk.save_chunk()
 			#await Helper.task_manager.create_task(chunk.save_chunk).completed
 
@@ -43,16 +45,16 @@ func save_map_segment_data(non_empty_chunk_data: Dictionary, segment_pos: Vector
 	var dir = DirAccess.open(current_save_folder)
 	var map_folder = "map_x" + str(segment_pos.x) + "_y" + str(segment_pos.y)
 	var target_folder = current_save_folder + "/" + map_folder
-	
+
 	# Create the directory if it doesn't exist
 	if not dir.dir_exists(map_folder):
 		if dir.make_dir(map_folder) != OK:
 			print_debug("Failed to create a folder for the segment at ", segment_pos)
 			return
-	
+
 	# Convert the dictionary to a JSON string
 	var json_data = JSON.stringify(non_empty_chunk_data)
-	
+
 	# Save the JSON string to a file
 	if Helper.json_helper.write_json_file(target_folder + "/segment_data.json", json_data) != OK:
 		print_debug("Failed to save chunk data for the segment at ", segment_pos)
@@ -66,30 +68,30 @@ func load_map_segment_data(segment_pos: Vector2) -> Dictionary:
 	var map_folder = "map_x" + str(segment_pos.x) + "_y" + str(segment_pos.y)
 	var file_path = current_save_folder + "/" + map_folder + "/segment_data.json"
 	var chunk_data = {}
-	
+
 	# Load the JSON data from the file
 	var tactical_map_json = Helper.json_helper.load_json_dictionary_file(file_path)
 	if tactical_map_json.is_empty():
 		return chunk_data  # Return an empty dictionary if loading fails
-	
+
 	# Transform the loaded chunk data back into a dictionary with Vector2 keys
 	for key in tactical_map_json.keys():
 		var chunk_pos = Vector2(key.split(",")[0].to_int(), key.split(",")[1].to_int())
 		chunk_data[chunk_pos] = tactical_map_json[key]
-	
+
 	return chunk_data
 
 
-# This function determines the saved map folder path for the current level. 
-# It constructs this path using the current level's position and the current 
-# save folder's path. If the map folder for the level exists, it returns 
+# This function determines the saved map folder path for the current level.
+# It constructs this path using the current level's position and the current
+# save folder's path. If the map folder for the level exists, it returns
 # the full path to this folder; otherwise, it returns an empty string.
 # The current_save_folder is determined when the game is first started
 # and does not change unless the user start a new game.
 func get_saved_map_folder(level_pos: Vector2) -> String:
 	var dir = DirAccess.open(current_save_folder)
 	var map_folder = "map_x" + str(level_pos.x) + "_y" + str(level_pos.y)
-	var target_folder = current_save_folder+ "/" + map_folder
+	var target_folder = current_save_folder + "/" + map_folder
 	# For example, the target_folder could be: "C:\Users\User\AppData\Roaming\Godot\app_userdata\
 	# CataX\save\2024-01-08T202236\map_x0_y0"
 	if dir and dir.dir_exists(map_folder):
@@ -112,9 +114,11 @@ func save_game():
 # Function to load game.json from a given saved game folder
 func load_game_from_folder(save_folder_name: String) -> void:
 	current_save_folder = "user://save/" + save_folder_name
-	var gameFileJson: Dictionary = Helper.json_helper.load_json_dictionary_file(current_save_folder + "/game.json")
+	var gameFileJson: Dictionary = Helper.json_helper.load_json_dictionary_file(
+		current_save_folder + "/game.json"
+	)
 	if gameFileJson:
-		Helper.mapseed = gameFileJson.get("mapseed", Helper.mapseed)  # Load the mapseed
+		Helper.map_seed = gameFileJson.get("mapseed", Helper.map_seed)  # Load the map seed
 		var elapsed_time = gameFileJson.get("elapsed_time", 0.0)  # Default to 0 if not present
 		Helper.time_helper.set_elapsed_time(elapsed_time)  # Load elapsed time into TimeHelper
 
@@ -132,8 +136,9 @@ func save_player_equipment() -> void:
 	var equipment_data = JSON.stringify(ItemManager.player_equipment.serialize())
 	Helper.json_helper.write_json_file(save_path, equipment_data)
 
-
 	# Function to load the player's inventory data
+
+
 func load_player_inventory() -> void:
 	var load_path = current_save_folder + "/player_inventory.json"
 
@@ -182,15 +187,19 @@ func load_player_state(player: Player) -> void:
 	else:
 		print_debug("Failed to load player state from: ", load_path)
 
+
 # This function saves the player's quest state to a JSON file.
 func save_quest_state() -> void:
 	var save_path = current_save_folder + "/quest_state.json"
 	var quest_state: Dictionary = Helper.quest_helper.get_state()
 	Helper.json_helper.write_json_file(save_path, JSON.stringify(quest_state))
 
+
 # Loads the player's quest state from "quest_state.json".
 func load_quest_state() -> void:
-	var quest_data = Helper.json_helper.load_json_dictionary_file(current_save_folder + "/quest_state.json")
+	var quest_data = Helper.json_helper.load_json_dictionary_file(
+		current_save_folder + "/quest_state.json"
+	)
 	if quest_data:
 		Helper.quest_helper.set_state(quest_data)
 	else:
@@ -199,13 +208,17 @@ func load_quest_state() -> void:
 
 # Function to save the current state of the grid
 func save_overmap_grid_to_file(grid_data: Dictionary, grid_key: Vector2) -> void:
-	var save_path = current_save_folder + "/overmap/grid_" + str(grid_key.x) + "_" + str(grid_key.y) + ".json"
+	var save_path = (
+		current_save_folder + "/overmap/grid_" + str(grid_key.x) + "_" + str(grid_key.y) + ".json"
+	)
 	Helper.json_helper.write_json_file(save_path, JSON.stringify(grid_data))
 
 
 # Function to load the state of the grid
 func load_overmap_grid_from_file(grid_key: Vector2) -> Dictionary:
-	var load_path = current_save_folder + "/overmap/grid_" + str(grid_key.x) + "_" + str(grid_key.y) + ".json"
+	var load_path = (
+		current_save_folder + "/overmap/grid_" + str(grid_key.x) + "_" + str(grid_key.y) + ".json"
+	)
 	return Helper.json_helper.load_json_dictionary_file(load_path)
 
 
@@ -228,8 +241,7 @@ func save_game_state():
 
 	# Save the game state to game.json
 	var game_state = {
-		"mapseed": Helper.mapseed,
-		"elapsed_time": Helper.time_helper.get_elapsed_time()  # Include elapsed time
+		"mapseed": Helper.map_seed, "elapsed_time": Helper.time_helper.get_elapsed_time()  # Include elapsed time
 	}
 	var save_path = current_save_folder + "/game.json"
 	if Helper.json_helper.write_json_file(save_path, JSON.stringify(game_state)) != OK:
@@ -243,7 +255,7 @@ func save_game_state():
 func is_new_game() -> bool:
 	var save_path = current_save_folder + "/player_state.json"
 	var dir = DirAccess.open(current_save_folder)
-	
+
 	if dir and dir.file_exists(save_path):
 		return false  # File exists, not a new game
 	return true  # File does not exist, this is a new game
