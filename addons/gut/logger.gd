@@ -26,18 +26,18 @@ var fmts = {
 }
 
 var _type_data = {
-	types.debug:		{disp='DEBUG', 		enabled=true, fmt=fmts.bold},
-	types.deprecated:	{disp='DEPRECATED', enabled=true, fmt=fmts.none},
-	types.error:		{disp='ERROR', 		enabled=true, fmt=fmts.red},
+	types.debug:		{disp='DEBUG', 			enabled=true, fmt=fmts.bold},
+	types.deprecated:	{disp='DEPRECATED', 	enabled=true, fmt=fmts.none},
+	types.error:		{disp='GUT ERROR', 		enabled=true, fmt=fmts.red},
 	types.expected_error:	{disp="ExpectedError", enabled=true, fmt=fmts.blue},
-	types.failed:		{disp='Failed', 	enabled=true, fmt=fmts.red},
-	types.info:			{disp='INFO', 		enabled=true, fmt=fmts.bold},
-	types.normal:		{disp='NORMAL', 	enabled=true, fmt=fmts.none},
-	types.orphan:		{disp='Orphans',	enabled=true, fmt=fmts.yellow},
-	types.passed:		{disp='Passed', 	enabled=true, fmt=fmts.green},
-	types.pending:		{disp='Pending',	enabled=true, fmt=fmts.yellow},
-	types.risky:		{disp='Risky',		enabled=true, fmt=fmts.yellow},
-	types.warn:			{disp='WARNING', 	enabled=true, fmt=fmts.yellow},
+	types.failed:		{disp='Failed', 		enabled=true, fmt=fmts.red},
+	types.info:			{disp='INFO', 			enabled=true, fmt=fmts.bold},
+	types.normal:		{disp='NORMAL', 		enabled=true, fmt=fmts.none},
+	types.orphan:		{disp='Orphans',		enabled=true, fmt=fmts.yellow},
+	types.passed:		{disp='Passed', 		enabled=true, fmt=fmts.green},
+	types.pending:		{disp='Pending',		enabled=true, fmt=fmts.yellow},
+	types.risky:		{disp='Risky',			enabled=true, fmt=fmts.yellow},
+	types.warn:			{disp='GUT WARNING', 	enabled=true, fmt=fmts.yellow},
 }
 
 var _logs = {
@@ -281,6 +281,10 @@ func log(text='', fmt=fmts.none):
 
 func lograw(text, fmt=fmts.none):
 	return _output(text, fmt)
+
+
+func p(p1='', p2='', p3='', p4='', p5='', p6='', p7='', p8='', p9='', p10='', ):
+	self.log(str(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10))
 
 
 # Print the test name if we aren't skipping names of tests that pass (basically
