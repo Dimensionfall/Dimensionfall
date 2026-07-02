@@ -603,8 +603,10 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
-					"id": "window_glass"
+				"feature": {
+					"id": "window_glass",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "dirt_light_00",
 				"rotation": 180.0
@@ -630,8 +632,10 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
-					"id": "window_glass"
+				"feature": {
+					"id": "window_glass",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "dirt_light_00",
 				"rotation": 180.0
@@ -659,8 +663,10 @@
 				"rotation": 90.0
 			},
 			{
-				"furniture": {
-					"id": "window_glass"
+				"feature": {
+					"id": "window_glass",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "rocky_earth_00",
 				"rotation": 90.0
@@ -670,8 +676,10 @@
 				"rotation": 90.0
 			},
 			{
-				"furniture": {
-					"id": "window_glass"
+				"feature": {
+					"id": "window_glass",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "rocky_earth_00",
 				"rotation": 90.0
@@ -699,8 +707,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "window_glass"
+				"feature": {
+					"id": "window_glass",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "rocky_earth_00",
 				"rotation": 270.0
@@ -730,9 +740,10 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "Tree_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "grass_plain_01",
 				"rotation": 180.0
@@ -752,9 +763,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "refrigerator_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "bathroom_tiles_blue_00",
 				"rotation": 180.0
@@ -766,8 +778,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "stove"
+				"feature": {
+					"id": "stove",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "bathroom_tiles_blue_00",
 				"rotation": 180.0
@@ -779,9 +793,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "countertop_wood",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "bathroom_tiles_blue_00",
 				"rotation": 180.0
@@ -793,9 +808,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "countertop_wood",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "bathroom_tiles_blue_00",
 				"rotation": 180.0
@@ -807,17 +823,14 @@
 			{
 				"areas": [
 					{
-						"id": "area126427",
-						"rotation": 0.0
-					},
-					{
 						"id": "floor_hallway",
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 90.0
@@ -833,9 +846,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_03",
 				"rotation": 180.0
@@ -847,8 +861,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "trash_bin"
+				"feature": {
+					"id": "trash_bin",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_03",
 				"rotation": 180.0
@@ -860,9 +876,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_03",
 				"rotation": 180.0
@@ -876,9 +893,10 @@
 				"rotation": 270.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "WillowTree_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "grass_plain_01",
 				"rotation": 180.0
@@ -894,8 +912,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "sofa"
+				"feature": {
+					"id": "sofa",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_05",
 				"rotation": 90.0
@@ -907,8 +927,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "lamp_standing"
+				"feature": {
+					"id": "lamp_standing",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_05",
 				"rotation": 90.0
@@ -920,9 +942,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_05",
 				"rotation": 90.0
@@ -934,9 +957,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "table_round_wood",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_05",
 				"rotation": 90.0
@@ -948,9 +972,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_05",
 				"rotation": 90.0
@@ -1020,9 +1045,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "toilet_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_purple_00",
 				"rotation": 90.0
@@ -1044,9 +1070,10 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "dirt_light_00",
 				"rotation": 180.0
@@ -1094,27 +1121,20 @@
 			{
 				"areas": [
 					{
-						"id": "area126427",
-						"rotation": 0.0
-					},
-					{
 						"id": "floor_hallway",
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 270.0
 			},
 			{
 				"areas": [
-					{
-						"id": "area126427",
-						"rotation": 0.0
-					},
 					{
 						"id": "floor_hallway",
 						"rotation": 0.0
@@ -1126,17 +1146,14 @@
 			{
 				"areas": [
 					{
-						"id": "area126427",
-						"rotation": 0.0
-					},
-					{
 						"id": "floor_hallway",
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 90.0
@@ -1158,9 +1175,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_office",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_03",
 				"rotation": 180.0
@@ -1172,17 +1190,19 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "desk",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_03",
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "dirt_light_00",
 				"rotation": 180.0
@@ -1196,9 +1216,10 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "rocky_earth_00",
 				"rotation": 90.0
@@ -1264,9 +1285,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "lamp_standing",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00",
 				"rotation": 270.0
@@ -1298,9 +1320,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00",
 				"rotation": 90.0
@@ -1332,9 +1355,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_purple_00",
 				"rotation": 90.0
@@ -1364,9 +1388,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_06",
 				"rotation": 180.0
@@ -1398,9 +1423,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "lamp_standing",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_06",
 				"rotation": 180.0
@@ -1411,10 +1437,6 @@
 			},
 			{
 				"areas": [
-					{
-						"id": "area126427",
-						"rotation": 0.0
-					},
 					{
 						"id": "floor_hallway",
 						"rotation": 0.0
@@ -1462,9 +1484,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_05",
 				"rotation": 90.0
@@ -1476,9 +1499,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_05",
 				"rotation": 90.0
@@ -1490,9 +1514,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_05",
 				"rotation": 90.0
@@ -1504,9 +1529,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_05",
 				"rotation": 90.0
@@ -1528,9 +1554,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00",
 				"rotation": 90.0
@@ -1598,9 +1625,10 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "dirt_light_00",
 				"rotation": 180.0
@@ -1622,9 +1650,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_wood",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_06",
 				"rotation": 180.0
@@ -1646,9 +1675,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_06",
 				"rotation": 180.0
@@ -1659,10 +1689,6 @@
 			},
 			{
 				"areas": [
-					{
-						"id": "area126427",
-						"rotation": 0.0
-					},
 					{
 						"id": "floor_hallway",
 						"rotation": 0.0
@@ -1671,9 +1697,10 @@
 				"id": "floor_wood_boards_00"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 90.0
@@ -1683,16 +1710,19 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
-					"id": "table_metal"
+				"feature": {
+					"id": "table_metal",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "concrete_00",
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "concrete_00",
 				"rotation": 180.0
@@ -1764,8 +1794,10 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
-					"id": "table_metal"
+				"feature": {
+					"id": "table_metal",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "concrete_00",
 				"rotation": 180.0
@@ -1801,9 +1833,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_06",
 				"rotation": 180.0
@@ -1815,9 +1848,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "table_round_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_06",
 				"rotation": 180.0
@@ -1829,9 +1863,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_06",
 				"rotation": 180.0
@@ -1843,9 +1878,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_06",
 				"rotation": 180.0
@@ -1856,10 +1892,6 @@
 			},
 			{
 				"areas": [
-					{
-						"id": "area126427",
-						"rotation": 0.0
-					},
 					{
 						"id": "floor_hallway",
 						"rotation": 0.0
@@ -1907,8 +1939,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "plant_pot_00"
+				"feature": {
+					"id": "plant_pot_00",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_mint_00",
 				"rotation": 90.0
@@ -1920,9 +1954,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_mint_00",
 				"rotation": 90.0
@@ -1944,9 +1979,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_08"
 			},
@@ -1966,8 +2002,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "lamp_standing"
+				"feature": {
+					"id": "lamp_standing",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_08",
 				"rotation": 180.0
@@ -1979,9 +2017,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_08"
 			},
@@ -2057,10 +2096,6 @@
 			{
 				"areas": [
 					{
-						"id": "area126427",
-						"rotation": 0.0
-					},
-					{
 						"id": "floor_hallway",
 						"rotation": 0.0
 					}
@@ -2085,9 +2120,10 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "concrete_00",
 				"rotation": 180.0
@@ -2101,9 +2137,10 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "rocky_earth_00",
 				"rotation": 90.0
@@ -2115,9 +2152,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "countertop_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_mint_00",
 				"rotation": 90.0
@@ -2159,9 +2197,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_wood",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_08"
 			},
@@ -2203,9 +2242,10 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "concrete_00",
 				"rotation": 180.0
@@ -2245,9 +2285,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "toilet_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_green_01",
 				"rotation": 180.0
@@ -2259,8 +2300,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "lamp_standing"
+				"feature": {
+					"id": "lamp_standing",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_green_01",
 				"rotation": 180.0
@@ -2271,10 +2314,6 @@
 			},
 			{
 				"areas": [
-					{
-						"id": "area126427",
-						"rotation": 0.0
-					},
 					{
 						"id": "floor_hallway",
 						"rotation": 0.0
@@ -2285,10 +2324,6 @@
 			{
 				"areas": [
 					{
-						"id": "area126427",
-						"rotation": 0.0
-					},
-					{
 						"id": "floor_hallway",
 						"rotation": 0.0
 					}
@@ -2298,10 +2333,6 @@
 			},
 			{
 				"areas": [
-					{
-						"id": "area126427",
-						"rotation": 0.0
-					},
 					{
 						"id": "floor_hallway",
 						"rotation": 0.0
@@ -2327,9 +2358,10 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "concrete_00",
 				"rotation": 180.0
@@ -2353,9 +2385,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "countertop_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_mint_00",
 				"rotation": 90.0
@@ -2386,9 +2419,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_08",
 				"rotation": 90.0
@@ -2400,9 +2434,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "table_round_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_08",
 				"rotation": 90.0
@@ -2414,9 +2449,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_08",
 				"rotation": 90.0
@@ -2449,9 +2485,10 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "concrete_00",
 				"rotation": 180.0
@@ -2511,10 +2548,6 @@
 			{
 				"areas": [
 					{
-						"id": "area126427",
-						"rotation": 0.0
-					},
-					{
 						"id": "floor_hallway",
 						"rotation": 0.0
 					}
@@ -2525,10 +2558,6 @@
 			{
 				"areas": [
 					{
-						"id": "area126427",
-						"rotation": 0.0
-					},
-					{
 						"id": "floor_hallway",
 						"rotation": 0.0
 					}
@@ -2538,10 +2567,6 @@
 			},
 			{
 				"areas": [
-					{
-						"id": "area126427",
-						"rotation": 0.0
-					},
 					{
 						"id": "floor_hallway",
 						"rotation": 0.0
@@ -2579,9 +2604,10 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "rocky_earth_00",
 				"rotation": 90.0
@@ -2593,9 +2619,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "stove",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_mint_00",
 				"rotation": 90.0
@@ -2637,9 +2664,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_wood",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_08",
 				"rotation": 90.0
@@ -2720,9 +2748,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_green_01",
 				"rotation": 180.0
@@ -2738,18 +2767,15 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_04"
 			},
 			{
 				"areas": [
-					{
-						"id": "area126427",
-						"rotation": 0.0
-					},
 					{
 						"id": "floor_hallway",
 						"rotation": 0.0
@@ -2759,10 +2785,6 @@
 			},
 			{
 				"areas": [
-					{
-						"id": "area126427",
-						"rotation": 0.0
-					},
 					{
 						"id": "floor_hallway",
 						"rotation": 0.0
@@ -2774,17 +2796,14 @@
 			{
 				"areas": [
 					{
-						"id": "area126427",
-						"rotation": 0.0
-					},
-					{
 						"id": "floor_hallway",
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "lamp_standing",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 90.0
@@ -2828,9 +2847,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "refrigerator_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_mint_00",
 				"rotation": 90.0
@@ -2852,9 +2872,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "lamp_standing",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_08",
 				"rotation": 180.0
@@ -2866,8 +2887,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "trash_bin"
+				"feature": {
+					"id": "trash_bin",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_08",
 				"rotation": 180.0
@@ -2902,9 +2925,10 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 90.0
@@ -2920,9 +2944,10 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_07",
 				"rotation": 180.0
@@ -2976,9 +3001,10 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_06",
 				"rotation": 180.0
@@ -3024,9 +3050,10 @@
 				"rotation": 90.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "rocky_earth_00",
 				"rotation": 90.0
@@ -3036,9 +3063,10 @@
 				"rotation": 90.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "rocky_earth_00",
 				"rotation": 90.0
@@ -3048,9 +3076,10 @@
 				"rotation": 90.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "rocky_earth_00",
 				"rotation": 90.0
@@ -3070,9 +3099,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00",
 				"rotation": 180.0
@@ -5469,8 +5499,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "door_wood"
+				"feature": {
+					"id": "door_wood",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00"
 			},
@@ -5482,8 +5514,10 @@
 				"rotation": 270.0
 			},
 			{
-				"furniture": {
-					"id": "window_glass"
+				"feature": {
+					"id": "window_glass",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "rocky_earth_00",
 				"rotation": 270.0
@@ -5493,8 +5527,10 @@
 				"rotation": 270.0
 			},
 			{
-				"furniture": {
-					"id": "window_glass"
+				"feature": {
+					"id": "window_glass",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "rocky_earth_00",
 				"rotation": 270.0
@@ -5504,8 +5540,10 @@
 				"rotation": 270.0
 			},
 			{
-				"furniture": {
-					"id": "window_glass"
+				"feature": {
+					"id": "window_glass",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "rocky_earth_00",
 				"rotation": 270.0
@@ -5543,8 +5581,10 @@
 				"id": "dirt_light_00"
 			},
 			{
-				"furniture": {
-					"id": "door_wood"
+				"feature": {
+					"id": "door_wood",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_06"
 			},
@@ -5585,9 +5625,10 @@
 				"id": "concrete_00"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_07"
 			},
@@ -5601,9 +5642,10 @@
 				"id": "blue_carpet_00"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 270.0
@@ -5652,8 +5694,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "lamp_standing"
+				"feature": {
+					"id": "lamp_standing",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_08"
 			},
@@ -5674,9 +5718,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "refrigerator_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_mint_00",
 				"rotation": 270.0
@@ -5714,8 +5759,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "lamp_standing"
+				"feature": {
+					"id": "lamp_standing",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 270.0
@@ -5741,9 +5788,10 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_04",
 				"rotation": 180.0
@@ -5764,9 +5812,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_green_01"
 			},
@@ -5836,9 +5885,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_wood",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_08",
 				"rotation": 270.0
@@ -5880,17 +5930,19 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "stove",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_mint_00",
 				"rotation": 270.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "rocky_earth_00",
 				"rotation": 270.0
@@ -5988,9 +6040,10 @@
 				"id": "concrete_00"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "concrete_00"
 			},
@@ -6026,9 +6079,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_08",
 				"rotation": 270.0
@@ -6040,9 +6094,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "table_round_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_08",
 				"rotation": 270.0
@@ -6054,9 +6109,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_08",
 				"rotation": 270.0
@@ -6088,9 +6144,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "countertop_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_mint_00",
 				"rotation": 270.0
@@ -6106,9 +6163,10 @@
 				"id": "dirt_light_00"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "concrete_00"
 			},
@@ -6164,9 +6222,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "standing_mirror",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_green_01"
 			},
@@ -6177,9 +6236,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "toilet_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_green_01"
 			},
@@ -6206,9 +6266,10 @@
 				"id": "concrete_00"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "concrete_00"
 			},
@@ -6254,8 +6315,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "chair_wood"
+				"feature": {
+					"id": "chair_wood",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_08",
 				"rotation": 180.0
@@ -6297,17 +6360,19 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "countertop_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_mint_00",
 				"rotation": 270.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "rocky_earth_00",
 				"rotation": 270.0
@@ -6320,9 +6385,10 @@
 				"id": "dirt_light_00"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "concrete_00"
 			},
@@ -6409,9 +6475,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_08",
 				"rotation": 180.0
@@ -6423,8 +6490,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "trash_bin"
+				"feature": {
+					"id": "trash_bin",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_08"
 			},
@@ -6445,9 +6514,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_08",
 				"rotation": 180.0
@@ -6468,9 +6538,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_mint_00",
 				"rotation": 270.0
@@ -6482,9 +6553,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_mint_00",
 				"rotation": 270.0
@@ -6534,9 +6606,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_06"
 			},
@@ -6547,9 +6620,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_06"
 			},
@@ -6560,9 +6634,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "table_round_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_06"
 			},
@@ -6573,9 +6648,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_06"
 			},
@@ -6595,9 +6671,10 @@
 				"id": "concrete_00"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "table_metal",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "concrete_00"
 			},
@@ -6664,16 +6741,18 @@
 				"id": "concrete_00"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "concrete_00"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "table_metal",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "concrete_00"
 			},
@@ -6681,9 +6760,10 @@
 				"id": "concrete_00"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 270.0
@@ -6708,9 +6788,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_06"
 			},
@@ -6730,8 +6811,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "chair_wood"
+				"feature": {
+					"id": "chair_wood",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_06"
 			},
@@ -6745,9 +6828,10 @@
 				"id": "floor_wood_boards_06"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "dirt_light_00"
 			},
@@ -6811,9 +6895,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00",
 				"rotation": 270.0
@@ -6835,8 +6920,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "bookcase_wood_00"
+				"feature": {
+					"id": "bookcase_wood_00",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_05",
 				"rotation": 270.0
@@ -6848,8 +6935,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "bookcase_wood_00"
+				"feature": {
+					"id": "bookcase_wood_00",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_05",
 				"rotation": 270.0
@@ -6861,8 +6950,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "bookcase_wood_00"
+				"feature": {
+					"id": "bookcase_wood_00",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_05",
 				"rotation": 270.0
@@ -6874,8 +6965,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "plant_pot_00"
+				"feature": {
+					"id": "plant_pot_00",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_05",
 				"rotation": 270.0
@@ -6925,9 +7018,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "lamp_standing",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_06"
 			},
@@ -6956,9 +7050,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_06"
 			},
@@ -6986,9 +7081,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_purple_00",
 				"rotation": 270.0
@@ -7020,9 +7116,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00",
 				"rotation": 270.0
@@ -7054,9 +7151,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "lamp_standing",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00",
 				"rotation": 90.0
@@ -7116,9 +7214,10 @@
 				"rotation": 270.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "rocky_earth_00",
 				"rotation": 270.0
@@ -7130,9 +7229,10 @@
 				"id": "grass_plain_01"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "dirt_light_00"
 			},
@@ -7143,9 +7243,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "desk",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_03"
 			},
@@ -7156,9 +7257,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_office",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_03"
 			},
@@ -7178,9 +7280,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 270.0
@@ -7202,9 +7305,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 90.0
@@ -7246,9 +7350,10 @@
 				"id": "bathroom_tiles_blue_00"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "dirt_light_00"
 			},
@@ -7259,9 +7364,10 @@
 				"id": "grass_plain_01"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "WillowTree_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "grass_plain_01"
 			},
@@ -7275,9 +7381,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "toilet_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_purple_00",
 				"rotation": 270.0
@@ -7346,9 +7453,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_05",
 				"rotation": 270.0
@@ -7360,8 +7468,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "table_round_wood"
+				"feature": {
+					"id": "table_round_wood",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_05",
 				"rotation": 270.0
@@ -7373,9 +7483,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_05",
 				"rotation": 270.0
@@ -7387,9 +7498,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "lamp_standing",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_05",
 				"rotation": 270.0
@@ -7401,9 +7513,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "sofa",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_05",
 				"rotation": 270.0
@@ -7416,9 +7529,10 @@
 				"id": "grass_plain_01"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "Tree_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "grass_plain_01"
 			},
@@ -7432,9 +7546,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_03"
 			},
@@ -7445,8 +7560,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "trash_bin"
+				"feature": {
+					"id": "trash_bin",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_03"
 			},
@@ -7457,9 +7574,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_03"
 			},
@@ -7473,9 +7591,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 270.0
@@ -7490,9 +7609,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "countertop_wood",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "bathroom_tiles_blue_00"
 			},
@@ -7503,9 +7623,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "countertop_wood",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "bathroom_tiles_blue_00"
 			},
@@ -7516,9 +7637,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "stove",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "bathroom_tiles_blue_00"
 			},
@@ -7529,9 +7651,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "refrigerator_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "bathroom_tiles_blue_00"
 			},
@@ -7569,9 +7692,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "rocky_earth_00",
 				"rotation": 90.0
@@ -7593,9 +7717,10 @@
 				"rotation": 270.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "rocky_earth_00",
 				"rotation": 270.0
@@ -7605,9 +7730,10 @@
 				"rotation": 270.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "rocky_earth_00",
 				"rotation": 270.0
@@ -7634,9 +7760,10 @@
 				"id": "dirt_light_00"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "dirt_light_00"
 			},
@@ -7653,9 +7780,10 @@
 				"id": "dirt_light_00"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "dirt_light_00"
 			},
@@ -7663,9 +7791,10 @@
 				"id": "dirt_light_00"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "dirt_light_00"
 			},
@@ -7782,105 +7911,39 @@
 			}
 		],
 		[
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -7893,9 +7956,7 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -7916,9 +7977,7 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -7927,12 +7986,8 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -7941,15 +7996,11 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01"
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -7966,9 +8017,7 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -7989,80 +8038,44 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -8075,156 +8088,72 @@
 				"id": "wood_stairs",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -8249,40 +8178,20 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -8307,56 +8216,28 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -8393,139 +8274,77 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -8550,99 +8369,53 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -8650,103 +8423,57 @@
 			{
 				"id": "floor_wood_boards_07"
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -8754,193 +8481,95 @@
 			{
 				"id": "wood_stairs"
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -8961,9 +8590,7 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -8972,25 +8599,15 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -8999,23 +8616,17 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -9024,826 +8635,290 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -9852,23 +8927,17 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -9877,25 +8946,15 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -9904,9 +8963,7 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -9927,193 +8984,95 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "wood_stairs",
 				"rotation": 180.0
@@ -10122,103 +9081,57 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "floor_wood_boards_07",
 				"rotation": 180.0
@@ -10227,99 +9140,53 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -10344,139 +9211,77 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -10513,56 +9318,28 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -10587,40 +9364,20 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -10645,156 +9402,72 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "wood_stairs",
 				"rotation": 90.0
@@ -10806,80 +9479,44 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -10900,9 +9537,7 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -10919,30 +9554,12 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-				"id": "brick_wall_01",
-				"rotation": 90.0
-			},
-			{
-				"id": "brick_wall_01",
-				"rotation": 90.0
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -10951,9 +9568,17 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
+			{},
+			{},
 			{
-
+				"id": "brick_wall_01",
+				"rotation": 90.0
 			},
+			{
+				"id": "brick_wall_01",
+				"rotation": 90.0
+			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -10970,16 +9595,12 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -10988,206 +9609,74 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			}
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{}
 		],
 		[
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -11199,8 +9688,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "window_glass"
+				"feature": {
+					"id": "window_glass",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -11220,8 +9711,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "window_glass"
+				"feature": {
+					"id": "window_glass",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -11237,8 +9730,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "window_glass"
+				"feature": {
+					"id": "window_glass",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -11263,12 +9758,8 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 180.0
@@ -11284,8 +9775,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "window_glass"
+				"feature": {
+					"id": "window_glass",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 180.0
@@ -11301,8 +9794,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "window_glass"
+				"feature": {
+					"id": "window_glass",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 180.0
@@ -11347,15 +9842,9 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -11367,9 +9856,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bed_wood_single_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 90.0
@@ -11381,8 +9871,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "trash_bin"
+				"feature": {
+					"id": "trash_bin",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 90.0
@@ -11394,9 +9886,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 90.0
@@ -11408,8 +9901,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "desk"
+				"feature": {
+					"id": "desk",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 90.0
@@ -11425,8 +9920,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "lamp_standing"
+				"feature": {
+					"id": "lamp_standing",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_07",
 				"rotation": 270.0
@@ -11442,9 +9939,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_blue_02",
 				"rotation": 90.0
@@ -11466,9 +9964,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "toilet_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_blue_02",
 				"rotation": 90.0
@@ -11477,12 +9976,8 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 180.0
@@ -11494,9 +9989,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 180.0
@@ -11508,8 +10004,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "trash_bin"
+				"feature": {
+					"id": "trash_bin",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 180.0
@@ -11521,8 +10019,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "desk"
+				"feature": {
+					"id": "desk",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 180.0
@@ -11534,8 +10034,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "lamp_standing"
+				"feature": {
+					"id": "lamp_standing",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 270.0
@@ -11547,9 +10049,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "wardrobe",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 90.0
@@ -11558,15 +10061,9 @@
 				"id": "brick_wall_01",
 				"rotation": 180.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -11578,9 +10075,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_green_01",
 				"rotation": 270.0
@@ -11602,9 +10100,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "toilet_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_green_01",
 				"rotation": 270.0
@@ -11613,15 +10112,9 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"areas": [
 					{
@@ -11629,9 +10122,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -11673,9 +10167,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_office",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 90.0
@@ -11700,9 +10195,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_07",
 				"rotation": 90.0
@@ -11734,9 +10230,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bathtub",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_blue_02",
 				"rotation": 90.0
@@ -11745,17 +10242,13 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
+			{},
+			{},
 			{
-
-			},
-			{
-
-			},
-			{
-				"areas": [],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 180.0
@@ -11787,9 +10280,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_office",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 180.0
@@ -11810,9 +10304,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 90.0
@@ -11852,9 +10347,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 270.0
@@ -11886,9 +10382,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bathtub",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_green_01",
 				"rotation": 270.0
@@ -11897,15 +10394,9 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -11917,9 +10408,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 90.0
@@ -11931,9 +10423,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "wardrobe",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 90.0
@@ -11995,9 +10488,7 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 180.0
@@ -12009,9 +10500,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bed_wood_single_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 270.0
@@ -12060,9 +10552,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 180.0
@@ -12121,12 +10614,8 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -12150,8 +10639,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "door_wood"
+				"feature": {
+					"id": "door_wood",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_07",
 				"rotation": 180.0
@@ -12194,9 +10685,7 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 180.0
@@ -12232,9 +10721,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "lamp_standing",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 270.0
@@ -12283,12 +10773,8 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -12300,9 +10786,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "desk",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00"
 			},
@@ -12313,9 +10800,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_office",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00"
 			},
@@ -12340,9 +10828,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_07",
 				"rotation": 90.0
@@ -12380,9 +10869,7 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"areas": [
 					{
@@ -12390,9 +10877,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -12511,12 +10999,8 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"areas": [
 					{
@@ -12524,9 +11008,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -12538,8 +11023,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "trash_bin"
+				"feature": {
+					"id": "trash_bin",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00"
 			},
@@ -12559,9 +11046,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_07",
 				"rotation": 270.0
@@ -12619,9 +11107,7 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -12633,9 +11119,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 270.0
@@ -12675,9 +11162,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 270.0
@@ -12706,12 +11194,8 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -12723,9 +11207,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00"
 			},
@@ -12742,9 +11227,7 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "wood_stairs",
 				"rotation": 90.0
@@ -12783,9 +11266,7 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -12807,9 +11288,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_02",
 				"rotation": 270.0
@@ -12821,9 +11303,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_02",
 				"rotation": 270.0
@@ -12835,9 +11318,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bed_wood_single_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_02",
 				"rotation": 270.0
@@ -12853,9 +11337,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "orange_carpet_00",
 				"rotation": 270.0
@@ -12867,8 +11352,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "trash_bin"
+				"feature": {
+					"id": "trash_bin",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "orange_carpet_00",
 				"rotation": 270.0
@@ -12880,9 +11367,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "orange_carpet_00",
 				"rotation": 270.0
@@ -12921,12 +11409,8 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -12938,9 +11422,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00"
 			},
@@ -12957,9 +11442,7 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"areas": [
 					{
@@ -12967,9 +11450,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_07",
 				"rotation": 90.0
@@ -13007,9 +11491,7 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"areas": [
 					{
@@ -13017,9 +11499,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -13061,9 +11544,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "lamp_standing",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_02",
 				"rotation": 270.0
@@ -13079,9 +11563,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "lamp_standing",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "orange_carpet_00",
 				"rotation": 270.0
@@ -13140,12 +11625,8 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"areas": [
 					{
@@ -13153,9 +11634,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -13167,9 +11649,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bed_wood_single_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00"
 			},
@@ -13180,18 +11663,17 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "wardrobe",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00"
 			},
 			{
 				"id": "brick_wall_01"
 			},
-			{
-
-			},
+			{},
 			{
 				"areas": [
 					{
@@ -13199,9 +11681,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_07"
 			},
@@ -13212,9 +11695,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_07",
 				"rotation": 90.0
@@ -13243,9 +11727,7 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -13257,9 +11739,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_02",
 				"rotation": 270.0
@@ -13271,9 +11754,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "desk",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_02",
 				"rotation": 270.0
@@ -13285,9 +11769,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_office",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_02",
 				"rotation": 270.0
@@ -13299,9 +11784,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "wardrobe",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_02",
 				"rotation": 270.0
@@ -13317,9 +11803,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bed_wood_single_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "orange_carpet_00",
 				"rotation": 270.0
@@ -13331,9 +11818,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "orange_carpet_00",
 				"rotation": 270.0
@@ -13345,9 +11833,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "table_round_wood",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "orange_carpet_00",
 				"rotation": 270.0
@@ -13359,9 +11848,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "orange_carpet_00",
 				"rotation": 270.0
@@ -13390,12 +11880,8 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -13407,9 +11893,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -13431,9 +11918,10 @@
 				"rotation": 270.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01"
 			},
@@ -13461,9 +11949,7 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -13479,9 +11965,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -13505,9 +11992,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -13523,9 +12011,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -13558,780 +12047,264 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -14367,8 +12340,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "window_glass"
+				"feature": {
+					"id": "window_glass",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -14384,8 +12359,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "window_glass"
+				"feature": {
+					"id": "window_glass",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -14409,8 +12386,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "window_glass"
+				"feature": {
+					"id": "window_glass",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -14423,9 +12402,7 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -14455,8 +12432,10 @@
 				"rotation": 180.0
 			},
 			{
-				"furniture": {
-					"id": "window_glass"
+				"feature": {
+					"id": "window_glass",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -14480,8 +12459,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "window_glass"
+				"feature": {
+					"id": "window_glass",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -14490,12 +12471,8 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -14527,9 +12504,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "orange_carpet_00",
 				"rotation": 90.0
@@ -14541,9 +12519,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "table_round_wood",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "orange_carpet_00",
 				"rotation": 90.0
@@ -14555,9 +12534,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "orange_carpet_00",
 				"rotation": 90.0
@@ -14569,9 +12549,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bed_wood_single_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "orange_carpet_00",
 				"rotation": 90.0
@@ -14587,9 +12568,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "wardrobe",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_02",
 				"rotation": 90.0
@@ -14601,9 +12583,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_office",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_02",
 				"rotation": 90.0
@@ -14615,9 +12598,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "desk",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_02",
 				"rotation": 90.0
@@ -14629,9 +12613,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_02",
 				"rotation": 90.0
@@ -14643,16 +12628,15 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -14684,9 +12668,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_07",
 				"rotation": 270.0
@@ -14698,16 +12683,15 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_07",
 				"rotation": 180.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 180.0
@@ -14719,9 +12703,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "wardrobe",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00",
 				"rotation": 180.0
@@ -14733,9 +12718,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bed_wood_single_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00",
 				"rotation": 180.0
@@ -14747,48 +12733,46 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
+				},
+				"id": "brick_wall_01",
+				"rotation": 90.0
+			},
+			{},
+			{},
+			{
+				"id": "brick_wall_01",
+				"rotation": 90.0
+			},
+			{
+				"id": "arc_stones_floor_00",
+				"rotation": 90.0
+			},
+			{
+				"id": "arc_stones_floor_00",
+				"rotation": 90.0
+			},
+			{
+				"id": "arc_stones_floor_00",
+				"rotation": 90.0
+			},
+			{
+				"id": "arc_stones_floor_00",
+				"rotation": 90.0
+			},
+			{
+				"feature": {
+					"id": "window_glass",
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
 			{
-
-			},
-			{
-
-			},
-			{
-				"id": "brick_wall_01",
-				"rotation": 90.0
-			},
-			{
-				"id": "arc_stones_floor_00",
-				"rotation": 90.0
-			},
-			{
-				"id": "arc_stones_floor_00",
-				"rotation": 90.0
-			},
-			{
-				"id": "arc_stones_floor_00",
-				"rotation": 90.0
-			},
-			{
-				"id": "arc_stones_floor_00",
-				"rotation": 90.0
-			},
-			{
-				"furniture": {
-					"id": "window_glass",
-					"rotation": 270.0
-				},
-				"id": "brick_wall_01",
-				"rotation": 90.0
-			},
-			{
 				"areas": [
 					{
 						"id": "floor_bedroom",
@@ -14825,9 +12809,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "lamp_standing",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "orange_carpet_00",
 				"rotation": 90.0
@@ -14843,9 +12828,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "lamp_standing",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_02",
 				"rotation": 90.0
@@ -14877,8 +12863,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "trash_bin"
+				"feature": {
+					"id": "trash_bin",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_02",
 				"rotation": 90.0
@@ -14887,9 +12875,7 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -14911,9 +12897,10 @@
 				"rotation": 270.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -14935,16 +12922,15 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_07",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -14966,9 +12952,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00",
 				"rotation": 180.0
@@ -14977,12 +12964,8 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -15024,9 +13007,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "cabinet_wood_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "orange_carpet_00",
 				"rotation": 90.0
@@ -15038,8 +13022,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "trash_bin"
+				"feature": {
+					"id": "trash_bin",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "orange_carpet_00",
 				"rotation": 90.0
@@ -15051,9 +13037,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "orange_carpet_00",
 				"rotation": 90.0
@@ -15069,9 +13056,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bed_wood_single_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_02",
 				"rotation": 90.0
@@ -15083,9 +13071,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_02",
 				"rotation": 90.0
@@ -15097,9 +13086,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_02",
 				"rotation": 90.0
@@ -15121,16 +13111,15 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -15169,9 +13158,7 @@
 				"id": "wood_stairs",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -15193,9 +13180,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00",
 				"rotation": 180.0
@@ -15204,12 +13192,8 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -15241,9 +13225,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 90.0
@@ -15283,9 +13268,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 90.0
@@ -15294,9 +13280,7 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -15357,9 +13341,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_07",
 				"rotation": 90.0
@@ -15381,9 +13366,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00",
 				"rotation": 180.0
@@ -15392,12 +13378,8 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -15419,9 +13401,10 @@
 				"rotation": 90.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -15517,16 +13500,15 @@
 				"rotation": 90.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -15548,9 +13530,10 @@
 				"rotation": 270.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -15572,9 +13555,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_07",
 				"rotation": 270.0
@@ -15600,9 +13584,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_office",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00",
 				"rotation": 180.0
@@ -15614,9 +13599,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "desk",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "blue_carpet_00",
 				"rotation": 180.0
@@ -15628,19 +13614,16 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -15692,9 +13675,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "lamp_standing",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 90.0
@@ -15720,9 +13704,7 @@
 			{
 				"id": "brick_wall_01"
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -15768,9 +13750,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_07"
 			},
@@ -15790,12 +13773,8 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -15856,9 +13835,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00"
 			},
@@ -15909,9 +13889,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bed_wood_single_00",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 90.0
@@ -15919,9 +13900,7 @@
 			{
 				"id": "brick_wall_01"
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -15987,9 +13966,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "wardrobe",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 270.0
@@ -16001,9 +13981,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 270.0
@@ -16012,15 +13993,9 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -16032,9 +14007,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bathtub",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_green_01",
 				"rotation": 90.0
@@ -16066,9 +14042,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 90.0
@@ -16106,9 +14083,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 270.0
@@ -16130,9 +14108,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_office",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00"
 			},
@@ -16153,8 +14132,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "trash_bin"
+				"feature": {
+					"id": "trash_bin",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00"
 			},
@@ -16165,18 +14146,15 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01"
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -16188,9 +14166,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bathtub",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_blue_02",
 				"rotation": 270.0
@@ -16222,9 +14201,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "door_wood",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_07",
 				"rotation": 270.0
@@ -16250,9 +14230,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "chair_office",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 270.0
@@ -16294,22 +14275,17 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 90.0
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -16321,9 +14297,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "toilet_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_green_01",
 				"rotation": 90.0
@@ -16345,9 +14322,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_green_01",
 				"rotation": 90.0
@@ -16356,15 +14334,9 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01"
 			},
@@ -16375,9 +14347,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "wardrobe",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 270.0
@@ -16389,9 +14362,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "lamp_standing",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00",
 				"rotation": 90.0
@@ -16403,9 +14377,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "desk",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00"
 			},
@@ -16416,9 +14391,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00"
 			},
@@ -16429,21 +14405,18 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bookcase_wood_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_00"
 			},
 			{
 				"id": "brick_wall_01"
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -16455,9 +14428,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "toilet_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_blue_02",
 				"rotation": 270.0
@@ -16479,9 +14453,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 270.0
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "kitchen_tiles_blue_02",
 				"rotation": 270.0
@@ -16497,9 +14472,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "lamp_standing",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_07",
 				"rotation": 90.0
@@ -16515,9 +14491,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "desk",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 270.0
@@ -16529,9 +14506,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "plant_pot_00",
-					"rotation": 0.0
+					"rotation": 0.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 270.0
@@ -16543,8 +14521,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
-					"id": "trash_bin"
+				"feature": {
+					"id": "trash_bin",
+					"rotation": 0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 270.0
@@ -16556,9 +14536,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "bed_wood_single_00",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "red_carpet_00",
 				"rotation": 270.0
@@ -16567,15 +14548,9 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -16621,9 +14596,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01"
 			},
@@ -16637,9 +14613,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01"
 			},
@@ -16649,12 +14626,8 @@
 			{
 				"id": "brick_wall_01"
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -16676,32 +14649,11 @@
 				"rotation": 90.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
-				"id": "brick_wall_01",
-				"rotation": 90.0
-			},
-			{
-				"id": "brick_wall_01",
-				"rotation": 90.0
-			},
-			{
-				"areas": [
-					{
-						"id": "floor_bedroom",
-						"rotation": 0.0
-					}
-				],
-				"furniture": {
-					"id": "window_glass",
-					"rotation": 180.0
-				},
-				"id": "brick_wall_01",
-				"rotation": 90.0
-			},
-			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
@@ -16716,9 +14668,10 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "window_glass",
-					"rotation": 180.0
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -16728,212 +14681,101 @@
 				"rotation": 90.0
 			},
 			{
-
+				"id": "brick_wall_01",
+				"rotation": 90.0
 			},
 			{
-
+				"areas": [
+					{
+						"id": "floor_bedroom",
+						"rotation": 0.0
+					}
+				],
+				"feature": {
+					"id": "window_glass",
+					"rotation": 180.0,
+					"type": "furniture"
+				},
+				"id": "brick_wall_01",
+				"rotation": 90.0
 			},
 			{
-
+				"id": "brick_wall_01",
+				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			}
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{}
 		],
 		[
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -16942,16 +14784,12 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -16972,12 +14810,8 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 180.0
@@ -16986,16 +14820,12 @@
 				"id": "brick_wall_01",
 				"rotation": 180.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 180.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 180.0
@@ -17036,242 +14866,122 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 180.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 180.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 180.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -17292,43 +15002,21 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 180.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -17349,15 +15037,9 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -17374,38 +15056,22 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 180.0
@@ -17434,190 +15100,86 @@
 				"id": "brick_wall_01",
 				"rotation": 180.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -17646,345 +15208,167 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -18001,31 +15385,17 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -18034,9 +15404,7 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -18049,16 +15417,12 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -18067,810 +15431,274 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -18879,16 +15707,12 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -18901,9 +15725,7 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -18912,24 +15734,12 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -18938,9 +15748,7 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -18953,342 +15761,158 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -19317,188 +15941,80 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01"
 			},
@@ -19520,38 +16036,22 @@
 			{
 				"id": "brick_wall_01"
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -19568,15 +16068,9 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -19597,42 +16091,20 @@
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01"
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -19653,239 +16125,119 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01"
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01"
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01"
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 90.0
@@ -19924,27 +16276,19 @@
 			{
 				"id": "brick_wall_01"
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01"
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01"
 			},
 			{
 				"id": "brick_wall_01"
 			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -19965,16 +16309,12 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
@@ -19983,214 +16323,80 @@
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "brick_wall_01",
 				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			}
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{}
 		],
 		[
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
 			},
@@ -20237,14 +16443,10 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
-			},
-			{
-
 			},
+			{},
+			{},
 			{
-
-			},
-			{
 				"id": "beehive_stones_00",
 				"rotation": 180.0
 			},
@@ -20303,17 +16505,11 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 180.0
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
 			{
-
-			},
-			{
-
-			},
-			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
 			},
@@ -20360,13 +16556,9 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00",
 				"rotation": 180.0
@@ -20427,16 +16619,10 @@
 				"id": "beehive_stones_00",
 				"rotation": 180.0
 			},
+			{},
+			{},
+			{},
 			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
 			},
@@ -20483,14 +16669,10 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
-			},
-			{
-
 			},
+			{},
+			{},
 			{
-
-			},
-			{
 				"id": "beehive_stones_00",
 				"rotation": 180.0
 			},
@@ -20549,16 +16731,10 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 180.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
@@ -20607,13 +16783,9 @@
 				"id": "beehive_stones_00",
 				"rotation": 90.0
 			},
+			{},
+			{},
 			{
-
-			},
-			{
-
-			},
-			{
 				"id": "beehive_stones_00",
 				"rotation": 180.0
 			},
@@ -20672,17 +16844,11 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 180.0
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
 			{
-
-			},
-			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
 			},
@@ -20713,26 +16879,14 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
 				"id": "beehive_stones_00",
 				"rotation": 180.0
 			},
@@ -20775,29 +16929,15 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 180.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
-
-			},
-			{
-
-			},
-			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
 			},
@@ -20828,25 +16968,13 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00",
 				"rotation": 180.0
@@ -20891,28 +17019,14 @@
 				"id": "beehive_stones_00",
 				"rotation": 180.0
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
 			},
@@ -20943,26 +17057,14 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
 				"id": "beehive_stones_00",
 				"rotation": 180.0
 			},
@@ -21005,29 +17107,15 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 180.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
 			},
@@ -21058,26 +17146,14 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
-
-			},
-			{
-
-			},
-			{
 				"id": "beehive_stones_00",
 				"rotation": 180.0
 			},
@@ -21120,29 +17196,15 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 180.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
-
-			},
-			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
 			},
@@ -21173,26 +17235,14 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
 				"id": "beehive_stones_00",
 				"rotation": 180.0
 			},
@@ -21235,29 +17285,15 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 180.0
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
 			},
@@ -21288,26 +17324,14 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
 				"id": "beehive_stones_00",
 				"rotation": 180.0
 			},
@@ -21351,44 +17375,30 @@
 				"id": "beehive_stones_00",
 				"rotation": 180.0
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
-
+				"id": "beehive_stones_00",
+				"rotation": 90.0
 			},
 			{
-
+				"id": "beehive_stones_00",
+				"rotation": 90.0
 			},
 			{
-
+				"id": "beehive_stones_00",
+				"rotation": 90.0
 			},
 			{
-
+				"id": "beehive_stones_00",
+				"rotation": 90.0
 			},
 			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"id": "beehive_stones_00",
-				"rotation": 90.0
-			},
-			{
-				"id": "beehive_stones_00",
-				"rotation": 90.0
-			},
-			{
-				"id": "beehive_stones_00",
-				"rotation": 90.0
-			},
-			{
-				"id": "beehive_stones_00",
-				"rotation": 90.0
-			},
-			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
 			},
@@ -21403,25 +17413,13 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 90.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00",
 				"rotation": 180.0
@@ -21465,924 +17463,275 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 180.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"id": "beehive_stones_00"
-			},
-			{
-				"id": "beehive_stones_00"
-			},
-			{
-				"id": "beehive_stones_00"
-			},
-			{
-				"id": "beehive_stones_00"
-			},
-			{
-				"id": "beehive_stones_00"
-			},
-			{
-				"id": "beehive_stones_00"
-			},
-			{
-				"id": "beehive_stones_00"
-			},
-			{
-				"id": "beehive_stones_00"
-			},
-			{
-				"id": "beehive_stones_00"
-			},
-			{
-				"id": "beehive_stones_00"
-			},
-			{
-				"id": "beehive_stones_00"
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"id": "beehive_stones_00",
-				"rotation": 270.0
-			},
-			{
-				"id": "beehive_stones_00",
-				"rotation": 270.0
-			},
-			{
-				"id": "beehive_stones_00",
-				"rotation": 270.0
-			},
-			{
-				"id": "beehive_stones_00",
-				"rotation": 270.0
-			},
-			{
-				"id": "beehive_stones_00",
-				"rotation": 270.0
-			},
-			{
-				"id": "beehive_stones_00",
-				"rotation": 270.0
-			},
-			{
-				"id": "beehive_stones_00",
-				"rotation": 270.0
-			},
-			{
-				"id": "beehive_stones_00",
-				"rotation": 270.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"id": "beehive_stones_00"
-			},
-			{
-				"id": "beehive_stones_00"
-			},
-			{
-				"id": "beehive_stones_00"
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00"
 			},
@@ -22408,23 +17757,20 @@
 				"id": "beehive_stones_00"
 			},
 			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
+				"id": "beehive_stones_00"
 			},
 			{
-
+				"id": "beehive_stones_00"
 			},
 			{
-
+				"id": "beehive_stones_00"
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
@@ -22456,28 +17802,14 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00"
 			},
@@ -22510,25 +17842,13 @@
 			},
 			{
 				"id": "beehive_stones_00"
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
@@ -22560,28 +17880,14 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00"
 			},
@@ -22614,25 +17920,13 @@
 			},
 			{
 				"id": "beehive_stones_00"
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
@@ -22664,28 +17958,14 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00"
 			},
@@ -22718,25 +17998,13 @@
 			},
 			{
 				"id": "beehive_stones_00"
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
@@ -22768,28 +18036,14 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00"
 			},
@@ -22822,25 +18076,13 @@
 			},
 			{
 				"id": "beehive_stones_00"
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
@@ -22872,28 +18114,14 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00"
 			},
@@ -22926,25 +18154,13 @@
 			},
 			{
 				"id": "beehive_stones_00"
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
@@ -22976,28 +18192,14 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"id": "beehive_stones_00"
-			},
-			{
-				"id": "beehive_stones_00"
-			},
-			{
-				"id": "beehive_stones_00"
-			},
-			{
-				"id": "beehive_stones_00"
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00"
 			},
@@ -23030,29 +18232,13 @@
 			},
 			{
 				"id": "beehive_stones_00"
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"id": "beehive_stones_00",
-				"rotation": 270.0
-			},
-			{
-				"id": "beehive_stones_00",
-				"rotation": 270.0
-			},
-			{
-				"id": "beehive_stones_00",
-				"rotation": 270.0
-			},
-			{
-				"id": "beehive_stones_00",
-				"rotation": 270.0
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
@@ -23084,16 +18270,10 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00"
 			},
@@ -23138,13 +18318,9 @@
 			},
 			{
 				"id": "beehive_stones_00"
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
@@ -23192,16 +18368,10 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00"
 			},
@@ -23246,13 +18416,9 @@
 			},
 			{
 				"id": "beehive_stones_00"
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
@@ -23300,16 +18466,10 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00"
 			},
@@ -23354,13 +18514,9 @@
 			},
 			{
 				"id": "beehive_stones_00"
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
@@ -23408,106 +18564,138 @@
 			{
 				"id": "beehive_stones_00",
 				"rotation": 270.0
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
 			},
+			{},
+			{},
+			{},
 			{
-
+				"id": "beehive_stones_00"
 			},
 			{
-
+				"id": "beehive_stones_00"
 			},
 			{
-
+				"id": "beehive_stones_00"
 			},
 			{
-
+				"id": "beehive_stones_00"
 			},
 			{
-
+				"id": "beehive_stones_00"
 			},
 			{
-
+				"id": "beehive_stones_00"
 			},
 			{
-
+				"id": "beehive_stones_00"
 			},
 			{
-
+				"id": "beehive_stones_00"
 			},
 			{
-
+				"id": "beehive_stones_00"
 			},
 			{
-
+				"id": "beehive_stones_00"
 			},
 			{
-
+				"id": "beehive_stones_00"
 			},
 			{
-
+				"id": "beehive_stones_00"
 			},
 			{
-
+				"id": "beehive_stones_00"
 			},
 			{
-
+				"id": "beehive_stones_00"
 			},
 			{
-
+				"id": "beehive_stones_00"
 			},
+			{},
+			{},
 			{
-
+				"id": "beehive_stones_00",
+				"rotation": 270.0
 			},
 			{
-
+				"id": "beehive_stones_00",
+				"rotation": 270.0
 			},
 			{
-
+				"id": "beehive_stones_00",
+				"rotation": 270.0
 			},
 			{
-
+				"id": "beehive_stones_00",
+				"rotation": 270.0
 			},
 			{
-
+				"id": "beehive_stones_00",
+				"rotation": 270.0
 			},
 			{
-
+				"id": "beehive_stones_00",
+				"rotation": 270.0
 			},
 			{
-
+				"id": "beehive_stones_00",
+				"rotation": 270.0
 			},
 			{
-
+				"id": "beehive_stones_00",
+				"rotation": 270.0
 			},
 			{
-
+				"id": "beehive_stones_00",
+				"rotation": 270.0
 			},
 			{
-
+				"id": "beehive_stones_00",
+				"rotation": 270.0
 			},
 			{
-
+				"id": "beehive_stones_00",
+				"rotation": 270.0
 			},
 			{
-
+				"id": "beehive_stones_00",
+				"rotation": 270.0
 			},
-			{
-
-			}
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{}
 		],
 		[],
 		[],
