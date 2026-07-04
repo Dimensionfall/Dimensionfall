@@ -36,10 +36,14 @@ class MapValidator:
             self.add_error(file_path, f"Failed to read file: {str(e)}")
             return
 
+        # Skip non-map metadata files like references.json
+        if os.path.basename(file_path) == "references.json":
+            return
+
         self.files_processed += 1
         
-        # 1. Check Top-Level Required Fields
-        required_fields = ['id', 'levels', 'areas']
+        # 1. Check Top-Level Required Fields (areas is now optional)
+        required_fields = ['id', 'levels']
         for field in required_fields:
             if field not in data:
                 self.add_error(file_path, f"Missing required top-level field: '{field}'")
@@ -47,7 +51,7 @@ class MapValidator:
 
         map_id = data['id']
         levels = data['levels']
-        areas = data['areas']
+        areas = data.get('areas', [])
 
         # 2. Check Optional Metadata Types
         metadata_checks = {
