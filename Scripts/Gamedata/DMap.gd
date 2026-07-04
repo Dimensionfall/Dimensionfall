@@ -167,7 +167,26 @@ func get_data() -> Dictionary:
 	
 	# Sanitize tile-level area references to remove stale editor artifacts
 	_sanitize_area_references(mydata)
+
+	# NEW: Implement sanitization for corrupt tiles (missing or empty ID when metadata exists)
+	_sanitize_tile_objects(mydata)
+	
 	return mydata
+
+func _sanitize_tile_objects(data: Dictionary) -> void:
+	if not data.has("levels") or not data["levels"] is Array:
+		return
+			
+	for level in data["levels"]:
+		if not level is Array:
+			continue
+		for i in range(level.size()):
+			var tile = level[i]
+			if tile is Dictionary and tile.size() > 0:
+				# Criteria for corruption: contains metadata but no valid, non-empty ID
+				if not tile.has("id") or tile["id"].is_empty() or tile["id"].strip_edges().is_empty():
+					level[i] = {} # Replace with empty dictionary (air tile)
+
 
 func _sanitize_area_references(data: Dictionary) -> void:
 	var valid_area_ids: Array[String] = []
