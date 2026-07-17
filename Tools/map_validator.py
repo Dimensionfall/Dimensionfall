@@ -4,6 +4,10 @@ import sys
 import argparse
 from typing import List, Dict, Any, Set
 
+MAP_WIDTH = 32
+MAP_HEIGHT = 32
+POPULATED_LEVEL_TILE_COUNT = MAP_WIDTH * MAP_HEIGHT
+
 class MapValidationError(Exception):
     """Custom exception for map validation errors."""
     pass
@@ -59,7 +63,7 @@ class MapValidator:
             'description': str,
             'categories': list,
             'connections': dict,
-            'mapwidth': (int, float), # Allow float for potential parity issues, will cast later
+            'mapwidth': (int, float), # Allow float for potential JSON/Godot parity issues
             'mapheight': (int, float),
             'weight': (int, float)
         }
@@ -70,10 +74,19 @@ class MapValidator:
                 if not isinstance(str(val) if expected_type == str else val, expected_type):
                     self.add_error(file_path, f"Field '{field}' has incorrect type (expected {expected_type})")
 
-        # 3. Setup Dimensions
-        map_width = int(data.get('mapwidth', 32))
-        map_height = int(data.get('mapheight', 32))
-        target_tile_count = map_width * map_height
+        # 3. Enforce the fixed map dimensions used by the loader and editor.
+        map_width = data.get('mapwidth', MAP_WIDTH)
+        map_height = data.get('mapheight', MAP_HEIGHT)
+        if map_width != MAP_WIDTH:
+            self.add_error(
+                file_path,
+                f"Field 'mapwidth': expected {MAP_WIDTH}, actual {map_width}"
+            )
+        if map_height != MAP_HEIGHT:
+            self.add_error(
+                file_path,
+                f"Field 'mapheight': expected {MAP_HEIGHT}, actual {map_height}"
+            )
 
         # 4. Validate Areas
         area_ids: Set[str] = set()
@@ -101,8 +114,11 @@ class MapValidator:
                 
                 # Check tile count if level is populated
                 if len(level) > 0:
-                    if len(level) != target_tile_count:
-                        self.add_warning(file_path, f"Level {level_idx} has {len(level)} tiles, expected {target_tile_count} ({map_width}x{map_height})")
+                    if len(level) != POPULATED_LEVEL_TILE_COUNT:
+                        self.add_error(
+                            file_path,
+                            f"Level {level_idx} tile count: expected {POPULATED_LEVEL_TILE_COUNT}, actual {len(level)}"
+                        )
 
                 for tile_idx, tile in enumerate(level):
                     if not isinstance(tile, dict):
