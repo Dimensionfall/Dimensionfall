@@ -89,6 +89,267 @@ class MapGeneratorTests(unittest.TestCase):
 
         self.assertEqual(generated["levels"][10][0], {})
 
+    def test_set_operation_places_one_tile(self):
+        recipe = valid_recipe()
+        recipe["base_tile"] = {"id": "grass_plain_01"}
+        recipe["operations"] = [
+            {"type": "set", "x": 3, "y": 2, "tile": {"id": "dirt_light_00"}}
+        ]
+
+        level = generate_map(recipe, TILES_PATH)["levels"][10]
+
+        self.assertEqual(level[2 * 32 + 3], {"id": "dirt_light_00"})
+        self.assertEqual(level[2 * 32 + 2], {"id": "grass_plain_01"})
+
+    def test_rectangle_operation_is_filled_and_later_operations_overwrite(self):
+        recipe = valid_recipe()
+        recipe["base_tile"] = {"id": "grass_plain_01"}
+        recipe["operations"] = [
+            {
+                "type": "rectangle",
+                "x": 1,
+                "y": 1,
+                "width": 3,
+                "height": 2,
+                "tile": {"id": "dirt_light_00"},
+            },
+            {"type": "set", "x": 2, "y": 1, "tile": None},
+        ]
+
+        level = generate_map(recipe, TILES_PATH)["levels"][10]
+
+        for index in {33, 35, 65, 66, 67}:
+            self.assertEqual(level[index], {"id": "dirt_light_00"})
+        self.assertEqual(level[34], {})
+
+    def test_rectangle_outline_places_only_border_and_handles_thin_rectangles(self):
+        recipe = valid_recipe()
+        recipe["base_tile"] = {"id": "grass_plain_01"}
+        recipe["operations"] = [
+            {
+                "type": "rectangle_outline",
+                "x": 1,
+                "y": 1,
+                "width": 3,
+                "height": 3,
+                "tile": {"id": "dirt_light_00"},
+            },
+            {
+                "type": "rectangle_outline",
+                "x": 6,
+                "y": 1,
+                "width": 1,
+                "height": 3,
+                "tile": None,
+            },
+        ]
+
+        level = generate_map(recipe, TILES_PATH)["levels"][10]
+
+        self.assertEqual(level[2 * 32 + 2], {"id": "grass_plain_01"})
+        for x, y in ((1, 1), (2, 1), (3, 1), (1, 2), (3, 2), (1, 3), (2, 3), (3, 3)):
+            self.assertEqual(level[y * 32 + x], {"id": "dirt_light_00"})
+        for y in range(1, 4):
+            self.assertEqual(level[y * 32 + 6], {})
+
+    def test_line_operation_handles_horizontal_vertical_and_diagonal_lines(self):
+        recipe = valid_recipe()
+        recipe["base_tile"] = {"id": "grass_plain_01"}
+        recipe["operations"] = [
+            {
+                "type": "line",
+                "from": [1, 1],
+                "to": [4, 1],
+                "tile": {"id": "dirt_light_00"},
+            },
+            {
+                "type": "line",
+                "from": [6, 1],
+                "to": [6, 4],
+                "tile": {"id": "dirt_light_00"},
+            },
+            {
+                "type": "line",
+                "from": [8, 1],
+                "to": [11, 4],
+                "tile": None,
+            },
+        ]
+
+        level = generate_map(recipe, TILES_PATH)["levels"][10]
+
+        for x in range(1, 5):
+            self.assertEqual(level[1 * 32 + x], {"id": "dirt_light_00"})
+        for y in range(1, 5):
+            self.assertEqual(level[y * 32 + 6], {"id": "dirt_light_00"})
+        for x, y in ((8, 1), (9, 2), (10, 3), (11, 4)):
+            self.assertEqual(level[y * 32 + x], {})
+
+    def test_scatter_count_is_exact_deterministic_and_replaces_existing_tiles(self):
+        recipe = valid_recipe()
+        recipe["base_tile"] = {"id": "grass_plain_01"}
+        recipe["operations"] = [
+            {
+                "type": "scatter",
+                "region": {"x": 4, "y": 5, "width": 4, "height": 3},
+                "count": 5,
+                "tile": {"id": "dirt_light_00"},
+            }
+        ]
+
+        first = generate_map(recipe, TILES_PATH)["levels"][10]
+        second = generate_map(recipe, TILES_PATH)["levels"][10]
+        scattered = {
+            (index % 32, index // 32)
+            for index, tile in enumerate(first)
+            if tile == {"id": "dirt_light_00"}
+        }
+
+        self.assertEqual(first, second)
+        self.assertEqual(len(scattered), 5)
+        self.assertTrue(all(4 <= x < 8 and 5 <= y < 8 for x, y in scattered))
+
+    def test_scatter_density_uses_floor_of_region_area(self):
+        recipe = valid_recipe()
+        recipe["base_tile"] = {"id": "grass_plain_01"}
+        recipe["operations"] = [
+            {
+                "type": "scatter",
+                "region": {"x": 0, "y": 0, "width": 3, "height": 3},
+                "density": 0.5,
+                "tile": {"id": "dirt_light_00"},
+            }
+        ]
+
+        level = generate_map(recipe, TILES_PATH)["levels"][10]
+
+        self.assertEqual(level.count({"id": "dirt_light_00"}), 4)
+
+    def test_invalid_operations_are_rejected_with_clear_errors(self):
+        base_region = {"x": 0, "y": 0, "width": 2, "height": 2}
+        cases = [
+            ("not-an-array", "operations must be an array"),
+            ([{"type": "unknown"}], "unknown operation 'unknown'"),
+            (
+                [{"type": "set", "x": 32, "y": 0, "tile": None}],
+                "operations\\[0\\].x must be an integer between 0 and 31",
+            ),
+            (
+                [{"type": "set", "x": 0, "y": 0, "tile": None, "extra": 1}],
+                "unknown operations\\[0\\] field 'extra'",
+            ),
+            (
+                [
+                    {
+                        "type": "rectangle",
+                        "x": 31,
+                        "y": 0,
+                        "width": 2,
+                        "height": 1,
+                        "tile": None,
+                    }
+                ],
+                "extends outside the 32x32 map",
+            ),
+            (
+                [{"type": "line", "from": [0, 0], "to": [32, 0], "tile": None}],
+                "operations\\[0\\].to\\[0\\] must be an integer between 0 and 31",
+            ),
+            (
+                [{"type": "scatter", "region": base_region, "tile": None}],
+                "must define exactly one of count or density",
+            ),
+            (
+                [
+                    {
+                        "type": "scatter",
+                        "region": base_region,
+                        "count": 1,
+                        "density": 0.5,
+                        "tile": None,
+                    }
+                ],
+                "must define exactly one of count or density",
+            ),
+            (
+                [
+                    {
+                        "type": "scatter",
+                        "region": base_region,
+                        "count": 5,
+                        "tile": None,
+                    }
+                ],
+                "count must be an integer between 0 and 4",
+            ),
+            (
+                [
+                    {
+                        "type": "scatter",
+                        "region": base_region,
+                        "count": 0,
+                        "tile": {"id": "missing_tile"},
+                    }
+                ],
+                "unknown tile 'missing_tile'",
+            ),
+            (
+                [
+                    {
+                        "type": "scatter",
+                        "region": base_region,
+                        "density": True,
+                        "tile": None,
+                    }
+                ],
+                "density must be a number between 0 and 1",
+            ),
+            (
+                [
+                    {
+                        "type": "scatter",
+                        "region": {**base_region, "extra": 1},
+                        "count": 1,
+                        "tile": None,
+                    }
+                ],
+                "unknown operations\\[0\\].region field 'extra'",
+            ),
+        ]
+        for operations, expected_message in cases:
+            with self.subTest(operations=operations):
+                recipe = valid_recipe()
+                recipe["operations"] = operations
+                with self.assertRaisesRegex(RecipeError, expected_message):
+                    generate_map(recipe, TILES_PATH)
+
+    def test_operations_require_an_explicit_tile_field(self):
+        operations = [
+            {"type": "set", "x": 0, "y": 0},
+            {"type": "rectangle", "x": 0, "y": 0, "width": 1, "height": 1},
+            {
+                "type": "rectangle_outline",
+                "x": 0,
+                "y": 0,
+                "width": 1,
+                "height": 1,
+            },
+            {"type": "line", "from": [0, 0], "to": [1, 1]},
+            {
+                "type": "scatter",
+                "region": {"x": 0, "y": 0, "width": 1, "height": 1},
+                "count": 0,
+            },
+        ]
+        for operation in operations:
+            with self.subTest(operation=operation):
+                recipe = valid_recipe()
+                recipe["operations"] = [operation]
+                with self.assertRaisesRegex(
+                    RecipeError, "operations\\[0\\].tile is required"
+                ):
+                    generate_map(recipe, TILES_PATH)
+
     def test_invalid_recipes_are_rejected_with_clear_errors(self):
         cases = [
             (
