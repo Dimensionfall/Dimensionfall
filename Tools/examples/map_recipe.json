@@ -1,0 +1,29 @@
+{
+  "id": "generated_meadow_prototype",
+  "name": "Generated Meadow Prototype",
+  "description": "A deterministic meadow generated from a compact recipe.",
+  "seed": 20260715,
+  "base_tile": {
+    "id": "grass_plain_01",
+    "rotation": "random"
+  },
+  "regions": [
+    {
+      "x": 2,
+      "y": 2,
+      "width": 5,
+      "height": 3,
+      "tile": {
+        "id": "dirt_light_00",
+        "rotation": 0
+      }
+    },
+    {
+      "x": 4,
+      "y": 3,
+      "width": 1,
+      "height": 1,
+      "tile": null
+    }
+  ]
+}
