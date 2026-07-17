@@ -1,29 +1,70 @@
 {
-  "id": "generated_meadow_prototype",
-  "name": "Generated Meadow Prototype",
-  "description": "A deterministic meadow generated from a compact recipe.",
-  "seed": 20260715,
-  "base_tile": {
-    "id": "grass_plain_01",
-    "rotation": "random"
-  },
-  "regions": [
-    {
-      "x": 2,
-      "y": 2,
-      "width": 5,
-      "height": 3,
-      "tile": {
-        "id": "dirt_light_00",
-        "rotation": 0
-      }
-    },
-    {
-      "x": 4,
-      "y": 3,
-      "width": 1,
-      "height": 1,
-      "tile": null
-    }
-  ]
+	"id": "generated_meadow_prototype",
+	"name": "Generated Meadow Prototype",
+	"description": "A deterministic meadow with a clearing, path, and scattered flowers.",
+	"seed": 20260715,
+	"base_tile": {
+		"id": "grass_plain_01",
+		"rotation": "random"
+	},
+	"operations": [
+		{
+			"type": "scatter",
+			"region": {
+				"x": 0,
+				"y": 0,
+				"width": 32,
+				"height": 32
+			},
+			"count": 90,
+			"tile": {
+				"id": "grass_flowers_00",
+				"rotation": "random"
+			}
+		},
+		{
+			"type": "rectangle",
+			"x": 10,
+			"y": 9,
+			"width": 12,
+			"height": 14,
+			"tile": {
+				"id": "grass_plain_01",
+				"rotation": "random"
+			}
+		},
+		{
+			"type": "rectangle_outline",
+			"x": 10,
+			"y": 9,
+			"width": 12,
+			"height": 14,
+			"tile": {
+				"id": "grass_dirt_00",
+				"rotation": "random"
+			}
+		},
+		{
+			"type": "line",
+			"from": [
+				0,
+				16
+			],
+			"to": [
+				31,
+				16
+			],
+			"tile": {
+				"id": "dirt_light_00"
+			}
+		},
+		{
+			"type": "set",
+			"x": 16,
+			"y": 15,
+			"tile": {
+				"id": "grass_flowers_01"
+			}
+		}
+	]
 }

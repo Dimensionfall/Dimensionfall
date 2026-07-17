@@ -1,4 +1,4 @@
-You have now completed the **foundation and first generator milestone**. The project can generate a structurally valid 32×32 Dimensionfall map from a compact recipe, but it cannot yet describe or place enough content to build a useful playable map.
+You have now completed the **foundation, minimal generator, and general placement-primitives milestones**. The project can generate a structurally valid, visually recognizable 32×32 outdoor Dimensionfall map from a compact recipe, but it cannot yet place gameplay features or buildings.
 
 ## Overall goal
 
@@ -123,6 +123,9 @@ The generator currently supports:
 * one populated level at level-array index 10;
 * a base tile covering the entire map;
 * ordered rectangular regions;
+* ordered `set`, `rectangle`, `rectangle_outline`, `line`, and `scatter` operations;
+* inclusive Bresenham line rasterization;
+* deterministic scatter by count or density;
 * fixed tile rotations;
 * deterministic random rotations;
 * `null` region tiles that produce `{}`;
@@ -146,7 +149,7 @@ unused levels: []
 
 ## 5. Generator and validator tests: complete for version 1
 
-The current Python test suite contains 16 tests and passes.
+The current Python test suite contains 24 tests and passes.
 
 Coverage includes:
 
@@ -154,6 +157,12 @@ Coverage includes:
 * exactly 1024 entries;
 * deterministic generation;
 * rectangular overlays;
+* single-cell placement;
+* filled and outlined rectangles, including thin outlines;
+* horizontal, vertical, and diagonal lines;
+* deterministic scatter by count and density;
+* operation ordering and overwrite behavior;
+* operation field, type, coordinate, bounds, and scatter-argument validation;
 * empty-tile representation;
 * unknown fields;
 * invalid IDs;
@@ -198,10 +207,7 @@ The current recipe language is intentionally minimal. It cannot yet express most
 
 It does not currently support:
 
-* lines or paths;
-* rectangle outlines;
 * circles or irregular regions;
-* scattered terrain;
 * weighted tile variation;
 * terrain blending;
 * multiple populated vertical levels;
@@ -221,7 +227,19 @@ It does not currently support:
 * importing an existing map into a recipe;
 * regeneration while preserving hand-authored changes.
 
-At present, it can create a technically valid field with rectangular patches. It cannot yet create a credible playable location.
+At present, it can create a recognizable outdoor terrain layout with paths, bounded clearings, and scattered variation. It cannot yet create a credible playable location because it has no furniture, semantic areas, buildings, or gameplay content.
+
+---
+
+# Progress tracking
+
+This document is the roadmap source of truth. Keep it current at milestone boundaries rather than recording a chronological activity log:
+
+* use `planned`, `next`, `in progress`, or `complete` for each phase;
+* mark a phase complete only after its success criterion and listed validation pass;
+* when a phase changes, update its delivered list, current capabilities and limitations, test count, recommended next task, and the one-view summary together;
+* keep temporary implementation notes and command output out of this document;
+* preserve detailed operation contracts in `Documentation/Modding/map_recipe_generator.md` and tests rather than duplicating them here.
 
 ---
 
@@ -268,69 +286,19 @@ Delivered:
 
 ## Phase 3 — General placement primitives
 
-**Status: next**
+**Status: complete**
 
-This should be the next branch.
+Delivered:
 
-Suggested name:
-
-```text
-feature/map-generator-primitives
-```
-
-or:
-
-```text
-hermes/map-generator-primitives
-```
-
-Recommended additions:
-
-* single-cell placement;
-* filled rectangle;
-* rectangle outline;
-* horizontal and vertical lines;
-* general line placement;
-* circles or ellipses;
-* deterministic scattered placement;
-* deterministic clusters;
-* checker or repeating patterns;
-* strict versus clipped boundary behavior.
-
-These primitives are the basic vocabulary needed before attempting authored maps.
-
-A recipe might begin to support:
-
-```json
-{
-  "operations": [
-    {
-      "type": "line",
-      "from": [0, 16],
-      "to": [31, 16],
-      "tile": {
-        "id": "dirt-light"
-      },
-      "width": 2
-    },
-    {
-      "type": "scatter",
-      "region": {
-        "x": 0,
-        "y": 0,
-        "width": 32,
-        "height": 32
-      },
-      "tile": {
-        "id": "grass-tall"
-      },
-      "density": 0.12
-    }
-  ]
-}
-```
-
-The exact schema should be designed after inspecting the available tile and map formats.
+* ordered `operations` applied after legacy `regions`;
+* `set`, filled `rectangle`, and `rectangle_outline` placement;
+* inclusive one-cell-wide lines using the integer Bresenham algorithm;
+* deterministic scatter using exactly one of `count` or `density`;
+* strict bounds with no silent clipping;
+* unknown-field and unknown-operation rejection;
+* shared placement logic for legacy regions and rectangle operations;
+* an outdoor example with a path, bounded clearing, and scattered flowers;
+* focused tests and recipe documentation.
 
 ### Success criterion
 
@@ -341,11 +309,11 @@ A recipe can generate a visually recognizable outdoor layout containing:
 * one bounded clearing;
 * some deterministic scattered variation.
 
-No furniture or buildings yet.
+No furniture or buildings yet. This criterion is met by `Tools/examples/map_recipe.json`.
 
 ## Phase 4 — Tile palettes and reusable patterns
 
-**Status: planned**
+**Status: next**
 
 Raw tile IDs are cumbersome and encourage agents to invent invalid identifiers. Introduce semantic recipe-level palettes.
 
@@ -640,93 +608,15 @@ An agent can create a new playable map from a concise design request, run all re
 
 # Recommended immediate next task
 
-The next contribution should stay narrow: **placement primitives only**.
+The next contribution should stay narrow: **tile palettes and deterministic variation**.
 
-Do not combine primitives, buildings, features, roads, and semantic map generation into one branch. That would make the recipe format unstable and difficult to review.
+Keep the completed placement-operation schema stable. Add named, recipe-level tile palettes that can be referenced anywhere an operation currently accepts a tile. Palette entries should use validated tile IDs and positive integer weights, select deterministically from the recipe seed, preserve explicit tile objects and `null`, and reject unknown palette names or malformed entries.
 
-A suitable Hermes task is:
+The branch should not add furniture, areas, buildings, semantic roads, towns, or additional levels. Its success criterion is visibly varied terrain without one recipe entry per cell.
 
-```text
-Extend the recipe-driven Dimensionfall map generator with a small set of
-general-purpose tile placement primitives.
+Before implementation, inspect the current generator, tests, tile database, recipe documentation, and example. Define how palette selection interacts with `"random"` rotation and RNG ordering, add focused compatibility and validation tests, update the example and documentation, generate and validate the example map, inspect dimensions and tile count, and run `git diff --check`.
 
-Read the repository guidance, current generator, validator, tests,
-documentation, example recipe, tile database, and representative valid maps
-before editing.
-
-Keep the existing fixed 32x32 map format and one populated ground level.
-
-Add an ordered `operations` recipe array. Preserve support for the existing
-`regions` field during this branch unless there is a strong, documented reason
-to migrate it.
-
-Implement these operations:
-
-1. `set`
-   - places one tile at x, y
-
-2. `rectangle`
-   - places a filled rectangle
-   - equivalent to the current region behavior
-
-3. `rectangle_outline`
-   - places only a rectangle's border
-   - define behavior for width or height equal to 1
-
-4. `line`
-   - places a deterministic one-tile-wide line between two integer points
-   - document the rasterization algorithm
-   - support horizontal, vertical, and diagonal lines
-
-5. `scatter`
-   - places tiles within a rectangular region using the recipe seed
-   - use either an explicit count or density, but not both
-   - deterministic for the same recipe and seed
-   - document whether existing cells are replaced
-
-Requirements:
-
-- operations execute in array order;
-- later operations may overwrite earlier terrain;
-- every coordinate must be checked against the fixed 32x32 grid;
-- preserve `{}` as the empty-tile representation;
-- reject unknown operation fields;
-- reject invalid operation types;
-- reject invalid coordinates and dimensions;
-- do not silently clip out-of-bounds shapes unless clipping is explicitly part
-  of the documented operation contract;
-- preserve deterministic output;
-- keep the generator independent of Godot;
-- do not add furniture, areas, buildings, roads, towns, or additional levels
-  in this branch.
-
-Decide whether `regions` should internally translate into a rectangle
-operation to avoid maintaining duplicate placement logic.
-
-Add tests covering:
-
-- each operation;
-- operation ordering and overwrite behavior;
-- horizontal, vertical, and diagonal lines;
-- thin rectangle outlines;
-- deterministic scatter;
-- invalid scatter arguments;
-- out-of-bounds operations;
-- unknown operation fields and types;
-- unchanged fixed dimensions and 1024-tile invariant;
-- backwards compatibility with the current example recipe, if retained.
-
-Update the recipe documentation and add or revise an example that produces a
-recognizable outdoor test layout with a path, clearing, and scattered terrain.
-
-Run the Python test suite, generate the example map, run the map validator,
-inspect generated dimensions and tile count, and run git diff --check.
-
-Do not commit or push.
-
-Report the chosen recipe schema, placement semantics, tests, validation
-results, limitations, and git diff summary.
-```
+Do not commit or push unless explicitly requested.
 
 ---
 
@@ -739,12 +629,12 @@ results, limitations, and git diff summary.
 [Complete] Minimal JSON recipe format
 [Complete] Deterministic 32×32 generator
 [Complete] Base tile and rectangle overlays
+[Complete] General tile-placement primitives
 [Complete] Generator and validator test suite
-[Complete] Documentation and example recipe
+[Complete] Documentation and recognizable outdoor example
 [Complete] Development moved to snipercup/CataX
 
-[Next]     General tile-placement primitives
-[Planned]  Palettes and deterministic variation
+[Next]     Palettes and deterministic variation
 [Planned]  Features and furniture
 [Planned]  Areas and buildings
 [Planned]  Roads and map connections
