@@ -15,6 +15,8 @@ python3 Tools/map_validator.py /tmp/generated_meadow_prototype.json
 
 The output filename must be `<id>.json`, matching the map loader's filename-derived ID. Existing output is protected. Pass `--overwrite` only when replacement is intended. Use `--tiles PATH` to validate tile IDs against a tile database other than `Mods/Dimensionfall/Tiles/Tiles.json`.
 
+For batch generation of deterministic seed variants and instructions for inspecting them in Godot's content editor, see [`map_example_generation.md`](map_example_generation.md).
+
 ## Recipe format
 
 The root must be a JSON object with these fields:

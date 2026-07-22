@@ -1,4 +1,4 @@
-You have now completed the **foundation, minimal generator, and general placement-primitives milestones**. The project can generate a structurally valid, visually recognizable 32×32 outdoor Dimensionfall map from a compact recipe, but it cannot yet place gameplay features or buildings.
+You have now completed the **foundation, minimal generator, general placement-primitives, and manual evaluation-harness milestones**. The project can generate and batch-test structurally valid, visually recognizable 32×32 outdoor Dimensionfall maps from compact recipes, but it cannot yet place gameplay features or buildings.
 
 ## Overall goal
 
@@ -149,7 +149,7 @@ unused levels: []
 
 ## 5. Generator and validator tests: complete for version 1
 
-The current Python test suite contains 24 tests and passes.
+The current Python test suite contains 34 tests and passes.
 
 Coverage includes:
 
@@ -199,6 +199,20 @@ Your working directory remains:
 ~/hermes/dimensionfall/workspace/Dimensionfall-test-runner
 ```
 
+## 7. Manual example generation and evaluation: complete
+
+The project now includes:
+
+```text
+Tools/generate_map_examples.py
+Tools/tests/test_generate_map_examples.py
+Documentation/Modding/map_example_generation.md
+```
+
+The runner generates one or more deterministic seed variants from maintained recipes, delegates validation and atomic publication to the existing generator, and can place outputs directly in a mod's `Maps` directory for content-editor inspection. It validates the complete batch and rejects duplicate output paths before publication. Newly created outputs and their SHA-256 digests are recorded in a non-JSON manifest so cleanup removes only unchanged runner-owned files.
+
+Ten focused tests cover variant IDs, complete map shape, determinism, CLI generation and cleanup, overwrite ownership, changed-file preservation, malformed recipes, duplicate outputs, and failed-publication safety.
+
 ---
 
 # What the generator cannot do yet
@@ -223,7 +237,7 @@ It does not currently support:
 * walkability checks;
 * accessibility or connectivity checks;
 * encounters, creatures, items, or spawn points;
-* visual previews;
+* standalone image or HTML previews outside Godot; generated map JSON can already be opened with the existing content-editor map preview;
 * importing an existing map into a recipe;
 * regeneration while preserving hand-authored changes.
 
@@ -311,7 +325,26 @@ A recipe can generate a visually recognizable outdoor layout containing:
 
 No furniture or buildings yet. This criterion is met by `Tools/examples/map_recipe.json`.
 
-## Phase 4 — Tile palettes and reusable patterns
+## Phase 4A — Manual example generation and evaluation harness
+
+**Status: complete**
+
+Delivered:
+
+* a Python CLI that reuses the existing generator rather than duplicating it;
+* one-command generation of multiple deterministic seed variants;
+* unique map IDs and matching filenames;
+* configurable recipe, tile database, output directory, variant count, and starting seed;
+* overwrite protection inherited from the generator;
+* a non-JSON ownership manifest with SHA-256 identity checks and exact-file cleanup;
+* direct output to a mod's `Maps` directory for inspection in the existing content-editor preview;
+* focused tests and a manual tester guide with example commands.
+
+### Success criterion
+
+A developer can run one documented command, launch Godot, and inspect at least three deterministic generated variants in the content editor without manually editing recipes or renaming output files. Cleanup leaves unrelated maps untouched.
+
+## Phase 4B — Tile palettes and reusable patterns
 
 **Status: next**
 
@@ -608,13 +641,13 @@ An agent can create a new playable map from a concise design request, run all re
 
 # Recommended immediate next task
 
-The next contribution should stay narrow: **tile palettes and deterministic variation**.
+The next contribution should stay narrow: **Phase 4B tile palettes and deterministic variation**.
 
 Keep the completed placement-operation schema stable. Add named, recipe-level tile palettes that can be referenced anywhere an operation currently accepts a tile. Palette entries should use validated tile IDs and positive integer weights, select deterministically from the recipe seed, preserve explicit tile objects and `null`, and reject unknown palette names or malformed entries.
 
 The branch should not add furniture, areas, buildings, semantic roads, towns, or additional levels. Its success criterion is visibly varied terrain without one recipe entry per cell.
 
-Before implementation, inspect the current generator, tests, tile database, recipe documentation, and example. Define how palette selection interacts with `"random"` rotation and RNG ordering, add focused compatibility and validation tests, update the example and documentation, generate and validate the example map, inspect dimensions and tile count, and run `git diff --check`.
+Before implementation, inspect the current generator, tests, tile database, recipe documentation, and example. Define how palette selection interacts with `"random"` rotation and RNG ordering, add focused compatibility and validation tests, update the example and documentation, use `Tools/generate_map_examples.py` to compare at least three deterministic variants in the content-editor preview, validate the generated maps, inspect dimensions and tile count, and run `git diff --check`.
 
 Do not commit or push unless explicitly requested.
 
@@ -630,6 +663,7 @@ Do not commit or push unless explicitly requested.
 [Complete] Deterministic 32×32 generator
 [Complete] Base tile and rectangle overlays
 [Complete] General tile-placement primitives
+[Complete] Manual example generation and evaluation harness
 [Complete] Generator and validator test suite
 [Complete] Documentation and recognizable outdoor example
 [Complete] Development moved to snipercup/CataX
