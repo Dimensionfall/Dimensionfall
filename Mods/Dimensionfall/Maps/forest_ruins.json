@@ -4367,7 +4367,7 @@
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
@@ -4377,7 +4377,7 @@
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -4791,7 +4791,7 @@
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
@@ -4801,11 +4801,11 @@
 					},
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
@@ -4815,7 +4815,7 @@
 					},
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "forest_underbrush_00"
@@ -4828,11 +4828,11 @@
 					},
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -4842,7 +4842,7 @@
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
@@ -4852,7 +4852,7 @@
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -4871,7 +4871,7 @@
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
@@ -4881,7 +4881,7 @@
 					}
 				],
 				"id": "forest_underbrush_00",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -4891,7 +4891,7 @@
 					}
 				],
 				"id": "forest_underbrush_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -4910,7 +4910,7 @@
 					}
 				],
 				"id": "forest_underbrush_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -4920,7 +4920,7 @@
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -5237,33 +5237,33 @@
 			},
 			{
 				"id": "floor_wood_boards_02",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "forest_underbrush_00",
@@ -5273,7 +5273,7 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "dirt_light_01"
@@ -5282,17 +5282,17 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "floor_wood_boards_02",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "dirt_light_00"
@@ -5301,7 +5301,7 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_01"
@@ -5310,27 +5310,27 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "forest_underbrush_00",
@@ -5340,7 +5340,7 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "forest_underbrush_00",
@@ -5354,7 +5354,7 @@
 					}
 				],
 				"id": "grass_medium_dirt_00",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -5667,7 +5667,7 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_02"
@@ -5676,37 +5676,37 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "dirt_light_02"
@@ -5715,27 +5715,27 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "dirt_light_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_02"
@@ -5744,17 +5744,17 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "dirt_light_02"
@@ -5763,7 +5763,7 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "dirt_light_00"
@@ -5772,7 +5772,7 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "floor_wood_boards_04"
@@ -5785,7 +5785,7 @@
 					}
 				],
 				"id": "forest_underbrush_02",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
@@ -6073,13 +6073,13 @@
 					}
 				],
 				"id": "dirt_light_02",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_04"
@@ -6088,7 +6088,7 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_04"
@@ -6097,105 +6097,105 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "floor_wood_boards_02",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_02",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "floor_wood_boards_02",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "grass_medium_dirt_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "dirt_light_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"id": "floor_wood_boards_02",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "forest_underbrush_01",
@@ -6230,10 +6230,11 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "destroyed_fence",
 					"itemgroups": [],
-					"rotation": 90
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "forest_underbrush_01",
 				"rotation": 270.0
@@ -6486,7 +6487,7 @@
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "dirt_light_01"
@@ -6495,67 +6496,67 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "floor_wood_boards_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "floor_wood_boards_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_03"
@@ -6564,7 +6565,7 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "grass_medium_dirt_00"
@@ -6573,34 +6574,34 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "grass_medium_dirt_02"
 			},
 			{
 				"id": "floor_wood_boards_03",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "forest_underbrush_00",
@@ -6635,10 +6636,11 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "destroyed_fence",
 					"itemgroups": [],
-					"rotation": 90
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "forest_underbrush_01",
 				"rotation": 90.0
@@ -6898,117 +6900,117 @@
 					}
 				],
 				"id": "dirt_light_02",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "forest_underbrush_01",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_02",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "dirt_light_02",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "grass_medium_dirt_00",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "grass_medium_dirt_00",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "forest_underbrush_00"
@@ -7017,7 +7019,7 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "floor_wood_boards_02"
@@ -7054,10 +7056,11 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "destroyed_fence",
 					"itemgroups": [],
-					"rotation": 90
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "forest_underbrush_00",
 				"rotation": 90.0
@@ -7308,7 +7311,7 @@
 					}
 				],
 				"id": "dirt_light_02",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
@@ -7318,13 +7321,13 @@
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_03"
@@ -7333,7 +7336,7 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "forest_underbrush_00"
@@ -7342,27 +7345,27 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_02",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "floor_wood_boards_04"
@@ -7371,60 +7374,60 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "dirt_light_00"
 			},
 			{
 				"id": "forest_underbrush_00",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 270
+						"rotation": 270.0
 					}
 				],
 				"id": "forest_underbrush_00",
@@ -7434,15 +7437,15 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "dirt_light_02",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "forest_underbrush_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -7473,10 +7476,11 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "destroyed_fence",
 					"itemgroups": [],
-					"rotation": 90
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "forest_underbrush_00",
 				"rotation": 270.0
@@ -7738,13 +7742,13 @@
 					}
 				],
 				"id": "dirt_light_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_04"
@@ -7753,37 +7757,37 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "dirt_light_02"
@@ -7792,20 +7796,21 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "damaged_shelves",
 					"itemgroups": [],
-					"rotation": 180
+					"rotation": 180.0,
+					"type": "furniture"
 				},
 				"id": "floor_wood_boards_04",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"id": "dirt_light_00"
@@ -7815,19 +7820,19 @@
 			},
 			{
 				"id": "floor_wood_boards_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"id": "floor_wood_boards_03",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "dirt_light_00",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "dirt_light_00",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "forest_underbrush_00"
@@ -7861,10 +7866,11 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "destroyed_fence",
 					"itemgroups": [],
-					"rotation": 90
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "forest_underbrush_02",
 				"rotation": 180.0
@@ -8112,47 +8118,47 @@
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "dirt_light_02",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "dirt_light_01"
 			},
 			{
 				"id": "floor_wood_boards_03",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "dirt_light_00",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "floor_wood_boards_02",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "floor_wood_boards_04"
 			},
 			{
 				"id": "floor_wood_boards_03",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "floor_wood_boards_04",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "forest_underbrush_02",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "dirt_light_02"
@@ -8161,17 +8167,17 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "forest_underbrush_00"
@@ -8180,15 +8186,15 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "floor_wood_boards_02",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "floor_wood_boards_04",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"id": "forest_underbrush_01",
@@ -8469,47 +8475,47 @@
 			},
 			{
 				"id": "dirt_light_00",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "floor_wood_boards_03",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "grass_medium_dirt_01",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_00"
@@ -8518,40 +8524,40 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "grass_medium_dirt_01",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_02"
 			},
 			{
 				"id": "floor_wood_boards_04",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "floor_wood_boards_03"
@@ -8560,25 +8566,25 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "floor_wood_boards_02",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "floor_wood_boards_03",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "dirt_light_02"
@@ -8612,10 +8618,11 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "destroyed_fence",
 					"itemgroups": [],
-					"rotation": 90
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "forest_underbrush_02",
 				"rotation": 270.0
@@ -8861,23 +8868,23 @@
 			},
 			{
 				"id": "grass_medium_dirt_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_04"
@@ -8886,71 +8893,71 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "forest_underbrush_00",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "dirt_light_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "forest_underbrush_02",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "floor_wood_boards_02"
@@ -8959,31 +8966,31 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"id": "grass_medium_dirt_02"
@@ -9017,10 +9024,11 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "destroyed_fence",
 					"itemgroups": [],
-					"rotation": 90
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "forest_underbrush_01",
 				"rotation": 270.0
@@ -9266,7 +9274,7 @@
 					}
 				],
 				"id": "grass_medium_dirt_01",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "dirt_light_00"
@@ -9275,7 +9283,7 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "dirt_light_01"
@@ -9284,7 +9292,7 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_03"
@@ -9293,37 +9301,37 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_00"
@@ -9332,31 +9340,31 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_02",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "grass_medium_dirt_00",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "floor_wood_boards_02"
@@ -9365,31 +9373,31 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "forest_underbrush_02",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "forest_underbrush_00",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -9672,11 +9680,11 @@
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"id": "dirt_light_01",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "dirt_light_02"
@@ -9685,7 +9693,7 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "floor_wood_boards_02"
@@ -9694,17 +9702,17 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "forest_underbrush_02"
@@ -9713,45 +9721,45 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "floor_wood_boards_02",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "forest_underbrush_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"id": "dirt_light_02",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "dirt_light_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "dirt_light_01"
@@ -9760,25 +9768,25 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "floor_wood_boards_04",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -9819,10 +9827,11 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "destroyed_fence",
 					"itemgroups": [],
-					"rotation": 90
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "forest_underbrush_01",
 				"rotation": 180.0
@@ -10058,7 +10067,7 @@
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
@@ -10068,7 +10077,7 @@
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -10081,109 +10090,109 @@
 			},
 			{
 				"id": "floor_wood_boards_04",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "floor_wood_boards_02",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "floor_wood_boards_02",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "dirt_light_02",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "dirt_light_00",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"id": "forest_underbrush_00",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "forest_underbrush_00",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "dirt_light_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"id": "floor_wood_boards_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -10193,7 +10202,7 @@
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -10224,10 +10233,11 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "destroyed_fence",
 					"itemgroups": [],
-					"rotation": 90
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "forest_underbrush_00",
 				"rotation": 90.0
@@ -10465,7 +10475,7 @@
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -10475,7 +10485,7 @@
 					}
 				],
 				"id": "forest_underbrush_00",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -10491,79 +10501,79 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"id": "grass_medium_dirt_01",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "floor_wood_boards_03",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "dirt_light_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -10573,31 +10583,31 @@
 					},
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "forest_underbrush_01",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "floor_wood_boards_04"
@@ -10644,10 +10654,11 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "destroyed_fence",
 					"itemgroups": [],
-					"rotation": 90
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "forest_underbrush_00",
 				"rotation": 180.0
@@ -10899,7 +10910,7 @@
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -10909,37 +10920,37 @@
 					}
 				],
 				"id": "dirt_light_02",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 0
+						"rotation": 0.0
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "dirt_light_02",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"areas": [
@@ -10949,7 +10960,7 @@
 					},
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "dirt_light_00"
@@ -10958,7 +10969,7 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "dirt_light_01"
@@ -10967,33 +10978,34 @@
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "forest_underbrush_02",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "dirt_light_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"id": "dirt_light_02"
 			},
 			{
-				"furniture": {
+				"feature": {
 					"id": "damaged_shelves",
 					"itemgroups": [],
-					"rotation": 270
+					"rotation": 270.0,
+					"type": "furniture"
 				},
 				"id": "grass_medium_dirt_00",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "floor_wood_boards_04"
@@ -11006,11 +11018,11 @@
 					},
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -11020,7 +11032,7 @@
 					},
 					{
 						"id": "wood_rubble",
-						"rotation": 180
+						"rotation": 180.0
 					}
 				],
 				"id": "dirt_light_02"
@@ -11328,7 +11340,7 @@
 					}
 				],
 				"id": "dirt_light_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -11338,7 +11350,7 @@
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -11348,7 +11360,7 @@
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -11358,7 +11370,7 @@
 					}
 				],
 				"id": "floor_wood_boards_02",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
@@ -11377,21 +11389,21 @@
 					},
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "dirt_light_02",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
 					{
 						"id": "wood_rubble",
-						"rotation": 90
+						"rotation": 90.0
 					}
 				],
 				"id": "floor_wood_boards_04",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"id": "floor_wood_boards_02"
@@ -11401,11 +11413,11 @@
 			},
 			{
 				"id": "floor_wood_boards_03",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "floor_wood_boards_04",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"id": "floor_wood_boards_02"
@@ -11427,7 +11439,7 @@
 					}
 				],
 				"id": "floor_wood_boards_03",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -11437,7 +11449,7 @@
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -11485,10 +11497,11 @@
 						"rotation": 0.0
 					}
 				],
-				"furniture": {
+				"feature": {
 					"id": "destroyed_fence",
 					"itemgroups": [],
-					"rotation": 90
+					"rotation": 90.0,
+					"type": "furniture"
 				},
 				"id": "grass_medium_dirt_01",
 				"rotation": 270.0
@@ -11781,7 +11794,7 @@
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -11800,7 +11813,7 @@
 					}
 				],
 				"id": "dirt_light_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -11819,7 +11832,7 @@
 					}
 				],
 				"id": "grass_medium_dirt_00",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -11829,7 +11842,7 @@
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
@@ -11848,7 +11861,7 @@
 					}
 				],
 				"id": "forest_underbrush_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"areas": [
@@ -12280,7 +12293,7 @@
 					}
 				],
 				"id": "dirt_light_01",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
@@ -12290,7 +12303,7 @@
 					}
 				],
 				"id": "dirt_light_00",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"areas": [
@@ -15282,826 +15295,284 @@
 			}
 		],
 		[
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"rotation": 270
-			},
-			{
-				"rotation": 180
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_01",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "floor_wood_shabby_dark_02"
 			},
-			{
-				"rotation": 90
-			},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_02"
 			},
@@ -16110,2284 +15581,872 @@
 			},
 			{
 				"id": "floor_wood_shabby_dark_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
 			{
 				"id": "floor_wood_shabby_dark_00",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "floor_wood_shabby_dark_00"
 			},
 			{
 				"id": "floor_wood_shabby_dark_02",
-				"rotation": 270
+				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_01"
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"rotation": 90
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_01"
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"rotation": 90
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_00",
-				"rotation": 270
+				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_00",
-				"rotation": 270
+				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_00"
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
-
+				"id": "floor_wood_shabby_dark_01",
+				"rotation": 180.0
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
-
+				"id": "floor_wood_shabby_dark_00",
+				"rotation": 180.0
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"rotation": 270
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
+				"id": "floor_wood_shabby_dark_02",
+				"rotation": 270.0
 			},
 			{
 				"id": "floor_wood_shabby_dark_01",
-				"rotation": 180
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"rotation": 90
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"rotation": 180
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"rotation": 90
-			},
-			{
-				"id": "floor_wood_shabby_dark_00",
-				"rotation": 180
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"rotation": 180
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"rotation": 270
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"rotation": 270
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+				"rotation": 90.0
+			},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_02",
-				"rotation": 270
+				"rotation": 180.0
 			},
-			{
-				"id": "floor_wood_shabby_dark_01",
-				"rotation": 90
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"id": "floor_wood_shabby_dark_02",
-				"rotation": 180
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_00",
-				"rotation": 90
+				"rotation": 90.0
 			},
-			{
-				"rotation": 270
-			},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_02"
 			},
-			{
-
-			},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_01",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "floor_wood_shabby_dark_02",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "floor_wood_shabby_dark_01",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "floor_wood_shabby_dark_00",
-				"rotation": 90
+				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_01",
-				"rotation": 180
+				"rotation": 180.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_00",
-				"rotation": 270
+				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"rotation": 270
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"rotation": 180
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_01"
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"rotation": 90
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"rotation": 90
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"rotation": 90
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"rotation": 270
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_02",
-				"rotation": 270
+				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_01",
-				"rotation": 90
+				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
+				"id": "floor_wood_shabby_dark_01",
+				"rotation": 270.0
 			},
 			{
 				"id": "floor_wood_shabby_dark_01",
-				"rotation": 270
+				"rotation": 180.0
 			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_01",
-				"rotation": 180
+				"rotation": 270.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"id": "floor_wood_shabby_dark_01",
-				"rotation": 270
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"rotation": 90
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_01"
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_02",
-				"rotation": 90
+				"rotation": 90.0
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-				"rotation": 270
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_01"
 			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_00",
-				"rotation": 90
+				"rotation": 90.0
 			},
-			{
-				"rotation": 180
-			},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_02"
 			},
-			{
-				"rotation": 270
-			},
-			{
-				"rotation": 180
-			},
+			{},
+			{},
 			{
 				"id": "floor_wood_shabby_dark_01",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "floor_wood_shabby_dark_02"
 			},
 			{
 				"id": "floor_wood_shabby_dark_02",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "floor_wood_shabby_dark_02",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "floor_wood_shabby_dark_01",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "floor_wood_shabby_dark_00",
-				"rotation": 270
+				"rotation": 270.0
 			},
 			{
 				"id": "floor_wood_shabby_dark_02",
-				"rotation": 180
+				"rotation": 180.0
 			},
 			{
 				"id": "floor_wood_shabby_dark_01",
-				"rotation": 90
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			},
-			{
-
-			}
+				"rotation": 90.0
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{}
 		],
 		[],
 		[],

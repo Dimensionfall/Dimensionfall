@@ -120,9 +120,11 @@ func get_shortcut():
 	to_return.events.append(_source_event)
 	return to_return
 
+func get_input_event():
+	return _source_event
 
 func set_shortcut(sc):
-	if(sc == null or sc.events == null || sc.events.size() <= 0):
+	if(sc == null or sc.events == null or sc.events.size() <= 0):
 		clear_shortcut()
 	else:
 		_source_event = sc.events[0]
@@ -142,8 +144,8 @@ func disable_set(should):
 
 func disable_clear(should):
 	_ctrls.clear_button.disabled = should
-	
-	
+
+
 func cancel():
 	if(_editing):
 		_edit_mode(false)

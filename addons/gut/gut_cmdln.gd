@@ -8,13 +8,20 @@
 # ------------------------------------------------------------------------------
 extends SceneTree
 
+var VersionConversion = load("res://addons/gut/version_conversion.gd")
+
 @warning_ignore("unsafe_method_access")
 @warning_ignore("inferred_declaration")
 func _init() -> void:
+	if(VersionConversion.error_if_not_all_classes_imported()):
+		quit(0)
+		return
+
 	var max_iter := 20
 	var iter := 0
 
-	var Loader : Object = load("res://addons/gut/gut_loader.gd")
+	# Make a reference to gut_loader so its _static_init is run.
+	var Laoder : Object = load("res://addons/gut/gut_loader.gd")
 
 	# Not seen this wait more than 1.
 	while(Engine.get_main_loop() == null and iter < max_iter):
@@ -29,7 +36,6 @@ func _init() -> void:
 	var cli : Node = load('res://addons/gut/cli/gut_cli.gd').new()
 	get_root().add_child(cli)
 
-	Loader.restore_ignore_addons()
 	cli.main()
 
 

@@ -1,10 +1,16 @@
-## This script is the base for custom scripts to be used in pre and post
-## run hooks.  Creating a hook script requires that you:[br]
-## [li]Inherit [code skip-lint]GutHookScript[/code][/li]
-## [li]Implement a [code skip-lint]run()[/code] method[/li]
-## [li]Configure the path in GUT (gutconfig and/or editor) as the approparite
-## hook (pre or post).[/li]
 class_name GutHookScript
+## This script is the base for custom scripts to be used in pre and post
+## run hooks.
+##
+## GUT Wiki:  [url=https://gut.readthedocs.io]https://gut.readthedocs.io[/url]
+## [br][br]
+## Creating a hook script requires that you:[br]
+##  - Inherit [code skip-lint]GutHookScript[/code][br]
+##  - Implement a [code skip-lint]run()[/code] method[br]
+##  - Configure the path in GUT (gutconfig and/or editor) as the approparite hook (pre or post).[br]
+##
+## See [wiki]Hooks[/wiki]
+
 
 ## Class responsible for generating xml.  You could use this to generate XML
 ## yourself instead of using the built in GUT xml generation options.  See
@@ -26,6 +32,10 @@ var _should_abort =  false
 func run():
 	gut.logger.error("Run method not overloaded.  Create a 'run()' method in your hook script to run your code.")
 
+## Register inner classes from one or more scripts for doubling.
+## Only worth calling from pre-run hook, not post-run.
+func register_inner_classes(script: Script):
+	gut.get_doubler().inner_class_registry.register(script)
 
 ## Set the exit code when running from the command line.  If not set then the
 ## default exit code will be returned (0 when no tests fail, 1 when any tests

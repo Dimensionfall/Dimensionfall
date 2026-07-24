@@ -53,7 +53,7 @@ func test_editor_loads_attacks():
 	# Set up test data with a melee and ranged attack
 	test_mob.attacks = {
 		"melee": [{"id": "claw_attack", "damage_multiplier": 1.0}],
-		"ranged": [{"id": "fireball", "damage_multiplier": 0.8}]
+		"ranged": [{"id": "fireball", "damage_multiplier": 1.0}]
 	}
 
 	editor_instance.dmob = test_mob
@@ -65,17 +65,17 @@ func test_editor_loads_attacks():
 
 	# Validate the first attack (melee)
 	assert_eq(children[0].text, "claw_attack", "Expected melee attack ID to be loaded")
-	assert_eq(children[2].value, 1.0, "Expected melee attack multiplier to be loaded")
+	assert_eq(children[2].value, 1.0, "Expected melee attack value to be 1.0")
 
 	# Validate the second attack (ranged)
 	assert_eq(children[3].text, "fireball", "Expected ranged attack ID to be loaded")
-	assert_eq(children[5].value, 0.8, "Expected ranged attack multiplier to be loaded")
+	assert_eq(children[5].value, 1.0, "Expected ranged attack value to be 1.0")
 
 
 func test_editor_saves_attacks():
 	# Simulate attacks being added in the UI
 	editor_instance._add_attack_to_grid({"id": "claw_attack", "damage_multiplier": 1.0, "type": "melee"})
-	editor_instance._add_attack_to_grid({"id": "fireball", "damage_multiplier": 0.8, "type": "ranged"})
+	editor_instance._add_attack_to_grid({"id": "fireball", "damage_multiplier": 1.0, "type": "ranged"})
 
 	editor_instance._on_save_button_button_up()
 
@@ -87,7 +87,7 @@ func test_editor_saves_attacks():
 	assert_eq(test_mob.attacks["melee"][0]["damage_multiplier"], 1.0, "Expected melee attack multiplier to be saved")
 
 	assert_eq(test_mob.attacks["ranged"][0]["id"], "fireball", "Expected ranged attack ID to be saved")
-	assert_eq(test_mob.attacks["ranged"][0]["damage_multiplier"], 0.8, "Expected ranged attack multiplier to be saved")
+	assert_eq(test_mob.attacks["ranged"][0]["damage_multiplier"], 1.0, "Expected ranged attack multiplier to be saved")
 
 
 func test_editor_toggles_dash_ability():

@@ -164,7 +164,59 @@ func get_data() -> Dictionary:
 		mydata["areas"] = areas
 	if not connections.is_empty():  # Omit connections if empty
 		mydata["connections"] = connections
+	
+	# Sanitize tile-level area references to remove stale editor artifacts
+	_sanitize_area_references(mydata)
+
+	# NEW: Implement sanitization for corrupt tiles (missing or empty ID when metadata exists)
+	_sanitize_tile_objects(mydata)
+	
 	return mydata
+
+func _sanitize_tile_objects(data: Dictionary) -> void:
+	if not data.has("levels") or not data["levels"] is Array:
+		return
+			
+	for level in data["levels"]:
+		if not level is Array:
+			continue
+		for i in range(level.size()):
+			var tile = level[i]
+			if tile is Dictionary and tile.size() > 0:
+				# Criteria for corruption: contains metadata but no valid, non-empty ID
+				if not tile.has("id") or tile["id"].is_empty() or tile["id"].strip_edges().is_empty():
+					level[i] = {} # Replace with empty dictionary (air tile)
+
+
+func _sanitize_area_references(data: Dictionary) -> void:
+	var valid_area_ids: Array[String] = []
+	if data.has("areas") and data["areas"] is Array:
+		for area in data["areas"]:
+			if area is Dictionary and area.has("id"):
+				valid_area_ids.append(area["id"])
+	
+	if not data.has("levels") or not data["levels"] is Array:
+		return
+
+	var removed_count: int = 0
+	for level in data["levels"]:
+		if not level is Array:
+			continue
+		for tile in level:
+			if tile is Dictionary and tile.has("areas") and tile["areas"] is Array:
+				var original_count = tile["areas"].size()
+				tile["areas"] = tile["areas"].filter(func(ref): 
+					return ref is Dictionary and ref.has("id") and ref["id"] in valid_area_ids
+				)
+				if tile["areas"].size() < original_count:
+					removed_count += (original_count - tile["areas"].size())
+				
+				if tile["areas"].is_empty():
+					tile.erase("areas")
+	
+	if removed_count > 0:
+		print("[DMap] Sanitized %d stale area references during data retrieval" % removed_count)
+
 
 
 func load_data_from_disk():
