@@ -28,12 +28,36 @@ The root must be a JSON object with these fields:
 | `description` | non-empty string | Map description. |
 | `seed` | integer | Fixed seed used by random rotations and scatter. Recipe input only; the map format does not store it. |
 | `base_tile` | tile object | Tile initially placed in every cell. |
+| `palette` | object | Named weighted tile sets that tile objects can reference. Optional; defaults to `{}`. |
 | `regions` | array | Legacy filled rectangles. Optional; defaults to `[]`. |
 | `operations` | array | Ordered placement operations. Optional; defaults to `[]`. |
 
 A recipe does not define map dimensions: all generated maps are 32 x 32. Coordinates start at the top-left. Every shape must fit entirely within the map; operations are never silently clipped.
 
-A tile object has a required `id` from the selected `Tiles.json` and an optional `rotation`. Rotation is `0`, `90`, `180`, `270`, or `"random"`. Operation tiles may be `null`, which writes the project's empty-tile representation, `{}`.
+A tile object has exactly one of:
+
+- `id`: a raw tile ID from the selected `Tiles.json`; or
+- `palette`: the name of a root-level palette.
+
+It may also include an optional `rotation` when using `id`. Rotation is `0`, `90`, `180`, `270`, or `"random"`. Operation tiles may be `null`, which writes the project's empty-tile representation, `{}`.
+
+Palette entries are objects with `id`, optional positive integer `weight` (default `1`), and optional `rotation`. Palette names may contain only letters, numbers, underscores, and hyphens. Palette selection uses the same seeded random-number generator as scatter and random rotation, so the same complete recipe and seed produce identical output. Changing a recipe from a raw tile to a palette reference may change later random choices because palette selection consumes random numbers.
+
+```json
+{
+  "palette": {
+    "ground": [
+      {"id": "grass_plain_01", "weight": 8, "rotation": "random"},
+      {"id": "grass_flowers_00", "weight": 2, "rotation": "random"}
+    ],
+    "path": [
+      {"id": "dirt_light_00", "weight": 3},
+      {"id": "grass_dirt_00", "weight": 1, "rotation": "random"}
+    ]
+  },
+  "base_tile": {"palette": "ground"}
+}
+```
 
 Legacy `regions` are applied first in array order, followed by `operations` in array order. Later placements overwrite earlier cells. `regions` remain supported for version-one recipes and use the same filled-rectangle placement implementation as `rectangle` operations.
 
@@ -97,4 +121,4 @@ The generator rejects unknown fields at every recipe level, root-level dimension
 
 The output uses 21 levels, with the generated row-major grid at index 10. It sets `categories` to `[]`, `weight` to `1000`, and all four connections to `"ground"`. It omits `areas`, matching `DMap.get_data()` when the area list is empty.
 
-The generator does not yet create palettes, features, furniture, areas, roads as semantic objects, buildings, towns, additional levels, or complex templates. Structural validity also does not yet guarantee walkability or gameplay quality.
+The generator does not yet create features, furniture, areas, roads as semantic objects, buildings, towns, additional levels, or complex templates. Structural validity also does not yet guarantee walkability or gameplay quality.

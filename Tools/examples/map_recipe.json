@@ -4,8 +4,7 @@
 	"description": "A deterministic meadow with a clearing, path, and scattered flowers.",
 	"seed": 20260715,
 	"base_tile": {
-		"id": "grass_plain_01",
-		"rotation": "random"
+		"palette": "ground"
 	},
 	"operations": [
 		{
@@ -18,8 +17,7 @@
 			},
 			"count": 90,
 			"tile": {
-				"id": "grass_flowers_00",
-				"rotation": "random"
+				"palette": "flowers"
 			}
 		},
 		{
@@ -29,8 +27,7 @@
 			"width": 12,
 			"height": 14,
 			"tile": {
-				"id": "grass_plain_01",
-				"rotation": "random"
+				"palette": "clearing"
 			}
 		},
 		{
@@ -40,8 +37,7 @@
 			"width": 12,
 			"height": 14,
 			"tile": {
-				"id": "grass_dirt_00",
-				"rotation": "random"
+				"palette": "path"
 			}
 		},
 		{
@@ -55,7 +51,7 @@
 				16
 			],
 			"tile": {
-				"id": "dirt_light_00"
+				"palette": "path"
 			}
 		},
 		{
@@ -66,5 +62,54 @@
 				"id": "grass_flowers_01"
 			}
 		}
-	]
+	],
+	"palette": {
+		"ground": [
+			{
+				"id": "grass_plain_01",
+				"weight": 8,
+				"rotation": "random"
+			},
+			{
+				"id": "grass_flowers_00",
+				"weight": 2,
+				"rotation": "random"
+			}
+		],
+		"clearing": [
+			{
+				"id": "grass_plain_01",
+				"weight": 4,
+				"rotation": "random"
+			},
+			{
+				"id": "grass_dirt_00",
+				"weight": 1,
+				"rotation": "random"
+			}
+		],
+		"path": [
+			{
+				"id": "dirt_light_00",
+				"weight": 3
+			},
+			{
+				"id": "grass_dirt_00",
+				"weight": 1,
+				"rotation": "random"
+			}
+		],
+		"flowers": [
+			{
+				"id": "grass_flowers_00",
+				"weight": 1,
+				"rotation": "random"
+			},
+			{
+				"id": "grass_flowers_01",
+				"weight": 1,
+				"rotation": "random"
+			}
+		]
+	}
 }
