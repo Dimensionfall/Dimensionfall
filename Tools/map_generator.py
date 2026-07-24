@@ -30,7 +30,9 @@ DEFAULT_CONNECTIONS = {
     "west": "ground",
 }
 VALID_ROTATIONS = (0, 90, 180, 270)
-TILE_FIELDS = {"id", "rotation"}
+TILE_FIELDS = {"id", "palette", "rotation"}
+PALETTE_FIELDS = {"id", "weight", "rotation"}
+PALETTE_NAME_PATTERN = re.compile(r"[A-Za-z0-9_-]+")
 REGION_FIELDS = {"x", "y", "width", "height", "tile"}
 SET_FIELDS = {"type", "x", "y", "tile"}
 RECTANGLE_FIELDS = {"type", "x", "y", "width", "height", "tile"}
@@ -44,6 +46,7 @@ RECIPE_FIELDS = {
     "description",
     "seed",
     "base_tile",
+    "palette",
     "regions",
     "operations",
 }
@@ -135,12 +138,55 @@ def _tile_ids(tiles_path: Path) -> set[str]:
     }
 
 
+def _validate_palette_entry(
+    entry: Any,
+    known_tiles: set[str],
+    context: str,
+) -> dict[str, Any]:
+    if not isinstance(entry, dict):
+        raise RecipeError(f"{context} must be an object")
+    unknown_fields = sorted(set(entry) - PALETTE_FIELDS)
+    if unknown_fields:
+        raise RecipeError(f"unknown {context} field '{unknown_fields[0]}'")
+    tile_spec = {field: entry[field] for field in ("id", "rotation") if field in entry}
+    tile_id, rotation = _validate_tile_spec(tile_spec, known_tiles, context)
+    weight = entry.get("weight", 1)
+    if type(weight) is not int or weight <= 0:
+        raise RecipeError(f"{context}.weight must be a positive integer")
+    return {"id": tile_id, "rotation": rotation, "weight": weight}
+
+
+def _validate_palette(
+    palette: Any,
+    known_tiles: set[str],
+) -> dict[str, list[dict[str, Any]]]:
+    if not isinstance(palette, dict):
+        raise RecipeError("palette must be an object")
+    validated: dict[str, list[dict[str, Any]]] = {}
+    for name, entries in palette.items():
+        if not isinstance(name, str) or not name.strip():
+            raise RecipeError("palette names must be non-empty strings")
+        _validate_unicode(name, f"palette.{name}")
+        if PALETTE_NAME_PATTERN.fullmatch(name) is None:
+            raise RecipeError(
+                f"palette name '{name}' may contain only letters, numbers, underscores, and hyphens"
+            )
+        if not isinstance(entries, list) or not entries:
+            raise RecipeError(f"palette.{name} must be a non-empty array")
+        validated[name] = [
+            _validate_palette_entry(entry, known_tiles, f"palette.{name}[{index}]")
+            for index, entry in enumerate(entries)
+        ]
+    return validated
+
+
 def _validate_tile_spec(
     spec: Any,
     known_tiles: set[str],
     context: str,
     *,
     allow_empty: bool = False,
+    palette: dict[str, list[dict[str, Any]]] | None = None,
 ) -> tuple[str | None, int | str]:
     if spec is None and allow_empty:
         return None, 0
@@ -150,6 +196,22 @@ def _validate_tile_spec(
     unknown_fields = sorted(set(spec) - TILE_FIELDS)
     if unknown_fields:
         raise RecipeError(f"unknown {context} field '{unknown_fields[0]}'")
+    has_id = "id" in spec
+    has_palette = "palette" in spec
+    if has_id == has_palette:
+        raise RecipeError(f"{context} must define exactly one of id or palette")
+    if has_palette:
+        if "rotation" in spec:
+            raise RecipeError(f"{context}.rotation cannot be used with palette")
+        palette_name = spec.get("palette")
+        if not isinstance(palette_name, str) or not palette_name.strip():
+            raise RecipeError(f"{context}.palette must be a non-empty string")
+        _validate_unicode(palette_name, f"{context}.palette")
+        if palette is None or palette_name not in palette:
+            raise RecipeError(
+                f"{context}.palette references unknown palette '{palette_name}'"
+            )
+        return None, 0
     tile_id = spec.get("id")
     if not isinstance(tile_id, str) or not tile_id.strip():
         raise RecipeError(f"{context}.id must be a non-empty string")
@@ -164,6 +226,19 @@ def _validate_tile_spec(
     return tile_id, rotation
 
 
+def _select_weighted_palette_entry(
+    entries: list[dict[str, Any]], rng: random.Random
+) -> dict[str, Any]:
+    total_weight = sum(entry["weight"] for entry in entries)
+    selection = rng.randrange(total_weight)
+    cumulative = 0
+    for entry in entries:
+        cumulative += entry["weight"]
+        if selection < cumulative:
+            return entry
+    return entries[-1]
+
+
 def _make_tile(
     spec: Any,
     rng: random.Random,
@@ -171,10 +246,19 @@ def _make_tile(
     context: str,
     *,
     allow_empty: bool = False,
+    palette: dict[str, list[dict[str, Any]]] | None = None,
 ) -> dict[str, Any]:
     tile_id, rotation = _validate_tile_spec(
-        spec, known_tiles, context, allow_empty=allow_empty
+        spec, known_tiles, context, allow_empty=allow_empty, palette=palette
     )
+    if isinstance(spec, dict) and "palette" in spec:
+        if palette is None:
+            raise RecipeError(
+                f"{context}.palette references unknown palette '{spec['palette']}'"
+            )
+        entry = _select_weighted_palette_entry(palette[spec["palette"]], rng)
+        tile_id = entry["id"]
+        rotation = entry["rotation"]
     if tile_id is None:
         return {}
     if rotation == "random":
@@ -187,9 +271,7 @@ def _make_tile(
 
 def _coordinate(value: Any, context: str, maximum: int) -> int:
     if type(value) is not int or not 0 <= value < maximum:
-        raise RecipeError(
-            f"{context} must be an integer between 0 and {maximum - 1}"
-        )
+        raise RecipeError(f"{context} must be an integer between 0 and {maximum - 1}")
     return value
 
 
@@ -198,6 +280,7 @@ def _apply_set(
     operation: dict[str, Any],
     rng: random.Random,
     known_tiles: set[str],
+    palette: dict[str, list[dict[str, Any]]],
     context: str,
 ) -> None:
     unknown_fields = sorted(set(operation) - SET_FIELDS)
@@ -206,7 +289,12 @@ def _apply_set(
     x = _coordinate(operation.get("x"), f"{context}.x", MAP_WIDTH)
     y = _coordinate(operation.get("y"), f"{context}.y", MAP_HEIGHT)
     level[y * MAP_WIDTH + x] = _make_tile(
-        operation.get("tile"), rng, known_tiles, f"{context}.tile", allow_empty=True
+        operation.get("tile"),
+        rng,
+        known_tiles,
+        f"{context}.tile",
+        allow_empty=True,
+        palette=palette,
     )
 
 
@@ -232,6 +320,7 @@ def _apply_rectangle(
     spec: dict[str, Any],
     rng: random.Random,
     known_tiles: set[str],
+    palette: dict[str, list[dict[str, Any]]],
     context: str,
     fields: set[str],
 ) -> None:
@@ -247,6 +336,7 @@ def _apply_rectangle(
                 known_tiles,
                 f"{context}.tile",
                 allow_empty=True,
+                palette=palette,
             )
 
 
@@ -255,6 +345,7 @@ def _apply_rectangle_outline(
     operation: dict[str, Any],
     rng: random.Random,
     known_tiles: set[str],
+    palette: dict[str, list[dict[str, Any]]],
     context: str,
 ) -> None:
     unknown_fields = sorted(set(operation) - RECTANGLE_FIELDS)
@@ -274,6 +365,7 @@ def _apply_rectangle_outline(
                     known_tiles,
                     f"{context}.tile",
                     allow_empty=True,
+                    palette=palette,
                 )
 
 
@@ -291,6 +383,7 @@ def _apply_line(
     operation: dict[str, Any],
     rng: random.Random,
     known_tiles: set[str],
+    palette: dict[str, list[dict[str, Any]]],
     context: str,
 ) -> None:
     unknown_fields = sorted(set(operation) - LINE_FIELDS)
@@ -310,6 +403,7 @@ def _apply_line(
             known_tiles,
             f"{context}.tile",
             allow_empty=True,
+            palette=palette,
         )
         if x == target_x and y == target_y:
             break
@@ -327,6 +421,7 @@ def _apply_scatter(
     operation: dict[str, Any],
     rng: random.Random,
     known_tiles: set[str],
+    palette: dict[str, list[dict[str, Any]]],
     context: str,
 ) -> None:
     unknown_fields = sorted(set(operation) - SCATTER_FIELDS)
@@ -362,6 +457,7 @@ def _apply_scatter(
         known_tiles,
         f"{context}.tile",
         allow_empty=True,
+        palette=palette,
     )
     candidates = [
         y * MAP_WIDTH + x
@@ -375,6 +471,7 @@ def _apply_scatter(
             known_tiles,
             f"{context}.tile",
             allow_empty=True,
+            palette=palette,
         )
 
 
@@ -400,9 +497,12 @@ def generate_map(recipe: dict[str, Any], tiles_path: Path) -> dict[str, Any]:
     if type(seed) is not int:
         raise RecipeError("seed must be an integer")
     known_tiles = _tile_ids(Path(tiles_path))
+    palette = _validate_palette(recipe.get("palette", {}), known_tiles)
     rng = random.Random(seed)
     level = [
-        _make_tile(recipe.get("base_tile"), rng, known_tiles, "base_tile")
+        _make_tile(
+            recipe.get("base_tile"), rng, known_tiles, "base_tile", palette=palette
+        )
         for _ in range(MAP_WIDTH * MAP_HEIGHT)
     ]
 
@@ -413,7 +513,9 @@ def generate_map(recipe: dict[str, Any], tiles_path: Path) -> dict[str, Any]:
         context = f"regions[{index}]"
         if not isinstance(region, dict):
             raise RecipeError(f"{context} must be an object")
-        _apply_rectangle(level, region, rng, known_tiles, context, REGION_FIELDS)
+        _apply_rectangle(
+            level, region, rng, known_tiles, palette, context, REGION_FIELDS
+        )
 
     operations = recipe.get("operations", [])
     if not isinstance(operations, list):
@@ -426,17 +528,19 @@ def generate_map(recipe: dict[str, Any], tiles_path: Path) -> dict[str, Any]:
         if operation_type in OPERATION_TYPES and "tile" not in operation:
             raise RecipeError(f"{context}.tile is required")
         if operation_type == "set":
-            _apply_set(level, operation, rng, known_tiles, context)
+            _apply_set(level, operation, rng, known_tiles, palette, context)
         elif operation_type == "rectangle":
             _apply_rectangle(
-                level, operation, rng, known_tiles, context, RECTANGLE_FIELDS
+                level, operation, rng, known_tiles, palette, context, RECTANGLE_FIELDS
             )
         elif operation_type == "rectangle_outline":
-            _apply_rectangle_outline(level, operation, rng, known_tiles, context)
+            _apply_rectangle_outline(
+                level, operation, rng, known_tiles, palette, context
+            )
         elif operation_type == "line":
-            _apply_line(level, operation, rng, known_tiles, context)
+            _apply_line(level, operation, rng, known_tiles, palette, context)
         elif operation_type == "scatter":
-            _apply_scatter(level, operation, rng, known_tiles, context)
+            _apply_scatter(level, operation, rng, known_tiles, palette, context)
         else:
             raise RecipeError(
                 f"{context}.type has unknown operation '{operation_type}'"

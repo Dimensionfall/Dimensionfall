@@ -6,7 +6,6 @@ from pathlib import Path
 from Tools.map_generator import RecipeError, generate_map, write_map
 from Tools.map_validator import MapValidator
 
-
 ROOT = Path(__file__).resolve().parents[2]
 TILES_PATH = ROOT / "Mods" / "Dimensionfall" / "Tiles" / "Tiles.json"
 
@@ -81,9 +80,7 @@ class MapGeneratorTests(unittest.TestCase):
 
     def test_null_region_tile_uses_the_existing_empty_dictionary_representation(self):
         recipe = valid_recipe()
-        recipe["regions"] = [
-            {"x": 0, "y": 0, "width": 1, "height": 1, "tile": None}
-        ]
+        recipe["regions"] = [{"x": 0, "y": 0, "width": 1, "height": 1, "tile": None}]
 
         generated = generate_map(recipe, TILES_PATH)
 
@@ -358,11 +355,7 @@ class MapGeneratorTests(unittest.TestCase):
             ),
             ({"base_tile": {"id": "missing_tile"}}, "unknown tile 'missing_tile'"),
             (
-                {
-                    "regions": [
-                        {"x": 0, "width": "two", "height": 1, "tile": None}
-                    ]
-                },
+                {"regions": [{"x": 0, "width": "two", "height": 1, "tile": None}]},
                 "regions\\[0\\].y must be a non-negative integer",
             ),
             (
@@ -407,6 +400,125 @@ class MapGeneratorTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, expected_message):
                     generate_map(recipe, TILES_PATH)
 
+    def test_palette_reference_works_for_base_tile(self):
+        recipe = valid_recipe()
+        recipe["palette"] = {
+            "ground": [
+                {"id": "grass_plain_01", "weight": 1},
+                {"id": "grass_flowers_00", "weight": 1},
+            ]
+        }
+        recipe["base_tile"] = {"palette": "ground"}
+
+        level = generate_map(recipe, TILES_PATH)["levels"][10]
+
+        self.assertTrue(
+            all(tile["id"] in {"grass_plain_01", "grass_flowers_00"} for tile in level)
+        )
+        self.assertGreater(len({tile["id"] for tile in level}), 1)
+
+    def test_palette_reference_works_for_rectangle_and_scatter_operations(self):
+        recipe = valid_recipe()
+        recipe["base_tile"] = {"id": "grass_plain_01"}
+        recipe["palette"] = {
+            "path": [{"id": "dirt_light_00", "weight": 1}],
+            "flowers": [{"id": "grass_flowers_01", "weight": 1}],
+        }
+        recipe["operations"] = [
+            {
+                "type": "rectangle",
+                "x": 1,
+                "y": 1,
+                "width": 2,
+                "height": 2,
+                "tile": {"palette": "path"},
+            },
+            {
+                "type": "scatter",
+                "region": {"x": 10, "y": 10, "width": 3, "height": 3},
+                "count": 3,
+                "tile": {"palette": "flowers"},
+            },
+        ]
+
+        level = generate_map(recipe, TILES_PATH)["levels"][10]
+
+        for index in {33, 34, 65, 66}:
+            self.assertEqual(level[index], {"id": "dirt_light_00"})
+        self.assertEqual(level.count({"id": "grass_flowers_01"}), 3)
+
+    def test_weighted_palette_selection_is_deterministic_and_uses_weights(self):
+        recipe = valid_recipe()
+        recipe["seed"] = 7
+        recipe["palette"] = {
+            "ground": [
+                {"id": "grass_plain_01", "weight": 8},
+                {"id": "grass_flowers_00", "weight": 2},
+            ]
+        }
+        recipe["base_tile"] = {"palette": "ground"}
+
+        first = generate_map(recipe, TILES_PATH)["levels"][10]
+        second = generate_map(recipe, TILES_PATH)["levels"][10]
+        flower_count = first.count({"id": "grass_flowers_00"})
+        grass_count = first.count({"id": "grass_plain_01"})
+
+        self.assertEqual(first, second)
+        self.assertGreater(flower_count, 0)
+        self.assertGreater(grass_count, flower_count)
+
+    def test_palette_validation_rejects_malformed_entries_and_references(self):
+        cases = [
+            ({"base_tile": {"palette": "missing"}}, "unknown palette 'missing'"),
+            ({"palette": []}, "palette must be an object"),
+            (
+                {"palette": {"": [{"id": "grass_plain_01"}]}},
+                "palette names must be non-empty strings",
+            ),
+            (
+                {"palette": {"bad name": [{"id": "grass_plain_01"}]}},
+                "may contain only letters",
+            ),
+            ({"palette": {"ground": []}}, "palette.ground must be a non-empty array"),
+            (
+                {"palette": {"ground": ["grass_plain_01"]}},
+                r"palette.ground\[0\] must be an object",
+            ),
+            (
+                {"palette": {"ground": [{"weight": 1}]}},
+                "must define exactly one of id or palette",
+            ),
+            (
+                {"palette": {"ground": [{"id": "missing_tile"}]}},
+                "unknown tile 'missing_tile'",
+            ),
+            (
+                {"palette": {"ground": [{"id": "grass_plain_01", "weight": 0}]}},
+                "weight must be a positive integer",
+            ),
+            (
+                {"palette": {"ground": [{"id": "grass_plain_01", "rotation": 45}]}},
+                "rotation must be 0, 90, 180, 270, or 'random'",
+            ),
+            (
+                {"palette": {"ground": [{"id": "grass_plain_01", "extra": True}]}},
+                r"unknown palette.ground\[0\] field 'extra'",
+            ),
+            (
+                {
+                    "palette": {"ground": [{"id": "grass_plain_01"}]},
+                    "base_tile": {"id": "grass_plain_01", "palette": "ground"},
+                },
+                "base_tile must define exactly one of id or palette",
+            ),
+        ]
+        for changes, expected_message in cases:
+            with self.subTest(changes=changes):
+                recipe = valid_recipe()
+                recipe.update(changes)
+                with self.assertRaisesRegex(RecipeError, expected_message):
+                    generate_map(recipe, TILES_PATH)
+
     def test_recipe_dimensions_are_not_configurable(self):
         for field in ("width", "height"):
             with self.subTest(field=field):
@@ -447,7 +559,9 @@ class MapGeneratorTests(unittest.TestCase):
             tiles_path = Path(directory) / "Tiles.json"
             tiles_path.write_text("42", encoding="utf-8")
 
-            with self.assertRaisesRegex(ValueError, "tile database must be a JSON array"):
+            with self.assertRaisesRegex(
+                ValueError, "tile database must be a JSON array"
+            ):
                 generate_map(valid_recipe(), tiles_path)
 
     def test_output_filename_must_match_map_id(self):
@@ -455,7 +569,9 @@ class MapGeneratorTests(unittest.TestCase):
             recipe_path = Path(directory) / "recipe.json"
             recipe_path.write_text(json.dumps(valid_recipe()), encoding="utf-8")
 
-            with self.assertRaisesRegex(ValueError, "must be named generated_test_map.json"):
+            with self.assertRaisesRegex(
+                ValueError, "must be named generated_test_map.json"
+            ):
                 write_map(recipe_path, Path(directory) / "different.json", TILES_PATH)
 
     def test_write_map_protects_existing_output_unless_overwrite_is_enabled(self):

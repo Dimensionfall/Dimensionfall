@@ -126,6 +126,7 @@ The generator currently supports:
 * ordered `set`, `rectangle`, `rectangle_outline`, `line`, and `scatter` operations;
 * inclusive Bresenham line rasterization;
 * deterministic scatter by count or density;
+* root-level weighted tile palettes referenced by base tiles and placement operations;
 * fixed tile rotations;
 * deterministic random rotations;
 * `null` region tiles that produce `{}`;
@@ -149,7 +150,7 @@ unused levels: []
 
 ## 5. Generator and validator tests: complete for version 1
 
-The current Python test suite contains 34 tests and passes.
+The current Python test suite contains 38 tests and passes.
 
 Coverage includes:
 
@@ -167,6 +168,7 @@ Coverage includes:
 * unknown fields;
 * invalid IDs;
 * unknown tile IDs;
+* palette references, weighted deterministic selection, and malformed palette rejection;
 * invalid metadata;
 * malformed tile databases;
 * out-of-bounds placement;
@@ -221,8 +223,8 @@ The current recipe language is intentionally minimal. It cannot yet express most
 
 It does not currently support:
 
+* reusable pattern definitions beyond tile palettes;
 * circles or irregular regions;
-* weighted tile variation;
 * terrain blending;
 * multiple populated vertical levels;
 * features or furniture;
@@ -346,7 +348,7 @@ A developer can run one documented command, launch Godot, and inspect at least t
 
 ## Phase 4B — Tile palettes and reusable patterns
 
-**Status: next**
+**Status: in progress**
 
 Raw tile IDs are cumbersome and encourage agents to invent invalid identifiers. Introduce semantic recipe-level palettes.
 
@@ -357,21 +359,21 @@ Example:
   "palette": {
     "ground": [
       {
-        "tile": "grass",
+        "id": "grass_plain_01",
         "weight": 8
       },
       {
-        "tile": "grass_variant",
+        "id": "grass_flowers_00",
         "weight": 2
       }
     ],
     "path": [
       {
-        "tile": "dirt-light",
+        "id": "dirt_light_00",
         "weight": 3
       },
       {
-        "tile": "dirt-dark",
+        "id": "grass_dirt_00",
         "weight": 1
       }
     ]
@@ -379,14 +381,19 @@ Example:
 }
 ```
 
-Goals:
+Delivered:
 
+* root-level semantic tile palettes;
 * weighted deterministic selection;
-* named tile sets;
-* automatic rotation rules;
-* reusable pattern definitions;
-* fewer raw IDs throughout recipes;
-* centralized checking of allowed tiles.
+* palette references from `base_tile`, legacy `regions`, and every placement operation;
+* strict palette validation and known tile-ID checking;
+* updated example recipe using palettes for ground, clearing, paths, and flowers.
+
+Remaining goals:
+
+* reusable pattern definitions beyond weighted tile sets;
+* richer automatic rotation rules;
+* additional examples that reduce raw IDs throughout recipes.
 
 ### Success criterion
 
