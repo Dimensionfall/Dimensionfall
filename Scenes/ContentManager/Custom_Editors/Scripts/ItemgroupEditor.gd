@@ -17,14 +17,13 @@ extends Control
 @export var amount_spin_box: SpinBox = null
 @export var simulation_text_edit: TextEdit = null
 
-
 # For controlling the focus when the tab button is pressed
 var control_elements: Array = []
 # This signal will be emitted when the user presses the save button
 # This signal should alert the contenteditor to refresh the content list
-signal data_changed()
+signal data_changed
 
-var olddata: DItemgroup # Remember what the value of the data was before editing
+var olddata: DItemgroup  # Remember what the value of the data was before editing
 # The data that represents this itemgroup
 # The data is selected from the ditemgroup.parent dictionary
 # based on the ID that the user has selected in the content editor
@@ -37,7 +36,7 @@ var ditemgroup: DItemgroup = null:
 
 
 func _ready():
-	control_elements = [itemgroupImageDisplay,NameTextEdit,DescriptionTextEdit]
+	control_elements = [itemgroupImageDisplay, NameTextEdit, DescriptionTextEdit]
 	modeOptionButton.add_item("Collection")
 	modeOptionButton.add_item("Distribution")
 	modeOptionButton.selected = 0  # Default to Collection
@@ -71,15 +70,17 @@ func add_item_entry(item: DItemgroup.Item):
 	probability_spinbox.max_value = 100.0
 	probability_spinbox.value = item.probability
 	probability_spinbox.step = 1
-	probability_spinbox.tooltip_text = "Set the item's spawn probability. Range: 0% (never)" +\
-									" to 100% (always).\nCollection Mode: Each item is" + \
-								  " picked independently. A probability of 100% means the " + \
-								  "item always appears, while 0% means it never does.\n" + \
-								  "Distribution Mode: One item is picked from the list. " + \
-								  "The item's probability is relative to others. \n" + \
-								  "E.g., if an item A has a probability of 30 and another " + \
-								  "item B has 20, A's chance is 60% (30 out of 50) and " + \
-								  "B's is 40% (20 out of 50)."
+	probability_spinbox.tooltip_text = (
+		"Set the item's spawn probability. Range: 0% (never)"
+		+ " to 100% (always).\nCollection Mode: Each item is"
+		+ " picked independently. A probability of 100% means the "
+		+ "item always appears, while 0% means it never does.\n"
+		+ "Distribution Mode: One item is picked from the list. "
+		+ "The item's probability is relative to others. \n"
+		+ "E.g., if an item A has a probability of 30 and another "
+		+ "item B has 20, A's chance is 60% (30 out of 50) and "
+		+ "B's is 40% (20 out of 50)."
+	)
 
 	var min_spinbox = SpinBox.new()
 	min_spinbox.min_value = 0
@@ -113,7 +114,7 @@ func add_item_entry(item: DItemgroup.Item):
 func _on_delete_item_button_pressed(item_id):
 	var num_columns = itemListContainer.columns  # Make sure this matches the number of elements per item in your grid
 	var children_to_remove = []
-	
+
 	# Find the label with the matching item_id to determine which row to delete
 	for i in range(itemListContainer.get_child_count()):
 		var child = itemListContainer.get_child(i)
@@ -124,7 +125,7 @@ func _on_delete_item_button_pressed(item_id):
 			for j in range(num_columns):
 				children_to_remove.append(itemListContainer.get_child(start_index + j))
 			break  # Once we find the right row, no need to check further
-	
+
 	# Remove and free all queued children
 	for child in children_to_remove:
 		itemListContainer.remove_child(child)
@@ -176,7 +177,7 @@ func _on_save_button_button_up():
 	ditemgroup.description = DescriptionTextEdit.text
 	ditemgroup.use_sprite = use_sprite_check_box.button_pressed
 	ditemgroup.mode = modeOptionButton.get_item_text(modeOptionButton.selected)
-	
+
 	var new_items: Array[DItemgroup.Item] = []
 	var num_children = itemListContainer.get_child_count()
 	var num_columns = itemListContainer.columns
@@ -188,18 +189,16 @@ func _on_save_button_button_up():
 		var min_amount = itemListContainer.get_child(i + 3).get_value()  # Fourth child is the SpinBox for minimum count
 		var max_amount = itemListContainer.get_child(i + 4).get_value()  # Fifth child is the SpinBox for maximum count
 
-		new_items.append(DItemgroup.Item.new({
-			"id": item_id, 
-			"probability": probability, 
-			"min": min_amount, 
-			"max": max_amount
-		}))
-	
+		new_items.append(
+			DItemgroup.Item.new(
+				{"id": item_id, "probability": probability, "min": min_amount, "max": max_amount}
+			)
+		)
+
 	ditemgroup.items = new_items
 	ditemgroup.changed(olddata)
 	data_changed.emit()
 	olddata = DItemgroup.new(ditemgroup.get_data().duplicate(true), null)
-
 
 
 func _input(event):
@@ -216,7 +215,7 @@ func _input(event):
 		get_viewport().set_input_as_handled()
 
 
-#When the itemgroupImageDisplay is clicked, the user will be prompted to select an image from 
+#When the itemgroupImageDisplay is clicked, the user will be prompted to select an image from
 # "res://Mods/Core/Itemgroups/". The texture of the itemgroupImageDisplay will change to the selected image
 func _on_itemgroup_image_display_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -242,17 +241,18 @@ func _can_drop_data(_newpos, data) -> bool:
 	# Check if the data dictionary has the 'id' property
 	if not data or not data.has("id"):
 		return false
-	
+
 	# Fetch item data by ID from Gamedata to ensure it exists and is valid
 	if not Gamedata.mods.by_id(data["mod_id"]).items.has_id(data["id"]):
 		return false
 
 	# Check if the ID of the dragged item already exists in the itemListContainer
-	for child in itemListContainer.get_children():
-		if child is HBoxContainer:
-			var label = child.get_child(1)  # Assuming the ID label is the second child
-			if label.text == data["id"]:
-				return false  # The item is already in the list
+	var num_children = itemListContainer.get_child_count()
+	var num_columns = itemListContainer.columns
+	for i in range(0, num_children, num_columns):
+		var label: Label = itemListContainer.get_child(i + 1)
+		if label.text == data["id"]:
+			return false  # The item is already in the list
 
 	# If all checks pass, return true
 	return true
@@ -278,14 +278,15 @@ func _handle_item_drop(dropped_data, _newpos) -> void:
 		var item_id = dropped_data["id"]
 		if not Gamedata.mods.by_id(dropped_data["mod_id"]).items.has_id(item_id):
 			return
-		
+
 		# Check if the item already exists in the itemListContainer to avoid duplicates
-		for child in itemListContainer.get_children():
-			if child is HBoxContainer:
-				var label = child.get_child(1)  # Assuming the ID label is the second child
-				if label.text == item_id:
-					print_debug("Item already exists in the list: " + item_id)
-					return
+		var num_children = itemListContainer.get_child_count()
+		var num_columns = itemListContainer.columns
+		for i in range(0, num_children, num_columns):
+			var label: Label = itemListContainer.get_child(i + 1)
+			if label.text == item_id:
+				print_debug("Item already exists in the list: " + item_id)
+				return
 
 		# If item is not already in the list, add it, use default probability if not specified
 		add_item_entry(DItemgroup.Item.new({"id": item_id, "probability": 20}))
@@ -318,7 +319,7 @@ func add_header_row():
 		header.text = headers[i]
 		header.tooltip_text = tooltips[i]
 		header.set_horizontal_alignment(HORIZONTAL_ALIGNMENT_CENTER)
-		header.add_theme_stylebox_override("normal",header_style)
+		header.add_theme_stylebox_override("normal", header_style)
 		header.set("custom_styles/panel", header_style.duplicate())  # Use duplicate to ensure each header can customize further if needed
 		itemListContainer.add_child(header)
 
@@ -336,12 +337,14 @@ func _on_simulation_button_button_up() -> void:
 		var min_amount = itemListContainer.get_child(i + 3).get_value()  # Fourth child is the minimum SpinBox
 		var max_amount = itemListContainer.get_child(i + 4).get_value()  # Fifth child is the maximum SpinBox
 
-		items_data.append({
-			"id": item_id,
-			"probability": probability,
-			"min": int(min_amount),
-			"max": int(max_amount)
-		})
+		items_data.append(
+			{
+				"id": item_id,
+				"probability": probability,
+				"min": int(min_amount),
+				"max": int(max_amount)
+			}
+		)
 
 	# Step 2: Read the selected mode from modeOptionButton (Collection or Distribution)
 	var selected_mode: String = modeOptionButton.get_item_text(modeOptionButton.selected)
@@ -361,14 +364,11 @@ func _on_simulation_button_button_up() -> void:
 
 	# Step 5: Sort the results by the amount generated (in descending order)
 	var sorted_results: Array = simulation_results.keys().map(
-		func(item_id):
-			return {"id": item_id, "amount": simulation_results[item_id]}
+		func(item_id): return {"id": item_id, "amount": simulation_results[item_id]}
 	)
-	
+
 	# Sort the array based on the "amount" value in descending order
-	sorted_results.sort_custom(func(a, b):
-		return b["amount"] < a["amount"]
-	)
+	sorted_results.sort_custom(func(a, b): return b["amount"] < a["amount"])
 
 	# Step 6: Print the sorted simulation results to simulation_text_edit
 	var result_text: String = ""
