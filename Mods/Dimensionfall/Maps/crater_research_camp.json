@@ -1,0 +1,14212 @@
+{
+	"id": "crater_research_camp",
+	"name": "Crater Research Camp",
+	"description": "An abandoned field laboratory overlooking a freshly exposed crater, with a metal research hut, hazardous sample yard, rock debris, and malfunctioning security patrols.",
+	"categories": [
+		"Field",
+		"Plains"
+	],
+	"weight": 1000,
+	"mapwidth": 32,
+	"mapheight": 32,
+	"levels": [
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rock_floor_02",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "wasteland_01",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "wasteland_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "dirt_light_01",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "dirt_light_01",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_02",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "wasteland_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_01",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_02",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_02",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_02",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_02",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_02",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_01",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_02",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "dirt_light_01",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "wasteland_01",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_02",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_02",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_02",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "wasteland_01",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_01",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "rock_floor_00",
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				]
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{}
+		],
+		[
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "wasteland_02"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "dirt_light_02"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "grass_flowers_00"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "dirt_light_02"
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				],
+				"feature": {
+					"type": "furniture",
+					"id": "desk",
+					"rotation": 0,
+					"itemgroups": []
+				}
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				],
+				"feature": {
+					"type": "furniture",
+					"id": "control_panel",
+					"rotation": 0,
+					"itemgroups": []
+				}
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				],
+				"feature": {
+					"type": "furniture",
+					"id": "chair_office",
+					"rotation": 0,
+					"itemgroups": []
+				}
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				],
+				"feature": {
+					"type": "furniture",
+					"id": "ups",
+					"rotation": 90,
+					"itemgroups": []
+				}
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				],
+				"feature": {
+					"type": "furniture",
+					"id": "equipment_rack",
+					"rotation": 270,
+					"itemgroups": [
+						"loot_electronic"
+					]
+				}
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"feature": {
+					"type": "furniture",
+					"id": "door_wood",
+					"rotation": 90,
+					"itemgroups": []
+				}
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "rock_slope_00",
+				"rotation": 270
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				],
+				"feature": {
+					"type": "furniture",
+					"id": "chemical_rack",
+					"rotation": 270,
+					"itemgroups": [
+						"first_aid"
+					]
+				}
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				],
+				"feature": {
+					"type": "furniture",
+					"id": "first_aid_rack",
+					"rotation": 90,
+					"itemgroups": [
+						"first_aid"
+					]
+				}
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				],
+				"feature": {
+					"type": "furniture",
+					"id": "military_cot",
+					"rotation": 180,
+					"itemgroups": []
+				}
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_patrol",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "concrete__cracked_00",
+				"areas": [
+					{
+						"id": "camp_patrol",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "wasteland_03"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_patrol",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "concrete__cracked_00",
+				"areas": [
+					{
+						"id": "camp_patrol",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00",
+				"feature": {
+					"type": "furniture",
+					"id": "table_metal",
+					"rotation": 0,
+					"itemgroups": []
+				}
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00",
+				"feature": {
+					"type": "furniture",
+					"id": "crate_wood",
+					"rotation": 90,
+					"itemgroups": [
+						"cabinet_general"
+					]
+				}
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "wasteland_03"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "wasteland_03"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_patrol",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "concrete__cracked_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_patrol",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "concrete__cracked_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				],
+				"feature": {
+					"type": "furniture",
+					"id": "barrel_radioactive_yellow",
+					"rotation": 0,
+					"itemgroups": []
+				}
+			},
+			{
+				"id": "concrete__cracked_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "concrete__cracked_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				],
+				"feature": {
+					"type": "furniture",
+					"id": "barrel_radioactive_red",
+					"rotation": 0,
+					"itemgroups": []
+				}
+			},
+			{
+				"id": "concrete__cracked_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				],
+				"feature": {
+					"type": "furniture",
+					"id": "light_machinery",
+					"rotation": 0,
+					"itemgroups": []
+				}
+			},
+			{
+				"id": "concrete__cracked_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "concrete__cracked_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_patrol",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "concrete__cracked_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_patrol",
+						"rotation": 0
+					}
+				],
+				"feature": {
+					"type": "furniture",
+					"id": "sandbag_barricade",
+					"rotation": 180,
+					"itemgroups": []
+				}
+			},
+			{
+				"id": "concrete__cracked_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "concrete__cracked_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "concrete__cracked_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "concrete__cracked_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "concrete__cracked_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "concrete__cracked_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				],
+				"feature": {
+					"type": "furniture",
+					"id": "sandbag_barricade",
+					"rotation": 180,
+					"itemgroups": []
+				}
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_flowers_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			},
+			{
+				"id": "grass_dirt_02",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				]
+			}
+		],
+		[
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "metal_wall_00"
+			},
+			{
+				"id": "metal_wall_00"
+			},
+			{
+				"id": "metal_wall_00"
+			},
+			{
+				"id": "metal_wall_00"
+			},
+			{
+				"id": "metal_wall_00"
+			},
+			{
+				"id": "metal_wall_00"
+			},
+			{
+				"id": "metal_wall_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "metal_wall_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "metal_wall_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "metal_wall_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "metal_wall_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "metal_wall_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "metal_wall_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "metal_wall_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "metal_wall_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "metal_wall_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "metal_wall_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "metal_wall_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "metal_wall_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "metal_wall_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "metal_wall_00"
+			},
+			{
+				"id": "metal_wall_00"
+			},
+			{
+				"id": "metal_wall_00"
+			},
+			{
+				"id": "metal_wall_00"
+			},
+			{
+				"id": "metal_wall_00"
+			},
+			{
+				"id": "metal_wall_00"
+			},
+			{
+				"id": "metal_wall_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{}
+		],
+		[
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{}
+		],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[],
+		[]
+	],
+	"connections": {
+		"north": "ground",
+		"east": "ground",
+		"south": "ground",
+		"west": "ground"
+	},
+	"areas": [
+		{
+			"id": "camp_field_ground",
+			"spawn_chance": 100,
+			"rotate_random": false,
+			"pick_one": false,
+			"tiles": [
+				{
+					"id": "grass_plain_01",
+					"count": 100
+				},
+				{
+					"id": "grass_dirt_00",
+					"count": 15
+				},
+				{
+					"id": "grass_dirt_01",
+					"count": 15
+				},
+				{
+					"id": "grass_dirt_02",
+					"count": 15
+				},
+				{
+					"id": "grass_medium_dirt_00",
+					"count": 1
+				},
+				{
+					"id": "grass_medium_dirt_01",
+					"count": 1
+				},
+				{
+					"id": "grass_medium_dirt_02",
+					"count": 1
+				},
+				{
+					"id": "grass_flowers_00",
+					"count": 1
+				},
+				{
+					"id": "grass_flowers_01",
+					"count": 1
+				},
+				{
+					"id": "grass_flowers_02",
+					"count": 1
+				},
+				{
+					"id": "grass_flowers_03",
+					"count": 1
+				}
+			],
+			"entities": []
+		},
+		{
+			"id": "camp_field_nature",
+			"spawn_chance": 100,
+			"rotate_random": true,
+			"pick_one": false,
+			"tiles": [
+				{
+					"id": "null",
+					"count": 1000
+				}
+			],
+			"entities": [
+				{
+					"id": "wild_vegetation_00",
+					"type": "furniture",
+					"count": 20
+				},
+				{
+					"id": "rock_field_00",
+					"type": "furniture",
+					"count": 10
+				},
+				{
+					"id": "PineTree_00",
+					"type": "furniture",
+					"count": 5
+				}
+			]
+		},
+		{
+			"id": "crater_debris",
+			"spawn_chance": 100,
+			"rotate_random": false,
+			"pick_one": false,
+			"tiles": [
+				{
+					"id": "null",
+					"count": 25
+				}
+			],
+			"entities": [
+				{
+					"id": "debris_rock",
+					"type": "itemgroup",
+					"count": 1
+				}
+			]
+		},
+		{
+			"id": "camp_patrol",
+			"spawn_chance": 35,
+			"rotate_random": true,
+			"pick_one": true,
+			"tiles": [
+				{
+					"id": "null",
+					"count": 100
+				}
+			],
+			"entities": [
+				{
+					"id": "security_robots",
+					"type": "mobgroup",
+					"count": 1
+				}
+			]
+		}
+	],
+	"rooms": [
+		{
+			"id": "research_hut",
+			"kind": "enclosed",
+			"boundary_validation": "complete",
+			"boundary_generation": "walls"
+		}
+	],
+	"room_connections": [
+		{
+			"id": "research_hut_door",
+			"at": [
+				8,
+				13
+			],
+			"z": 0,
+			"from": {
+				"kind": "room",
+				"id": "research_hut"
+			},
+			"to": {
+				"kind": "exterior"
+			},
+			"target_at": [
+				9,
+				13
+			],
+			"entrance": {
+				"exterior_at": [
+					10,
+					13
+				],
+				"facing": "west"
+			}
+		}
+	],
+	"buildings": [
+		{
+			"id": "crater_research_hut",
+			"rooms": [
+				"research_hut"
+			],
+			"footprint": {
+				"x": 3,
+				"y": 9,
+				"width": 7,
+				"height": 9
+			},
+			"z": 0,
+			"building_levels": [
+				{
+					"z": 0,
+					"rooms": [
+						"research_hut"
+					],
+					"furniture_anchors": [
+						"research_console",
+						"sample_storage"
+					]
+				}
+			],
+			"interior_rooms": [
+				"research_hut"
+			],
+			"furniture_anchors": [
+				{
+					"id": "research_console",
+					"at": [
+						7,
+						10
+					],
+					"z": 0,
+					"kind": "workstation"
+				},
+				{
+					"id": "sample_storage",
+					"at": [
+						4,
+						15
+					],
+					"z": 0,
+					"kind": "storage"
+				}
+			],
+			"reachability_validation": {
+				"required_furniture_anchors": [
+					"research_console",
+					"sample_storage"
+				],
+				"required_building_levels": [
+					0
+				]
+			},
+			"building_geometry": {
+				"floor_tile": {
+					"id": "concrete_00"
+				},
+				"wall_tile": {
+					"id": "metal_wall_00"
+				},
+				"support_tile": {
+					"id": "dirt_light_00"
+				},
+				"roof_tile": {
+					"id": "concrete__cracked_00"
+				}
+			}
+		}
+	],
+	"building_surfaces": [
+		{
+			"id": "research_hut_roof",
+			"building": "crater_research_hut",
+			"kind": "roof",
+			"z": 0
+		}
+	]
+}

@@ -15,6 +15,10 @@ MOBGROUPS_PATH = ROOT / "Mods" / "Dimensionfall" / "Mobgroups" / "Mobgroups.json
 ITEMGROUPS_PATH = ROOT / "Mods" / "Dimensionfall" / "Itemgroups" / "Itemgroups.json"
 PRODUCTION_RECIPE_PATH = ROOT / "Tools" / "recipes" / "pine_hollow_outpost.json"
 PRODUCTION_MAP_PATH = ROOT / "Mods" / "Dimensionfall" / "Maps" / "pine_hollow_outpost.json"
+CRATER_RESEARCH_RECIPE_PATH = ROOT / "Tools" / "recipes" / "crater_research_camp.json"
+CRATER_RESEARCH_MAP_PATH = ROOT / "Mods" / "Dimensionfall" / "Maps" / "crater_research_camp.json"
+CRATER_RESEARCH_PREVIEW_PATH = ROOT / "Mods" / "Dimensionfall" / "Maps" / "crater_research_camp.png"
+CRATER_RESEARCH_FIXTURE_PATH = ROOT / "Tools" / "examples" / "map_recipe_crater_research_camp.json"
 
 MAINTAINED_RECIPE_FILENAMES = (
     "map_recipe.json",
@@ -39,6 +43,7 @@ MAINTAINED_RECIPE_FILENAMES = (
     "map_recipe_semantic_single_storey_building.json",
     "map_recipe_semantic_two_storey_building.json",
     "map_recipe_pine_hollow_outpost.json",
+    "map_recipe_crater_research_camp.json",
 )
 
 
@@ -3087,6 +3092,99 @@ class MapGeneratorTests(unittest.TestCase):
         self.assertEqual(generated["levels"][12][9 * 32 + 10]["id"], "grass_ramp_00")
         self.assertEqual(generated["levels"][12][9 * 32 + 10]["rooms"], ["loft"])
         self.assertEqual(generated["levels"][12][10 * 32 + 10], {})
+
+    def test_crater_research_camp_recipe_has_finished_location_contract(self):
+        recipe = json.loads(CRATER_RESEARCH_RECIPE_PATH.read_text(encoding="utf-8"))
+        generated = generate_map(recipe, TILES_PATH)
+
+        self.assertEqual(recipe["id"], "crater_research_camp")
+        self.assertEqual(recipe["categories"], ["Field", "Plains"])
+        self.assertEqual(generated["connections"], {
+            "north": "ground", "east": "ground", "south": "ground", "west": "ground",
+        })
+        self.assertNotIn("road_endpoints", generated)
+        self.assertNotIn("road_paths", generated)
+
+        ground = generated["levels"][10]
+        crater_floor = generated["levels"][9]
+        hut_roof = generated["levels"][12]
+        self.assertEqual(ground[13 * 32 + 12], {"id": "rock_slope_00", "rotation": 270})
+        self.assertEqual(len(hut_roof), 32 * 32)
+        self.assertEqual(hut_roof[13 * 32 + 6]["id"], "concrete__cracked_00")
+        self.assertEqual(crater_floor[13 * 32 + 13]["id"], "rock_floor_00")
+        self.assertEqual(ground[13 * 32 + 13], {})
+        self.assertEqual([ground[13 * 32 + x]["id"] for x in range(9, 12)], [
+            "concrete_00", "dirt_light_00", "dirt_light_00",
+        ])
+
+        building = generated["buildings"][0]
+        self.assertEqual(building["id"], "crater_research_hut")
+        self.assertEqual(building["rooms"], ["research_hut"])
+        self.assertEqual(building["building_levels"], [{
+            "z": 0,
+            "rooms": ["research_hut"],
+            "furniture_anchors": ["research_console", "sample_storage"],
+        }])
+        self.assertEqual(generated["room_connections"], [{
+            "id": "research_hut_door",
+            "at": [8, 13],
+            "target_at": [9, 13],
+            "z": 0,
+            "from": {"kind": "room", "id": "research_hut"},
+            "to": {"kind": "exterior"},
+            "entrance": {"exterior_at": [10, 13], "facing": "west"},
+        }])
+        self.assertEqual(ground[13 * 32 + 9]["feature"], {
+            "type": "furniture", "id": "door_wood", "rotation": 90, "itemgroups": [],
+        })
+
+        expected_features = {
+            (7, 10): ("control_panel", 0, []),
+            (4, 13): ("equipment_rack", 270, ["loot_electronic"]),
+            (4, 15): ("chemical_rack", 270, ["first_aid"]),
+            (8, 15): ("first_aid_rack", 90, ["first_aid"]),
+            (8, 20): ("crate_wood", 90, ["cabinet_general"]),
+            (4, 21): ("barrel_radioactive_yellow", 0, []),
+            (6, 21): ("barrel_radioactive_red", 0, []),
+            (7, 21): ("light_machinery", 0, []),
+        }
+        for (x, y), (feature_id, rotation, itemgroups) in expected_features.items():
+            with self.subTest(at=(x, y)):
+                self.assertEqual(ground[y * 32 + x]["feature"], {
+                    "type": "furniture",
+                    "id": feature_id,
+                    "rotation": rotation,
+                    "itemgroups": itemgroups,
+                })
+
+        areas = {area["id"]: area for area in generated["areas"]}
+        self.assertEqual(areas["crater_debris"]["tiles"], [{"id": "null", "count": 25}])
+        self.assertEqual(areas["crater_debris"]["entities"], [
+            {"id": "debris_rock", "type": "itemgroup", "count": 1},
+        ])
+        self.assertEqual(areas["camp_patrol"]["entities"], [
+            {"id": "security_robots", "type": "mobgroup", "count": 1},
+        ])
+        self.assertEqual(areas["camp_field_nature"]["tiles"], [{"id": "null", "count": 1000}])
+
+        clear_route = [(10, 13), (11, 13), (12, 13), (13, 13), (14, 13)]
+        self.assertFalse(any(ground[y * 32 + x].get("feature") for x, y in clear_route))
+
+    def test_crater_research_camp_published_map_matches_recipe_and_validates(self):
+        recipe = json.loads(CRATER_RESEARCH_RECIPE_PATH.read_text(encoding="utf-8"))
+        generated = generate_map(recipe, TILES_PATH)
+        published = json.loads(CRATER_RESEARCH_MAP_PATH.read_text(encoding="utf-8"))
+
+        self.assertEqual(published, generated)
+        fixture_recipe = json.loads(CRATER_RESEARCH_FIXTURE_PATH.read_text(encoding="utf-8"))
+        fixture_generated = generate_map(fixture_recipe, TILES_PATH)
+        fixture_generated["id"] = generated["id"]
+        fixture_generated["name"] = generated["name"]
+        self.assertEqual(fixture_generated, generated)
+        self.assertTrue(CRATER_RESEARCH_PREVIEW_PATH.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"))
+        validator = MapValidator()
+        validator.validate_map(str(CRATER_RESEARCH_MAP_PATH))
+        self.assertEqual(validator.errors, [])
 
     def test_pine_hollow_outpost_fixture_creates_a_new_rural_two_level_location(self):
         recipe_path = ROOT / "Tools" / "examples" / "map_recipe_pine_hollow_outpost.json"

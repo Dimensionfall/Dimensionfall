@@ -1,0 +1,185 @@
+{
+	"id": "crater_research_camp",
+	"name": "Crater Research Camp",
+	"description": "An abandoned field laboratory overlooking a freshly exposed crater, with a metal research hut, hazardous sample yard, rock debris, and malfunctioning security patrols.",
+	"seed": 20260909,
+	"categories": ["Field", "Plains"],
+	"palette": {
+		"camp_field": [
+			{"id": "grass_plain_01", "weight": 12},
+			{"id": "grass_dirt_00", "weight": 4},
+			{"id": "grass_dirt_01", "weight": 3},
+			{"id": "grass_dirt_02", "weight": 3},
+			{"id": "grass_medium_dirt_00", "weight": 2},
+			{"id": "grass_flowers_00", "weight": 1}
+		],
+		"crater_floor": [
+			{"id": "rock_floor_00", "weight": 12},
+			{"id": "rock_floor_01", "weight": 3},
+			{"id": "rock_floor_02", "weight": 3},
+			{"id": "wasteland_00", "weight": 2},
+			{"id": "wasteland_01", "weight": 2},
+			{"id": "dirt_light_01", "weight": 2}
+		],
+		"crater_lip": [
+			{"id": "rocky_earth_00", "weight": 8},
+			{"id": "wasteland_02", "weight": 3},
+			{"id": "wasteland_03", "weight": 3},
+			{"id": "dirt_light_02", "weight": 2}
+		]
+	},
+	"levels": [
+		{
+			"z": -1,
+			"operations": [
+				{"type": "rectangle", "x": 12, "y": 8, "width": 12, "height": 12, "tile": {"id": "rock_floor_00"}},
+				{"type": "scatter", "region": {"x": 12, "y": 8, "width": 12, "height": 12}, "tile": {"palette": "crater_floor"}, "density": 0.35},
+				{"type": "area_rectangle", "area": "crater_debris", "x": 12, "y": 8, "width": 12, "height": 12, "rotation": 0}
+			]
+		},
+		{
+			"z": 0,
+			"base_tile": {"palette": "camp_field"},
+			"operations": [
+				{"type": "rectangle", "x": 11, "y": 7, "width": 14, "height": 14, "tile": {"id": "rocky_earth_00"}},
+				{"type": "scatter", "region": {"x": 11, "y": 7, "width": 14, "height": 14}, "tile": {"palette": "crater_lip"}, "density": 0.30},
+				{"type": "rectangle", "x": 12, "y": 8, "width": 12, "height": 12, "tile": null},
+				{"type": "set", "x": 12, "y": 13, "tile": {"id": "rock_slope_00", "rotation": 270}},
+				{"type": "rectangle", "x": 3, "y": 19, "width": 7, "height": 4, "tile": {"id": "concrete__cracked_00"}},
+				{"type": "line", "from": [9, 13], "to": [11, 13], "tile": {"id": "dirt_light_00"}},
+				{"type": "area_rectangle", "area": "camp_field_ground", "x": 0, "y": 0, "width": 32, "height": 7, "rotation": 0},
+				{"type": "area_rectangle", "area": "camp_field_ground", "x": 0, "y": 21, "width": 32, "height": 11, "rotation": 0},
+				{"type": "area_rectangle", "area": "camp_field_ground", "x": 0, "y": 7, "width": 3, "height": 14, "rotation": 0},
+				{"type": "area_rectangle", "area": "camp_field_ground", "x": 25, "y": 7, "width": 7, "height": 14, "rotation": 0},
+				{"type": "area_rectangle", "area": "camp_field_nature", "x": 0, "y": 0, "width": 32, "height": 5, "rotation": 0},
+				{"type": "area_rectangle", "area": "camp_field_nature", "x": 0, "y": 24, "width": 32, "height": 8, "rotation": 0},
+				{"type": "area_rectangle", "area": "camp_field_nature", "x": 0, "y": 5, "width": 2, "height": 19, "rotation": 0},
+				{"type": "area_rectangle", "area": "camp_field_nature", "x": 27, "y": 5, "width": 5, "height": 19, "rotation": 0},
+				{"type": "area_rectangle", "area": "camp_patrol", "x": 2, "y": 19, "width": 2, "height": 4, "rotation": 0},
+				{"type": "room_rectangle", "room": "research_hut", "x": 4, "y": 10, "width": 5, "height": 7},
+				{"type": "set", "x": 9, "y": 13, "tile": {"id": "concrete_00"}},
+				{"type": "furniture", "id": "door_wood", "x": 9, "y": 13, "rotation": 90},
+				{"type": "furniture", "id": "desk", "x": 5, "y": 10, "rotation": 0},
+				{"type": "furniture", "id": "chair_office", "x": 5, "y": 11, "rotation": 0},
+				{"type": "furniture", "id": "control_panel", "x": 7, "y": 10, "rotation": 0},
+				{"type": "furniture", "id": "ups", "x": 8, "y": 11, "rotation": 90},
+				{"type": "furniture", "id": "equipment_rack", "x": 4, "y": 13, "rotation": 270, "itemgroups": ["loot_electronic"]},
+				{"type": "furniture", "id": "chemical_rack", "x": 4, "y": 15, "rotation": 270, "itemgroups": ["first_aid"]},
+				{"type": "furniture", "id": "first_aid_rack", "x": 8, "y": 15, "rotation": 90, "itemgroups": ["first_aid"]},
+				{"type": "furniture", "id": "military_cot", "x": 6, "y": 16, "rotation": 180},
+				{"type": "furniture", "id": "table_metal", "x": 5, "y": 20, "rotation": 0},
+				{"type": "furniture", "id": "crate_wood", "x": 8, "y": 20, "rotation": 90, "itemgroups": ["cabinet_general"]},
+				{"type": "furniture", "id": "barrel_radioactive_yellow", "x": 4, "y": 21, "rotation": 0},
+				{"type": "furniture", "id": "barrel_radioactive_red", "x": 6, "y": 21, "rotation": 0},
+				{"type": "furniture", "id": "light_machinery", "x": 7, "y": 21, "rotation": 0},
+				{"type": "furniture", "id": "sandbag_barricade", "x": 3, "y": 22, "rotation": 180},
+				{"type": "furniture", "id": "sandbag_barricade", "x": 9, "y": 22, "rotation": 180}
+			]
+		},
+		{
+			"z": 2,
+			"operations": [
+				{"type": "rectangle", "x": 3, "y": 9, "width": 7, "height": 9, "tile": {"id": "concrete__cracked_00"}}
+			]
+		}
+	],
+	"connections": {
+		"north": "ground",
+		"east": "ground",
+		"south": "ground",
+		"west": "ground"
+	},
+	"areas": [
+		{
+			"id": "camp_field_ground",
+			"spawn_chance": 100,
+			"rotate_random": false,
+			"pick_one": false,
+			"tiles": [
+				{"id": "grass_plain_01", "count": 100},
+				{"id": "grass_dirt_00", "count": 15},
+				{"id": "grass_dirt_01", "count": 15},
+				{"id": "grass_dirt_02", "count": 15},
+				{"id": "grass_medium_dirt_00", "count": 1},
+				{"id": "grass_medium_dirt_01", "count": 1},
+				{"id": "grass_medium_dirt_02", "count": 1},
+				{"id": "grass_flowers_00", "count": 1},
+				{"id": "grass_flowers_01", "count": 1},
+				{"id": "grass_flowers_02", "count": 1},
+				{"id": "grass_flowers_03", "count": 1}
+			],
+			"entities": []
+		},
+		{
+			"id": "camp_field_nature",
+			"spawn_chance": 100,
+			"rotate_random": true,
+			"pick_one": false,
+			"tiles": [{"id": "null", "count": 1000}],
+			"entities": [
+				{"id": "wild_vegetation_00", "type": "furniture", "count": 20},
+				{"id": "rock_field_00", "type": "furniture", "count": 10},
+				{"id": "PineTree_00", "type": "furniture", "count": 5}
+			]
+		},
+		{
+			"id": "crater_debris",
+			"spawn_chance": 100,
+			"rotate_random": false,
+			"pick_one": false,
+			"tiles": [{"id": "null", "count": 25}],
+			"entities": [{"id": "debris_rock", "type": "itemgroup", "count": 1}]
+		},
+		{
+			"id": "camp_patrol",
+			"spawn_chance": 35,
+			"rotate_random": true,
+			"pick_one": true,
+			"tiles": [{"id": "null", "count": 100}],
+			"entities": [{"id": "security_robots", "type": "mobgroup", "count": 1}]
+		}
+	],
+	"rooms": [
+		{"id": "research_hut", "kind": "enclosed", "boundary_validation": "complete", "boundary_generation": "walls"}
+	],
+	"buildings": [
+		{
+			"id": "crater_research_hut",
+			"rooms": ["research_hut"],
+			"footprint": {"x": 3, "y": 9, "width": 7, "height": 9},
+			"z": 0,
+			"building_geometry": {
+				"floor_tile": {"id": "concrete_00"},
+				"wall_tile": {"id": "metal_wall_00"},
+				"support_tile": {"id": "dirt_light_00"},
+				"roof_tile": {"id": "concrete__cracked_00"}
+			},
+			"building_levels": [
+				{"z": 0, "rooms": ["research_hut"], "furniture_anchors": ["research_console", "sample_storage"]}
+			],
+			"interior_rooms": ["research_hut"],
+			"reachability_validation": {
+				"required_furniture_anchors": ["research_console", "sample_storage"],
+				"required_building_levels": [0]
+			},
+			"furniture_anchors": [
+				{"id": "research_console", "at": [7, 10], "z": 0, "kind": "workstation"},
+				{"id": "sample_storage", "at": [4, 15], "z": 0, "kind": "storage"}
+			]
+		}
+	],
+	"building_surfaces": [
+		{"id": "research_hut_roof", "building": "crater_research_hut", "kind": "roof", "z": 0}
+	],
+	"room_connections": [
+		{
+			"id": "research_hut_door",
+			"at": [8, 13],
+			"target_at": [9, 13],
+			"z": 0,
+			"from": {"kind": "room", "id": "research_hut"},
+			"to": {"kind": "exterior"},
+			"entrance": {"exterior_at": [10, 13], "facing": "west"}
+		}
+	]
+}
