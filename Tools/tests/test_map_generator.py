@@ -3174,6 +3174,24 @@ class MapGeneratorTests(unittest.TestCase):
         clear_route = [(10, 13), (11, 13), (12, 13), (13, 13), (14, 13)]
         self.assertFalse(any(ground[y * 32 + x].get("feature") for x, y in clear_route))
 
+    def test_crater_research_camp_has_irregular_rounded_crater(self):
+        recipe = json.loads(CRATER_RESEARCH_RECIPE_PATH.read_text(encoding="utf-8"))
+        generated = generate_map(recipe, TILES_PATH)
+        ground, floor = generated["levels"][10], generated["levels"][9]
+        spans = [(16, 19), (14, 21), (13, 22), (13, 22), (12, 23), (12, 23),
+                 (12, 23), (13, 23), (12, 22), (13, 22), (14, 21), (16, 20)]
+        basin = {(x, y) for y, (left, right) in enumerate(spans, 8)
+                 for x in range(left, right + 1)}
+        self.assertEqual({(i % 32, i // 32) for i, cell in enumerate(floor) if cell}, basin)
+        self.assertEqual({(i % 32, i // 32) for i, cell in enumerate(ground) if not cell},
+                         basin - {(12, 13)})
+        debris = {(i % 32, i // 32) for i, cell in enumerate(floor)
+                  if any(area["id"] == "crater_debris" for area in cell.get("areas", []))}
+        self.assertEqual(debris, basin)
+        for x, y in [(11, 7), (24, 7), (11, 20), (24, 20)]:
+            self.assertTrue(ground[y * 32 + x]["id"].startswith("grass_"))
+        self.assertEqual(ground[13 * 32 + 12], {"id": "rock_slope_00", "rotation": 270})
+
     def test_crater_research_camp_published_map_matches_recipe_and_validates(self):
         recipe = json.loads(CRATER_RESEARCH_RECIPE_PATH.read_text(encoding="utf-8"))
         generated = generate_map(recipe, TILES_PATH)

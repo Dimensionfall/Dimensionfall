@@ -288,42 +288,10 @@
 			{},
 			{},
 			{},
-			{
-				"id": "rock_floor_02",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "wasteland_01",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "rock_floor_00",
 				"areas": [
@@ -360,42 +328,6 @@
 					}
 				]
 			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
 			{},
 			{},
 			{},
@@ -416,24 +348,12 @@
 			{},
 			{},
 			{},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "rock_floor_00",
 				"areas": [
@@ -506,24 +426,9 @@
 					}
 				]
 			},
-			{
-				"id": "dirt_light_01",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
+			{},
+			{},
+			{},
 			{},
 			{},
 			{},
@@ -634,24 +539,6 @@
 					}
 				]
 			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
 			{},
 			{},
 			{},
@@ -672,15 +559,8 @@
 			{},
 			{},
 			{},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
+			{},
+			{},
 			{
 				"id": "rock_floor_00",
 				"areas": [
@@ -771,15 +651,7 @@
 					}
 				]
 			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
+			{},
 			{},
 			{},
 			{},
@@ -1184,15 +1056,7 @@
 			{},
 			{},
 			{},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
+			{},
 			{
 				"id": "rock_floor_00",
 				"areas": [
@@ -1411,15 +1275,6 @@
 					}
 				]
 			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
 			{},
 			{},
 			{},
@@ -1440,15 +1295,8 @@
 			{},
 			{},
 			{},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
+			{},
+			{},
 			{
 				"id": "rock_floor_00",
 				"areas": [
@@ -1539,15 +1387,6 @@
 					}
 				]
 			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
 			{},
 			{},
 			{},
@@ -1568,24 +1407,9 @@
 			{},
 			{},
 			{},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
+			{},
+			{},
+			{},
 			{
 				"id": "rock_floor_02",
 				"areas": [
@@ -1658,24 +1482,6 @@
 					}
 				]
 			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
 			{},
 			{},
 			{},
@@ -1696,42 +1502,12 @@
 			{},
 			{},
 			{},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "wasteland_01",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "rock_floor_00",
 				"areas": [
@@ -1777,33 +1553,9 @@
 					}
 				]
 			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
+			{},
+			{},
+			{},
 			{},
 			{},
 			{},
@@ -4970,7 +4722,16 @@
 				"id": "grass_plain_01"
 			},
 			{
-				"id": "rocky_earth_00"
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
+				"id": "grass_plain_01"
 			},
 			{
 				"id": "rocky_earth_00"
@@ -4985,31 +4746,22 @@
 				"id": "rocky_earth_00"
 			},
 			{
-				"id": "rocky_earth_00"
+				"id": "wasteland_03"
 			},
 			{
-				"id": "rocky_earth_00"
+				"id": "wasteland_02"
 			},
 			{
-				"id": "rocky_earth_00"
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "dirt_light_02"
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "rocky_earth_00"
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "rocky_earth_00"
-			},
-			{
-				"id": "rocky_earth_00"
-			},
-			{
-				"id": "rocky_earth_00"
-			},
-			{
-				"id": "rocky_earth_00"
+				"id": "grass_dirt_01"
 			},
 			{
 				"id": "grass_plain_01",
@@ -5154,22 +4906,38 @@
 				"id": "grass_plain_01"
 			},
 			{
-				"id": "rocky_earth_00"
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "wasteland_03"
+			},
+			{
+				"id": "wasteland_02"
+			},
+			{
+				"id": "dirt_light_02"
 			},
 			{},
 			{},
 			{},
 			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
+			{
+				"id": "wasteland_02"
+			},
 			{
 				"id": "rocky_earth_00"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "grass_dirt_01"
 			},
 			{
 				"id": "grass_plain_01",
@@ -5314,12 +5082,14 @@
 				"id": "grass_plain_01"
 			},
 			{
+				"id": "grass_dirt_00"
+			},
+			{
 				"id": "rocky_earth_00"
 			},
-			{},
-			{},
-			{},
-			{},
+			{
+				"id": "wasteland_02"
+			},
 			{},
 			{},
 			{},
@@ -5330,6 +5100,12 @@
 			{},
 			{
 				"id": "dirt_light_02"
+			},
+			{
+				"id": "wasteland_03"
+			},
+			{
+				"id": "grass_dirt_01"
 			},
 			{
 				"id": "grass_plain_01",
@@ -5501,6 +5277,9 @@
 				"id": "grass_plain_01"
 			},
 			{
+				"id": "grass_dirt_00"
+			},
+			{
 				"id": "rocky_earth_00"
 			},
 			{},
@@ -5513,8 +5292,9 @@
 			{},
 			{},
 			{},
-			{},
-			{},
+			{
+				"id": "rocky_earth_00"
+			},
 			{
 				"id": "rocky_earth_00"
 			},
@@ -5690,8 +5470,9 @@
 			{
 				"id": "rocky_earth_00"
 			},
-			{},
-			{},
+			{
+				"id": "rocky_earth_00"
+			},
 			{},
 			{},
 			{},
@@ -5703,7 +5484,10 @@
 			{},
 			{},
 			{
-				"id": "rocky_earth_00"
+				"id": "dirt_light_02"
+			},
+			{
+				"id": "wasteland_02"
 			},
 			{
 				"id": "grass_plain_01",
@@ -5863,7 +5647,7 @@
 				"id": "grass_plain_01"
 			},
 			{
-				"id": "rocky_earth_00"
+				"id": "wasteland_02"
 			},
 			{},
 			{},
@@ -5878,7 +5662,7 @@
 			{},
 			{},
 			{
-				"id": "rocky_earth_00"
+				"id": "wasteland_02"
 			},
 			{
 				"id": "grass_flowers_00",
@@ -6070,7 +5854,7 @@
 			{},
 			{},
 			{
-				"id": "rocky_earth_00"
+				"id": "wasteland_02"
 			},
 			{
 				"id": "grass_plain_01",
@@ -6230,7 +6014,7 @@
 				"id": "grass_dirt_00"
 			},
 			{
-				"id": "rocky_earth_00"
+				"id": "wasteland_03"
 			},
 			{},
 			{},
@@ -6245,7 +6029,7 @@
 			{},
 			{},
 			{
-				"id": "rocky_earth_00"
+				"id": "wasteland_02"
 			},
 			{
 				"id": "grass_plain_01",
@@ -6421,7 +6205,10 @@
 				"id": "grass_plain_01"
 			},
 			{
-				"id": "rocky_earth_00"
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "dirt_light_02"
 			},
 			{},
 			{},
@@ -6434,9 +6221,8 @@
 			{},
 			{},
 			{},
-			{},
 			{
-				"id": "rocky_earth_00"
+				"id": "wasteland_02"
 			},
 			{
 				"id": "grass_plain_01",
@@ -6602,9 +6388,8 @@
 				"id": "grass_dirt_00"
 			},
 			{
-				"id": "rocky_earth_00"
+				"id": "dirt_light_02"
 			},
-			{},
 			{},
 			{},
 			{},
@@ -6618,6 +6403,9 @@
 			{},
 			{
 				"id": "rocky_earth_00"
+			},
+			{
+				"id": "dirt_light_02"
 			},
 			{
 				"id": "grass_medium_dirt_00",
@@ -6762,6 +6550,9 @@
 				"id": "grass_dirt_02"
 			},
 			{
+				"id": "grass_dirt_00"
+			},
+			{
 				"id": "rocky_earth_00"
 			},
 			{},
@@ -6774,10 +6565,11 @@
 			{},
 			{},
 			{},
-			{},
-			{},
 			{
 				"id": "rocky_earth_00"
+			},
+			{
+				"id": "grass_medium_dirt_00"
 			},
 			{
 				"id": "grass_dirt_00",
@@ -6922,6 +6714,12 @@
 				"id": "grass_plain_01"
 			},
 			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "grass_dirt_02"
+			},
+			{
 				"id": "rocky_earth_00"
 			},
 			{},
@@ -6932,12 +6730,14 @@
 			{},
 			{},
 			{},
-			{},
-			{},
-			{},
-			{},
 			{
-				"id": "rocky_earth_00"
+				"id": "wasteland_02"
+			},
+			{
+				"id": "dirt_light_02"
+			},
+			{
+				"id": "grass_plain_01"
 			},
 			{
 				"id": "grass_plain_01",
@@ -7092,6 +6892,18 @@
 				"id": "grass_plain_01"
 			},
 			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "rocky_earth_00"
+			},
+			{
 				"id": "wasteland_03"
 			},
 			{},
@@ -7099,15 +6911,17 @@
 			{},
 			{},
 			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
 			{
 				"id": "rocky_earth_00"
+			},
+			{
+				"id": "wasteland_03"
+			},
+			{
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "grass_dirt_01"
 			},
 			{
 				"id": "grass_dirt_00",
@@ -7276,7 +7090,22 @@
 				"id": "grass_plain_01"
 			},
 			{
-				"id": "rocky_earth_00"
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_plain_01"
+			},
+			{
+				"id": "grass_dirt_01"
+			},
+			{
+				"id": "grass_medium_dirt_00"
+			},
+			{
+				"id": "wasteland_02"
 			},
 			{
 				"id": "rocky_earth_00"
@@ -7285,37 +7114,22 @@
 				"id": "rocky_earth_00"
 			},
 			{
-				"id": "rocky_earth_00"
+				"id": "wasteland_02"
 			},
 			{
-				"id": "rocky_earth_00"
-			},
-			{
-				"id": "rocky_earth_00"
+				"id": "wasteland_02"
 			},
 			{
 				"id": "wasteland_03"
 			},
 			{
-				"id": "rocky_earth_00"
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "wasteland_03"
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "rocky_earth_00"
-			},
-			{
-				"id": "rocky_earth_00"
-			},
-			{
-				"id": "rocky_earth_00"
-			},
-			{
-				"id": "rocky_earth_00"
-			},
-			{
-				"id": "rocky_earth_00"
+				"id": "grass_dirt_02"
 			},
 			{
 				"id": "grass_dirt_00",

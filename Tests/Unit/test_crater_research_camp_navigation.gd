@@ -30,14 +30,21 @@ func test_crater_research_camp_connects_hut_rim_and_crater_floor() -> void:
 
 
 func _populate_camp_geometry() -> void:
-	for x in range(0, 32):
-		for z in range(0, 32):
-			if not Rect2i(12, 8, 12, 12).has_point(Vector2i(x, z)):
-				fixture.add_block(Vector3(x, 0, z))
-	for x in range(12, 24):
-		for z in range(8, 20):
-			fixture.add_block(Vector3(x, -1, z))
-	fixture.add_block(Vector3(12, 0, 13), "slope", 270)
+	var map_data: Dictionary = JSON.parse_string(
+		FileAccess.get_file_as_string("res://Mods/Dimensionfall/Maps/crater_research_camp.json")
+	)
+	for level_index in [9, 10]:
+		var cells: Array = map_data["levels"][level_index]
+		for index in range(cells.size()):
+			var cell: Dictionary = cells[index]
+			if not cell.has("id"):
+				continue
+			var shape := "slope" if cell["id"] == "rock_slope_00" else "cube"
+			fixture.add_block(
+				Vector3(index % 32, level_index - 10, floori(index / 32.0)),
+				shape,
+				int(cell.get("rotation", 0))
+			)
 
 	for x in range(3, 10):
 		fixture.add_wall_obstacle(Vector3(x, 1, 9))
