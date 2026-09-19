@@ -3137,6 +3137,10 @@ class MapGeneratorTests(unittest.TestCase):
         self.assertEqual(ground[13 * 32 + 9]["feature"], {
             "type": "furniture", "id": "door_wood", "rotation": 90, "itemgroups": [],
         })
+        for y in range(21, 23):
+            for x in range(3, 10):
+                with self.subTest(field_ground_exclusion=(x, y)):
+                    self.assertNotIn("camp_field_ground", [area["id"] for area in ground[y * 32 + x].get("areas", [])])
 
         expected_features = {
             (7, 10): ("control_panel", 0, []),

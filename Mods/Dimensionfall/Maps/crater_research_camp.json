@@ -7443,10 +7443,6 @@
 				"id": "concrete__cracked_00",
 				"areas": [
 					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					},
-					{
 						"id": "camp_patrol",
 						"rotation": 0
 					}
@@ -7454,12 +7450,6 @@
 			},
 			{
 				"id": "concrete__cracked_00",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					}
-				],
 				"feature": {
 					"type": "furniture",
 					"id": "barrel_radioactive_yellow",
@@ -7468,22 +7458,10 @@
 				}
 			},
 			{
-				"id": "concrete__cracked_00",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					}
-				]
+				"id": "concrete__cracked_00"
 			},
 			{
 				"id": "concrete__cracked_00",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					}
-				],
 				"feature": {
 					"type": "furniture",
 					"id": "barrel_radioactive_red",
@@ -7493,12 +7471,6 @@
 			},
 			{
 				"id": "concrete__cracked_00",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					}
-				],
 				"feature": {
 					"type": "furniture",
 					"id": "light_machinery",
@@ -7507,22 +7479,10 @@
 				}
 			},
 			{
-				"id": "concrete__cracked_00",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					}
-				]
+				"id": "concrete__cracked_00"
 			},
 			{
-				"id": "concrete__cracked_00",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					}
-				]
+				"id": "concrete__cracked_00"
 			},
 			{
 				"id": "grass_plain_01",
@@ -7785,10 +7745,6 @@
 				"id": "concrete__cracked_00",
 				"areas": [
 					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					},
-					{
 						"id": "camp_patrol",
 						"rotation": 0
 					}
@@ -7801,58 +7757,22 @@
 				}
 			},
 			{
-				"id": "concrete__cracked_00",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					}
-				]
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
+			},
+			{
+				"id": "concrete__cracked_00"
 			},
 			{
 				"id": "concrete__cracked_00",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "concrete__cracked_00",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "concrete__cracked_00",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "concrete__cracked_00",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "concrete__cracked_00",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					}
-				],
 				"feature": {
 					"type": "furniture",
 					"id": "sandbag_barricade",
