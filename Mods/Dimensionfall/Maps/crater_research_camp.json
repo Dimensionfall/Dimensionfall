@@ -1,14 +1,219 @@
 {
-	"id": "crater_research_camp",
-	"name": "Crater Research Camp",
-	"description": "An abandoned field laboratory overlooking a freshly exposed crater, with a metal research hut, hazardous sample yard, rock debris, and malfunctioning security patrols.",
+	"areas": [
+		{
+			"entities": [],
+			"id": "camp_field_ground",
+			"pick_one": false,
+			"rotate_random": false,
+			"spawn_chance": 100,
+			"tiles": [
+				{
+					"count": 100,
+					"id": "grass_plain_01"
+				},
+				{
+					"count": 15,
+					"id": "grass_dirt_00"
+				},
+				{
+					"count": 15,
+					"id": "grass_dirt_01"
+				},
+				{
+					"count": 15,
+					"id": "grass_dirt_02"
+				},
+				{
+					"count": 1,
+					"id": "grass_medium_dirt_00"
+				},
+				{
+					"count": 1,
+					"id": "grass_medium_dirt_01"
+				},
+				{
+					"count": 1,
+					"id": "grass_medium_dirt_02"
+				},
+				{
+					"count": 1,
+					"id": "grass_flowers_00"
+				},
+				{
+					"count": 1,
+					"id": "grass_flowers_01"
+				},
+				{
+					"count": 1,
+					"id": "grass_flowers_02"
+				},
+				{
+					"count": 1,
+					"id": "grass_flowers_03"
+				}
+			]
+		},
+		{
+			"entities": [
+				{
+					"count": 20,
+					"id": "wild_vegetation_00",
+					"type": "furniture"
+				},
+				{
+					"count": 10,
+					"id": "rock_field_00",
+					"type": "furniture"
+				},
+				{
+					"count": 5,
+					"id": "PineTree_00",
+					"type": "furniture"
+				}
+			],
+			"id": "camp_field_nature",
+			"pick_one": false,
+			"rotate_random": true,
+			"spawn_chance": 100,
+			"tiles": [
+				{
+					"count": 1000,
+					"id": "null"
+				}
+			]
+		},
+		{
+			"entities": [
+				{
+					"count": 1,
+					"id": "debris_rock",
+					"type": "itemgroup"
+				}
+			],
+			"id": "crater_debris",
+			"pick_one": false,
+			"rotate_random": false,
+			"spawn_chance": 100,
+			"tiles": [
+				{
+					"count": 25,
+					"id": "null"
+				}
+			]
+		},
+		{
+			"entities": [
+				{
+					"count": 1,
+					"id": "security_robots",
+					"type": "mobgroup"
+				}
+			],
+			"id": "camp_patrol",
+			"pick_one": true,
+			"rotate_random": true,
+			"spawn_chance": 35,
+			"tiles": [
+				{
+					"count": 100,
+					"id": "null"
+				}
+			]
+		}
+	],
+	"building_surfaces": [
+		{
+			"building": "crater_research_hut",
+			"id": "research_hut_roof",
+			"kind": "roof",
+			"z": 0
+		}
+	],
+	"buildings": [
+		{
+			"building_geometry": {
+				"floor_tile": {
+					"id": "concrete_00"
+				},
+				"roof_tile": {
+					"id": "concrete__cracked_00"
+				},
+				"support_tile": {
+					"id": "dirt_light_00"
+				},
+				"wall_tile": {
+					"id": "metal_wall_00"
+				}
+			},
+			"building_levels": [
+				{
+					"furniture_anchors": [
+						"research_console",
+						"sample_storage"
+					],
+					"rooms": [
+						"research_hut"
+					],
+					"z": 0
+				}
+			],
+			"footprint": {
+				"height": 9,
+				"width": 7,
+				"x": 3,
+				"y": 9
+			},
+			"furniture_anchors": [
+				{
+					"at": [
+						7,
+						10
+					],
+					"id": "research_console",
+					"kind": "workstation",
+					"z": 0
+				},
+				{
+					"at": [
+						4,
+						15
+					],
+					"id": "sample_storage",
+					"kind": "storage",
+					"z": 0
+				}
+			],
+			"id": "crater_research_hut",
+			"interior_rooms": [
+				"research_hut"
+			],
+			"reachability_validation": {
+				"required_building_levels": [
+					0
+				],
+				"required_furniture_anchors": [
+					"research_console",
+					"sample_storage"
+				]
+			},
+			"rooms": [
+				"research_hut"
+			],
+			"z": 0
+		}
+	],
 	"categories": [
 		"Field",
 		"Plains"
 	],
-	"weight": 1000,
-	"mapwidth": 32,
-	"mapheight": 32,
+	"connections": {
+		"east": "ground",
+		"north": "ground",
+		"south": "ground",
+		"west": "ground"
+	},
+	"description": "An abandoned field laboratory overlooking a freshly exposed crater, with a metal research hut, hazardous sample yard, rock debris, and malfunctioning security patrols.",
+	"id": "crater_research_camp",
 	"levels": [
 		[],
 		[],
@@ -608,22 +813,22 @@
 				"id": "dirt_light_01"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "dirt_light_01",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "dirt_light_01"
 			},
 			{
 				"id": "rock_floor_00"
@@ -1706,22 +1911,22 @@
 				"id": "rock_floor_00"
 			},
 			{
-				"id": "wasteland_01",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "wasteland_01"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
 				"id": "rock_floor_00"
@@ -1769,40 +1974,40 @@
 				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "wasteland_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "wasteland_00"
 			},
 			{
 				"id": "rock_floor_00"
@@ -1901,33 +2106,33 @@
 				"id": "wasteland_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_02",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_02"
 			},
 			{},
 			{},
 			{
-				"id": "rock_floor_02",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_02"
 			},
 			{
 				"id": "rock_floor_00"
@@ -1972,42 +2177,39 @@
 				"id": "rock_floor_02"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "dirt_light_01",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "dirt_light_01"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
-			},
-			{
+				],
 				"id": "rock_floor_00"
 			},
 			{
@@ -2016,32 +2218,29 @@
 			{
 				"id": "rock_floor_00"
 			},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
 			{
 				"id": "rock_floor_00"
 			},
-			{
-				"id": "rock_floor_01"
-			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{
 				"id": "rock_floor_00"
 			},
@@ -2049,40 +2248,46 @@
 				"id": "rock_floor_01"
 			},
 			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "wasteland_01",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
+				"id": "rock_floor_01"
 			},
 			{
-				"id": "wasteland_01",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_01",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "wasteland_01"
+			},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "wasteland_01"
+			},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_01"
 			},
 			{
 				"id": "rock_floor_00"
@@ -2131,13 +2336,13 @@
 				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
 				"id": "rock_floor_02"
@@ -3003,49 +3208,49 @@
 				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_01",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_01"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_01",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_01"
 			},
 			{
-				"id": "rock_floor_01",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_01"
 			},
 			{
-				"id": "dirt_light_01",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "dirt_light_01"
 			},
 			{
 				"id": "rock_floor_01"
@@ -3082,51 +3287,51 @@
 				"id": "dirt_light_01"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_01",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_01"
 			},
 			{
-				"id": "rock_floor_01",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_01"
 			},
 			{},
 			{},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
 				"id": "rock_floor_00"
@@ -3159,44 +3364,44 @@
 				"id": "dirt_light_01"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{},
 			{},
 			{},
 			{},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
 				"id": "rock_floor_00"
@@ -3245,22 +3450,22 @@
 			{},
 			{},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "dirt_light_01",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "dirt_light_01"
 			},
 			{
 				"id": "rock_floor_00"
@@ -3292,47 +3497,21 @@
 				"id": "rock_floor_02"
 			},
 			{
-				"id": "rock_floor_02",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_02"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
-			},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{
-				"id": "wasteland_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
+				],
 				"id": "rock_floor_00"
 			},
 			{},
@@ -3340,6 +3519,32 @@
 			{},
 			{},
 			{},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "wasteland_00"
+			},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_00"
+			},
+			{
+				"id": "rock_floor_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
 			{},
 			{},
 			{},
@@ -3363,35 +3568,35 @@
 				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{},
 			{},
 			{},
 			{},
 			{
-				"id": "wasteland_01",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "wasteland_01"
 			},
 			{
 				"id": "rock_floor_01"
@@ -3426,44 +3631,44 @@
 				"id": "wasteland_00"
 			},
 			{
-				"id": "dirt_light_01",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "dirt_light_01"
 			},
 			{
-				"id": "rock_floor_02",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_02"
 			},
 			{},
 			{},
 			{},
 			{},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "dirt_light_01",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "dirt_light_01"
 			},
 			{
 				"id": "rock_floor_00"
@@ -3497,50 +3702,50 @@
 				"id": "wasteland_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_02",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_02"
 			},
 			{},
 			{
-				"id": "dirt_light_01",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "dirt_light_01"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
 				"id": "rock_floor_02"
@@ -3581,31 +3786,31 @@
 				"id": "rock_floor_02"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
 				"id": "rock_floor_02"
@@ -4324,138 +4529,40 @@
 			{},
 			{},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "wasteland_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
-			},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "dirt_light_01",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
+				],
+				"id": "wasteland_00"
 			},
 			{},
 			{},
@@ -4480,111 +4587,80 @@
 			{},
 			{},
 			{},
+			{},
+			{},
+			{},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
-			},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
+				],
+				"id": "dirt_light_01"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
-			},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
 			{
-				"id": "rock_floor_02",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
+			},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_00"
+			},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_00"
 			},
 			{},
 			{},
@@ -4607,23 +4683,152 @@
 			{},
 			{},
 			{},
+			{},
+			{},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
+			},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_00"
+			},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_00"
+			},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_02"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_00"
+			},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_00"
 			},
 			{},
 			{},
@@ -4634,22 +4839,22 @@
 			{},
 			{},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{},
 			{},
@@ -4690,13 +4895,13 @@
 			{},
 			{},
 			{
-				"id": "rock_floor_02",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_02"
 			},
 			{},
 			{},
@@ -4719,40 +4924,22 @@
 			{},
 			{},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_02",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
-			},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
+				],
+				"id": "rock_floor_02"
 			},
 			{},
 			{},
@@ -4763,115 +4950,14 @@
 			{},
 			{},
 			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_01",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
-			},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{},
 			{},
@@ -4894,24 +4980,23 @@
 			{},
 			{},
 			{},
-			{},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{},
 			{},
@@ -4919,23 +5004,79 @@
 			{},
 			{},
 			{},
+			{},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_01"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_00"
+			},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_00"
 			},
 			{},
 			{},
@@ -4959,54 +5100,47 @@
 			{},
 			{},
 			{},
-			{},
 			{
-				"id": "rock_floor_02",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_02",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
-			},
-			{
-				"id": "rock_floor_00",
-				"areas": [
-					{
-						"id": "crater_debris",
-						"rotation": 0
-					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{},
 			{},
 			{},
+			{},
+			{},
+			{},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{},
 			{},
@@ -5031,53 +5165,124 @@
 			{},
 			{},
 			{},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_02"
+			},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_02"
+			},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_00"
+			},
 			{},
 			{},
 			{},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_00",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
 			},
 			{
-				"id": "rock_floor_01",
 				"areas": [
 					{
 						"id": "crater_debris",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "rock_floor_00"
+			},
+			{
+				"areas": [
+					{
+						"id": "crater_debris",
+						"rotation": 0
+					}
+				],
+				"id": "rock_floor_01"
 			},
 			{},
 			{},
@@ -5477,7 +5682,6 @@
 		],
 		[
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5487,10 +5691,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5500,10 +5704,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5513,10 +5717,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5526,10 +5730,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5539,10 +5743,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5552,10 +5756,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5565,10 +5769,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5578,10 +5782,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5591,10 +5795,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5604,10 +5808,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5617,10 +5821,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5630,10 +5834,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5643,10 +5847,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5656,10 +5860,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5669,10 +5873,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5682,10 +5886,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5695,10 +5899,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5708,10 +5912,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5721,10 +5925,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5734,10 +5938,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5747,10 +5951,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5760,10 +5964,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5773,10 +5977,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5786,10 +5990,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5799,10 +6003,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5812,10 +6016,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5825,10 +6029,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5838,10 +6042,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5851,10 +6055,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5864,10 +6068,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5877,10 +6081,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5890,10 +6094,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5903,10 +6107,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5916,10 +6120,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5929,10 +6133,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5942,10 +6146,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5955,10 +6159,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5968,10 +6172,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5981,10 +6185,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -5994,10 +6198,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6007,10 +6211,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6020,10 +6224,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6033,10 +6237,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6046,10 +6250,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6059,10 +6263,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6072,10 +6276,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6085,10 +6289,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6098,10 +6302,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6111,10 +6315,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6124,10 +6328,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6137,10 +6341,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6150,10 +6354,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6163,10 +6367,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6176,10 +6380,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6189,10 +6393,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6202,10 +6406,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6215,10 +6419,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6228,10 +6432,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6241,10 +6445,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6254,10 +6458,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6267,10 +6471,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6280,10 +6484,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6293,10 +6497,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6306,10 +6510,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6319,10 +6523,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6332,10 +6536,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6345,10 +6549,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6358,10 +6562,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6371,10 +6575,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6384,10 +6588,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6397,10 +6601,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6410,10 +6614,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6423,10 +6627,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6436,10 +6640,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6449,10 +6653,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6462,10 +6666,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6475,10 +6679,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6488,10 +6692,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6501,10 +6705,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6514,10 +6718,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6527,10 +6731,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6540,10 +6744,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6553,10 +6757,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6566,10 +6770,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6579,10 +6783,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6592,10 +6796,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6605,10 +6809,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6618,10 +6822,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6631,10 +6835,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6644,10 +6848,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6657,10 +6861,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6670,10 +6874,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6683,10 +6887,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6696,10 +6900,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6709,10 +6913,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6722,10 +6926,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6735,10 +6939,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6748,10 +6952,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6761,10 +6965,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6774,10 +6978,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6787,10 +6991,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6800,10 +7004,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6813,10 +7017,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6826,10 +7030,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6839,10 +7043,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6852,10 +7056,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6865,10 +7069,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6878,10 +7082,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6891,10 +7095,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6904,10 +7108,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6917,10 +7121,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6930,10 +7134,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6943,10 +7147,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6956,10 +7160,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6969,10 +7173,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6982,10 +7186,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -6995,10 +7199,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7008,10 +7212,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7021,10 +7225,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7034,10 +7238,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7047,10 +7251,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7060,10 +7264,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7073,10 +7277,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7086,10 +7290,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7099,10 +7303,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7112,10 +7316,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7125,10 +7329,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7138,10 +7342,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7151,10 +7355,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7164,10 +7368,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7177,10 +7381,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7190,10 +7394,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7203,10 +7407,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7216,10 +7420,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7229,10 +7433,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7242,10 +7446,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7255,10 +7459,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7268,10 +7472,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7281,10 +7485,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7294,10 +7498,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7307,10 +7511,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7320,10 +7524,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7333,10 +7537,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7346,10 +7550,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7359,10 +7563,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7372,10 +7576,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7385,10 +7589,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7398,10 +7602,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7411,10 +7615,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7424,10 +7628,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7437,10 +7641,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7450,10 +7654,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7463,10 +7667,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7476,10 +7680,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7489,10 +7693,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7502,10 +7706,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7515,10 +7719,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7528,10 +7732,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7541,10 +7745,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7554,10 +7758,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7567,10 +7771,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7580,235 +7784,235 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7818,10 +8022,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7831,10 +8035,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7844,10 +8048,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7857,10 +8061,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7870,10 +8074,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7883,10 +8087,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -7896,235 +8100,235 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8134,10 +8338,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8147,10 +8351,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8160,10 +8364,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8173,10 +8377,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8186,10 +8390,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8199,10 +8403,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8212,16 +8416,17 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
 				"id": "grass_dirt_02"
@@ -8290,25 +8495,24 @@
 				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8318,10 +8522,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8331,10 +8535,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8344,10 +8548,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8357,10 +8561,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8370,10 +8574,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8383,10 +8587,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8396,16 +8600,17 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
 				"id": "grass_plain_01"
@@ -8466,25 +8671,24 @@
 				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8494,10 +8698,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8507,10 +8711,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8520,10 +8724,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8533,10 +8737,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8546,10 +8750,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8559,10 +8763,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8572,16 +8776,17 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
 				"id": "dirt_light_00"
@@ -8634,25 +8839,24 @@
 				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8662,10 +8866,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8675,10 +8879,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8688,10 +8892,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8701,10 +8905,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8714,10 +8918,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8727,10 +8931,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8740,16 +8944,17 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
 				"id": "dirt_light_00"
@@ -8761,18 +8966,12 @@
 				]
 			},
 			{
-				"id": "concrete_00",
-				"rooms": [
-					"research_hut"
-				],
 				"feature": {
-					"type": "furniture",
 					"id": "desk",
+					"itemgroups": [],
 					"rotation": 0,
-					"itemgroups": []
-				}
-			},
-			{
+					"type": "furniture"
+				},
 				"id": "concrete_00",
 				"rooms": [
 					"research_hut"
@@ -8782,13 +8981,19 @@
 				"id": "concrete_00",
 				"rooms": [
 					"research_hut"
-				],
+				]
+			},
+			{
 				"feature": {
-					"type": "furniture",
 					"id": "control_panel",
+					"itemgroups": [],
 					"rotation": 0,
-					"itemgroups": []
-				}
+					"type": "furniture"
+				},
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
 			},
 			{
 				"id": "concrete_00",
@@ -8825,25 +9030,24 @@
 				"id": "rocky_earth_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8853,10 +9057,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8866,10 +9070,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8879,10 +9083,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8892,10 +9096,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8905,10 +9109,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8918,10 +9122,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -8931,16 +9135,17 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
 				"id": "dirt_light_00"
@@ -8952,18 +9157,12 @@
 				]
 			},
 			{
-				"id": "concrete_00",
-				"rooms": [
-					"research_hut"
-				],
 				"feature": {
-					"type": "furniture",
 					"id": "chair_office",
+					"itemgroups": [],
 					"rotation": 0,
-					"itemgroups": []
-				}
-			},
-			{
+					"type": "furniture"
+				},
 				"id": "concrete_00",
 				"rooms": [
 					"research_hut"
@@ -8979,13 +9178,19 @@
 				"id": "concrete_00",
 				"rooms": [
 					"research_hut"
-				],
+				]
+			},
+			{
 				"feature": {
-					"type": "furniture",
 					"id": "ups",
+					"itemgroups": [],
 					"rotation": 90,
-					"itemgroups": []
-				}
+					"type": "furniture"
+				},
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
 			},
 			{
 				"id": "dirt_light_00"
@@ -9016,25 +9221,24 @@
 				"id": "wasteland_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9044,10 +9248,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9057,10 +9261,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9070,10 +9274,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9083,10 +9287,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9096,10 +9300,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9109,10 +9313,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9122,16 +9326,17 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
 				"id": "dirt_light_00"
@@ -9191,25 +9396,24 @@
 				"id": "wasteland_02"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9219,10 +9423,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9232,10 +9436,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9245,10 +9449,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9258,10 +9462,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9271,10 +9475,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9284,10 +9488,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9297,35 +9501,30 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
 				"id": "dirt_light_00"
 			},
 			{
-				"id": "concrete_00",
-				"rooms": [
-					"research_hut"
-				],
 				"feature": {
-					"type": "furniture",
 					"id": "equipment_rack",
-					"rotation": 270,
 					"itemgroups": [
 						"loot_electronic"
-					]
-				}
-			},
-			{
+					],
+					"rotation": 270,
+					"type": "furniture"
+				},
 				"id": "concrete_00",
 				"rooms": [
 					"research_hut"
@@ -9351,12 +9550,18 @@
 			},
 			{
 				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
 				"feature": {
-					"type": "furniture",
 					"id": "door_wood",
+					"itemgroups": [],
 					"rotation": 90,
-					"itemgroups": []
-				}
+					"type": "furniture"
+				},
+				"id": "concrete_00"
 			},
 			{
 				"id": "dirt_light_00"
@@ -9383,25 +9588,24 @@
 				"id": "wasteland_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9411,10 +9615,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9424,10 +9628,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9437,10 +9641,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9450,10 +9654,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9463,10 +9667,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9476,10 +9680,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9489,16 +9693,17 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
 				"id": "dirt_light_00"
@@ -9558,25 +9763,24 @@
 				"id": "wasteland_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9586,10 +9790,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9599,10 +9803,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9612,10 +9816,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9625,10 +9829,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9638,10 +9842,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9651,10 +9855,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9664,35 +9868,30 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
 				"id": "dirt_light_00"
 			},
 			{
-				"id": "concrete_00",
-				"rooms": [
-					"research_hut"
-				],
 				"feature": {
-					"type": "furniture",
 					"id": "chemical_rack",
+					"itemgroups": [
+						"first_aid"
+					],
 					"rotation": 270,
-					"itemgroups": [
-						"first_aid"
-					]
-				}
-			},
-			{
+					"type": "furniture"
+				},
 				"id": "concrete_00",
 				"rooms": [
 					"research_hut"
@@ -9714,15 +9913,21 @@
 				"id": "concrete_00",
 				"rooms": [
 					"research_hut"
-				],
+				]
+			},
+			{
 				"feature": {
-					"type": "furniture",
 					"id": "first_aid_rack",
-					"rotation": 90,
 					"itemgroups": [
 						"first_aid"
-					]
-				}
+					],
+					"rotation": 90,
+					"type": "furniture"
+				},
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
 			},
 			{
 				"id": "dirt_light_00"
@@ -9751,149 +9956,149 @@
 				"id": "wasteland_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
-			},
-			{
-				"id": "grass_plain_01",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "grass_dirt_02",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					},
-					{
-						"id": "camp_field_nature",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "grass_plain_01",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					},
-					{
-						"id": "camp_field_nature",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "grass_plain_01",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					},
-					{
-						"id": "camp_field_nature",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "grass_dirt_02",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					},
-					{
-						"id": "camp_field_nature",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "grass_dirt_00",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					},
-					{
-						"id": "camp_field_nature",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "grass_dirt_01",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					},
-					{
-						"id": "camp_field_nature",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "grass_dirt_00",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					},
-					{
-						"id": "camp_field_nature",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "grass_dirt_00",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "dirt_light_00"
-			},
-			{
-				"id": "concrete_00",
-				"rooms": [
-					"research_hut"
-				]
-			},
-			{
-				"id": "concrete_00",
-				"rooms": [
-					"research_hut"
-				]
-			},
-			{
-				"id": "concrete_00",
-				"rooms": [
-					"research_hut"
 				],
+				"id": "grass_plain_01"
+			},
+			{
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				],
+				"id": "grass_plain_01"
+			},
+			{
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				],
+				"id": "grass_dirt_02"
+			},
+			{
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				],
+				"id": "grass_plain_01"
+			},
+			{
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				],
+				"id": "grass_plain_01"
+			},
+			{
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				],
+				"id": "grass_dirt_02"
+			},
+			{
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				],
+				"id": "grass_dirt_00"
+			},
+			{
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				],
+				"id": "grass_dirt_01"
+			},
+			{
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				],
+				"id": "grass_dirt_00"
+			},
+			{
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					}
+				],
+				"id": "grass_dirt_00"
+			},
+			{
+				"id": "dirt_light_00"
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
+			},
+			{
 				"feature": {
-					"type": "furniture",
 					"id": "military_cot",
+					"itemgroups": [],
 					"rotation": 180,
-					"itemgroups": []
-				}
+					"type": "furniture"
+				},
+				"id": "concrete_00",
+				"rooms": [
+					"research_hut"
+				]
 			},
 			{
 				"id": "concrete_00",
@@ -9934,25 +10139,24 @@
 				"id": "dirt_light_02"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9962,10 +10166,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9975,10 +10179,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -9988,10 +10192,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10001,10 +10205,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10014,10 +10218,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10027,10 +10231,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10040,16 +10244,17 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
 				"id": "dirt_light_00"
@@ -10098,25 +10303,24 @@
 				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10126,10 +10330,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10139,10 +10343,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10152,10 +10356,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10165,10 +10369,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10178,10 +10382,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10191,10 +10395,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10204,16 +10408,17 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
 				"id": "grass_dirt_02"
@@ -10266,38 +10471,24 @@
 				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_flowers_00",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					},
-					{
-						"id": "camp_field_nature",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10307,10 +10498,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10320,10 +10511,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10333,10 +10524,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10346,10 +10537,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10359,10 +10550,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10372,10 +10563,23 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				],
+				"id": "grass_plain_01"
+			},
+			{
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10385,16 +10589,17 @@
 						"id": "camp_patrol",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "concrete__cracked_00",
 				"areas": [
 					{
 						"id": "camp_patrol",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "concrete__cracked_00"
 			},
 			{
 				"id": "concrete__cracked_00"
@@ -10450,38 +10655,24 @@
 				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					},
-					{
-						"id": "camp_field_nature",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10491,10 +10682,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10504,10 +10695,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10517,10 +10708,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10530,10 +10721,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10543,10 +10734,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10556,10 +10747,23 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_medium_dirt_00",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				],
+				"id": "grass_dirt_01"
+			},
+			{
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10569,45 +10773,46 @@
 						"id": "camp_patrol",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "concrete__cracked_00",
 				"areas": [
 					{
 						"id": "camp_patrol",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "concrete__cracked_00"
 			},
 			{
 				"id": "concrete__cracked_00"
 			},
 			{
-				"id": "concrete__cracked_00",
 				"feature": {
-					"type": "furniture",
 					"id": "table_metal",
+					"itemgroups": [],
 					"rotation": 0,
-					"itemgroups": []
-				}
-			},
-			{
+					"type": "furniture"
+				},
 				"id": "concrete__cracked_00"
 			},
 			{
 				"id": "concrete__cracked_00"
 			},
 			{
-				"id": "concrete__cracked_00",
+				"id": "concrete__cracked_00"
+			},
+			{
 				"feature": {
-					"type": "furniture",
 					"id": "crate_wood",
-					"rotation": 90,
 					"itemgroups": [
 						"cabinet_general"
-					]
-				}
+					],
+					"rotation": 90,
+					"type": "furniture"
+				},
+				"id": "concrete__cracked_00"
 			},
 			{
 				"id": "concrete__cracked_00"
@@ -10658,38 +10863,24 @@
 				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					},
-					{
-						"id": "camp_field_nature",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10699,10 +10890,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10712,10 +10903,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10725,10 +10916,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10738,10 +10929,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10751,10 +10942,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10764,10 +10955,23 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				],
+				"id": "grass_plain_01"
+			},
+			{
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -10777,221 +10981,208 @@
 						"id": "camp_patrol",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "concrete__cracked_00",
 				"areas": [
 					{
 						"id": "camp_patrol",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "concrete__cracked_00"
 			},
 			{
-				"id": "concrete__cracked_00",
 				"feature": {
-					"type": "furniture",
 					"id": "barrel_radioactive_yellow",
+					"itemgroups": [],
 					"rotation": 0,
-					"itemgroups": []
-				}
+					"type": "furniture"
+				},
+				"id": "concrete__cracked_00"
 			},
 			{
 				"id": "concrete__cracked_00"
 			},
 			{
-				"id": "concrete__cracked_00",
 				"feature": {
-					"type": "furniture",
 					"id": "barrel_radioactive_red",
+					"itemgroups": [],
 					"rotation": 0,
-					"itemgroups": []
-				}
+					"type": "furniture"
+				},
+				"id": "concrete__cracked_00"
 			},
 			{
-				"id": "concrete__cracked_00",
 				"feature": {
-					"type": "furniture",
 					"id": "light_machinery",
+					"itemgroups": [],
 					"rotation": 0,
-					"itemgroups": []
-				}
-			},
-			{
+					"type": "furniture"
+				},
 				"id": "concrete__cracked_00"
 			},
 			{
 				"id": "concrete__cracked_00"
 			},
 			{
-				"id": "grass_plain_01",
+				"id": "concrete__cracked_00"
+			},
+			{
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_01",
-				"areas": [
-					{
-						"id": "camp_field_ground",
-						"rotation": 0
-					},
-					{
-						"id": "camp_field_nature",
-						"rotation": 0
-					}
-				]
-			},
-			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11001,10 +11192,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11014,10 +11205,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11027,10 +11218,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11040,10 +11231,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11053,10 +11244,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11066,10 +11257,23 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_plain_01",
+				"areas": [
+					{
+						"id": "camp_field_ground",
+						"rotation": 0
+					},
+					{
+						"id": "camp_field_nature",
+						"rotation": 0
+					}
+				],
+				"id": "grass_dirt_00"
+			},
+			{
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11079,10 +11283,10 @@
 						"id": "camp_patrol",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "concrete__cracked_00",
 				"areas": [
 					{
 						"id": "camp_patrol",
@@ -11090,13 +11294,11 @@
 					}
 				],
 				"feature": {
-					"type": "furniture",
 					"id": "sandbag_barricade",
+					"itemgroups": [],
 					"rotation": 180,
-					"itemgroups": []
-				}
-			},
-			{
+					"type": "furniture"
+				},
 				"id": "concrete__cracked_00"
 			},
 			{
@@ -11112,169 +11314,171 @@
 				"id": "concrete__cracked_00"
 			},
 			{
-				"id": "concrete__cracked_00",
+				"id": "concrete__cracked_00"
+			},
+			{
 				"feature": {
-					"type": "furniture",
 					"id": "sandbag_barricade",
+					"itemgroups": [],
 					"rotation": 180,
-					"itemgroups": []
-				}
+					"type": "furniture"
+				},
+				"id": "concrete__cracked_00"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11284,10 +11488,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11297,10 +11501,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11310,10 +11514,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11323,10 +11527,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11336,10 +11540,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11349,10 +11553,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11362,235 +11566,235 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11600,10 +11804,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11613,10 +11817,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11626,10 +11830,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11639,10 +11843,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11652,10 +11856,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11665,10 +11869,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11678,10 +11882,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11691,10 +11895,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11704,10 +11908,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11717,10 +11921,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11730,10 +11934,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11743,10 +11947,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11756,10 +11960,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11769,10 +11973,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11782,10 +11986,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11795,10 +11999,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11808,10 +12012,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11821,10 +12025,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11834,10 +12038,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11847,10 +12051,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11860,10 +12064,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11873,10 +12077,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11886,10 +12090,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11899,10 +12103,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11912,10 +12116,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11925,10 +12129,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11938,10 +12142,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11951,10 +12155,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11964,10 +12168,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11977,10 +12181,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -11990,10 +12194,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12003,10 +12207,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12016,10 +12220,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12029,10 +12233,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12042,10 +12246,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12055,10 +12259,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12068,10 +12272,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12081,10 +12285,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12094,10 +12298,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12107,10 +12311,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12120,10 +12324,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12133,10 +12337,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12146,10 +12350,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12159,10 +12363,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12172,10 +12376,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12185,10 +12389,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12198,10 +12402,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12211,10 +12415,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12224,10 +12428,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12237,10 +12441,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12250,10 +12454,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12263,10 +12467,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12276,10 +12480,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12289,10 +12493,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12302,10 +12506,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12315,10 +12519,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12328,10 +12532,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12341,10 +12545,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12354,10 +12558,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12367,10 +12571,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12380,10 +12584,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12393,10 +12597,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12406,10 +12610,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12419,10 +12623,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12432,10 +12636,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12445,10 +12649,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12458,10 +12662,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12471,10 +12675,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12484,10 +12688,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12497,10 +12701,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12510,10 +12714,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12523,10 +12727,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12536,10 +12740,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12549,10 +12753,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12562,10 +12766,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12575,10 +12779,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12588,10 +12792,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12601,10 +12805,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12614,10 +12818,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12627,10 +12831,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12640,10 +12844,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12653,10 +12857,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12666,10 +12870,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12679,10 +12883,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12692,10 +12896,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12705,10 +12909,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12718,10 +12922,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12731,10 +12935,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12744,10 +12948,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12757,10 +12961,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12770,10 +12974,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12783,10 +12987,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12796,10 +13000,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12809,10 +13013,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12822,10 +13026,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12835,10 +13039,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12848,10 +13052,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12861,10 +13065,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12874,10 +13078,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12887,10 +13091,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12900,10 +13104,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12913,10 +13117,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12926,10 +13130,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12939,10 +13143,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12952,10 +13156,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12965,10 +13169,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12978,10 +13182,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -12991,10 +13195,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13004,10 +13208,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13017,10 +13221,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13030,10 +13234,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13043,10 +13247,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13056,10 +13260,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13069,10 +13273,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13082,10 +13286,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13095,10 +13299,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13108,10 +13312,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13121,10 +13325,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13134,10 +13338,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13147,10 +13351,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13160,10 +13364,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13173,10 +13377,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13186,10 +13390,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13199,10 +13403,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13212,10 +13416,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13225,10 +13429,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13238,10 +13442,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13251,10 +13455,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13264,10 +13468,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13277,10 +13481,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13290,10 +13494,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13303,10 +13507,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13316,10 +13520,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13329,10 +13533,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13342,10 +13546,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13355,10 +13559,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13368,10 +13572,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13381,10 +13585,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13394,10 +13598,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13407,10 +13611,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13420,10 +13624,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13433,10 +13637,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13446,10 +13650,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13459,10 +13663,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13472,10 +13676,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13485,10 +13689,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13498,10 +13702,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13511,10 +13715,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13524,10 +13728,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13537,10 +13741,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13550,10 +13754,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13563,10 +13767,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13576,10 +13780,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13589,10 +13793,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13602,10 +13806,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13615,10 +13819,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13628,10 +13832,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13641,10 +13845,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13654,10 +13858,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13667,10 +13871,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13680,10 +13884,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13693,10 +13897,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13706,10 +13910,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13719,10 +13923,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13732,10 +13936,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13745,10 +13949,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13758,10 +13962,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13771,10 +13975,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13784,10 +13988,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13797,10 +14001,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13810,10 +14014,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13823,10 +14027,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13836,10 +14040,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13849,10 +14053,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13862,10 +14066,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13875,10 +14079,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13888,10 +14092,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13901,10 +14105,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13914,10 +14118,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13927,10 +14131,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13940,10 +14144,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13953,10 +14157,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13966,10 +14170,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13979,10 +14183,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -13992,10 +14196,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14005,10 +14209,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14018,10 +14222,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14031,10 +14235,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14044,10 +14248,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14057,10 +14261,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14070,10 +14274,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14083,10 +14287,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14096,10 +14300,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14109,10 +14313,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14122,10 +14326,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14135,10 +14339,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14148,10 +14352,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14161,10 +14365,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14174,10 +14378,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14187,10 +14391,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14200,10 +14404,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14213,10 +14417,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14226,10 +14430,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14239,10 +14443,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14252,10 +14456,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14265,10 +14469,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14278,10 +14482,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14291,10 +14495,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14304,10 +14508,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14317,10 +14521,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14330,10 +14534,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14343,10 +14547,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14356,10 +14560,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14369,10 +14573,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14382,10 +14586,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14395,10 +14599,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14408,10 +14612,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14421,10 +14625,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14434,10 +14638,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14447,10 +14651,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14460,10 +14664,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14473,10 +14677,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14486,10 +14690,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14499,10 +14703,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14512,10 +14716,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14525,10 +14729,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14538,10 +14742,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14551,10 +14755,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14564,10 +14768,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14577,10 +14781,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14590,10 +14794,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14603,10 +14807,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14616,10 +14820,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14629,10 +14833,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14642,10 +14846,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14655,10 +14859,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14668,10 +14872,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14681,10 +14885,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14694,10 +14898,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14707,10 +14911,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_flowers_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14720,10 +14924,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_flowers_00"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14733,10 +14937,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14746,10 +14950,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14759,10 +14963,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14772,10 +14976,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14785,10 +14989,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14798,10 +15002,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14811,10 +15015,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14824,10 +15028,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14837,10 +15041,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14850,10 +15054,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14863,10 +15067,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14876,10 +15080,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14889,10 +15093,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14902,10 +15106,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_00"
 			},
 			{
-				"id": "grass_medium_dirt_00",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14915,10 +15119,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_medium_dirt_00"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14928,10 +15132,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_plain_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14941,10 +15145,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_plain_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14954,10 +15158,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_01",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14967,10 +15171,10 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_01"
 			},
 			{
-				"id": "grass_dirt_02",
 				"areas": [
 					{
 						"id": "camp_field_ground",
@@ -14980,7 +15184,8 @@
 						"id": "camp_field_nature",
 						"rotation": 0
 					}
-				]
+				],
+				"id": "grass_dirt_02"
 			}
 		],
 		[
@@ -17224,159 +17429,13 @@
 		[],
 		[]
 	],
-	"connections": {
-		"north": "ground",
-		"east": "ground",
-		"south": "ground",
-		"west": "ground"
-	},
-	"areas": [
-		{
-			"id": "camp_field_ground",
-			"spawn_chance": 100,
-			"rotate_random": false,
-			"pick_one": false,
-			"tiles": [
-				{
-					"id": "grass_plain_01",
-					"count": 100
-				},
-				{
-					"id": "grass_dirt_00",
-					"count": 15
-				},
-				{
-					"id": "grass_dirt_01",
-					"count": 15
-				},
-				{
-					"id": "grass_dirt_02",
-					"count": 15
-				},
-				{
-					"id": "grass_medium_dirt_00",
-					"count": 1
-				},
-				{
-					"id": "grass_medium_dirt_01",
-					"count": 1
-				},
-				{
-					"id": "grass_medium_dirt_02",
-					"count": 1
-				},
-				{
-					"id": "grass_flowers_00",
-					"count": 1
-				},
-				{
-					"id": "grass_flowers_01",
-					"count": 1
-				},
-				{
-					"id": "grass_flowers_02",
-					"count": 1
-				},
-				{
-					"id": "grass_flowers_03",
-					"count": 1
-				}
-			],
-			"entities": []
-		},
-		{
-			"id": "camp_field_nature",
-			"spawn_chance": 100,
-			"rotate_random": true,
-			"pick_one": false,
-			"tiles": [
-				{
-					"id": "null",
-					"count": 1000
-				}
-			],
-			"entities": [
-				{
-					"id": "wild_vegetation_00",
-					"type": "furniture",
-					"count": 20
-				},
-				{
-					"id": "rock_field_00",
-					"type": "furniture",
-					"count": 10
-				},
-				{
-					"id": "PineTree_00",
-					"type": "furniture",
-					"count": 5
-				}
-			]
-		},
-		{
-			"id": "crater_debris",
-			"spawn_chance": 100,
-			"rotate_random": false,
-			"pick_one": false,
-			"tiles": [
-				{
-					"id": "null",
-					"count": 25
-				}
-			],
-			"entities": [
-				{
-					"id": "debris_rock",
-					"type": "itemgroup",
-					"count": 1
-				}
-			]
-		},
-		{
-			"id": "camp_patrol",
-			"spawn_chance": 35,
-			"rotate_random": true,
-			"pick_one": true,
-			"tiles": [
-				{
-					"id": "null",
-					"count": 100
-				}
-			],
-			"entities": [
-				{
-					"id": "security_robots",
-					"type": "mobgroup",
-					"count": 1
-				}
-			]
-		}
-	],
-	"rooms": [
-		{
-			"id": "research_hut",
-			"kind": "enclosed",
-			"boundary_validation": "complete",
-			"boundary_generation": "walls"
-		}
-	],
+	"mapheight": 32,
+	"mapwidth": 32,
+	"name": "Crater Research Camp",
 	"room_connections": [
 		{
-			"id": "research_hut_door",
 			"at": [
 				8,
-				13
-			],
-			"z": 0,
-			"from": {
-				"kind": "room",
-				"id": "research_hut"
-			},
-			"to": {
-				"kind": "exterior"
-			},
-			"target_at": [
-				9,
 				13
 			],
 			"entrance": {
@@ -17385,88 +17444,29 @@
 					13
 				],
 				"facing": "west"
-			}
-		}
-	],
-	"buildings": [
-		{
-			"id": "crater_research_hut",
-			"rooms": [
-				"research_hut"
-			],
-			"footprint": {
-				"x": 3,
-				"y": 9,
-				"width": 7,
-				"height": 9
 			},
-			"z": 0,
-			"building_levels": [
-				{
-					"z": 0,
-					"rooms": [
-						"research_hut"
-					],
-					"furniture_anchors": [
-						"research_console",
-						"sample_storage"
-					]
-				}
-			],
-			"interior_rooms": [
-				"research_hut"
-			],
-			"furniture_anchors": [
-				{
-					"id": "research_console",
-					"at": [
-						7,
-						10
-					],
-					"z": 0,
-					"kind": "workstation"
-				},
-				{
-					"id": "sample_storage",
-					"at": [
-						4,
-						15
-					],
-					"z": 0,
-					"kind": "storage"
-				}
-			],
-			"reachability_validation": {
-				"required_furniture_anchors": [
-					"research_console",
-					"sample_storage"
-				],
-				"required_building_levels": [
-					0
-				]
+			"from": {
+				"id": "research_hut",
+				"kind": "room"
 			},
-			"building_geometry": {
-				"floor_tile": {
-					"id": "concrete_00"
-				},
-				"wall_tile": {
-					"id": "metal_wall_00"
-				},
-				"support_tile": {
-					"id": "dirt_light_00"
-				},
-				"roof_tile": {
-					"id": "concrete__cracked_00"
-				}
-			}
-		}
-	],
-	"building_surfaces": [
-		{
-			"id": "research_hut_roof",
-			"building": "crater_research_hut",
-			"kind": "roof",
+			"id": "research_hut_door",
+			"target_at": [
+				9,
+				13
+			],
+			"to": {
+				"kind": "exterior"
+			},
 			"z": 0
 		}
-	]
+	],
+	"rooms": [
+		{
+			"boundary_generation": "walls",
+			"boundary_validation": "complete",
+			"id": "research_hut",
+			"kind": "enclosed"
+		}
+	],
+	"weight": 1
 }

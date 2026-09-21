@@ -11,7 +11,8 @@
 			"office_building_00",
 			"police_station",
 			"generichouse_end",
-			"military_bunker"
+			"military_bunker",
+			"crater_research_camp"
 		]
 	},
 	"clothing_general": {
@@ -28,7 +29,8 @@
 			"military_bunker",
 			"crater_small",
 			"survivor_gas_station",
-			"underground_cave"
+			"underground_cave",
+			"crater_research_camp"
 		]
 	},
 	"debris_urban": {
@@ -97,7 +99,8 @@
 			"radio_tower",
 			"police_station",
 			"military_bunker",
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"generic_field_finds": {
@@ -144,7 +147,8 @@
 	"loot_electronic": {
 		"maps": [
 			"radio_tower",
-			"factory_hall"
+			"factory_hall",
+			"crater_research_camp"
 		],
 		"mobs": [
 			"venom_crawler",

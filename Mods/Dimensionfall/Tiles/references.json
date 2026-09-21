@@ -622,7 +622,8 @@
 			"field_outpost",
 			"field_farmland",
 			"underground_cave",
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"grass_dirt_01": {
@@ -669,7 +670,8 @@
 			"field_outpost",
 			"field_farmland",
 			"underground_cave",
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"grass_dirt_02": {
@@ -715,7 +717,8 @@
 			"field_outpost",
 			"field_farmland",
 			"underground_cave",
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"grass_dirt_center_00": {
@@ -765,7 +768,8 @@
 			"suburban_park",
 			"field_farmland",
 			"underground_cave",
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"grass_flowers_01": {
@@ -803,7 +807,8 @@
 			"suburban_park",
 			"field_farmland",
 			"underground_cave",
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"grass_flowers_02": {
@@ -840,7 +845,8 @@
 			"suburban_park",
 			"field_farmland",
 			"underground_cave",
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"grass_flowers_03": {
@@ -878,7 +884,8 @@
 			"suburban_park",
 			"field_farmland",
 			"underground_cave",
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"grass_medium_dirt_00": {
@@ -927,7 +934,8 @@
 			"field_outpost",
 			"field_farmland",
 			"underground_cave",
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"grass_medium_dirt_01": {
@@ -976,7 +984,8 @@
 			"field_outpost",
 			"field_farmland",
 			"underground_cave",
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"grass_medium_dirt_02": {
@@ -1024,7 +1033,8 @@
 			"field_outpost",
 			"field_farmland",
 			"underground_cave",
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"grass_plain": {
@@ -1066,7 +1076,8 @@
 			"forest_camp_00",
 			"military_bunker",
 			"crater_small",
-			"survivor_gas_station"
+			"survivor_gas_station",
+			"crater_research_camp"
 		]
 	},
 	"grass_ramp_00": {

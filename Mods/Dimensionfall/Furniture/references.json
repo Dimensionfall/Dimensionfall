@@ -32,7 +32,8 @@
 			"forest_clearing",
 			"forest_ruins",
 			"field_farmland",
-			"generated_furnished_clearing"
+			"generated_furnished_clearing",
+			"crater_research_camp"
 		]
 	},
 	"Tree_00": {
@@ -117,12 +118,14 @@
 	},
 	"barrel_radioactive_red": {
 		"maps": [
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"barrel_radioactive_yellow": {
 		"maps": [
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"bathtub": {
@@ -295,7 +298,8 @@
 			"military_bunker",
 			"survivor_gas_station",
 			"underground_lab",
-			"field_farmland"
+			"field_farmland",
+			"crater_research_camp"
 		]
 	},
 	"chair_wood": {
@@ -326,7 +330,8 @@
 	"chemical_rack": {
 		"maps": [
 			"military_bunker",
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"clothing_rack": {
@@ -338,7 +343,8 @@
 		"maps": [
 			"military_bunker",
 			"survivor_gas_station",
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"conveyor": {
@@ -392,7 +398,8 @@
 			"survivor_gas_station",
 			"office_building_00",
 			"abandoned_building",
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"crate_wood_long": {
@@ -434,7 +441,8 @@
 			"industrial_control_center",
 			"survivor_gas_station",
 			"underground_lab",
-			"field_farmland"
+			"field_farmland",
+			"crater_research_camp"
 		]
 	},
 	"destroyed_fence": {
@@ -481,7 +489,8 @@
 			"military_bunker",
 			"survivor_gas_station",
 			"underground_lab",
-			"field_farmland"
+			"field_farmland",
+			"crater_research_camp"
 		]
 	},
 	"equipment_rack": {
@@ -493,7 +502,8 @@
 			"warehouse_storage",
 			"military_bunker",
 			"survivor_gas_station",
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"first_aid_rack": {
@@ -501,7 +511,8 @@
 			"radio_tower",
 			"industrial_control_center",
 			"military_bunker",
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"gas_pump": {
@@ -531,7 +542,8 @@
 	"light_machinery": {
 		"maps": [
 			"scrap_yard",
-			"factory_hall"
+			"factory_hall",
+			"crater_research_camp"
 		]
 	},
 	"military_car_wreck": {
@@ -541,7 +553,8 @@
 	},
 	"military_cot": {
 		"maps": [
-			"military_bunker"
+			"military_bunker",
+			"crater_research_camp"
 		]
 	},
 	"plant_pot_00": {
@@ -601,7 +614,8 @@
 	},
 	"rock_field_00": {
 		"maps": [
-			"generated_furnished_clearing"
+			"generated_furnished_clearing",
+			"crater_research_camp"
 		]
 	},
 	"rusted_fridge": {
@@ -613,7 +627,8 @@
 	"sandbag_barricade": {
 		"maps": [
 			"military_bunker",
-			"survivor_gas_station"
+			"survivor_gas_station",
+			"crater_research_camp"
 		]
 	},
 	"security_gate": {
@@ -712,7 +727,8 @@
 			"RockyHill_SW",
 			"store_electronic_clothing",
 			"industrial_control_center",
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"table_picknic": {
@@ -832,7 +848,8 @@
 			"radio_tower",
 			"industrial_control_center",
 			"military_bunker",
-			"underground_lab"
+			"underground_lab",
+			"crater_research_camp"
 		]
 	},
 	"vending_machine": {
@@ -878,7 +895,8 @@
 	},
 	"wild_vegetation_00": {
 		"maps": [
-			"generated_furnished_clearing"
+			"generated_furnished_clearing",
+			"crater_research_camp"
 		]
 	},
 	"window_glass": {
