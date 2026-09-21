@@ -1091,11 +1091,11 @@ A migrated Pine Hollow-style recipe must describe its exterior doorway with one 
 5. ~~Remove redundant Pine Hollow door anchor, per-level door-anchor, and separate entrance/context declarations only after compatibility tests prove equivalent output.~~ The canonical connection-level entrance now owns doorway identity and exterior approach metadata; the redundant declarations were removed from both Pine Hollow recipes.
 6. ~~Re-run maintained generation, deterministic comparison, standalone validation, and focused Godot navigation coverage; document the final authoring contract.~~ The maintained acceptance matrix remains green after regeneration and the final authoring contract is documented above.
 
-### 10.8 Pine Hollow Outpost detail and immersion pass — in progress
+### 10.8 Pine Hollow Outpost detail and immersion pass — complete
 
-**Status: in progress; controlled field variation, shabby wood floors, cabin furnishing, and bounded exterior nature dressing implemented; manual editor review pending**
+**Status: complete; controlled field variation, shabby wood floors, cabin furnishing, bounded exterior nature dressing, container itemgroups, and acceptance validation complete**
 
-Phase 10.7 made Pine Hollow a correctly classified, playable field map. It did not attempt to make the location visually complete. The next Pine Hollow-specific work is an authored detail pass that uses the existing generic terrain, palette, scatter, area, furniture, and room/building primitives rather than adding Pine-Hollow-specific generator conditionals.
+Phase 10.7 made Pine Hollow a correctly classified, playable field map. Phase 10.8 completed its authored detail and immersion pass using the existing generic terrain, palette, area, furniture, and room/building primitives without adding Pine-Hollow-specific generator conditionals.
 
 The implemented first slice uses the existing field-compatible `grass_plain_01`, `grass_dirt_00`–`02`, `grass_medium_dirt_00`, and `grass_flowers_00` palette entries. It deliberately excludes `forest_underbrush_00`: Pine Hollow is a field map, not a forest map. It also excludes `grass_dead_00`, which does not fit the intended maintained field treatment. The `outpost_ground` runtime area covers every map cell outside the cabin footprint and always replaces its covered ground with a mostly-grass weighted mix; it does not use `null`. The cabin and loft use `floor_wood_shabby_00`, while the exterior threshold and open lean-to use explicit `concrete_00`. The ground-floor composition uses a wooden bed, stove, cabinet, table, chair, and lean-to tool bench; bounded exterior nature dressing uses an `outpost_field_nature` runtime area with wild vegetation, field rock, pine tree, and burned-stump weights in exterior-only membership regions. The `outpost_yard` runtime area has three dirt variants and deliberately excludes the path, building, and lean-to. Runtime area selection makes exterior dressing vary by map instance rather than baking it into the generated JSON. Focused generator assertions protect the material, route, required prop, non-forest palette, runtime-area, and clearance contracts.
 
@@ -1185,19 +1185,23 @@ This is authored environmental storytelling, not a new generic settlement or ove
 
 #### 10.8.7 Implementation order
 
-1. Inventory the real tile and furniture catalogs for wood floors, beds, tables, seats, stoves/utilities, storage, rocks, vegetation, shrubs, trees, stumps, and damaged props. Record unavailable concepts and choose the closest existing assets.
-2. Add test-first assertions for the intended recipe contract: `Field` classification, all-ground edges, no road metadata, preserved service-path cells, wood floor cells, threshold concrete, and reserved clearances.
-3. Add the smallest ground palette and deterministic terrain variation. Run the focused generator tests and inspect the generated map before adding furniture.
-4. Replace the ground-floor concrete material where appropriate, preserving threshold and staircase exceptions. Validate the generated map independently.
-5. Add the ground-floor cabin furnishing composition and any loft/lean-to additions. Add only gameplay-relevant furniture anchors and update required target assertions.
-6. Add bounded exterior vegetation and nature-prop runtime area membership, then tune density and protected regions through editor inspection.
-7. Add restrained work-yard wear, clutter, fence/overgrowth relationships, and any available abandoned props.
-8. Regenerate both the maintained example and production map from their respective recipes, compare the complete published artifact, and inspect the result in Godot/content editor.
-9. Run the structural, deterministic, validator, DMap, and real navigation acceptance matrix. Do not mark this phase complete if any detail pass blocks an existing route or changes the canonical doorway contract.
+All planned implementation steps are complete. The maintained production recipe, example recipe, published map, generator tests, validator checks, deterministic regeneration, and runtime navigation acceptance remain aligned. The final content/editor acceptance was completed as part of closing this phase.
+
+1. ~~Inventory the real tile and furniture catalogs for wood floors, beds, tables, seats, stoves/utilities, storage, rocks, vegetation, shrubs, trees, stumps, and damaged props. Record unavailable concepts and choose the closest existing assets.~~
+2. ~~Add test-first assertions for the intended recipe contract: `Field` classification, all-ground edges, no road metadata, preserved service-path cells, wood floor cells, threshold concrete, and reserved clearances.~~
+3. ~~Add the smallest ground palette and deterministic terrain variation. Run the focused generator tests and inspect the generated map before adding furniture.~~
+4. ~~Replace the ground-floor concrete material where appropriate, preserving threshold and staircase exceptions. Validate the generated map independently.~~
+5. ~~Add the ground-floor cabin furnishing composition and any loft/lean-to additions. Add only gameplay-relevant furniture anchors and update required target assertions.~~
+6. ~~Add bounded exterior vegetation and nature-prop runtime area membership, then tune density and protected regions through editor inspection.~~
+7. ~~Add restrained work-yard wear, clutter, fence/overgrowth relationships, and any available abandoned props.~~
+8. ~~Regenerate both the maintained example and production map from their respective recipes, compare the complete published artifact, and inspect the result in Godot/content editor.~~
+9. ~~Run the structural, deterministic, validator, DMap, and real navigation acceptance matrix. Do not mark this phase complete if any detail pass blocks an existing route or changes the canonical doorway contract.~~
 
 #### 10.8.8 Acceptance criteria
 
-The detail pass is complete only when all of the following are true:
+All acceptance criteria below are complete for the maintained Pine Hollow outpost. The final implementation includes controlled ground variation, furnished and navigable cabin spaces, sparse runtime nature dressing, authored container itemgroups, preserved route/doorway semantics, generated-map validation, deterministic output, and final content/editor acceptance.
+
+The detail pass is complete because all of the following acceptance conditions were met:
 
 * the ground has visible but controlled deterministic variation beyond one uniform grass tile;
 * the cabin ground floor visibly reads as wood or an explicitly documented catalog limitation is resolved;
@@ -1224,6 +1228,23 @@ Do not include the following in this detail pass:
 * town, settlement, or overmap-wide composition;
 * physical ceiling generation;
 * generalized tall-storey `wall_height`.
+
+### 10.9 Crater Research Camp maintained content map — implementation complete
+
+**Status: implementation and automated acceptance complete; manual in-game/content-editor visual review pending**
+
+`crater_research_camp` demonstrates that the generic recipe workflow can ship a finished field location without adding map-specific generator behavior. The map uses `Field` and `Plains` categories with `ground` on all four edges. Its authored composition includes a four-level-deep rock crater with an asymmetric rounded basin and irregular rim inspired by `crater_small`, nested solid-backed terraces, exposed-surface debris coverage kept off the access route, and four sparse reversible slopes linking the surface to z=-4, an enclosed metal research hut with a canonical east-side entrance and an explicitly authored standable cracked-concrete roof, a connected service path, a concrete outdoor equipment pad, scientific and industrial furniture with deliberate rotations, container itemgroup overrides, hazardous-material props, and reserved navigation cells.
+
+Runtime areas provide broad field-ground variation outside the protected camp/crater envelope, sparse nature dressing, crater-floor rock debris, and a possible security-robot patrol. The field palette follows the proven `crater_small` grass/dirt/flower proportions; the crater, hut, path, and equipment pad remain explicitly authored so runtime area selection cannot overwrite focal geometry. Existing catalog assets were sufficient, so no new tile or furniture definitions were introduced. A dedicated 128×128 tactical-map preview accompanies the published JSON.
+
+The maintained source/output set is:
+
+* `Tools/recipes/crater_research_camp.json` — production source of truth;
+* `Tools/examples/map_recipe_crater_research_camp.json` — structurally equivalent maintained fixture with distinct example identity;
+* `Mods/Dimensionfall/Maps/crater_research_camp.json` and `.png` — published runtime map and preview;
+* `Tests/Unit/test_crater_research_camp_navigation.gd` — real `Chunk`/`NavigationServer3D` hut-to-rim and crater descent/ascent acceptance.
+
+The generated-map contract asserts map classification and connections, crater depth and slope rotation, building ownership and canonical entrance metadata, exact focal furniture rotations and itemgroups, protected clear route cells, runtime-area entity pools, production/fixture parity, deterministic publication, and standalone validation.
 
 ## Phase 11 — Generalized tall-storey wall height
 
@@ -1262,11 +1283,11 @@ Implement this only with test-first coverage in `Tools/tests/test_map_generator.
 
 # Recommended immediate next task
 
-**Recommended next task: Phase 10.8 Pine Hollow detail and immersion pass.** The structural map-generation workflow is established: Pine Hollow is a maintained `Field` map with all-ground edge connections, a short pedestrian/service path, a playable furnished structure baseline, canonical doorway metadata, deterministic generation, independent validation, and real navigation coverage. The next work is to author and validate the missing visual/content detail: controlled ground variation, suitable wood cabin floors, ground-floor furnishing, vegetation, nature props, and restrained work-yard abandonment. Keep Phase 11 `wall_height`, roadside placement, map-to-map roads, and town composition deferred until a concrete gameplay requirement exists.
+**Recommended next task: manually review Crater Research Camp in the content editor/game, then define a concrete tall-room gameplay requirement before implementing Phase 11 (`wall_height`).** Pine Hollow is complete, and Crater Research Camp has complete implementation and automated acceptance with only its visual walkthrough pending. After that review, the plan has no remaining location-specific work for either map. Phase 11 is the next defined generator milestone, but it should remain deferred until a real location or gameplay feature requires storeys taller than the current one-wall-layer rule. Once that requirement exists, begin with test-first coverage for the generic `wall_height` contract, then update the generator, standalone validator, DMap sanitization, a minimal example recipe, and focused Godot navigation/collision tests.
 
-Do not yet generate towns or overmap-wide composition. Preserve the established map-level `areas` plus per-tile area membership representation, keep room semantics independent from runtime areas, and treat overmap areas as the authority for settlement composition and multi-map roads. Explicit map-to-map edge compatibility remains deferred until it becomes useful.
+Until that requirement exists, the best next step is a short discovery/design pass: choose the first concrete tall-room use case, define its door/window opening behavior and expected roof/support geometry, and only then start Phase 11 implementation. Do not reopen Pine Hollow or generate towns/overmap-wide composition as a substitute; preserve the established map-level areas, room semantics, runtime itemgroup behavior, and map-edge contracts.
 
-Run the complete Python suite, relevant Godot tests or smoke checks, all maintained example generations through `Tools/map_validator.py`, and `git diff --check`.
+Run the complete Python suite, relevant Godot tests or smoke checks, all maintained example generations through `Tools/map_validator.py`, and `git diff --check` after implementation work.
 
 Do not commit or push unless explicitly requested.
 
@@ -1349,8 +1370,9 @@ Do not commit or push unless explicitly requested.
 [Complete] Phase 10.5 Pine Hollow Outpost automated and manual acceptance plus field-map placement conversion
 [Complete] Phase 10.6 room-derived surface operations and room-owned multi-level geometry
 [Complete] Phase 10.7 canonical doorway and entrance declarations
-[Next] Phase 10.8 Pine Hollow detail and immersion pass
-[Deferred] Phase 11 generalized tall-storey `wall_height`
+[Complete] Phase 10.8 Pine Hollow detail and immersion pass
+[In review] Phase 10.9 Crater Research Camp maintained content map — automated acceptance complete; manual visual review pending
+[Next, pending concrete requirement] Phase 11 generalized tall-storey `wall_height`
 [Target] Agent-generated playable maps
 ```
 

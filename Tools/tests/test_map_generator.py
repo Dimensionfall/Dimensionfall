@@ -15,6 +15,10 @@ MOBGROUPS_PATH = ROOT / "Mods" / "Dimensionfall" / "Mobgroups" / "Mobgroups.json
 ITEMGROUPS_PATH = ROOT / "Mods" / "Dimensionfall" / "Itemgroups" / "Itemgroups.json"
 PRODUCTION_RECIPE_PATH = ROOT / "Tools" / "recipes" / "pine_hollow_outpost.json"
 PRODUCTION_MAP_PATH = ROOT / "Mods" / "Dimensionfall" / "Maps" / "pine_hollow_outpost.json"
+CRATER_RESEARCH_RECIPE_PATH = ROOT / "Tools" / "recipes" / "crater_research_camp.json"
+CRATER_RESEARCH_MAP_PATH = ROOT / "Mods" / "Dimensionfall" / "Maps" / "crater_research_camp.json"
+CRATER_RESEARCH_PREVIEW_PATH = ROOT / "Mods" / "Dimensionfall" / "Maps" / "crater_research_camp.png"
+CRATER_RESEARCH_FIXTURE_PATH = ROOT / "Tools" / "examples" / "map_recipe_crater_research_camp.json"
 
 MAINTAINED_RECIPE_FILENAMES = (
     "map_recipe.json",
@@ -39,6 +43,7 @@ MAINTAINED_RECIPE_FILENAMES = (
     "map_recipe_semantic_single_storey_building.json",
     "map_recipe_semantic_two_storey_building.json",
     "map_recipe_pine_hollow_outpost.json",
+    "map_recipe_crater_research_camp.json",
 )
 
 
@@ -3087,6 +3092,157 @@ class MapGeneratorTests(unittest.TestCase):
         self.assertEqual(generated["levels"][12][9 * 32 + 10]["id"], "grass_ramp_00")
         self.assertEqual(generated["levels"][12][9 * 32 + 10]["rooms"], ["loft"])
         self.assertEqual(generated["levels"][12][10 * 32 + 10], {})
+
+    def test_crater_research_camp_recipe_has_finished_location_contract(self):
+        recipe = json.loads(CRATER_RESEARCH_RECIPE_PATH.read_text(encoding="utf-8"))
+        generated = generate_map(recipe, TILES_PATH)
+
+        self.assertEqual(recipe["id"], "crater_research_camp")
+        self.assertEqual(recipe["categories"], ["Field", "Plains"])
+        self.assertEqual(generated["connections"], {
+            "north": "ground", "east": "ground", "south": "ground", "west": "ground",
+        })
+        self.assertNotIn("road_endpoints", generated)
+        self.assertNotIn("road_paths", generated)
+
+        ground = generated["levels"][10]
+        crater_floor = generated["levels"][9]
+        hut_roof = generated["levels"][12]
+        self.assertEqual(ground[13 * 32 + 12], {"id": "rock_slope_00", "rotation": 270})
+        self.assertEqual(len(hut_roof), 32 * 32)
+        self.assertEqual(hut_roof[13 * 32 + 6]["id"], "concrete__cracked_00")
+        self.assertIn(crater_floor[13 * 32 + 13]["id"],
+                      {entry["id"] for entry in recipe["palette"]["crater_floor"]})
+        self.assertEqual(ground[13 * 32 + 13], {})
+        self.assertEqual([ground[13 * 32 + x]["id"] for x in range(9, 12)], [
+            "concrete_00", "dirt_light_00", "dirt_light_00",
+        ])
+
+        building = generated["buildings"][0]
+        self.assertEqual(building["id"], "crater_research_hut")
+        self.assertEqual(building["rooms"], ["research_hut"])
+        self.assertEqual(building["building_levels"], [{
+            "z": 0,
+            "rooms": ["research_hut"],
+            "furniture_anchors": ["research_console", "sample_storage"],
+        }])
+        self.assertEqual(generated["room_connections"], [{
+            "id": "research_hut_door",
+            "at": [8, 13],
+            "target_at": [9, 13],
+            "z": 0,
+            "from": {"kind": "room", "id": "research_hut"},
+            "to": {"kind": "exterior"},
+            "entrance": {"exterior_at": [10, 13], "facing": "west"},
+        }])
+        self.assertEqual(ground[13 * 32 + 9]["feature"], {
+            "type": "furniture", "id": "door_wood", "rotation": 90, "itemgroups": [],
+        })
+        for y in range(21, 23):
+            for x in range(3, 10):
+                with self.subTest(field_ground_exclusion=(x, y)):
+                    self.assertNotIn("camp_field_ground", [area["id"] for area in ground[y * 32 + x].get("areas", [])])
+
+        expected_features = {
+            (7, 10): ("control_panel", 0, []),
+            (4, 13): ("equipment_rack", 270, ["loot_electronic"]),
+            (4, 15): ("chemical_rack", 270, ["first_aid"]),
+            (8, 15): ("first_aid_rack", 90, ["first_aid"]),
+            (8, 20): ("crate_wood", 90, ["cabinet_general"]),
+            (4, 21): ("barrel_radioactive_yellow", 0, []),
+            (6, 21): ("barrel_radioactive_red", 0, []),
+            (7, 21): ("light_machinery", 0, []),
+        }
+        for (x, y), (feature_id, rotation, itemgroups) in expected_features.items():
+            with self.subTest(at=(x, y)):
+                self.assertEqual(ground[y * 32 + x]["feature"], {
+                    "type": "furniture",
+                    "id": feature_id,
+                    "rotation": rotation,
+                    "itemgroups": itemgroups,
+                })
+
+        areas = {area["id"]: area for area in generated["areas"]}
+        self.assertEqual(areas["crater_debris"]["tiles"], [{"id": "null", "count": 25}])
+        self.assertEqual(areas["crater_debris"]["entities"], [
+            {"id": "debris_rock", "type": "itemgroup", "count": 1},
+        ])
+        self.assertEqual(areas["camp_patrol"]["entities"], [
+            {"id": "security_robots", "type": "mobgroup", "count": 1},
+        ])
+        self.assertEqual(areas["camp_field_nature"]["tiles"], [{"id": "null", "count": 1000}])
+
+        clear_route = [(10, 13), (11, 13), (12, 13), (13, 13), (14, 13)]
+        self.assertFalse(any(ground[y * 32 + x].get("feature") for x, y in clear_route))
+
+    def test_crater_research_camp_has_irregular_rounded_crater(self):
+        recipe = json.loads(CRATER_RESEARCH_RECIPE_PATH.read_text(encoding="utf-8"))
+        generated = generate_map(recipe, TILES_PATH)
+        ground, floor = generated["levels"][10], generated["levels"][9]
+        spans = [(16, 19), (14, 21), (13, 22), (13, 22), (12, 23), (12, 23),
+                 (12, 23), (13, 23), (12, 22), (13, 22), (14, 21), (16, 20)]
+        basin = {(x, y) for y, (left, right) in enumerate(spans, 8)
+                 for x in range(left, right + 1)}
+        levels = generated["levels"]
+        self.assertTrue(levels[6], "The crater must reach z=-4")
+        covered = {(i % 32, i // 32) for level in levels[6:10]
+                   for i, cell in enumerate(level) if cell}
+        self.assertEqual(covered, basin)
+        slopes = [cell for level in levels[6:11] for cell in level
+                  if cell.get("id") == "rock_slope_00"]
+        self.assertEqual(len(slopes), 4)
+        for z in range(6, 10):
+            exposed = {(i % 32, i // 32) for i, cell in enumerate(levels[z])
+                       if cell and not levels[z + 1][i]}
+            pending = [next(iter(exposed))]
+            reached = set(pending)
+            while pending:
+                x, y = pending.pop()
+                for neighbor in [(x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)]:
+                    if neighbor in exposed and neighbor not in reached:
+                        reached.add(neighbor)
+                        pending.append(neighbor)
+            self.assertEqual(reached, exposed, f"Disconnected terrace at z={z - 10}")
+        for x, y in basin:
+            occupied = [z for z in range(6, 10) if levels[z][y * 32 + x]]
+            self.assertEqual(occupied, list(range(6, max(occupied) + 1)))
+        for depth, x in enumerate([12, 14, 16, 18]):
+            cell = levels[10 - depth][13 * 32 + x]
+            self.assertEqual(cell["id"], "rock_slope_00")
+            self.assertEqual(cell["rotation"], 270)
+            self.assertTrue(levels[9 - depth][13 * 32 + x])
+            self.assertTrue(levels[10 - depth][13 * 32 + x - 1])
+            self.assertTrue(levels[9 - depth][13 * 32 + x + 1])
+            self.assertFalse(levels[10 - depth][13 * 32 + x + 1])
+        self.assertEqual({(i % 32, i // 32) for i, cell in enumerate(ground) if not cell},
+                         basin - {(12, 13)})
+        debris = set()
+        for z in range(6, 10):
+            for i, cell in enumerate(levels[z]):
+                if any(a["id"] == "crater_debris" for a in cell.get("areas", [])):
+                    self.assertFalse(levels[z + 1][i])
+                    self.assertNotEqual(cell["id"], "rock_slope_00")
+                    debris.add((i % 32, i // 32))
+        self.assertEqual(debris, basin - {(x, 13) for x in range(12, 21)})
+        for x, y in [(11, 7), (24, 7), (11, 20), (24, 20)]:
+            self.assertTrue(ground[y * 32 + x]["id"].startswith("grass_"))
+        self.assertEqual(ground[13 * 32 + 12], {"id": "rock_slope_00", "rotation": 270})
+
+    def test_crater_research_camp_published_map_matches_recipe_and_validates(self):
+        recipe = json.loads(CRATER_RESEARCH_RECIPE_PATH.read_text(encoding="utf-8"))
+        generated = generate_map(recipe, TILES_PATH)
+        published = json.loads(CRATER_RESEARCH_MAP_PATH.read_text(encoding="utf-8"))
+
+        self.assertEqual(published, generated)
+        fixture_recipe = json.loads(CRATER_RESEARCH_FIXTURE_PATH.read_text(encoding="utf-8"))
+        fixture_generated = generate_map(fixture_recipe, TILES_PATH)
+        fixture_generated["id"] = generated["id"]
+        fixture_generated["name"] = generated["name"]
+        self.assertEqual(fixture_generated, generated)
+        self.assertTrue(CRATER_RESEARCH_PREVIEW_PATH.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"))
+        validator = MapValidator()
+        validator.validate_map(str(CRATER_RESEARCH_MAP_PATH))
+        self.assertEqual(validator.errors, [])
 
     def test_pine_hollow_outpost_fixture_creates_a_new_rural_two_level_location(self):
         recipe_path = ROOT / "Tools" / "examples" / "map_recipe_pine_hollow_outpost.json"
