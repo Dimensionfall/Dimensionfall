@@ -23,17 +23,36 @@ func test_crater_research_camp_connects_hut_rim_and_crater_floor() -> void:
 
 	var hut: Vector3 = fixture.grid_to_world(8, 13, 1.5)
 	var rim: Vector3 = fixture.grid_to_world(11, 13, 1.5)
-	var crater_floor: Vector3 = fixture.grid_to_world(15, 13, 0.5)
+	var crater_floor: Vector3 = fixture.grid_to_world(19, 14, -2.5)
 	fixture.assert_path_connects(hut, rim, "Research hut to crater rim")
-	fixture.assert_path_crosses_levels(rim, crater_floor, "Crater descent", 0.5, 1.5)
-	fixture.assert_path_crosses_levels(crater_floor, rim, "Crater ascent", 0.5, 1.5)
+	fixture.assert_path_connects(rim, crater_floor, "Crater descent")
+	fixture.assert_path_connects(crater_floor, rim, "Crater ascent")
+	for depth in range(1, 4):
+		var terrace: Vector3 = fixture.grid_to_world(11 + depth * 2, 13, 1.5 - depth)
+		fixture.assert_path_connects(rim, terrace, "Surface to terrace %s" % depth)
+		fixture.assert_path_connects(terrace, rim, "Terrace %s to surface" % depth)
+	var map_data: Dictionary = JSON.parse_string(
+		FileAccess.get_file_as_string("res://Mods/Dimensionfall/Maps/crater_research_camp.json")
+	)
+	for level_index in range(6, 10):
+		for index in range(1024):
+			var cell: Dictionary = map_data["levels"][level_index][index]
+			if cell.is_empty() or not map_data["levels"][level_index + 1][index].is_empty():
+				continue
+			if cell["id"] == "rock_slope_00":
+				continue
+			var point: Vector3 = fixture.grid_to_world(
+				index % 32, floori(index / 32.0), level_index - 8.5
+			)
+			fixture.assert_path_connects(point, rim, "Return from floor cell %s:%s" % [level_index, index])
+			fixture.assert_path_connects(rim, point, "Reach floor cell %s:%s" % [level_index, index])
 
 
 func _populate_camp_geometry() -> void:
 	var map_data: Dictionary = JSON.parse_string(
 		FileAccess.get_file_as_string("res://Mods/Dimensionfall/Maps/crater_research_camp.json")
 	)
-	for level_index in [9, 10]:
+	for level_index in range(6, 11):
 		var cells: Array = map_data["levels"][level_index]
 		for index in range(cells.size()):
 			var cell: Dictionary = cells[index]

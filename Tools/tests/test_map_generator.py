@@ -3111,7 +3111,8 @@ class MapGeneratorTests(unittest.TestCase):
         self.assertEqual(ground[13 * 32 + 12], {"id": "rock_slope_00", "rotation": 270})
         self.assertEqual(len(hut_roof), 32 * 32)
         self.assertEqual(hut_roof[13 * 32 + 6]["id"], "concrete__cracked_00")
-        self.assertEqual(crater_floor[13 * 32 + 13]["id"], "rock_floor_00")
+        self.assertIn(crater_floor[13 * 32 + 13]["id"],
+                      {entry["id"] for entry in recipe["palette"]["crater_floor"]})
         self.assertEqual(ground[13 * 32 + 13], {})
         self.assertEqual([ground[13 * 32 + x]["id"] for x in range(9, 12)], [
             "concrete_00", "dirt_light_00", "dirt_light_00",
@@ -3182,12 +3183,47 @@ class MapGeneratorTests(unittest.TestCase):
                  (12, 23), (13, 23), (12, 22), (13, 22), (14, 21), (16, 20)]
         basin = {(x, y) for y, (left, right) in enumerate(spans, 8)
                  for x in range(left, right + 1)}
-        self.assertEqual({(i % 32, i // 32) for i, cell in enumerate(floor) if cell}, basin)
+        levels = generated["levels"]
+        self.assertTrue(levels[6], "The crater must reach z=-4")
+        covered = {(i % 32, i // 32) for level in levels[6:10]
+                   for i, cell in enumerate(level) if cell}
+        self.assertEqual(covered, basin)
+        slopes = [cell for level in levels[6:11] for cell in level
+                  if cell.get("id") == "rock_slope_00"]
+        self.assertEqual(len(slopes), 4)
+        for z in range(6, 10):
+            exposed = {(i % 32, i // 32) for i, cell in enumerate(levels[z])
+                       if cell and not levels[z + 1][i]}
+            pending = [next(iter(exposed))]
+            reached = set(pending)
+            while pending:
+                x, y = pending.pop()
+                for neighbor in [(x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)]:
+                    if neighbor in exposed and neighbor not in reached:
+                        reached.add(neighbor)
+                        pending.append(neighbor)
+            self.assertEqual(reached, exposed, f"Disconnected terrace at z={z - 10}")
+        for x, y in basin:
+            occupied = [z for z in range(6, 10) if levels[z][y * 32 + x]]
+            self.assertEqual(occupied, list(range(6, max(occupied) + 1)))
+        for depth, x in enumerate([12, 14, 16, 18]):
+            cell = levels[10 - depth][13 * 32 + x]
+            self.assertEqual(cell["id"], "rock_slope_00")
+            self.assertEqual(cell["rotation"], 270)
+            self.assertTrue(levels[9 - depth][13 * 32 + x])
+            self.assertTrue(levels[10 - depth][13 * 32 + x - 1])
+            self.assertTrue(levels[9 - depth][13 * 32 + x + 1])
+            self.assertFalse(levels[10 - depth][13 * 32 + x + 1])
         self.assertEqual({(i % 32, i // 32) for i, cell in enumerate(ground) if not cell},
                          basin - {(12, 13)})
-        debris = {(i % 32, i // 32) for i, cell in enumerate(floor)
-                  if any(area["id"] == "crater_debris" for area in cell.get("areas", []))}
-        self.assertEqual(debris, basin)
+        debris = set()
+        for z in range(6, 10):
+            for i, cell in enumerate(levels[z]):
+                if any(a["id"] == "crater_debris" for a in cell.get("areas", [])):
+                    self.assertFalse(levels[z + 1][i])
+                    self.assertNotEqual(cell["id"], "rock_slope_00")
+                    debris.add((i % 32, i // 32))
+        self.assertEqual(debris, basin - {(x, 13) for x in range(12, 21)})
         for x, y in [(11, 7), (24, 7), (11, 20), (24, 20)]:
             self.assertTrue(ground[y * 32 + x]["id"].startswith("grass_"))
         self.assertEqual(ground[13 * 32 + 12], {"id": "rock_slope_00", "rotation": 270})
